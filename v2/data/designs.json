@@ -1607,6 +1607,47 @@
     "path": "v2-design-038/index.html"
   },
   {
+    "id": "v2-design-039",
+    "number": 39,
+    "title": "Support Diagnostics Tab Console",
+    "concept": "A responsive tabbed operations workspace that prioritizes selected-site status, logs, database details, transfer history, and realistic warnings while keeping the live WordPress shell protected and usable.",
+    "focus": [
+      "support diagnostics first viewport",
+      "responsive tabbed console",
+      "Blueprint replacement runbook",
+      "settings Save & Reload consequences",
+      "saved, local, and temporary state differences"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start",
+      "WordPress PR preview",
+      "Gutenberg PR or branch preview",
+      "GitHub import with account connection and token warning",
+      "Blueprint URL runner",
+      "Import .zip with replacement warning",
+      "Blueprint gallery categories and search with representative subset label",
+      "Featured blueprint shortcuts",
+      "Save temporary Playground in browser storage",
+      "Save to a local directory",
+      "Save progress state",
+      "Saved and unsaved Playground list",
+      "Rename saved Playground",
+      "Delete saved Playground with confirmation and fallback",
+      "URL path navigation and refresh",
+      "Homepage and WP Admin shortcuts",
+      "WordPress, PHP, language, older versions, network, and multisite settings",
+      "Destructive unsaved reset and stored Save & Reload behavior",
+      "File browser with new file, new folder, upload, browse, selected editor, dirty state, and save result",
+      "Blueprint copy, download, run, validation, editor, and result state",
+      "Database driver, SQLite path, size, database download, Adminer, and phpMyAdmin",
+      "Playground, WordPress, and PHP logs with realistic warning state",
+      "Export to GitHub",
+      "Download as .zip",
+      "Database download and Blueprint bundle portability"
+    ],
+    "path": "v2-design-039/index.html"
+  },
+  {
     "id": "v2-design-040",
     "number": 40,
     "title": "Command Search Cockpit",
