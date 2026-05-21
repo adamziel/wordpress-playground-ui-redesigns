@@ -1,0 +1,52 @@
+{
+  "id": "design-019",
+  "title": "Playground Command File",
+  "concept": "A minimalist expert interface for Blueprint authors that treats the Playground as a single command file: a compact toolbar exposes structured menus, while authoring, runtime preview, Site Manager tools, saved management, gallery browsing, and portability flows unfold in one vertical stack.",
+  "focus": [
+    "minimal expert toolbar",
+    "single-column progressive disclosure",
+    "Blueprint author first viewport",
+    "IDE-like file and code affordances",
+    "structured menus over explanatory panels"
+  ],
+  "flows": [
+    "Start a new Playground from vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, .zip import, featured blueprints, or the full Blueprint gallery.",
+    "Author and run blueprint.json with copy link and bundle download controls before inspecting the runtime preview.",
+    "Save an unsaved Playground to browser storage or a local directory with visible file-copy progress.",
+    "Browse saved and unsaved Playgrounds, then rename or delete saved browser-backed sites.",
+    "Use Site Manager settings, files, Blueprint, database, logs, Homepage, WP Admin, export to GitHub, and .zip download from compact command surfaces."
+  ],
+  "featureCoverage": [
+    "create vanilla WordPress Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub after account connection",
+    "run a Blueprint URL",
+    "import a .zip",
+    "browse and filter Blueprint gallery entries",
+    "select featured blueprint shortcuts",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "show save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh active embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress version, PHP version, and language settings",
+    "include older WordPress versions",
+    "allow network access",
+    "create a multisite network",
+    "communicate destructive reset and stored Save & Reload behavior",
+    "file browser with create file, create folder, upload, browse, and code editing affordances",
+    "view, copy, download, and run the current Blueprint bundle",
+    "inspect database driver, path, and size",
+    "download database.sqlite",
+    "open Adminer",
+    "open phpMyAdmin",
+    "inspect Playground, WordPress, and PHP logs with empty states",
+    "export to GitHub",
+    "download as .zip"
+  ]
+}

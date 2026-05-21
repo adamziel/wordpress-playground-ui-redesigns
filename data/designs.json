@@ -819,5 +819,52 @@
       "download a .zip"
     ],
     "path": "design-018/index.html"
+  },
+  {
+    "id": "design-019",
+    "number": 19,
+    "title": "Playground Command File",
+    "concept": "A minimalist expert interface for Blueprint authors that treats the Playground as a single command file: a compact toolbar exposes structured menus, while authoring, runtime preview, Site Manager tools, saved management, gallery browsing, and portability flows unfold in one vertical stack.",
+    "focus": [
+      "minimal expert toolbar",
+      "single-column progressive disclosure",
+      "Blueprint author first viewport",
+      "IDE-like file and code affordances",
+      "structured menus over explanatory panels"
+    ],
+    "featureCoverage": [
+      "create vanilla WordPress Playground",
+      "create from WordPress PR",
+      "create from Gutenberg PR or branch",
+      "import from GitHub after account connection",
+      "run a Blueprint URL",
+      "import a .zip",
+      "browse and filter Blueprint gallery entries",
+      "select featured blueprint shortcuts",
+      "save temporary Playground in browser storage",
+      "save to a local directory",
+      "show save progress",
+      "browse saved and unsaved Playgrounds",
+      "rename a saved Playground",
+      "delete a saved Playground",
+      "navigate active WordPress paths with URL input",
+      "refresh active embedded WordPress page",
+      "open Homepage and WP Admin",
+      "edit WordPress version, PHP version, and language settings",
+      "include older WordPress versions",
+      "allow network access",
+      "create a multisite network",
+      "communicate destructive reset and stored Save & Reload behavior",
+      "file browser with create file, create folder, upload, browse, and code editing affordances",
+      "view, copy, download, and run the current Blueprint bundle",
+      "inspect database driver, path, and size",
+      "download database.sqlite",
+      "open Adminer",
+      "open phpMyAdmin",
+      "inspect Playground, WordPress, and PHP logs with empty states",
+      "export to GitHub",
+      "download as .zip"
+    ],
+    "path": "design-019/index.html"
   }
 ]
