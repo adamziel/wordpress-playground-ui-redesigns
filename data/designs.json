@@ -4028,5 +4028,52 @@
       "download a .zip"
     ],
     "path": "design-090/index.html"
+  },
+  {
+    "id": "design-093",
+    "number": 93,
+    "title": "Playground Admin Ledger",
+    "concept": "A dense WordPress-admin-like dashboard for documentation writers preparing repeatable demos, with a tabbed workspace, saved-site ledger tables, compact source forms, and high-contrast black, white, and cyan technical styling.",
+    "focus": [
+      "professional admin dashboard",
+      "tabbed workspace instead of modal-first navigation",
+      "dense tables and filters for repeated demo preparation",
+      "route-specific launch inputs and constraints",
+      "distinct browser-storage and local-directory save destinations",
+      "visible destructive reset, import, delete, and reload consequences"
+    ],
+    "featureCoverage": [
+      "create a vanilla Playground",
+      "create from WordPress PR",
+      "create from Gutenberg PR or branch",
+      "import from GitHub after account connection",
+      "run a Blueprint URL",
+      "import a .zip",
+      "browse and filter Blueprint gallery entries",
+      "select featured blueprint shortcuts",
+      "save temporary Playground in browser storage",
+      "save to a local directory",
+      "see save progress",
+      "browse saved and unsaved Playgrounds",
+      "rename a saved Playground",
+      "delete a saved Playground",
+      "navigate active WordPress paths with URL input",
+      "refresh the active embedded WordPress page",
+      "open Homepage and WP Admin",
+      "edit WordPress/PHP/language settings",
+      "include older WordPress versions",
+      "allow network access",
+      "create a multisite network",
+      "understand destructive reset/reload behavior",
+      "use File browser with create folder/file, upload, browse, and code editing affordances",
+      "view/copy/download/run the current Blueprint bundle",
+      "inspect database driver/path/size",
+      "download database.sqlite",
+      "open Adminer and phpMyAdmin",
+      "inspect logs and empty/error states",
+      "export to GitHub",
+      "download a .zip"
+    ],
+    "path": "design-093/index.html"
   }
 ]
