@@ -754,5 +754,48 @@
       "Operations ledger and transfer history for save, rename, delete, import, export, settings, files, database, and Blueprint replacement"
     ],
     "path": "v2-design-019/index.html"
+  },
+  {
+    "id": "v2-design-020",
+    "number": 20,
+    "title": "Command Search Ledger Cockpit",
+    "concept": "A light technical Playground cockpit where command search and grouped command results drive route-specific forms, while an operations ledger, event stream, saved-object list, and protected live WordPress shell show every save, rename, delete, import, export, file, database, and Blueprint action mutating the same selected Playground object.",
+    "focus": [
+      "command search as discovery layer",
+      "operations ledger and event stream",
+      "visible selected Playground mutation",
+      "local-directory save lifecycle",
+      "file and database operation completion",
+      "protected live WordPress shell"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start route",
+      "WordPress PR preview input",
+      "Gutenberg PR or branch preview input",
+      "GitHub import with account connection and non-persistent token caveat",
+      "Blueprint URL runner with validation",
+      "Import .zip with selected archive and replacement warning",
+      "Blueprint gallery categories and search with honest representative subset of 43",
+      "Featured Blueprint entries including Art Gallery, Coffee Shop, Feed Reader with the Friends Plugin, Gaming News, Non-profit Organization, and Personal Blog",
+      "Save in this browser with progress and browser slug identity",
+      "Save to a local directory with folder picker, permission denial, permission grant, progress, folder identity, local badge, and reconnect consequence",
+      "Saved and unsaved Playground list",
+      "Open/manage, rename, delete confirmation, cancel, row mutation, and temporary fallback",
+      "Current shell path input and refresh",
+      "Homepage and WP Admin shortcuts",
+      "Temporary, browser-saved, and local-directory storage distinctions",
+      "WordPress version, PHP version, language, older versions, network access, and multisite controls",
+      "Destructive reset and saved/local reload consequences",
+      "File browser with create file, create folder, upload, browse files, selected editor, dirty state, save, and result state",
+      "Blueprint editor with validation, copy link, download bundle, run, warning, and result state",
+      "SQLite-backed database driver, path, size, database download, Adminer, and phpMyAdmin",
+      "Playground, WordPress, and PHP logs with realistic notice state",
+      "Export to GitHub with repository target and session-only token consequence",
+      "Download active Playground as .zip",
+      "Database download",
+      "Blueprint bundle actions",
+      "Operations ledger and transfer history for saves, edits, downloads, imports, exports, delete, reset, and navigation"
+    ],
+    "path": "v2-design-020/index.html"
   }
 ]
