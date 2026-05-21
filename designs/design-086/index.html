@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design 086 - Command Inspector Playground</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app" data-drawer-open="true">
+    <header class="topbar">
+      <div class="brand">
+        <span class="mark" aria-hidden="true">W</span>
+        <div>
+          <strong>Playground</strong>
+          <span>Core review console</span>
+        </div>
+      </div>
+
+      <form class="omnibar" role="search" aria-label="Search Playground commands">
+        <span class="slash">/</span>
+        <input id="commandSearch" type="search" value="pr" aria-label="Search starts, saved sites, blueprints, files, exports" autocomplete="off">
+        <kbd>⌘K</kbd>
+      </form>
+
+      <nav class="topnav" aria-label="Primary">
+        <button class="nav-button active" type="button" data-command="wp-pr">Review</button>
+        <button class="nav-button" type="button" data-command="save">Save</button>
+        <button class="nav-button" type="button" data-command="library">Saved</button>
+        <button class="nav-button" type="button" data-command="files">Manage</button>
+        <button class="nav-button" type="button" data-command="gallery">Blueprints</button>
+      </nav>
+
+      <div class="state-chip unsaved">Unsaved Playground</div>
+      <button class="icon-button drawer-toggle" type="button" aria-label="Toggle inspector" data-toggle-drawer>Inspector</button>
+    </header>
+
+    <main class="workspace">
+      <section class="command-stage" aria-label="Command launcher and active site">
+        <div class="pathbar">
+          <button type="button" class="icon-button" aria-label="Refresh active WordPress page">↻</button>
+          <label class="path-input">
+            <span>Active path</span>
+            <input value="/hello-from-playground/" aria-label="WordPress path">
+          </label>
+          <button type="button" data-command="homepage">Homepage</button>
+          <button type="button" data-command="wp-admin">WP Admin</button>
+          <button type="button" class="primary" data-command="save">Save</button>
+        </div>
+
+        <div class="stage-grid">
+          <aside class="command-panel" aria-label="Grouped command results">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Command matches</p>
+                <h1>Find any Playground action</h1>
+              </div>
+              <span id="resultCount">18 results</span>
+            </div>
+
+            <div class="filter-row" aria-label="Command groups">
+              <button class="filter active" type="button" data-filter="all">All</button>
+              <button class="filter" type="button" data-filter="start">Starts</button>
+              <button class="filter" type="button" data-filter="current">Current</button>
+              <button class="filter" type="button" data-filter="site">Site Manager</button>
+              <button class="filter" type="button" data-filter="move">Import / export</button>
+            </div>
+
+            <div class="command-list" id="commandList">
+              <button class="command-row selected" type="button" data-command="wp-pr" data-tags="start pr review">
+                <span class="command-key">WP</span>
+                <span><strong>Preview a WordPress PR</strong><small>PR number or URL, replaces the current temporary site</small></span>
+                <em>Preview</em>
+              </button>
+              <button class="command-row" type="button" data-command="gutenberg-pr" data-tags="start pr branch review">
+                <span class="command-key">GB</span>
+                <span><strong>Preview a Gutenberg PR or branch</strong><small>Accepts PR number, URL, or branch name</small></span>
+                <em>Preview</em>
+              </button>
+              <button class="command-row" type="button" data-command="vanilla" data-tags="start new">
+                <span class="command-key">NW</span>
+                <span><strong>Start Vanilla WordPress</strong><small>Fresh latest WordPress in the browser</small></span>
+                <em>Start</em>
+              </button>
+              <button class="command-row" type="button" data-command="github" data-tags="start import github">
+                <span class="command-key">GH</span>
+                <span><strong>Import from GitHub</strong><small>Public plugin, theme, or wp-content repository after account connection</small></span>
+                <em>Connect</em>
+              </button>
+              <button class="command-row" type="button" data-command="blueprint-url" data-tags="start blueprint url">
+                <span class="command-key">BU</span>
+                <span><strong>Run Blueprint from URL</strong><small>Paste a blueprint URL and run it over a Playground</small></span>
+                <em>Run</em>
+              </button>
+              <button class="command-row" type="button" data-command="zip" data-tags="start import zip">
+                <span class="command-key">ZIP</span>
+                <span><strong>Import .zip</strong><small>Choose a local archive; imported files replace the current site</small></span>
+                <em>Browse</em>
+              </button>
+              <button class="command-row" type="button" data-command="save" data-tags="current save browser local">
+                <span class="command-key">SV</span>
+                <span><strong>Save current Playground</strong><small>Browser storage or a selected local directory</small></span>
+                <em>2 destinations</em>
+              </button>
+              <button class="command-row" type="button" data-command="library" data-tags="current saved rename delete">
+                <span class="command-key">LIB</span>
+                <span><strong>Manage saved Playgrounds</strong><small>Open unsaved entries, rename, or delete browser-backed Playgrounds</small></span>
+                <em>2 sites</em>
+              </button>
+              <button class="command-row" type="button" data-command="settings" data-tags="site settings reset reload">
+                <span class="command-key">SET</span>
+                <span><strong>Settings, reset, and reload</strong><small>WordPress, PHP, language, network, multisite</small></span>
+                <em>Destructive</em>
+              </button>
+              <button class="command-row" type="button" data-command="files" data-tags="site files code">
+                <span class="command-key">FS</span>
+                <span><strong>File browser</strong><small>Create files and folders, upload, browse, edit wp-config.php</small></span>
+                <em>Edit</em>
+              </button>
+              <button class="command-row" type="button" data-command="blueprint" data-tags="site blueprint run bundle">
+                <span class="command-key">BP</span>
+                <span><strong>Current blueprint.json</strong><small>Copy link, download bundle, or run Blueprint</small></span>
+                <em>Run</em>
+              </button>
+              <button class="command-row" type="button" data-command="database" data-tags="site database sqlite adminer phpmyadmin">
+                <span class="command-key">DB</span>
+                <span><strong>Database tools</strong><small>SQLite path, download database.sqlite, Adminer, phpMyAdmin</small></span>
+                <em>Inspect</em>
+              </button>
+              <button class="command-row" type="button" data-command="logs" data-tags="site logs php wordpress">
+                <span class="command-key">LOG</span>
+                <span><strong>Logs</strong><small>Playground, WordPress, and PHP logs with empty states</small></span>
+                <em>Clean</em>
+              </button>
+              <button class="command-row" type="button" data-command="gallery" data-tags="start blueprint gallery featured">
+                <span class="command-key">43</span>
+                <span><strong>Blueprint gallery</strong><small>Search, categories, selected detail, run, inspect</small></span>
+                <em>Catalog</em>
+              </button>
+              <button class="command-row" type="button" data-command="export" data-tags="move export github zip database">
+                <span class="command-key">EX</span>
+                <span><strong>Export and download artifacts</strong><small>Export to GitHub, download .zip, database, Blueprint bundle</small></span>
+                <em>Move</em>
+              </button>
+            </div>
+          </aside>
+
+          <section class="run-board" aria-label="Visible current-product flow">
+            <div class="board-head">
+              <div>
+                <p class="eyebrow">Proven flow</p>
+                <h2>PR review run: launch, save, inspect, export</h2>
+              </div>
+              <button type="button" data-command="wp-pr">Edit selected source</button>
+            </div>
+
+            <ol class="flow-strip">
+              <li class="done"><span>1</span><strong>Source</strong><small>WordPress PR #61234</small></li>
+              <li class="done"><span>2</span><strong>Saved</strong><small>Browser: research-browser</small></li>
+              <li class="active"><span>3</span><strong>Inspect</strong><small>Files + Blueprint open</small></li>
+              <li><span>4</span><strong>Export</strong><small>GitHub or .zip</small></li>
+            </ol>
+
+            <div class="preview-shell">
+              <div class="browser-chrome">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                <strong>My WordPress Website</strong>
+                <em>/hello-from-playground/</em>
+              </div>
+              <div class="wp-preview">
+                <header>
+                  <strong>My WordPress Website</strong>
+                  <nav>Hello from WordPress Playground! &nbsp; Sample Page</nav>
+                </header>
+                <div class="hero">
+                  <div>
+                    <h3>Hello from <span>WordPress Playground!</span></h3>
+                    <p>This Playground runs client-side in your browser and is logged in as admin for review.</p>
+                    <mark>Unsaved changes will be lost unless saved.</mark>
+                    <button type="button">Discover the mission behind Playground</button>
+                  </div>
+                  <div class="wp-art" aria-hidden="true">W</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="manager-summary">
+              <article>
+                <strong>Site Manager</strong>
+                <span>Settings · Files · Blueprint · Database · Logs</span>
+              </article>
+              <article>
+                <strong>Current file</strong>
+                <span>/wordpress/wp-config.php, line 1 editable</span>
+              </article>
+              <article>
+                <strong>Database</strong>
+                <span>SQLite, 452 KB, Adminer and phpMyAdmin available</span>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <aside class="inspector" aria-live="polite" aria-label="Contextual command inspector">
+        <div class="inspector-head">
+          <div>
+            <p class="eyebrow" id="drawerKicker">Start source</p>
+            <h2 id="drawerTitle">Preview a WordPress PR</h2>
+          </div>
+          <button class="icon-button" type="button" aria-label="Close inspector" data-toggle-drawer>×</button>
+        </div>
+        <div class="inspector-body" id="drawerBody"></div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
