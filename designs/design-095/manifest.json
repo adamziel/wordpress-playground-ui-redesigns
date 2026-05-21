@@ -1,0 +1,53 @@
+{
+  "id": "design-095",
+  "title": "Playground Run Monitor",
+  "concept": "A diagnostics-and-logs console for first-time WordPress learners: the first viewport explains the active run through health, logs, database state, save progress, and risk notices before revealing creation, saved management, Site Manager, Blueprint gallery, import, and export workflows.",
+  "focus": [
+    "diagnostics-led first viewport for learners",
+    "left navigation plus full-height content",
+    "visible launch-to-save-to-saved-identity flow proof",
+    "database and logs as primary orientation",
+    "blue, green, and amber operational states"
+  ],
+  "flows": [
+    "Monitor current Playground health, logs, database details, path navigation, Homepage, WP Admin, and embedded WordPress preview from the first screen.",
+    "Start from Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, or imported .zip with route-specific inputs and constraints.",
+    "Save a temporary Playground in browser storage or to a local directory with separate destination selection, progress, and resulting saved state.",
+    "Manage saved and unsaved Playgrounds with rename, delete, open, and current-site consequence messaging.",
+    "Use Site Manager settings, file browser, Blueprint editor, database tools, and logs while preserving the active site context.",
+    "Browse a dense Blueprint catalog with category filters, search, representative cards from 43 entries, selected detail, inspect, and run actions.",
+    "Export to GitHub, download a Playground .zip, import a .zip over the current site, download a Blueprint bundle, and download database.sqlite."
+  ],
+  "featureCoverage": [
+    "create a vanilla Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub after account connection",
+    "run a Blueprint URL",
+    "import a .zip",
+    "browse and filter Blueprint gallery entries",
+    "select featured blueprint shortcuts",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "see save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh the active embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress/PHP/language settings",
+    "include older WordPress versions",
+    "allow network access",
+    "create a multisite network",
+    "understand destructive reset/reload behavior",
+    "use File browser with create folder/file, upload, browse, tree, and code editor",
+    "view/copy/download/run the current Blueprint bundle",
+    "inspect database driver/path/size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect Playground, WordPress, and PHP logs",
+    "export to GitHub",
+    "download a .zip"
+  ]
+}
