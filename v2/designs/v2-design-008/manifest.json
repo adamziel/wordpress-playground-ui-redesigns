@@ -1,0 +1,52 @@
+{
+  "id": "v2-design-008",
+  "title": "Runtime Control Room",
+  "concept": "A large live WordPress browser paired with a right runtime inspector that makes version, PHP, language, network, multisite, reset, reload, save, and portability consequences visible on the same active Playground object.",
+  "focus": [
+    "runtime settings control room",
+    "large protected browser preview",
+    "right inspector command grouping",
+    "local-directory save consequences",
+    "portable transfer completion"
+  ],
+  "flows": [
+    "Adjust WordPress version, include older versions, PHP version, language, network access, and multisite settings while reset or saved-site reload consequences remain visible",
+    "Save the temporary Playground to a local directory with folder picker, permission grant, progress, selected folder identity, local badge, and reload consequence",
+    "Generate and download the active Playground as a zip with source status, progress, completed result, preview status, and transfer history mutation",
+    "Export the active Playground to GitHub after account connection and repository selection with progress and transfer history",
+    "Start or replace a Playground from vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, or zip import",
+    "Manage saved, local, and temporary Playgrounds with open, manage, rename, delete confirmation, and final fallback state",
+    "Use Site Manager tabs for settings, files, blueprint editing, database tools, logs, GitHub export, and zip download without hiding the live browser"
+  ],
+  "featureCoverage": [
+    "create vanilla WordPress Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub with account connection",
+    "run Blueprint URL",
+    "import .zip with replacement confirmation",
+    "browse and filter a labeled subset of the 43-entry Blueprint gallery",
+    "select featured Blueprint entries and run them",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "show save progress for browser and local destinations",
+    "show selected local folder identity and reload permission consequence",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground with confirmation and fallback state",
+    "navigate active WordPress paths with URL input",
+    "refresh active embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress version, PHP version, language, older versions, network, and multisite settings",
+    "communicate destructive reset and stored Save & Reload behavior",
+    "file browser with create file, create folder, upload, browse, selected editor, dirty state, and save result",
+    "view, copy, download, validate, and run the current Blueprint bundle",
+    "inspect database driver, path, and size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect Playground, WordPress, and PHP logs",
+    "export to GitHub",
+    "download active Playground as .zip",
+    "record transfer history for GitHub, ZIP, Blueprint, database, and import actions"
+  ]
+}

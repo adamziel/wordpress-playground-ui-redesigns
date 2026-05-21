@@ -38,5 +38,50 @@
       "Transfer history for imports, exports, saves, downloads, and destructive actions"
     ],
     "path": "v2-design-004/index.html"
+  },
+  {
+    "id": "v2-design-008",
+    "number": 8,
+    "title": "Runtime Control Room",
+    "concept": "A large live WordPress browser paired with a right runtime inspector that makes version, PHP, language, network, multisite, reset, reload, save, and portability consequences visible on the same active Playground object.",
+    "focus": [
+      "runtime settings control room",
+      "large protected browser preview",
+      "right inspector command grouping",
+      "local-directory save consequences",
+      "portable transfer completion"
+    ],
+    "featureCoverage": [
+      "create vanilla WordPress Playground",
+      "create from WordPress PR",
+      "create from Gutenberg PR or branch",
+      "import from GitHub with account connection",
+      "run Blueprint URL",
+      "import .zip with replacement confirmation",
+      "browse and filter a labeled subset of the 43-entry Blueprint gallery",
+      "select featured Blueprint entries and run them",
+      "save temporary Playground in browser storage",
+      "save to a local directory",
+      "show save progress for browser and local destinations",
+      "show selected local folder identity and reload permission consequence",
+      "browse saved and unsaved Playgrounds",
+      "rename a saved Playground",
+      "delete a saved Playground with confirmation and fallback state",
+      "navigate active WordPress paths with URL input",
+      "refresh active embedded WordPress page",
+      "open Homepage and WP Admin",
+      "edit WordPress version, PHP version, language, older versions, network, and multisite settings",
+      "communicate destructive reset and stored Save & Reload behavior",
+      "file browser with create file, create folder, upload, browse, selected editor, dirty state, and save result",
+      "view, copy, download, validate, and run the current Blueprint bundle",
+      "inspect database driver, path, and size",
+      "download database.sqlite",
+      "open Adminer and phpMyAdmin",
+      "inspect Playground, WordPress, and PHP logs",
+      "export to GitHub",
+      "download active Playground as .zip",
+      "record transfer history for GitHub, ZIP, Blueprint, database, and import actions"
+    ],
+    "path": "v2-design-008/index.html"
   }
 ]
