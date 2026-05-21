@@ -1264,6 +1264,43 @@
     "path": "v2-design-030/index.html"
   },
   {
+    "id": "v2-design-031",
+    "number": 31,
+    "title": "Preview-Protecting Tabbed Console",
+    "concept": "A responsive tabbed operations workspace that keeps the live WordPress shell large and persistent while Start, Save, Playgrounds, Site Manager, Blueprints, and Transfers mutate the same active Playground object.",
+    "focus": [
+      "large protected WordPress preview",
+      "responsive tabbed command deck",
+      "route-specific PR and branch preview lifecycle",
+      "browser versus local save consequences",
+      "stateful saved object and replacement flows"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start route",
+      "WordPress PR preview route with PR number or URL",
+      "Gutenberg PR or branch route with validation and preview result",
+      "GitHub import with account connection and non-persistent token warning",
+      "Blueprint URL runner",
+      "Import .zip with native chooser model, replacement confirmation, and final imported state",
+      "Blueprint gallery categories and search with an honest representative subset of 43 entries",
+      "Featured Blueprint shortcuts including Art Gallery, Coffee Shop, Feed Reader with the Friends Plugin, Gaming News, Non-profit Organization, and Personal Blog",
+      "Save in this browser with file-copy progress and browser-backed slug",
+      "Save to a local directory with folder permission and reconnect consequence",
+      "Saved, unsaved, local-directory, preview, Blueprint, and imported Playground object list",
+      "Open, manage, rename, delete confirmation, delete cancel, final row removal, and active fallback",
+      "Active shell path input, refresh, Homepage, WP Admin, temporary/saved/local state, Save, reset, and reload consequences",
+      "Site Manager Settings, Files, Blueprint, Database, Logs, Export to GitHub, and Download as zip",
+      "Files create file, create folder, upload, browse files, selected editor, dirty state, save, and result state",
+      "Blueprint editor, Blueprint URL, copy, download, run, validation, replacement warning, and result state",
+      "SQLite-backed database path, database size, database download, Adminer, and phpMyAdmin",
+      "Playground, WordPress, and PHP logs with realistic notice state",
+      "Portability actions for GitHub import/export, ZIP import/download, database download, and Blueprint bundle actions",
+      "Transfer history that records saves, PR previews, Blueprint runs, ZIP replacement, database download, GitHub export, rename, delete, file edits, and path navigation",
+      "Mobile layout exposing current path, save state, start action, Site Manager, and saved Playgrounds without horizontal overflow"
+    ],
+    "path": "v2-design-031/index.html"
+  },
+  {
     "id": "v2-design-032",
     "number": 32,
     "title": "Operations Rail Console",
