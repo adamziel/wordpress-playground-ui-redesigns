@@ -1,0 +1,1251 @@
+:root {
+  --ink: #182026;
+  --muted: #66727d;
+  --soft: #eef2f6;
+  --panel: #ffffff;
+  --line: #d9e0e7;
+  --rail: #171d23;
+  --rail-soft: #232b33;
+  --blue: #315cf6;
+  --blue-soft: #e9efff;
+  --green: #15835b;
+  --green-soft: #e9f8ef;
+  --amber: #9b6400;
+  --amber-soft: #fff4d7;
+  --red: #b3261e;
+  --red-soft: #fde8e6;
+  --shadow: 0 14px 40px rgba(23, 29, 35, 0.12);
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5f7f9;
+  color: var(--ink);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  min-height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: #a8b3bf;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+input,
+select {
+  min-width: 0;
+  width: 100%;
+  min-height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fff;
+  color: var(--ink);
+  padding: 7px 10px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+pre {
+  overflow: auto;
+  margin: 0;
+  padding: 14px;
+  border-radius: 8px;
+  background: #111820;
+  color: #e7edf3;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.shell {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: minmax(250px, 330px) minmax(260px, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  min-height: 64px;
+  padding: 10px 18px;
+  border-bottom: 1px solid #111820;
+  background: #1b2229;
+  color: #fff;
+}
+
+.brandBlock {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 11px;
+}
+
+.brandBlock strong,
+.brandBlock span {
+  display: block;
+}
+
+.brandBlock strong {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.brandBlock span:not(.brandMark) {
+  color: #aeb8c2;
+  font-size: 12px;
+}
+
+.brandMark,
+.wpIcon {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  font-weight: 800;
+  flex: 0 0 auto;
+}
+
+.pathForm {
+  display: grid;
+  grid-template-columns: 38px minmax(130px, 1fr) auto;
+  gap: 8px;
+  min-width: 0;
+}
+
+.pathForm input {
+  border-color: #424c56;
+  background: #2b343d;
+  color: #eef3f7;
+}
+
+.iconBtn,
+.goBtn {
+  border-color: #424c56;
+  background: #2b343d;
+  color: #eef3f7;
+}
+
+.shellActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  min-width: 0;
+}
+
+.shellActions button {
+  border-color: #414b56;
+  background: #252e37;
+  color: #f3f6f8;
+  white-space: nowrap;
+}
+
+.shellActions .primary,
+.primary {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #fff;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 84px minmax(350px, 460px) minmax(420px, 1fr);
+  min-height: calc(100vh - 64px);
+}
+
+.rail {
+  position: sticky;
+  top: 64px;
+  height: calc(100vh - 64px);
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding: 12px 8px;
+  background: var(--rail);
+}
+
+.railItem {
+  width: 100%;
+  min-height: 58px;
+  border-color: transparent;
+  background: transparent;
+  color: #b9c3cd;
+  padding: 8px 4px;
+  font-size: 12px;
+}
+
+.railItem.active {
+  border-color: #526170;
+  background: var(--rail-soft);
+  color: #fff;
+  box-shadow: inset 3px 0 0 var(--blue);
+}
+
+.operations,
+.preview {
+  min-width: 0;
+}
+
+.operations {
+  border-right: 1px solid var(--line);
+  background: var(--panel);
+  overflow: auto;
+}
+
+.opsHeader {
+  position: sticky;
+  top: 64px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+}
+
+.opsHeader h1,
+.sectionHead h2,
+.transferCard h2,
+.dbCard h2,
+.blueprintDetail strong {
+  margin: 0;
+}
+
+.opsHeader h1 {
+  font-size: 22px;
+}
+
+.eyebrow {
+  margin: 0 0 3px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 26px;
+  border-radius: 999px;
+  padding: 3px 9px;
+  background: var(--soft);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.badge.warning {
+  background: var(--amber-soft);
+  color: var(--amber);
+}
+
+.badge.blue {
+  background: var(--blue-soft);
+  color: var(--blue);
+}
+
+.badge.green {
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.badge.red {
+  background: var(--red-soft);
+  color: var(--red);
+}
+
+.modePanel,
+.managerPanel {
+  display: none;
+}
+
+.modePanel.active,
+.managerPanel.active {
+  display: block;
+}
+
+.modePanel {
+  padding: 18px 20px 24px;
+}
+
+.routeGrid,
+.blueprintGrid,
+.dataGrid,
+.transferGrid {
+  display: grid;
+  gap: 12px;
+}
+
+.routeCard,
+.choice,
+.savedRow,
+.transferCard,
+.dbCard,
+.blueprintCard,
+.resultBox,
+.confirmBox,
+.renameBox,
+.permissionBox,
+.progressCard,
+.callout,
+.blueprintDetail {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.routeCard {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 14px;
+}
+
+.routeCard.selected {
+  border-color: var(--blue);
+  background: var(--blue-soft);
+}
+
+.routeCard strong,
+.routeCard span {
+  display: block;
+}
+
+.routeCard strong,
+.savedRow strong,
+.choice strong {
+  margin-bottom: 4px;
+}
+
+.routeCard span,
+.choice span,
+.savedRow small,
+.resultBox,
+.callout span,
+.permissionBox span,
+.transferCard p,
+.dbCard p,
+.sectionHead p {
+  color: var(--muted);
+}
+
+.routeCard label {
+  margin-top: 8px;
+}
+
+.small {
+  min-height: 32px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+.danger,
+.dangerGhost {
+  border-color: var(--red);
+}
+
+.danger {
+  background: var(--red);
+  color: #fff;
+}
+
+.dangerGhost {
+  background: var(--red-soft);
+  color: var(--red);
+}
+
+.callout {
+  display: grid;
+  gap: 5px;
+  margin-top: 14px;
+  padding: 13px;
+}
+
+.callout.warning {
+  border-color: #f0c76a;
+  background: var(--amber-soft);
+}
+
+.dangerTone {
+  border-color: #efb5b0;
+  background: var(--red-soft);
+}
+
+.splitOptions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.choice {
+  min-height: 86px;
+  display: block;
+  text-align: left;
+  padding: 13px;
+}
+
+.choice.active {
+  border-color: var(--blue);
+  background: var(--blue-soft);
+  box-shadow: inset 0 0 0 1px var(--blue);
+}
+
+.field,
+.permissionBox,
+.progressCard,
+.resultBox,
+.confirmBox,
+.renameBox,
+.blueprintDetail {
+  margin-top: 14px;
+}
+
+.permissionBox {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 13px;
+}
+
+.progressCard {
+  padding: 13px;
+}
+
+.progressLine {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 9px;
+  font-size: 13px;
+}
+
+.meter {
+  height: 9px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #dfe5eb;
+}
+
+.meter span {
+  display: block;
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--blue), #15966d);
+  transition: width 0.25s ease;
+}
+
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.buttonRow.vertical {
+  display: grid;
+}
+
+.resultBox,
+.confirmBox,
+.renameBox {
+  padding: 13px;
+}
+
+.confirmBox {
+  border-color: #efb5b0;
+  background: #fff8f7;
+}
+
+.confirmBox strong,
+.confirmBox span {
+  display: block;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.sectionHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.sectionHead.compact {
+  align-items: center;
+}
+
+.savedList {
+  display: grid;
+  gap: 10px;
+}
+
+.savedRow {
+  display: grid;
+  grid-template-columns: 42px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+}
+
+.savedRow.active {
+  border-color: var(--blue);
+  background: var(--blue-soft);
+}
+
+.savedRow.deleted {
+  opacity: 0.55;
+}
+
+.rowIcon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
+  background: #17202a;
+  color: #fff;
+  font-weight: 800;
+}
+
+.rowActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.tabs,
+.logTabs,
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.tabs button.active,
+.logTabs button.active,
+.chips button.active {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #fff;
+}
+
+.formGrid {
+  display: grid;
+  gap: 12px;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+}
+
+.check input {
+  width: auto;
+  min-height: 0;
+}
+
+.fileTools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.fileWorkspace {
+  display: grid;
+  grid-template-columns: minmax(130px, 0.75fr) minmax(190px, 1.25fr);
+  gap: 12px;
+}
+
+.fileTree {
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f8fafc;
+  font-size: 13px;
+}
+
+.fileTree li {
+  padding: 8px 9px;
+  border-radius: 6px;
+}
+
+.fileTree .selected {
+  background: var(--blue-soft);
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.editor {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.editorTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.dbCard,
+.transferCard {
+  padding: 14px;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: minmax(110px, 0.55fr) 1fr;
+  gap: 8px 12px;
+  margin: 12px 0;
+  font-size: 13px;
+}
+
+dt {
+  color: var(--muted);
+}
+
+dd {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.logStream {
+  display: grid;
+  gap: 8px;
+}
+
+.logLine {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 10px;
+  padding: 11px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+}
+
+.logLine.warning {
+  border-color: #f0c76a;
+  background: #fffaf0;
+}
+
+.logLine.error {
+  border-color: #efb5b0;
+  background: #fff8f7;
+}
+
+.searchField {
+  width: min(220px, 100%);
+}
+
+.chips {
+  overflow: hidden;
+}
+
+.chips button {
+  min-height: 30px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.blueprintGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.blueprintCard {
+  min-height: 148px;
+  overflow: hidden;
+  text-align: left;
+  padding: 0;
+}
+
+.blueprintThumb {
+  height: 70px;
+  display: grid;
+  align-items: end;
+  padding: 9px;
+  color: #fff;
+  background: linear-gradient(135deg, #82672e, #284c7a);
+}
+
+.blueprintThumb.coffee {
+  background: linear-gradient(135deg, #542e78, #c46b2a);
+}
+
+.blueprintThumb.feed {
+  background: linear-gradient(135deg, #f6f8ff, #486dcc);
+  color: #253043;
+}
+
+.blueprintThumb.news {
+  background: linear-gradient(135deg, #111, #d97a34);
+}
+
+.blueprintThumb.nonprofit {
+  background: linear-gradient(135deg, #6f3a18, #d59b54);
+}
+
+.blueprintThumb.blog {
+  background: linear-gradient(135deg, #5b1234, #b86989);
+}
+
+.blueprintThumb.shop {
+  background: linear-gradient(135deg, #116466, #d7a455);
+}
+
+.blueprintThumb.exp {
+  background: linear-gradient(135deg, #16335d, #0ca678);
+}
+
+.blueprintBody {
+  padding: 11px;
+}
+
+.blueprintBody strong,
+.blueprintBody span {
+  display: block;
+}
+
+.blueprintBody span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.blueprintCard.active {
+  border-color: var(--blue);
+  box-shadow: inset 0 0 0 1px var(--blue);
+}
+
+.blueprintDetail {
+  display: grid;
+  gap: 10px;
+}
+
+.dataGrid,
+.transferGrid {
+  grid-template-columns: 1fr;
+}
+
+.primaryFlow {
+  border-color: var(--blue);
+  box-shadow: var(--shadow);
+}
+
+.history {
+  margin-top: 18px;
+}
+
+.history ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.history li {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  font-size: 13px;
+}
+
+.preview {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: 18px;
+  background: #eef2f6;
+  overflow: auto;
+}
+
+.previewTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.previewActions {
+  display: flex;
+  gap: 8px;
+}
+
+.browserFrame {
+  min-height: 640px;
+  border: 1px solid #cfd7df;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.browserChrome {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 34px;
+  padding: 0 12px;
+  border-bottom: 1px solid #182026;
+  background: #1b2229;
+  color: #d9e2ea;
+  font-size: 12px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d9e2ea;
+}
+
+.red {
+  background: #ef6b62;
+}
+
+.amberDot {
+  background: #f0b84f;
+}
+
+.greenDot {
+  background: #49b878;
+}
+
+.wpBar {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 34px;
+  padding: 0 12px;
+  background: #252c33;
+  color: #f2f5f7;
+  font-size: 13px;
+}
+
+.wpBar button {
+  min-height: 28px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+.wpIcon {
+  width: 24px;
+  height: 24px;
+  font-size: 12px;
+}
+
+.push {
+  margin-left: auto;
+}
+
+.siteHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px 34px;
+  font-size: 17px;
+}
+
+.siteHeader nav {
+  display: flex;
+  gap: 24px;
+  color: #303841;
+}
+
+.siteSurface {
+  position: relative;
+  min-height: 530px;
+  display: grid;
+  grid-template-columns: minmax(250px, 0.95fr) minmax(260px, 1.05fr);
+  align-items: center;
+  gap: 28px;
+  overflow: hidden;
+  padding: 48px 42px 64px;
+}
+
+.heroCopy {
+  position: relative;
+  z-index: 2;
+  max-width: 470px;
+}
+
+.previewKicker {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.heroCopy h2 {
+  margin: 0 0 20px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.08;
+  font-weight: 500;
+}
+
+.heroCopy h2 span {
+  color: var(--blue);
+}
+
+.heroCopy p {
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.highlight {
+  display: inline;
+  background: #fff1a8;
+  box-decoration-break: clone;
+}
+
+.heroCopy button {
+  margin-top: 24px;
+  min-width: 250px;
+  background: var(--blue);
+  color: #fff;
+  border-color: var(--blue);
+}
+
+.wpArtwork {
+  position: relative;
+  min-height: 360px;
+}
+
+.ring,
+.arc {
+  position: absolute;
+  border: 44px solid #31e979;
+  border-radius: 50%;
+}
+
+.ring {
+  inset: 40px -60px auto 0;
+  height: 260px;
+}
+
+.arc {
+  inset: 250px -35px auto 70px;
+  height: 180px;
+}
+
+.letter {
+  position: absolute;
+  top: 10px;
+  right: 45px;
+  display: grid;
+  place-items: center;
+  width: 210px;
+  height: 210px;
+  border: 15px solid #1c1c1f;
+  border-radius: 50%;
+  color: #1c1c1f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 150px;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+@media (max-width: 1180px) {
+  .workspace {
+    grid-template-columns: 72px minmax(320px, 420px) minmax(360px, 1fr);
+  }
+
+  .shell {
+    grid-template-columns: minmax(210px, 280px) 1fr;
+  }
+
+  .shellActions {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    padding-bottom: 2px;
+  }
+
+  .browserFrame {
+    min-height: 560px;
+  }
+}
+
+@media (max-width: 900px) {
+  body {
+    padding-bottom: 124px;
+  }
+
+  .shell {
+    position: relative;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .shellActions {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 7px;
+    overflow: visible;
+  }
+
+  .shellActions button,
+  .shellActions .badge {
+    min-width: 0;
+    width: 100%;
+    padding-inline: 6px;
+    font-size: 12px;
+  }
+
+  .workspace {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .rail {
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 30;
+    height: 118px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4px;
+    padding: 8px;
+    border-top: 1px solid #303943;
+  }
+
+  .railItem {
+    min-width: 0;
+    min-height: 52px;
+  }
+
+  .railItem.active {
+    box-shadow: inset 0 3px 0 var(--blue);
+  }
+
+  .preview {
+    order: 1;
+    min-height: auto;
+    padding: 12px;
+  }
+
+  .operations {
+    order: 2;
+    border-right: 0;
+    border-top: 1px solid var(--line);
+    overflow: visible;
+  }
+
+  .opsHeader {
+    position: static;
+  }
+
+  .browserFrame {
+    min-height: 0;
+  }
+
+  .siteHeader {
+    padding: 16px;
+    flex-direction: column;
+  }
+
+  .siteHeader nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .siteSurface {
+    min-height: 430px;
+    grid-template-columns: 1fr;
+    padding: 28px 18px 34px;
+  }
+
+  .wpArtwork {
+    min-height: 190px;
+  }
+
+  .ring {
+    inset: 16px -20px auto 30px;
+    height: 150px;
+    border-width: 28px;
+  }
+
+  .arc {
+    display: none;
+  }
+
+  .letter {
+    top: 0;
+    right: 34px;
+    width: 118px;
+    height: 118px;
+    border-width: 10px;
+    font-size: 78px;
+  }
+
+  .heroCopy h2 {
+    font-size: 36px;
+  }
+
+  .heroCopy p {
+    font-size: 16px;
+  }
+
+  .heroCopy button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .splitOptions,
+  .fileWorkspace,
+  .blueprintGrid,
+  .dataGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .routeCard,
+  .savedRow,
+  .permissionBox {
+    grid-template-columns: 1fr;
+  }
+
+  .rowActions,
+  .previewActions {
+    justify-content: flex-start;
+  }
+
+  .logLine {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .pathForm {
+    grid-template-columns: 36px minmax(0, 1fr) 44px;
+  }
+
+  .shellActions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .shellActions .badge {
+    grid-column: 1 / -1;
+  }
+
+  .previewTop,
+  .sectionHead,
+  .opsHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .previewActions,
+  .buttonRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .buttonRow.vertical {
+    grid-template-columns: 1fr;
+  }
+
+  .buttonRow > button,
+  .previewActions button {
+    width: 100%;
+  }
+
+  .modePanel {
+    padding: 14px 12px 20px;
+  }
+
+  .opsHeader {
+    padding: 14px 12px;
+  }
+
+  dl {
+    grid-template-columns: 1fr;
+  }
+
+  .wpBar {
+    gap: 9px;
+    overflow: hidden;
+  }
+
+  .wpBar span:nth-of-type(n+4),
+  .wpBar button {
+    display: none;
+  }
+}

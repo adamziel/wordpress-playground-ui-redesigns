@@ -1,0 +1,50 @@
+{
+  "id": "v2-design-032",
+  "title": "Operations Rail Console",
+  "concept": "A responsive WordPress Playground console with a persistent left operations rail for Create, Save, Library, Manage, Blueprints, Data, Logs, and Transfer modes. Each mode updates the same active Playground identity, path, storage badge, saved rows, preview state, and transfer history.",
+  "focus": [
+    "operations rail navigation",
+    "stateful Playground object mutation",
+    "local-directory save lifecycle",
+    "portable transfer completion",
+    "responsive tabbed console"
+  ],
+  "flows": [
+    "Start a Playground from Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, or ZIP import while retaining the live shell",
+    "Save the current temporary Playground to a local directory with folder permission, progress, selected folder identity, local storage badge, saved row mutation, and reload consequence",
+    "Manage saved and unsaved Playgrounds with open, rename, delete confirmation, row removal, and active-site fallback",
+    "Use Site Manager tabs for settings, files, Blueprint, database, and logs with file dirty/save state and reset versus reload copy",
+    "Browse a clearly labeled representative subset of the 43 Blueprint gallery entries with categories, search, URL validation, copy, download, and run result state",
+    "Finish a ZIP download transfer with source status, progress, generated archive result, preview mutation, and transfer history"
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start",
+    "WordPress PR preview",
+    "Gutenberg PR or branch preview",
+    "GitHub import with account connection",
+    "Blueprint URL runner",
+    "Import .zip with replacement confirmation",
+    "Blueprint gallery categories and search",
+    "Featured Blueprint shortcuts in representative subset",
+    "Save temporary Playground in browser storage",
+    "Save to a local directory",
+    "Save progress state",
+    "Saved and unsaved Playground list",
+    "Rename saved Playground",
+    "Delete saved Playground with confirmation and final state",
+    "Path input and refresh for active embedded WordPress page",
+    "Homepage and WP Admin shortcuts",
+    "Temporary, saved browser, and local-directory storage states",
+    "WordPress, PHP, language, older versions, network, and multisite settings",
+    "Destructive reset and saved/local reload consequences",
+    "File browser create file, create folder, upload, browse, selected editor, dirty state, and save result",
+    "Blueprint editor copy, download, run, validation, and result state",
+    "SQLite database driver, path, size, database download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs with warning and error states",
+    "Export to GitHub",
+    "Download as .zip",
+    "Database download",
+    "Blueprint bundle actions",
+    "Transfer history"
+  ]
+}
