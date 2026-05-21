@@ -1605,5 +1605,43 @@
       "Transfer history for saves, runtime changes, files, database, Blueprint, GitHub, ZIP, delete, rename, and navigation"
     ],
     "path": "v2-design-038/index.html"
+  },
+  {
+    "id": "v2-design-040",
+    "number": 40,
+    "title": "Command Search Cockpit",
+    "concept": "A responsive tabbed operations workspace where command search is the discovery layer and persistent panels show route-specific forms, consequences, progress, and mutations to the live Playground shell.",
+    "focus": [
+      "command search as primary discovery",
+      "responsive tabbed console with mobile bottom navigation",
+      "stateful file and database operations",
+      "route-specific launch and portability forms",
+      "live WordPress shell protection"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start route",
+      "WordPress PR preview route with PR number or URL",
+      "Gutenberg PR or branch preview route",
+      "GitHub import with account connection and token persistence caveat",
+      "Blueprint URL runner with validation and replacement result",
+      "Import .zip with native chooser model and replacement warning",
+      "Blueprint gallery categories and search with representative subset of 43 labeled honestly",
+      "Featured Blueprint shortcuts and selected Blueprint detail",
+      "Save in this browser with file-copy progress and browser-backed slug",
+      "Save to a local directory with folder picker permission and reconnect consequence",
+      "Saved, unsaved, browser, local-directory, and imported Playground states",
+      "Saved management open/manage, rename, delete confirmation, delete cancel, delete progress, and final row removal",
+      "Current shell path input, refresh, Homepage, WP Admin, temporary/saved state, Save, and reset/reload consequences",
+      "Site Manager settings, Files, Blueprint, Database, Logs, Export to GitHub, and Download as zip",
+      "Files create file, create folder, upload, browse files, selected file editor, dirty state, save progress, and save result",
+      "Blueprint editor, Blueprint URL, copy link, download bundle, run, validation, and result state",
+      "SQLite database driver, database path, size, database.sqlite download, Adminer, and phpMyAdmin",
+      "Playground, WordPress, and PHP logs with event records",
+      "GitHub import and GitHub export portability",
+      "ZIP import and ZIP download portability",
+      "Database download and Blueprint bundle portability actions",
+      "Mobile bottom navigation exposing command, Site Manager, saved Playgrounds, Blueprints, and Transfers without horizontal overflow"
+    ],
+    "path": "v2-design-040/index.html"
   }
 ]

@@ -1,0 +1,45 @@
+{
+  "id": "v2-design-040",
+  "title": "Command Search Cockpit",
+  "concept": "A responsive tabbed operations workspace where command search is the discovery layer and persistent panels show route-specific forms, consequences, progress, and mutations to the live Playground shell.",
+  "focus": [
+    "command search as primary discovery",
+    "responsive tabbed console with mobile bottom navigation",
+    "stateful file and database operations",
+    "route-specific launch and portability forms",
+    "live WordPress shell protection"
+  ],
+  "flows": [
+    "Search for a command, choose a grouped result, complete a route-specific form, run progress, and mutate the active Playground shell title, path, preview, storage badge, or transfer history",
+    "Select and edit a file in Site Manager, produce a dirty state, save it, clear the dirty badge, and write an event into Logs and activity history",
+    "Download database.sqlite from the SQLite-backed database with progress, final download state, selected object update, and log record",
+    "Save the current temporary Playground in browser storage or to a local directory with distinct destination consequences, progress, saved row insertion, and reset or reload behavior",
+    "Manage saved and unsaved Playgrounds with open/manage, rename, delete confirmation, deletion progress, row removal, and active fallback",
+    "Run replacement flows for Blueprint URL and ZIP import with validation, confirmation copy, progress, preview mutation, and activity history",
+    "Use Site Manager tabs for settings, files, Blueprint, database, logs, Export to GitHub, Download as zip, and database download while the live shell remains visible"
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start route",
+    "WordPress PR preview route with PR number or URL",
+    "Gutenberg PR or branch preview route",
+    "GitHub import with account connection and token persistence caveat",
+    "Blueprint URL runner with validation and replacement result",
+    "Import .zip with native chooser model and replacement warning",
+    "Blueprint gallery categories and search with representative subset of 43 labeled honestly",
+    "Featured Blueprint shortcuts and selected Blueprint detail",
+    "Save in this browser with file-copy progress and browser-backed slug",
+    "Save to a local directory with folder picker permission and reconnect consequence",
+    "Saved, unsaved, browser, local-directory, and imported Playground states",
+    "Saved management open/manage, rename, delete confirmation, delete cancel, delete progress, and final row removal",
+    "Current shell path input, refresh, Homepage, WP Admin, temporary/saved state, Save, and reset/reload consequences",
+    "Site Manager settings, Files, Blueprint, Database, Logs, Export to GitHub, and Download as zip",
+    "Files create file, create folder, upload, browse files, selected file editor, dirty state, save progress, and save result",
+    "Blueprint editor, Blueprint URL, copy link, download bundle, run, validation, and result state",
+    "SQLite database driver, database path, size, database.sqlite download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs with event records",
+    "GitHub import and GitHub export portability",
+    "ZIP import and ZIP download portability",
+    "Database download and Blueprint bundle portability actions",
+    "Mobile bottom navigation exposing command, Site Manager, saved Playgrounds, Blueprints, and Transfers without horizontal overflow"
+  ]
+}
