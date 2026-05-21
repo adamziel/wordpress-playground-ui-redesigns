@@ -4028,51 +4028,5 @@
       "download a .zip"
     ],
     "path": "design-090/index.html"
-  },
-  {
-    "id": "design-091",
-    "number": 91,
-    "title": "Blueprint Manager Takeover",
-    "concept": "A compact enterprise Site Manager becomes the primary Playground surface, using card grids and a detail drawer for launch, save, authoring, management, and inspection work while the WordPress site stays in a narrow preview strip.",
-    "focus": [
-      "Site Manager as the main product surface",
-      "Blueprint author workflow density",
-      "Distinct save destinations and destructive consequences",
-      "Card grid with action detail drawer",
-      "Responsive manager-first mobile layout"
-    ],
-    "featureCoverage": [
-      "create a vanilla Playground",
-      "create from WordPress PR",
-      "create from Gutenberg PR or branch",
-      "import from GitHub after account connection",
-      "run a Blueprint URL",
-      "import a .zip",
-      "browse and filter Blueprint gallery entries",
-      "select featured blueprint shortcuts",
-      "save temporary Playground in browser storage",
-      "save to a local directory",
-      "see save progress",
-      "browse saved and unsaved Playgrounds",
-      "rename a saved Playground",
-      "delete a saved Playground",
-      "navigate active WordPress paths with URL input",
-      "refresh the active embedded WordPress page",
-      "open Homepage and WP Admin",
-      "edit WordPress/PHP/language settings",
-      "include older WordPress versions",
-      "allow network access",
-      "create a multisite network",
-      "understand destructive reset/reload behavior",
-      "use File browser with create folder/file, upload, browse, and code editing affordances",
-      "view/copy/download/run the current Blueprint bundle",
-      "inspect database driver/path/size",
-      "download database.sqlite",
-      "open Adminer and phpMyAdmin",
-      "inspect logs and empty/error states",
-      "export to GitHub",
-      "download a .zip"
-    ],
-    "path": "design-091/index.html"
   }
 ]
