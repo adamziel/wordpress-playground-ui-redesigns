@@ -2897,6 +2897,45 @@
     "path": "design-064/index.html"
   },
   {
+    "id": "design-066",
+    "number": 66,
+    "title": "Command Palette Inspector",
+    "concept": "A tabbed WordPress Playground workspace where the command palette is the first screen and primary discovery model. Actions resolve into a light inspector that shows the exact inputs, constraints, destructive consequences, progress, and resulting saved or portable state.",
+    "focus": [
+      "command palette as core navigation",
+      "right-side inspector for route-specific forms and warnings",
+      "dark diagnostics surface with light content cards",
+      "theme-author workflow density",
+      "tabbed workspace for site, manager, gallery, saved, and transfer surfaces"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start",
+      "WordPress PR preview",
+      "Gutenberg PR or branch preview",
+      "GitHub import with connection/token caveat",
+      "Blueprint URL run",
+      "zip import with current-site consequence",
+      "Blueprint shortcuts and 43-item gallery framing",
+      "save in browser storage",
+      "save to local directory",
+      "save progress",
+      "saved and unsaved Playground management",
+      "rename saved Playground",
+      "delete saved Playground",
+      "path navigation and refresh",
+      "Homepage and WP Admin shortcuts",
+      "WordPress/PHP/language/network/multisite settings",
+      "destructive reset and saved reload messaging",
+      "file browser create folder/file upload browse and code editing",
+      "blueprint copy/download/run bundle tools",
+      "database driver path size download Adminer phpMyAdmin",
+      "Playground WordPress and PHP logs",
+      "Export to GitHub",
+      "Download as zip"
+    ],
+    "path": "design-066/index.html"
+  },
+  {
     "id": "design-070",
     "number": 70,
     "title": "Playground Portability Hub",
