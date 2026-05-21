@@ -1,0 +1,51 @@
+{
+  "id": "design-040",
+  "title": "Playground Action Cards",
+  "concept": "A beginner-oriented card-grid workspace for theme authors where plain-language action groups sit beside a detail drawer that explains consequences, required inputs, and safe destructive-action handling before each Playground task.",
+  "focus": [
+    "beginner action cards",
+    "detail drawer guidance",
+    "safe destructive-action messaging",
+    "theme author demo preparation",
+    "light gray workspace with green status accents"
+  ],
+  "flows": [
+    "Start or replace a Playground from vanilla WordPress, WordPress PRs, Gutenberg PRs or branches, GitHub imports, Blueprint URLs, zip imports, featured Blueprints, or the full Blueprint gallery.",
+    "Save an unsaved Playground in browser storage or to a local directory with visible file-copy progress and clear consequences before replacement.",
+    "Manage saved and temporary Playgrounds with open, rename, delete, save, zip import, and backup affordances.",
+    "Use Site Manager settings, file browser, Blueprint editor, database tools, logs, Homepage, WP Admin, path navigation, reset/reload warnings, export to GitHub, and zip download from grouped action cards and tabs.",
+    "Browse and filter Blueprint gallery entries by current categories before running a selected starter."
+  ],
+  "featureCoverage": [
+    "create a vanilla WordPress Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub after account connection",
+    "run Blueprint URL",
+    "import .zip",
+    "browse and filter Blueprint gallery entries",
+    "select featured Blueprint shortcuts",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "see save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh the active embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress version, PHP version, and language settings",
+    "include older WordPress versions",
+    "allow network access",
+    "create a multisite network",
+    "understand destructive reset and stored Save & Reload behavior",
+    "use File browser with create folder, create file, upload, browse, and code editing affordances",
+    "view, copy, download, and run the current Blueprint bundle",
+    "inspect database driver, path, and size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect Playground, WordPress, and PHP logs with empty states",
+    "export to GitHub",
+    "download a .zip"
+  ]
+}
