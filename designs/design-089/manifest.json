@@ -1,0 +1,47 @@
+{
+  "id": "design-089",
+  "title": "Playground Configuration Ledger",
+  "concept": "A settings-first configuration studio for theme authors that treats WordPress, PHP, language, network, multisite, reset, reload, launch, save, and manager work as one modal-free ledger with visible consequences.",
+  "focus": [
+    "settings-first runtime decisions",
+    "destructive reset and saved reload clarity",
+    "distinct launch and import route inputs",
+    "browser versus local-directory persistence",
+    "dense inline Site Manager tools"
+  ],
+  "flows": [
+    "configure WordPress, PHP, language, network, and multisite before launching",
+    "select a Gutenberg branch launch route and see it reflected in the flow receipt",
+    "save a temporary Playground to browser storage or a local directory with separate progress states",
+    "manage saved Playgrounds with rename and delete consequences visible inline",
+    "inspect files, blueprint JSON, database, logs, export, and import results from Site Manager",
+    "filter the Blueprint gallery, inspect a selected Blueprint, and run it"
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start",
+    "WordPress PR preview",
+    "Gutenberg PR or branch preview",
+    "GitHub import with account connection note",
+    "Blueprint URL run",
+    ".zip import with current-site replacement warning",
+    "Blueprint gallery category filters and search",
+    "featured Blueprint shortcuts represented in catalog",
+    "Save in this browser",
+    "Save to a local directory",
+    "save progress",
+    "saved and unsaved Playground management",
+    "rename saved Playground",
+    "delete saved Playground",
+    "URL path navigation and refresh",
+    "Homepage and WP Admin shortcuts",
+    "WordPress version, older versions, PHP, language, network, and multisite settings",
+    "destructive Apply Settings and Reset Playground",
+    "saved Playground Save and Reload",
+    "File browser with create, upload, browse, tree, and code editor",
+    "Blueprint editor with copy link, download bundle, and run",
+    "database driver, SQLite path, size, download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs",
+    "Export to GitHub",
+    "Download as .zip"
+  ]
+}
