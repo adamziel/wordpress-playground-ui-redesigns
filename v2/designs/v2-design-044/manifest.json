@@ -1,0 +1,47 @@
+{
+  "id": "v2-design-044",
+  "title": "Blueprint Registry Console",
+  "concept": "A Blueprint-first command console that uses an admin-style registry table for saved, local, temporary, imported, exported, and deleted Playground objects while keeping selected Blueprint detail and a live WordPress preview visible.",
+  "focus": [
+    "Blueprint search, selected detail, URL runner, JSON editor, validation, run, copy, and download commands",
+    "Admin table object model for Playground rows and transfer states",
+    "Local-directory save lifecycle with permission, progress, folder identity, and reload consequence",
+    "Protected live WordPress shell with path, refresh, Homepage, WP Admin, storage badge, and Site Manager access",
+    "Stateful file, database, replacement, delete, import, and export outcomes"
+  ],
+  "flows": [
+    "Finish Save to a local directory end to end with folder picker, cancel path, permission grant, file-copy progress, selected folder identity, local badge, active row mutation, transfer history, and reconnect-after-refresh consequence.",
+    "Run a selected Blueprint replacement end to end with gallery search, categories, selected detail, Blueprint URL, JSON editor, validation, replace-current warning, confirmation, progress, preview mutation, database size change, imported row state, and transfer log.",
+    "Use the Site Manager Files tab to select wp-config.php, mark it dirty, save the file with progress, clear the dirty state, update logs, and record a transfer result.",
+    "Download database.sqlite from the SQLite-backed database with path, size, progress, success state, Adminer, phpMyAdmin, and transfer history.",
+    "Manage saved and unsaved rows with open, rename, delete confirmation, cancel, deleted final state, and active shell continuity.",
+    "Create or import through Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import with account connection, Blueprint URL, and ZIP import with route-specific inputs and replacement consequences.",
+    "Run portability actions for GitHub import/export, ZIP import/download, database download, and Blueprint bundle copy/download while the live preview remains visible."
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start route",
+    "WordPress PR preview with PR number or URL",
+    "Gutenberg PR or branch preview with PR, URL, or branch input",
+    "GitHub import with account connection and token-not-stored consequence",
+    "Blueprint URL runner",
+    "Import .zip with native chooser framing and replacement warning",
+    "Blueprint gallery categories and search with honest representative subset of 43",
+    "Selected Blueprint detail with URL, JSON editor, validation, copy, download, run, warning, progress, and result state",
+    "Save in this browser with browser slug and saved row mutation",
+    "Save to a local directory with folder picker, cancellation, permission grant, progress, folder identity, local badge, and reconnect consequence",
+    "Saved, unsaved, local-directory, imported, exported, and deleted table row states",
+    "Open, manage, rename, delete confirmation, delete cancellation, and deleted final state",
+    "Current shell path input, refresh, Homepage, WP Admin, temporary/saved/local/imported state, Save, and reset/reload consequences",
+    "Site Manager Settings, Files, Blueprint, Database, Logs, Export to GitHub, and Download as zip",
+    "Files create file, create folder, upload, browse files, selected editor, dirty state, save progress, and result state",
+    "WordPress version, PHP version, language, older versions, network access, and multisite settings",
+    "Destructive Apply Settings & Reset Playground and stored Save & Reload behavior",
+    "SQLite-backed database driver, path, size, database download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs with realistic notice and mutation records",
+    "Export to GitHub",
+    "Download as .zip",
+    "Database download",
+    "Blueprint bundle portability actions",
+    "Transfer history for saves, imports, exports, file edits, database downloads, deletes, path navigation, and Blueprint runs"
+  ]
+}

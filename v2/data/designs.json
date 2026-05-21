@@ -1727,5 +1727,45 @@
       "Transfer history for saves, settings reloads, resets, imports, exports, downloads, file edits, Blueprint runs, deletes, and path navigation"
     ],
     "path": "v2-design-041/index.html"
+  },
+  {
+    "id": "v2-design-044",
+    "number": 44,
+    "title": "Blueprint Registry Console",
+    "concept": "A Blueprint-first command console that uses an admin-style registry table for saved, local, temporary, imported, exported, and deleted Playground objects while keeping selected Blueprint detail and a live WordPress preview visible.",
+    "focus": [
+      "Blueprint search, selected detail, URL runner, JSON editor, validation, run, copy, and download commands",
+      "Admin table object model for Playground rows and transfer states",
+      "Local-directory save lifecycle with permission, progress, folder identity, and reload consequence",
+      "Protected live WordPress shell with path, refresh, Homepage, WP Admin, storage badge, and Site Manager access",
+      "Stateful file, database, replacement, delete, import, and export outcomes"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start route",
+      "WordPress PR preview with PR number or URL",
+      "Gutenberg PR or branch preview with PR, URL, or branch input",
+      "GitHub import with account connection and token-not-stored consequence",
+      "Blueprint URL runner",
+      "Import .zip with native chooser framing and replacement warning",
+      "Blueprint gallery categories and search with honest representative subset of 43",
+      "Selected Blueprint detail with URL, JSON editor, validation, copy, download, run, warning, progress, and result state",
+      "Save in this browser with browser slug and saved row mutation",
+      "Save to a local directory with folder picker, cancellation, permission grant, progress, folder identity, local badge, and reconnect consequence",
+      "Saved, unsaved, local-directory, imported, exported, and deleted table row states",
+      "Open, manage, rename, delete confirmation, delete cancellation, and deleted final state",
+      "Current shell path input, refresh, Homepage, WP Admin, temporary/saved/local/imported state, Save, and reset/reload consequences",
+      "Site Manager Settings, Files, Blueprint, Database, Logs, Export to GitHub, and Download as zip",
+      "Files create file, create folder, upload, browse files, selected editor, dirty state, save progress, and result state",
+      "WordPress version, PHP version, language, older versions, network access, and multisite settings",
+      "Destructive Apply Settings & Reset Playground and stored Save & Reload behavior",
+      "SQLite-backed database driver, path, size, database download, Adminer, and phpMyAdmin",
+      "Playground, WordPress, and PHP logs with realistic notice and mutation records",
+      "Export to GitHub",
+      "Download as .zip",
+      "Database download",
+      "Blueprint bundle portability actions",
+      "Transfer history for saves, imports, exports, file edits, database downloads, deletes, path navigation, and Blueprint runs"
+    ],
+    "path": "v2-design-044/index.html"
   }
 ]
