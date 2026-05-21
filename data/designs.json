@@ -2439,5 +2439,51 @@
       "download a .zip"
     ],
     "path": "design-054/index.html"
+  },
+  {
+    "id": "design-057",
+    "number": 57,
+    "title": "Playground Demo Dossier",
+    "concept": "A document-style workspace for documentation writers where a Playground is managed as a compact project dossier: cover metadata, inline source/settings/library/artifact sections, and a contextual detail drawer replace app rails and modal stacks.",
+    "focus": [
+      "document-style information architecture",
+      "card grid with contextual detail drawer",
+      "compact enterprise SaaS styling with thin borders",
+      "documentation demo preparation workflow",
+      "inline settings and artifact tracking in the first viewport"
+    ],
+    "featureCoverage": [
+      "create a vanilla Playground",
+      "create from WordPress PR",
+      "create from Gutenberg PR or branch",
+      "import from GitHub after account connection",
+      "run a Blueprint URL",
+      "import a .zip",
+      "browse and filter Blueprint gallery entries",
+      "select featured blueprint shortcuts",
+      "save temporary Playground in browser storage",
+      "save to a local directory",
+      "see save progress",
+      "browse saved and unsaved Playgrounds",
+      "rename a saved Playground",
+      "delete a saved Playground",
+      "navigate active WordPress paths with URL input",
+      "refresh the active embedded WordPress page",
+      "open Homepage and WP Admin",
+      "edit WordPress/PHP/language settings",
+      "include older WordPress versions",
+      "allow network access",
+      "create a multisite network",
+      "understand destructive reset/reload behavior",
+      "use File browser with create folder/file, upload, browse, and code editing affordances",
+      "view/copy/download/run the current Blueprint bundle",
+      "inspect database driver/path/size",
+      "download database.sqlite",
+      "open Adminer and phpMyAdmin",
+      "inspect logs and empty/error states",
+      "export to GitHub",
+      "download a .zip"
+    ],
+    "path": "design-057/index.html"
   }
 ]
