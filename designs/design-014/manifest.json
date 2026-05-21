@@ -1,0 +1,51 @@
+{
+  "id": "design-014",
+  "title": "Blueprint Marketplace IDE",
+  "concept": "A marketplace-first Playground redesign where image-rich Blueprint cards are the primary starting surface, with PR review starts, saved-site management, and Site Manager tools organized as adjacent IDE-style actions.",
+  "focus": [
+    "visual Blueprint marketplace first viewport",
+    "core contributor PR review starts",
+    "IDE-like code and file affordances",
+    "mobile bottom navigation",
+    "saved Playground and portability workflows"
+  ],
+  "flows": [
+    "Browse and filter the Blueprint gallery from the first viewport, select featured blueprints, and run or inspect a blueprint.",
+    "Start a fresh Playground from Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, or .zip import.",
+    "Save an unsaved Playground to browser storage or a local directory with visible copy progress, then manage saved entries with rename and delete actions.",
+    "Navigate the active WordPress site with path refresh, Homepage, and WP Admin shortcuts.",
+    "Use Site Manager settings, file browser, Blueprint editor, database tools, logs, export to GitHub, and download as .zip."
+  ],
+  "featureCoverage": [
+    "create a vanilla Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub after account connection",
+    "run a Blueprint URL",
+    "import a .zip",
+    "browse and filter Blueprint gallery entries",
+    "select featured blueprint shortcuts",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "see save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh the active embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress version, PHP version, and language settings",
+    "include older WordPress versions",
+    "allow network access",
+    "create a multisite network",
+    "understand destructive reset and saved reload behavior",
+    "use File browser with create folder, create file, upload, browse, and code editing affordances",
+    "view, copy, download, and run the current Blueprint bundle",
+    "inspect database driver, path, and size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect Playground, WordPress, and PHP logs and empty states",
+    "export to GitHub",
+    "download a .zip"
+  ]
+}
