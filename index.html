@@ -49,7 +49,7 @@
       }
 
       .lede {
-        max-width: 760px;
+        max-width: 820px;
         margin: 14px 0 0;
         color: var(--muted);
         font-size: 17px;
@@ -92,46 +92,97 @@
 
       .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-        gap: 14px;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 520px), 1fr));
+        gap: 18px;
       }
 
-      .card {
-        min-height: 174px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+      .preview-card {
         border: 1px solid var(--line);
         border-radius: 8px;
         background: var(--panel);
-        padding: 16px;
-        text-decoration: none;
-        color: inherit;
+        overflow: hidden;
       }
 
-      .card:hover {
+      .preview-card:hover {
         border-color: var(--accent);
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
       }
 
-      .card h2 {
-        margin: 0 0 8px;
+      .preview-head {
+        min-height: 86px;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .preview-head h2 {
+        margin: 4px 0 0;
         font-size: 18px;
         line-height: 1.25;
       }
 
-      .card p {
+      .preview-head a {
+        align-self: flex-start;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 7px 10px;
+        color: var(--accent-dark);
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .preview-head a:hover {
+        border-color: var(--accent);
+      }
+
+      .frame-wrap {
+        aspect-ratio: 16 / 10;
+        background: #eef1f4;
+        border-bottom: 1px solid var(--line);
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        display: block;
+        border: 0;
+        background: #fff;
+      }
+
+      .preview-card p {
         margin: 0;
+        padding: 14px 16px 16px;
         color: var(--muted);
         font-size: 14px;
         line-height: 1.45;
       }
 
-      .card .number {
-        margin-top: 20px;
+      .number {
         color: var(--accent-dark);
         font-size: 13px;
         font-weight: 700;
+      }
+
+      @media (max-width: 640px) {
+        .wrap {
+          width: min(100% - 20px, 1180px);
+        }
+
+        .hero {
+          padding: 28px 0 22px;
+        }
+
+        .toolbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .preview-head {
+          min-height: 0;
+        }
       }
 
       .empty {
@@ -147,7 +198,7 @@
     <header>
       <div class="wrap hero">
         <h1>WordPress Playground UI Redesigns</h1>
-        <p class="lede">A running gallery of static redesign explorations for the current WordPress Playground interface, grounded in captured user flows and feature coverage.</p>
+        <p class="lede">A running iframe preview gallery of static redesign explorations for the current WordPress Playground interface, grounded in captured user flows and feature coverage.</p>
         <div class="meta">
           <span class="pill">100 / 100 designs</span>
           <span class="pill">Live research captured May 21, 2026</span>
@@ -158,710 +209,1310 @@
     <main>
       <div class="wrap">
         <div class="toolbar">
-          <strong>Design Gallery</strong>
+          <strong>Iframe Preview Gallery</strong>
           <a href="research/PLAYGROUND_UI_MAP.md">Current UI map</a>
         </div>
         <div class="grid">
-          <a class="card" href="designs/design-001/index.html">
-            <div>
-              <h2>Playground Console</h2>
-              <p>A dense console-style workspace that keeps the live WordPress preview visible while creation, saved management, Site Manager tools, and export actions live in a persistent command panel.</p>
-            </div>
-            <div class="number">Design 001</div>
-          </a>
-          <a class="card" href="designs/design-002/index.html">
-            <div>
-              <h2>Playground Operations Desk</h2>
-              <p>A dense three-pane console that keeps creation sources, saved Playgrounds, the live WordPress frame, and Site Manager tools visible together instead of scattering core actions across separate overlays.</p>
-            </div>
-            <div class="number">Design 002</div>
-          </a>
-          <a class="card" href="designs/design-003/index.html">
-            <div>
-              <h2>Playground Command Deck</h2>
-              <p>A split command-deck interface that keeps create, saved management, Site Manager, blueprint gallery, and portability workflows in one persistent workbench beside the live WordPress site.</p>
-            </div>
-            <div class="number">Design 003</div>
-          </a>
-          <a class="card" href="designs/design-004/index.html">
-            <div>
-              <h2>Playground Workbench</h2>
-              <p>A single workspace that keeps creation, saved Playground management, the active WordPress preview, and Site Manager inspection visible at once instead of sending users through separate overlays.</p>
-            </div>
-            <div class="number">Design 004</div>
-          </a>
-          <a class="card" href="designs/design-005/index.html">
-            <div>
-              <h2>Playground Debug Browser</h2>
-              <p>A browser-chrome redesign for support engineers that treats every Playground as a tab, keeps the WordPress address bar and save state central, and exposes creation, saved sites, Site Manager tools, gallery browsing, and exports through side drawers.</p>
-            </div>
-            <div class="number">Design 005</div>
-          </a>
-          <a class="card" href="designs/design-006/index.html">
-            <div>
-              <h2>Playground Command Lens</h2>
-              <p>A command-palette-first redesign where search is the primary navigation model, grouped results expose every Playground action, and an inspector pane explains the selected workflow without hiding the active WordPress context.</p>
-            </div>
-            <div class="number">Design 006</div>
-          </a>
-          <a class="card" href="designs/design-007/index.html">
-            <div>
-              <h2>Playground Operations Console</h2>
-              <p>A persistent command-center interface that replaces modal-first navigation with a left workflow rail, a dense operational workbench, and a live WordPress preview kept in context.</p>
-            </div>
-            <div class="number">Design 007</div>
-          </a>
-          <a class="card" href="designs/design-008/index.html">
-            <div>
-              <h2>Operations Workbench</h2>
-              <p>A three-pane Playground interface that keeps creation, saved management, the live WordPress browser, and Site Manager tools visible as one continuous workspace instead of switching between separate overlays.</p>
-            </div>
-            <div class="number">Design 008</div>
-          </a>
-          <a class="card" href="designs/design-009/index.html">
-            <div>
-              <h2>Playground Mission Control</h2>
-              <p>A persistent operations console that keeps launch choices, the live WordPress site, and Site Manager tools visible together. Start, save, import, export, and saved-management workflows open as contextual drawers instead of separate full-screen panels.</p>
-            </div>
-            <div class="number">Design 009</div>
-          </a>
-          <a class="card" href="designs/design-010/index.html">
-            <div>
-              <h2>Playground Workbench</h2>
-              <p>A three-pane workbench that treats creation, saved Playgrounds, the live WordPress frame, and Site Manager operations as one continuous workspace instead of separate modal-first surfaces.</p>
-            </div>
-            <div class="number">Design 010</div>
-          </a>
-          <a class="card" href="designs/design-011/index.html">
-            <div>
-              <h2>Site Manager Takeover</h2>
-              <p>A manager-first Playground interface where Settings, Files, Blueprint, Database, and Logs own the main workspace, while creation, saving, saved management, gallery, import, and export flows are inline supporting panels and the WordPress site is reduced to a narrow reference preview.</p>
-            </div>
-            <div class="number">Design 011</div>
-          </a>
-          <a class="card" href="designs/design-012/index.html">
-            <div>
-              <h2>Guided Workshop Checklist</h2>
-              <p>A table-led onboarding workspace for educators that keeps saved Playground management as the first screen while a progress checklist walks users through creation, saving, runtime settings, Site Manager tools, blueprint browsing, and portability.</p>
-            </div>
-            <div class="number">Design 012</div>
-          </a>
-          <a class="card" href="designs/design-013/index.html">
-            <div>
-              <h2>Playground Admin Ledger</h2>
-              <p>A compact WordPress-admin-style dashboard for repeated Playground use, organized as operational cards and tables with a right-side detail drawer for the selected Playground and Site Manager tool.</p>
-            </div>
-            <div class="number">Design 013</div>
-          </a>
-          <a class="card" href="designs/design-014/index.html">
-            <div>
-              <h2>Blueprint Marketplace IDE</h2>
-              <p>A marketplace-first Playground redesign where image-rich Blueprint cards are the primary starting surface, with PR review starts, saved-site management, and Site Manager tools organized as adjacent IDE-style actions.</p>
-            </div>
-            <div class="number">Design 014</div>
-          </a>
-          <a class="card" href="designs/design-015/index.html">
-            <div>
-              <h2>Playground Diagnostics Console</h2>
-              <p>A tabbed support-engineer workspace that leads with runtime status, logs, database details, and environment health while keeping creation, save, management, editor, blueprint, gallery, import, and export flows one tab away.</p>
-            </div>
-            <div class="number">Design 015</div>
-          </a>
-          <a class="card" href="designs/design-016/index.html">
-            <div>
-              <h2>Playground Launch Index</h2>
-              <p>A local-development launcher organized around a command/search overlay and dense results pane, so power users can start PR previews, import GitHub projects, run blueprints, manage saved Playgrounds, edit files, inspect runtime state, and export work from one searchable index.</p>
-            </div>
-            <div class="number">Design 016</div>
-          </a>
-          <a class="card" href="designs/design-017/index.html">
-            <div>
-              <h2>Playground Project Document</h2>
-              <p>A document-style workspace that presents each Playground as a saved project with a project header, inline sections, document-outline navigation, and contextual actions for theme authors instead of modal stacks or a three-pane operations console.</p>
-            </div>
-            <div class="number">Design 017</div>
-          </a>
-          <a class="card" href="designs/design-018/index.html">
-            <div>
-              <h2>Tabbed Project Workspace</h2>
-              <p>A compact enterprise workspace for agency developers that treats each Playground as a project tab and each project surface as a second-level tab, with launch, save, gallery, library, import, and export flows handled in a contextual drawer.</p>
-            </div>
-            <div class="number">Design 018</div>
-          </a>
-          <a class="card" href="designs/design-019/index.html">
-            <div>
-              <h2>Playground Command File</h2>
-              <p>A minimalist expert interface for Blueprint authors that treats the Playground as a single command file: a compact toolbar exposes structured menus, while authoring, runtime preview, Site Manager tools, saved management, gallery browsing, and portability flows unfold in one vertical stack.</p>
-            </div>
-            <div class="number">Design 019</div>
-          </a>
-          <a class="card" href="designs/design-020/index.html">
-            <div>
-              <h2>Playground Action Cards</h2>
-              <p>A beginner-oriented action board for plugin developers that groups Playground creation, saving, management, inspection, and export tasks into clear cards beside a split live preview and contextual editor.</p>
-            </div>
-            <div class="number">Design 020</div>
-          </a>
-          <a class="card" href="designs/design-021/index.html">
-            <div>
-              <h2>Guided Launch Brief</h2>
-              <p>A wizard-first Playground redesign for agency developers, where creating a client test site is framed as a five-step launch brief and saved Playgrounds, Site Manager tools, gallery browsing, saving, import, and export remain available as secondary task modes.</p>
-            </div>
-            <div class="number">Design 021</div>
-          </a>
-          <a class="card" href="designs/design-022/index.html">
-            <div>
-              <h2>Playground Library</h2>
-              <p>A saved-sites-first dashboard where temporary and browser-backed Playgrounds are the primary objects, creation and portability are actions on the library, and the active WordPress site only expands after a Playground is selected.</p>
-            </div>
-            <div class="number">Design 022</div>
-          </a>
-          <a class="card" href="designs/design-023/index.html">
-            <div>
-              <h2>Blueprint Launchpad</h2>
-              <p>A Blueprint-first Playground redesign where search, category filters, featured Blueprint cards, Blueprint URL entry, and current blueprint.json actions form the home surface, while saved management and Site Manager tools sit in compact workspace bands.</p>
-            </div>
-            <div class="number">Design 023</div>
-          </a>
-          <a class="card" href="designs/design-024/index.html">
-            <div>
-              <h2>Developer File and Data IDE</h2>
-              <p>A WordPress admin-inspired IDE workspace for documentation writers preparing demos, with files, blueprint JSON, database tools, logs, environment controls, and live preview treated as the primary surface while creation, saving, and library management sit in discoverable drawers.</p>
-            </div>
-            <div class="number">Design 024</div>
-          </a>
-          <a class="card" href="designs/design-025/index.html">
-            <div>
-              <h2>Playground Teaching Browser</h2>
-              <p>A browser-chrome redesign for educators running workshops: Playgrounds are tabs, the WordPress path is an address bar, save state is visible in the chrome, and creation, saved management, Site Manager tools, gallery browsing, import, and export live in contextual side drawers.</p>
-            </div>
-            <div class="number">Design 025</div>
-          </a>
-          <a class="card" href="designs/design-026/index.html">
-            <div>
-              <h2>Playground Command Inspector</h2>
-              <p>A single-column command-palette redesign for first-time WordPress learners where every current Playground action is searchable, grouped, and expanded into an inline inspector instead of being scattered across separate overlays.</p>
-            </div>
-            <div class="number">Design 026</div>
-          </a>
-          <a class="card" href="designs/design-027/index.html">
-            <div>
-              <h2>Playground Review Board</h2>
-              <p>A task-board workflow for core contributors where Create, Save, Manage, Inspect, Export, and Debug lanes organize every Playground capability while a live WordPress preview and selected-card editor stay visible beside the board.</p>
-            </div>
-            <div class="number">Design 027</div>
-          </a>
-          <a class="card" href="designs/design-028/index.html">
-            <div>
-              <h2>Pocket Repro Shell</h2>
-              <p>A mobile-first Playground redesign for support engineers that turns the app into a compact reproduction kit: the active site, save status, next launch actions, saved Playgrounds, Site Manager tools, gallery, imports, and exports are all reachable from a persistent bottom dock without modal overlays.</p>
-            </div>
-            <div class="number">Design 028</div>
-          </a>
-          <a class="card" href="designs/design-029/index.html">
-            <div>
-              <h2>Playground Configuration Studio</h2>
-              <p>A settings-first, table-led Playground workspace for power users who need to verify WordPress, PHP, language, network, multisite, and reset impact before launching, saving, managing, or exporting browser-backed sites.</p>
-            </div>
-            <div class="number">Design 029</div>
-          </a>
-          <a class="card" href="designs/design-030/index.html">
-            <div>
-              <h2>Playground Portability Hub</h2>
-              <p>A card-grid workspace for theme authors that puts import, save, export, ZIP, GitHub, local directory, and Blueprint bundle movement in the first viewport, with a detail drawer for the selected transfer task and supporting Site Manager sections below.</p>
-            </div>
-            <div class="number">Design 030</div>
-          </a>
-          <a class="card" href="designs/design-031/index.html">
-            <div>
-              <h2>Agency Site Manager Takeover</h2>
-              <p>A dense, manager-first Playground redesign for agency developers where the Site Manager is the primary product surface, saved sites and start sources live in a left client queue, and the WordPress site is reduced to a narrow verification preview.</p>
-            </div>
-            <div class="number">Design 031</div>
-          </a>
-          <a class="card" href="designs/design-032/index.html">
-            <div>
-              <h2>Guided Author Workspace</h2>
-              <p>A checklist-led, tabbed Playground workspace for Blueprint authors that teaches the existing capabilities in sequence while keeping the active WordPress browser, save state, authoring tools, Site Manager, library, and gallery reachable from one dark diagnostics surface.</p>
-            </div>
-            <div class="number">Design 032</div>
-          </a>
-          <a class="card" href="designs/design-033/index.html">
-            <div>
-              <h2>Playground Admin Command Table</h2>
-              <p>A dense WordPress-admin-like dashboard for plugin developers where a persistent command/search overlay drives a compact results pane, while saved sites, starts, Site Manager tools, blueprints, and transfer actions remain organized as admin tables.</p>
-            </div>
-            <div class="number">Design 033</div>
-          </a>
-          <a class="card" href="designs/design-034/index.html">
-            <div>
-              <h2>Blueprint Marketplace Workspace</h2>
-              <p>A visual-first Playground IA for documentation writers where the blueprint gallery is the default workspace and PR, GitHub, ZIP, save, saved management, and Site Manager flows remain adjacent actions.</p>
-            </div>
-            <div class="number">Design 034</div>
-          </a>
-          <a class="card" href="designs/design-035/index.html">
-            <div>
-              <h2>Playground Run Monitor</h2>
-              <p>A diagnostics-first Playground redesign for educators running workshops: the first viewport is a run monitor with environment health, live logs, database state, and a compact live WordPress preview, while creation, saving, saved management, imports, exports, and gallery browsing live in a top-navigation contextual drawer.</p>
-            </div>
-            <div class="number">Design 035</div>
-          </a>
-          <a class="card" href="designs/design-036/index.html">
-            <div>
-              <h2>Playground Local Dev Launcher</h2>
-              <p>A single-column progressive disclosure interface that frames WordPress Playground around beginner-friendly local development jobs: start a test site, preview PRs, import code, edit files, run blueprints, inspect runtime state, and export results.</p>
-            </div>
-            <div class="number">Design 036</div>
-          </a>
-          <a class="card" href="designs/design-037/index.html">
-            <div>
-              <h2>Playground Review Document</h2>
-              <p>A document-style Playground workspace for core contributors reviewing PRs: the active Playground is treated as a project document with inline start sources, save state, saved references, runtime settings, files, blueprint, database, logs, and export actions beside a split live preview and contextual editor.</p>
-            </div>
-            <div class="number">Design 037</div>
-          </a>
-          <a class="card" href="designs/design-038/index.html">
-            <div>
-              <h2>Repro Tab Workspace</h2>
-              <p>A friendly support-engineer workspace that treats each Playground as a top-level repro tab, then keeps Site, Files, Blueprint, Database, Logs, and Runtime as within-project tabs with all creation, saving, gallery, import, and export flows handled by inline panels.</p>
-            </div>
-            <div class="number">Design 038</div>
-          </a>
-          <a class="card" href="designs/design-039/index.html">
-            <div>
-              <h2>Playground Register</h2>
-              <p>A minimal expert toolbar and table-led register for power users managing many saved Playgrounds, where creation, import, export, saving, and Site Manager actions are exposed through compact command menus and row inspectors instead of large onboarding panels.</p>
-            </div>
-            <div class="number">Design 039</div>
-          </a>
-          <a class="card" href="designs/design-040/index.html">
-            <div>
-              <h2>Playground Action Cards</h2>
-              <p>A beginner-oriented card-grid workspace for theme authors where plain-language action groups sit beside a detail drawer that explains consequences, required inputs, and safe destructive-action handling before each Playground task.</p>
-            </div>
-            <div class="number">Design 040</div>
-          </a>
-          <a class="card" href="designs/design-041/index.html">
-            <div>
-              <h2>Repro Launch Runbook</h2>
-              <p>A guided launch wizard for support engineers that treats every new Playground as a reproducible case: the first viewport is a step-by-step source, runtime, persistence, and handoff flow, while saved Playgrounds and Site Manager tools remain available as side tasks from the left navigation.</p>
-            </div>
-            <div class="number">Design 041</div>
-          </a>
-          <a class="card" href="designs/design-042/index.html">
-            <div>
-              <h2>Playground Library Desk</h2>
-              <p>A saved-sites-first enterprise dashboard where the first viewport is a dense browser-backed Playground library, creation and transfer workflows are actions on that library, and the active WordPress site remains secondary inside a contextual drawer or selected-site manager.</p>
-            </div>
-            <div class="number">Design 042</div>
-          </a>
-          <a class="card" href="designs/design-043/index.html">
-            <div>
-              <h2>Blueprint Studio</h2>
-              <p>A Blueprint-first Playground workspace for theme authors that starts with gallery filtering, Blueprint URL execution, and current blueprint editing before progressively revealing saved sites, settings, files, database, logs, and exports.</p>
-            </div>
-            <div class="number">Design 043</div>
-          </a>
-          <a class="card" href="designs/design-044/index.html">
-            <div>
-              <h2>Playground IDE Workbench</h2>
-              <p>A developer file-and-data IDE for agency developers testing client sites, with file tree, blueprint JSON, database tools, logs, runtime settings, and live WordPress preview visible as the primary workspace while creation, saving, saved management, import, and export remain discoverable through drawers and commands.</p>
-            </div>
-            <div class="number">Design 044</div>
-          </a>
-          <a class="card" href="designs/design-045/index.html">
-            <div>
-              <h2>Playground Author Browser</h2>
-              <p>A browser-chrome redesign for Blueprint authors where Playgrounds behave like browser tabs, creation and saved management live in a bookmark shelf, and Site Manager opens as inline authoring drawers beside the active WordPress page.</p>
-            </div>
-            <div class="number">Design 045</div>
-          </a>
-          <a class="card" href="designs/design-046/index.html">
-            <div>
-              <h2>Playground Command Inspector</h2>
-              <p>A table-led management screen for plugin developers where a persistent command launcher is the primary discovery surface and every current Playground action resolves into a compact inspector with the right form, warning, or Site Manager tab.</p>
-            </div>
-            <div class="number">Design 046</div>
-          </a>
-          <a class="card" href="designs/design-047/index.html">
-            <div>
-              <h2>Playground Demo Board</h2>
-              <p>A compact enterprise task-board redesign for documentation writers, where Create, Save, Manage, Inspect, Export, and Debug lanes form a demo runbook and each workflow opens in a detail drawer while the live WordPress preview remains a board card.</p>
-            </div>
-            <div class="number">Design 047</div>
-          </a>
-          <a class="card" href="designs/design-048/index.html">
-            <div>
-              <h2>Playground Pocket Workshop</h2>
-              <p>A mobile-first compact shell for educators running workshops: the first viewport is a thumb-reachable runboard with save state, path navigation, start actions, and a bottom navigation model that scales up beside a desktop preview.</p>
-            </div>
-            <div class="number">Design 048</div>
-          </a>
-          <a class="card" href="designs/design-049/index.html">
-            <div>
-              <h2>Runtime Configuration Studio</h2>
-              <p>A settings-first, learner-oriented WordPress Playground workspace that makes WordPress, PHP, language, network, multisite, reset, and reload decisions the first visible task before routing users into launch, saved management, Site Manager tools, blueprint gallery, and portability flows.</p>
-            </div>
-            <div class="number">Design 049</div>
-          </a>
-          <a class="card" href="designs/design-050/index.html">
-            <div>
-              <h2>Playground Transfer Command</h2>
-              <p>A portability-centered command/search workspace for core contributors reviewing PRs, where GitHub, ZIP, local directory, browser save, Blueprint bundle, and database artifacts are treated as first-class routes with a dense results pane.</p>
-            </div>
-            <div class="number">Design 050</div>
-          </a>
-          <a class="card" href="designs/design-051/index.html">
-            <div>
-              <h2>Split Site Manager Takeover</h2>
-              <p>A support-engineer-focused Playground workspace that makes Site Manager the primary surface, keeps creation and saved management in a left navigation model, and compresses the active WordPress site into a narrow verification preview.</p>
-            </div>
-            <div class="number">Design 051</div>
-          </a>
-          <a class="card" href="designs/design-052/index.html">
-            <div>
-              <h2>Playground Checklist Workspace</h2>
-              <p>A compact enterprise SaaS workspace that turns Playground discovery into an ordered runbook: start a site, save it, manage saved sessions, inspect Site Manager tools, and package work through a contextual drawer beside the active WordPress preview.</p>
-            </div>
-            <div class="number">Design 052</div>
-          </a>
-          <a class="card" href="designs/design-053/index.html">
-            <div>
-              <h2>Playground Admin Workbench</h2>
-              <p>A dense WordPress-admin-like dashboard for theme authors who repeatedly create, save, inspect, and export Playgrounds. The first viewport is a compact register table with progressive disclosure sections for creation, storage, Site Manager, and Blueprint gallery work.</p>
-            </div>
-            <div class="number">Design 053</div>
-          </a>
-          <a class="card" href="designs/design-054/index.html">
-            <div>
-              <h2>Blueprint Exchange</h2>
-              <p>A visual blueprint marketplace for agency developers where the first viewport is the primary start surface: image-rich blueprint cards, category navigation, search, and adjacent PR/GitHub/ZIP/URL starts sit beside a persistent split WordPress preview and editor.</p>
-            </div>
-            <div class="number">Design 054</div>
-          </a>
-          <a class="card" href="designs/design-055/index.html">
-            <div>
-              <h2>Playground Run Ledger</h2>
-              <p>A diagnostics-first WordPress Playground workspace for Blueprint authors that leads with runtime health, logs, database facts, and embedded site status while keeping creation, save, saved management, Site Manager, import, export, and Blueprint gallery flows available as modal-free inline panels.</p>
-            </div>
-            <div class="number">Design 055</div>
-          </a>
-          <a class="card" href="designs/design-056/index.html">
-            <div>
-              <h2>Playground Dev Run Ledger</h2>
-              <p>A table-led local development launcher for plugin developers that treats every saved site, temporary site, PR preview, GitHub import, Blueprint run, and zip transfer as a row in a dense development ledger with a contextual inspector and separate workbench surfaces.</p>
-            </div>
-            <div class="number">Design 056</div>
-          </a>
-          <a class="card" href="designs/design-057/index.html">
-            <div>
-              <h2>Playground Demo Dossier</h2>
-              <p>A document-style workspace for documentation writers where a Playground is managed as a compact project dossier: cover metadata, inline source/settings/library/artifact sections, and a contextual detail drawer replace app rails and modal stacks.</p>
-            </div>
-            <div class="number">Design 057</div>
-          </a>
-          <a class="card" href="designs/design-058/index.html">
-            <div>
-              <h2>Playground Project Tabs</h2>
-              <p>A tabbed project workspace for educators running workshops: multiple Playgrounds stay open as project tabs, while each project exposes Site, Files, Blueprints, Database, Logs, and Settings as IDE-like inner tabs.</p>
-            </div>
-            <div class="number">Design 058</div>
-          </a>
-          <a class="card" href="designs/design-059/index.html">
-            <div>
-              <h2>Playground Keybar</h2>
-              <p>A tabbed, keyboard-like Playground workspace for first-time learners who want expert affordances: the live WordPress browser is the first viewport, global creation/saving/import/export actions live in compact structured menus, and Site Manager tools are split into fast tabs rather than modal panels.</p>
-            </div>
-            <div class="number">Design 059</div>
-          </a>
-          <a class="card" href="designs/design-060/index.html">
-            <div>
-              <h2>Playground Action Finder</h2>
-              <p>A command/search overlay with grouped beginner action cards and a results pane, designed for core contributors who need clear PR review starts, safe save/reset messaging, and quick discovery of the full Playground toolset.</p>
-            </div>
-            <div class="number">Design 060</div>
-          </a>
-          <a class="card" href="designs/design-061/index.html">
-            <div>
-              <h2>Workshop Launch Wizard</h2>
-              <p>A guided, educator-focused launch wizard that makes Playground creation the primary workflow, with a dark diagnostics shell, light decision cards, and a split live preview/editor area for verifying and managing the resulting site.</p>
-            </div>
-            <div class="number">Design 061</div>
-          </a>
-          <a class="card" href="designs/design-062/index.html">
-            <div>
-              <h2>Playground Learning Library</h2>
-              <p>A saved-sites-first Playground redesign for first-time WordPress learners where saved and unsaved Playgrounds are the primary library objects, creation and portability are inline actions on that library, and the active WordPress site becomes a secondary preview once a Playground is selected.</p>
-            </div>
-            <div class="number">Design 062</div>
-          </a>
-          <a class="card" href="designs/design-063/index.html">
-            <div>
-              <h2>Blueprint Review Desk</h2>
-              <p>A Blueprint-first, table-led WordPress Playground workspace for core contributors who need to inspect catalog entries, run Blueprint URLs, preview PR sources, and manage saved review Playgrounds without losing operational controls.</p>
-            </div>
-            <div class="number">Design 063</div>
-          </a>
-          <a class="card" href="designs/design-064/index.html">
-            <div>
-              <h2>Playground Casebench IDE</h2>
-              <p>A support-engineer file-and-data IDE that treats each Playground as a bug reproduction case: the first viewport is a light gray card grid of files, Blueprint JSON, database, logs, runtime, preview, source, save, and saved-management tasks, with a detail drawer for concrete actions and consequences.</p>
-            </div>
-            <div class="number">Design 064</div>
-          </a>
-          <a class="card" href="designs/design-065/index.html">
-            <div>
-              <h2>Playground Browser Stack</h2>
-              <p>A browser-chrome redesign for power users managing many Playgrounds, with tabbed site identity, an address bar, colored save-state chips, side drawers for launch and management flows, and bottom navigation on small screens.</p>
-            </div>
-            <div class="number">Design 065</div>
-          </a>
-          <a class="card" href="designs/design-066/index.html">
-            <div>
-              <h2>Command Palette Inspector</h2>
-              <p>A tabbed WordPress Playground workspace where the command palette is the first screen and primary discovery model. Actions resolve into a light inspector that shows the exact inputs, constraints, destructive consequences, progress, and resulting saved or portable state.</p>
-            </div>
-            <div class="number">Design 066</div>
-          </a>
-          <a class="card" href="designs/design-067/index.html">
-            <div>
-              <h2>Playground Agency Task Board</h2>
-              <p>A kanban-style agency workflow where Create, Save, Manage, Inspect, Export, and Debug lanes expose every current Playground capability, while a command/search overlay and result pane show exact inputs, progress, saved state, and consequences for the selected task.</p>
-            </div>
-            <div class="number">Design 067</div>
-          </a>
-          <a class="card" href="designs/design-068/index.html">
-            <div>
-              <h2>Pocket Author Shell</h2>
-              <p>A mobile-first compact Playground shell for Blueprint authors, using bottom navigation on narrow screens and a left rail on desktop while keeping launch, save, run, and manager consequences in stacked task panels.</p>
-            </div>
-            <div class="number">Design 068</div>
-          </a>
-          <a class="card" href="designs/design-069/index.html">
-            <div>
-              <h2>Runtime Contract Studio</h2>
-              <p>A settings-first WordPress Playground configuration studio for plugin developers. The first viewport treats WordPress, PHP, language, network, multisite, and reset or reload impact as the primary working surface, while launch, saving, saved management, Site Manager tools, Blueprint gallery, and portability flows open through a top-navigation contextual drawer.</p>
-            </div>
-            <div class="number">Design 069</div>
-          </a>
-          <a class="card" href="designs/design-070/index.html">
-            <div>
-              <h2>Playground Portability Hub</h2>
-              <p>A single-column progressive disclosure redesign that treats every Playground action as a portability step: start or import, save to browser or local directory, export to GitHub or zip, and package Blueprints for reuse.</p>
-            </div>
-            <div class="number">Design 070</div>
-          </a>
-          <a class="card" href="designs/design-071/index.html">
-            <div>
-              <h2>Workshop Site Manager Takeover</h2>
-              <p>A Site Manager-first Playground redesign for educators running workshops: creation, save state, saved-site management, runtime settings, files, blueprint, database, logs, gallery, and portability all live inside a dark diagnostic manager while the WordPress site is kept as a narrow embedded preview.</p>
-            </div>
-            <div class="number">Design 071</div>
-          </a>
-          <a class="card" href="designs/design-072/index.html">
-            <div>
-              <h2>Playground Lesson Path Workspace</h2>
-              <p>A modal-free onboarding checklist workspace that lets first-time WordPress learners discover Playground capabilities in sequence while keeping the live WordPress site visible.</p>
-            </div>
-            <div class="number">Design 072</div>
-          </a>
-          <a class="card" href="designs/design-073/index.html">
-            <div>
-              <h2>Playground Admin Register</h2>
-              <p>A dense WordPress-admin-like dashboard for repeat core contributor use, where the first viewport is a saved Playground register with filters, row actions, and an inline workflow inspector that exposes save destinations, destructive actions, route-specific launch inputs, and resulting states.</p>
-            </div>
-            <div class="number">Design 073</div>
-          </a>
-          <a class="card" href="designs/design-074/index.html">
-            <div>
-              <h2>Blueprint Market Workbench</h2>
-              <p>A visual blueprint marketplace is the first usable screen, with support-engineer launch routes, save destinations, saved management, and Site Manager controls arranged as adjacent workbench actions.</p>
-            </div>
-            <div class="number">Design 074</div>
-          </a>
-          <a class="card" href="designs/design-075/index.html">
-            <div>
-              <h2>Playground Operations Ledger</h2>
-              <p>A diagnostics-first Playground redesign for power users managing many saved sites. The first viewport is an operations ledger that leads with health, logs, database details, storage status, and current-site consequences before exposing creation, saving, Site Manager, import/export, and Blueprint catalog tasks.</p>
-            </div>
-            <div class="number">Design 075</div>
-          </a>
-          <a class="card" href="designs/design-076/index.html">
-            <div>
-              <h2>Playground Devbench</h2>
-              <p>A local-development launcher for theme authors that turns Playground into a tabbed run bench: route-specific PR, GitHub, Blueprint, and zip starts are first-class, while save state, manager tools, catalog inspection, and export results remain visible as workflow outputs.</p>
-            </div>
-            <div class="number">Design 076</div>
-          </a>
-          <a class="card" href="designs/design-077/index.html">
-            <div>
-              <h2>Project Document Workspace</h2>
-              <p>A document-style WordPress Playground workspace where launch sources, save state, Site Manager tools, catalog browsing, and import/export actions are organized as inline project sections with a command/search overlay and live results pane.</p>
-            </div>
-            <div class="number">Design 077</div>
-          </a>
-          <a class="card" href="designs/design-078/index.html">
-            <div>
-              <h2>Tabbed Blueprint Project Workspace</h2>
-              <p>A WordPress-admin-inspired Playground workspace where each Playground is an open project tab, and the selected project exposes Site, Files, Blueprint, Database, Logs, and Settings as within-project tabs. The first viewport centers Blueprint authoring while keeping launch routes, saved identity, destructive impacts, and portability outcomes visible.</p>
-            </div>
-            <div class="number">Design 078</div>
-          </a>
-          <a class="card" href="designs/design-079/index.html">
-            <div>
-              <h2>Playground Command Bar</h2>
-              <p>A minimalist expert workspace organized around a persistent command toolbar and a contextual drawer, keeping the live WordPress site visible while launch, save, management, Site Manager, and export/import operations are composed from compact menus.</p>
-            </div>
-            <div class="number">Design 079</div>
-          </a>
-          <a class="card" href="designs/design-080/index.html">
-            <div>
-              <h2>Guided Playground Action Stack</h2>
-              <p>A beginner-card, single-column progressive disclosure redesign for documentation writers preparing demos. The active unsaved Playground appears first, followed by grouped action cards that reveal exact launch, save, management, Site Manager, Blueprint gallery, and portability consequences inline.</p>
-            </div>
-            <div class="number">Design 080</div>
-          </a>
-          <a class="card" href="designs/design-081/index.html">
-            <div>
-              <h2>Launch Packet Wizard</h2>
-              <p>A guided launch wizard for Blueprint authors that treats a Playground as a compact launch packet: source route, runtime, storage destination, and handoff result are assembled in a card grid with a contextual detail drawer, while saved Playgrounds and Site Manager remain available as side tasks.</p>
-            </div>
-            <div class="number">Design 081</div>
-          </a>
-          <a class="card" href="designs/design-082/index.html">
-            <div>
-              <h2>Saved Sites Library</h2>
-              <p>A library-first Playground interface for plugin developers where saved, local, and temporary Playgrounds are the primary workspace, while creation routes, save destinations, and Site Manager tools appear as actions on the selected site.</p>
-            </div>
-            <div class="number">Design 082</div>
-          </a>
-          <a class="card" href="designs/design-083/index.html">
-            <div>
-              <h2>Blueprint Desk</h2>
-              <p>A Blueprint-first, tabbed documentation workspace where the catalog, URL runner, current blueprint editor, route-specific launch forms, saved-state proof, and Site Manager tools are organized around preparing reproducible demos.</p>
-            </div>
-            <div class="number">Design 083</div>
-          </a>
-          <a class="card" href="designs/design-084/index.html">
-            <div>
-              <h2>Workshop IDE Command Overlay</h2>
-              <p>A developer file-and-data IDE for educators running workshops, where the first viewport is a dense Site Manager workbench and creation, saving, saved management, imports, exports, and Blueprint browsing are discovered through a command/search overlay with a live results inspector.</p>
-            </div>
-            <div class="number">Design 084</div>
-          </a>
-          <a class="card" href="designs/design-085/index.html">
-            <div>
-              <h2>Playground Browser Desk</h2>
-              <p>A browser-chrome redesign of WordPress Playground where Playgrounds are tabs, the WordPress path is a real address bar, and creation, saving, saved management, Site Manager drawers, Blueprints, and transfers are organized around browser-like controls for first-time learners.</p>
-            </div>
-            <div class="number">Design 085</div>
-          </a>
-          <a class="card" href="designs/design-086/index.html">
-            <div>
-              <h2>Command Inspector Review Console</h2>
-              <p>A command-palette-first Playground redesign for core contributors reviewing PRs: the omnibar and grouped command results are the primary discovery surface, while every current action opens a compact contextual inspector drawer beside the live WordPress preview.</p>
-            </div>
-            <div class="number">Design 086</div>
-          </a>
-          <a class="card" href="designs/design-087/index.html">
-            <div>
-              <h2>Playground Repro Board</h2>
-              <p>A single-column task-board workflow for support engineers reproducing bugs, where Create, Save, Manage, Inspect, Export, and Debug lanes behave like dense IDE tickets and the live WordPress site is a preview card inside the board.</p>
-            </div>
-            <div class="number">Design 087</div>
-          </a>
-          <a class="card" href="designs/design-088/index.html">
-            <div>
-              <h2>Pocket Fleet Shell</h2>
-              <p>A mobile-first compact WordPress Playground shell for power users managing many saved sites, with bottom navigation, stacked touch panels, and a desktop split preview/editor workspace.</p>
-            </div>
-            <div class="number">Design 088</div>
-          </a>
-          <a class="card" href="designs/design-089/index.html">
-            <div>
-              <h2>Playground Configuration Ledger</h2>
-              <p>A settings-first configuration studio for theme authors that treats WordPress, PHP, language, network, multisite, reset, reload, launch, save, and manager work as one modal-free ledger with visible consequences.</p>
-            </div>
-            <div class="number">Design 089</div>
-          </a>
-          <a class="card" href="designs/design-090/index.html">
-            <div>
-              <h2>Playground Portability Ledger</h2>
-              <p>A table-led import and export hub that treats every Playground as a portable work item, with browser saves, local directory saves, GitHub export, zip import, and Blueprint bundles visible from the first screen.</p>
-            </div>
-            <div class="number">Design 090</div>
-          </a>
-          <a class="card" href="designs/design-091/index.html">
-            <div>
-              <h2>Blueprint Author Site Manager</h2>
-              <p>A Site Manager takeover that makes the manager the main product surface, using compact card grids plus a detail drawer for launch, persistence, authoring, inspection, export, and saved-site consequences while the WordPress site remains a narrow preview.</p>
-            </div>
-            <div class="number">Design 091</div>
-          </a>
-          <a class="card" href="designs/design-092/index.html">
-            <div>
-              <h2>Playground Runbook Workspace</h2>
-              <p>An IDE-like onboarding checklist that walks plugin developers through current WordPress Playground capabilities in sequence while keeping route contracts, save consequences, and the active site visible.</p>
-            </div>
-            <div class="number">Design 092</div>
-          </a>
-          <a class="card" href="designs/design-093/index.html">
-            <div>
-              <h2>Playground Admin Ledger</h2>
-              <p>A dense WordPress-admin-like dashboard for documentation writers preparing repeatable demos, with a tabbed workspace, saved-site ledger tables, compact source forms, and high-contrast black, white, and cyan technical styling.</p>
-            </div>
-            <div class="number">Design 093</div>
-          </a>
-          <a class="card" href="designs/design-094/index.html">
-            <div>
-              <h2>Workshop Blueprint Market</h2>
-              <p>A visual Blueprint marketplace for educators where the first screen is a dense image-rich catalog with a command/search overlay, while PR starts, GitHub import, ZIP import, save destinations, saved management, and Site Manager tools remain adjacent and consequence-aware.</p>
-            </div>
-            <div class="number">Design 094</div>
-          </a>
-          <a class="card" href="designs/design-095/index.html">
-            <div>
-              <h2>Playground Run Monitor</h2>
-              <p>A diagnostics-and-logs console for first-time WordPress learners: the first viewport explains the active run through health, logs, database state, save progress, and risk notices before revealing creation, saved management, Site Manager, Blueprint gallery, import, and export workflows.</p>
-            </div>
-            <div class="number">Design 095</div>
-          </a>
-          <a class="card" href="designs/design-096/index.html">
-            <div>
-              <h2>Review Launcher</h2>
-              <p>A compact local-development launcher for core contributors that separates PR, branch, GitHub, Blueprint, zip, and vanilla starts into distinct review routes while a contextual drawer exposes the exact inputs, save destinations, consequences, and results for the selected workflow.</p>
-            </div>
-            <div class="number">Design 096</div>
-          </a>
-          <a class="card" href="designs/design-097/index.html">
-            <div>
-              <h2>Reproduction Dossier Workspace</h2>
-              <p>A document-style WordPress Playground workspace for support engineers where each Playground is a case file: source, persistence, saved identity, Site Manager tools, Blueprint catalog, and handoff actions appear as inline document clauses with contextual controls instead of app rails or modal stacks.</p>
-            </div>
-            <div class="number">Design 097</div>
-          </a>
-          <a class="card" href="designs/design-098/index.html">
-            <div>
-              <h2>Playground Tab Matrix</h2>
-              <p>A high-density tabbed project workspace for power users managing several Playgrounds at once, with project tabs across the shell, within-project tabs for Site Manager tools, and a split editor plus WordPress preview.</p>
-            </div>
-            <div class="number">Design 098</div>
-          </a>
-          <a class="card" href="designs/design-099/index.html">
-            <div>
-              <h2>Playground Editor Bar</h2>
-              <p>A modal-free expert toolbar for theme authors that treats Playground work as compact command strips beside the live site: launch routes, save destinations, saved management, Site Manager tools, Blueprint catalog, and transfer commands stay inline with keyboard-like affordances and visible state changes.</p>
-            </div>
-            <div class="number">Design 099</div>
-          </a>
-          <a class="card" href="designs/design-100/index.html">
-            <div>
-              <h2>Client Site Workbench</h2>
-              <p>A table-led Playground manager for agency developers, with beginner-readable action cards, explicit save destinations, and consequence messaging shown before destructive changes.</p>
-            </div>
-            <div class="number">Design 100</div>
-          </a>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 001</div>
+                <h2>Playground Console</h2>
+              </div>
+              <a href="designs/design-001/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-001/index.html" title="Design 001 - Playground Console" loading="lazy"></iframe>
+            </div>
+            <p>A dense console-style workspace that keeps the live WordPress preview visible while creation, saved management, Site Manager tools, and export actions live in a persistent command panel.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 002</div>
+                <h2>Playground Operations Desk</h2>
+              </div>
+              <a href="designs/design-002/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-002/index.html" title="Design 002 - Playground Operations Desk" loading="lazy"></iframe>
+            </div>
+            <p>A dense three-pane console that keeps creation sources, saved Playgrounds, the live WordPress frame, and Site Manager tools visible together instead of scattering core actions across separate overlays.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 003</div>
+                <h2>Playground Command Deck</h2>
+              </div>
+              <a href="designs/design-003/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-003/index.html" title="Design 003 - Playground Command Deck" loading="lazy"></iframe>
+            </div>
+            <p>A split command-deck interface that keeps create, saved management, Site Manager, blueprint gallery, and portability workflows in one persistent workbench beside the live WordPress site.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 004</div>
+                <h2>Playground Workbench</h2>
+              </div>
+              <a href="designs/design-004/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-004/index.html" title="Design 004 - Playground Workbench" loading="lazy"></iframe>
+            </div>
+            <p>A single workspace that keeps creation, saved Playground management, the active WordPress preview, and Site Manager inspection visible at once instead of sending users through separate overlays.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 005</div>
+                <h2>Playground Debug Browser</h2>
+              </div>
+              <a href="designs/design-005/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-005/index.html" title="Design 005 - Playground Debug Browser" loading="lazy"></iframe>
+            </div>
+            <p>A browser-chrome redesign for support engineers that treats every Playground as a tab, keeps the WordPress address bar and save state central, and exposes creation, saved sites, Site Manager tools, gallery browsing, and exports through side drawers.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 006</div>
+                <h2>Playground Command Lens</h2>
+              </div>
+              <a href="designs/design-006/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-006/index.html" title="Design 006 - Playground Command Lens" loading="lazy"></iframe>
+            </div>
+            <p>A command-palette-first redesign where search is the primary navigation model, grouped results expose every Playground action, and an inspector pane explains the selected workflow without hiding the active WordPress context.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 007</div>
+                <h2>Playground Operations Console</h2>
+              </div>
+              <a href="designs/design-007/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-007/index.html" title="Design 007 - Playground Operations Console" loading="lazy"></iframe>
+            </div>
+            <p>A persistent command-center interface that replaces modal-first navigation with a left workflow rail, a dense operational workbench, and a live WordPress preview kept in context.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 008</div>
+                <h2>Operations Workbench</h2>
+              </div>
+              <a href="designs/design-008/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-008/index.html" title="Design 008 - Operations Workbench" loading="lazy"></iframe>
+            </div>
+            <p>A three-pane Playground interface that keeps creation, saved management, the live WordPress browser, and Site Manager tools visible as one continuous workspace instead of switching between separate overlays.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 009</div>
+                <h2>Playground Mission Control</h2>
+              </div>
+              <a href="designs/design-009/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-009/index.html" title="Design 009 - Playground Mission Control" loading="lazy"></iframe>
+            </div>
+            <p>A persistent operations console that keeps launch choices, the live WordPress site, and Site Manager tools visible together. Start, save, import, export, and saved-management workflows open as contextual drawers instead of separate full-screen panels.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 010</div>
+                <h2>Playground Workbench</h2>
+              </div>
+              <a href="designs/design-010/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-010/index.html" title="Design 010 - Playground Workbench" loading="lazy"></iframe>
+            </div>
+            <p>A three-pane workbench that treats creation, saved Playgrounds, the live WordPress frame, and Site Manager operations as one continuous workspace instead of separate modal-first surfaces.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 011</div>
+                <h2>Site Manager Takeover</h2>
+              </div>
+              <a href="designs/design-011/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-011/index.html" title="Design 011 - Site Manager Takeover" loading="lazy"></iframe>
+            </div>
+            <p>A manager-first Playground interface where Settings, Files, Blueprint, Database, and Logs own the main workspace, while creation, saving, saved management, gallery, import, and export flows are inline supporting panels and the WordPress site is reduced to a narrow reference preview.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 012</div>
+                <h2>Guided Workshop Checklist</h2>
+              </div>
+              <a href="designs/design-012/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-012/index.html" title="Design 012 - Guided Workshop Checklist" loading="lazy"></iframe>
+            </div>
+            <p>A table-led onboarding workspace for educators that keeps saved Playground management as the first screen while a progress checklist walks users through creation, saving, runtime settings, Site Manager tools, blueprint browsing, and portability.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 013</div>
+                <h2>Playground Admin Ledger</h2>
+              </div>
+              <a href="designs/design-013/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-013/index.html" title="Design 013 - Playground Admin Ledger" loading="lazy"></iframe>
+            </div>
+            <p>A compact WordPress-admin-style dashboard for repeated Playground use, organized as operational cards and tables with a right-side detail drawer for the selected Playground and Site Manager tool.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 014</div>
+                <h2>Blueprint Marketplace IDE</h2>
+              </div>
+              <a href="designs/design-014/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-014/index.html" title="Design 014 - Blueprint Marketplace IDE" loading="lazy"></iframe>
+            </div>
+            <p>A marketplace-first Playground redesign where image-rich Blueprint cards are the primary starting surface, with PR review starts, saved-site management, and Site Manager tools organized as adjacent IDE-style actions.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 015</div>
+                <h2>Playground Diagnostics Console</h2>
+              </div>
+              <a href="designs/design-015/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-015/index.html" title="Design 015 - Playground Diagnostics Console" loading="lazy"></iframe>
+            </div>
+            <p>A tabbed support-engineer workspace that leads with runtime status, logs, database details, and environment health while keeping creation, save, management, editor, blueprint, gallery, import, and export flows one tab away.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 016</div>
+                <h2>Playground Launch Index</h2>
+              </div>
+              <a href="designs/design-016/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-016/index.html" title="Design 016 - Playground Launch Index" loading="lazy"></iframe>
+            </div>
+            <p>A local-development launcher organized around a command/search overlay and dense results pane, so power users can start PR previews, import GitHub projects, run blueprints, manage saved Playgrounds, edit files, inspect runtime state, and export work from one searchable index.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 017</div>
+                <h2>Playground Project Document</h2>
+              </div>
+              <a href="designs/design-017/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-017/index.html" title="Design 017 - Playground Project Document" loading="lazy"></iframe>
+            </div>
+            <p>A document-style workspace that presents each Playground as a saved project with a project header, inline sections, document-outline navigation, and contextual actions for theme authors instead of modal stacks or a three-pane operations console.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 018</div>
+                <h2>Tabbed Project Workspace</h2>
+              </div>
+              <a href="designs/design-018/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-018/index.html" title="Design 018 - Tabbed Project Workspace" loading="lazy"></iframe>
+            </div>
+            <p>A compact enterprise workspace for agency developers that treats each Playground as a project tab and each project surface as a second-level tab, with launch, save, gallery, library, import, and export flows handled in a contextual drawer.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 019</div>
+                <h2>Playground Command File</h2>
+              </div>
+              <a href="designs/design-019/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-019/index.html" title="Design 019 - Playground Command File" loading="lazy"></iframe>
+            </div>
+            <p>A minimalist expert interface for Blueprint authors that treats the Playground as a single command file: a compact toolbar exposes structured menus, while authoring, runtime preview, Site Manager tools, saved management, gallery browsing, and portability flows unfold in one vertical stack.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 020</div>
+                <h2>Playground Action Cards</h2>
+              </div>
+              <a href="designs/design-020/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-020/index.html" title="Design 020 - Playground Action Cards" loading="lazy"></iframe>
+            </div>
+            <p>A beginner-oriented action board for plugin developers that groups Playground creation, saving, management, inspection, and export tasks into clear cards beside a split live preview and contextual editor.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 021</div>
+                <h2>Guided Launch Brief</h2>
+              </div>
+              <a href="designs/design-021/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-021/index.html" title="Design 021 - Guided Launch Brief" loading="lazy"></iframe>
+            </div>
+            <p>A wizard-first Playground redesign for agency developers, where creating a client test site is framed as a five-step launch brief and saved Playgrounds, Site Manager tools, gallery browsing, saving, import, and export remain available as secondary task modes.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 022</div>
+                <h2>Playground Library</h2>
+              </div>
+              <a href="designs/design-022/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-022/index.html" title="Design 022 - Playground Library" loading="lazy"></iframe>
+            </div>
+            <p>A saved-sites-first dashboard where temporary and browser-backed Playgrounds are the primary objects, creation and portability are actions on the library, and the active WordPress site only expands after a Playground is selected.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 023</div>
+                <h2>Blueprint Launchpad</h2>
+              </div>
+              <a href="designs/design-023/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-023/index.html" title="Design 023 - Blueprint Launchpad" loading="lazy"></iframe>
+            </div>
+            <p>A Blueprint-first Playground redesign where search, category filters, featured Blueprint cards, Blueprint URL entry, and current blueprint.json actions form the home surface, while saved management and Site Manager tools sit in compact workspace bands.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 024</div>
+                <h2>Developer File and Data IDE</h2>
+              </div>
+              <a href="designs/design-024/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-024/index.html" title="Design 024 - Developer File and Data IDE" loading="lazy"></iframe>
+            </div>
+            <p>A WordPress admin-inspired IDE workspace for documentation writers preparing demos, with files, blueprint JSON, database tools, logs, environment controls, and live preview treated as the primary surface while creation, saving, and library management sit in discoverable drawers.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 025</div>
+                <h2>Playground Teaching Browser</h2>
+              </div>
+              <a href="designs/design-025/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-025/index.html" title="Design 025 - Playground Teaching Browser" loading="lazy"></iframe>
+            </div>
+            <p>A browser-chrome redesign for educators running workshops: Playgrounds are tabs, the WordPress path is an address bar, save state is visible in the chrome, and creation, saved management, Site Manager tools, gallery browsing, import, and export live in contextual side drawers.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 026</div>
+                <h2>Playground Command Inspector</h2>
+              </div>
+              <a href="designs/design-026/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-026/index.html" title="Design 026 - Playground Command Inspector" loading="lazy"></iframe>
+            </div>
+            <p>A single-column command-palette redesign for first-time WordPress learners where every current Playground action is searchable, grouped, and expanded into an inline inspector instead of being scattered across separate overlays.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 027</div>
+                <h2>Playground Review Board</h2>
+              </div>
+              <a href="designs/design-027/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-027/index.html" title="Design 027 - Playground Review Board" loading="lazy"></iframe>
+            </div>
+            <p>A task-board workflow for core contributors where Create, Save, Manage, Inspect, Export, and Debug lanes organize every Playground capability while a live WordPress preview and selected-card editor stay visible beside the board.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 028</div>
+                <h2>Pocket Repro Shell</h2>
+              </div>
+              <a href="designs/design-028/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-028/index.html" title="Design 028 - Pocket Repro Shell" loading="lazy"></iframe>
+            </div>
+            <p>A mobile-first Playground redesign for support engineers that turns the app into a compact reproduction kit: the active site, save status, next launch actions, saved Playgrounds, Site Manager tools, gallery, imports, and exports are all reachable from a persistent bottom dock without modal overlays.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 029</div>
+                <h2>Playground Configuration Studio</h2>
+              </div>
+              <a href="designs/design-029/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-029/index.html" title="Design 029 - Playground Configuration Studio" loading="lazy"></iframe>
+            </div>
+            <p>A settings-first, table-led Playground workspace for power users who need to verify WordPress, PHP, language, network, multisite, and reset impact before launching, saving, managing, or exporting browser-backed sites.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 030</div>
+                <h2>Playground Portability Hub</h2>
+              </div>
+              <a href="designs/design-030/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-030/index.html" title="Design 030 - Playground Portability Hub" loading="lazy"></iframe>
+            </div>
+            <p>A card-grid workspace for theme authors that puts import, save, export, ZIP, GitHub, local directory, and Blueprint bundle movement in the first viewport, with a detail drawer for the selected transfer task and supporting Site Manager sections below.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 031</div>
+                <h2>Agency Site Manager Takeover</h2>
+              </div>
+              <a href="designs/design-031/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-031/index.html" title="Design 031 - Agency Site Manager Takeover" loading="lazy"></iframe>
+            </div>
+            <p>A dense, manager-first Playground redesign for agency developers where the Site Manager is the primary product surface, saved sites and start sources live in a left client queue, and the WordPress site is reduced to a narrow verification preview.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 032</div>
+                <h2>Guided Author Workspace</h2>
+              </div>
+              <a href="designs/design-032/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-032/index.html" title="Design 032 - Guided Author Workspace" loading="lazy"></iframe>
+            </div>
+            <p>A checklist-led, tabbed Playground workspace for Blueprint authors that teaches the existing capabilities in sequence while keeping the active WordPress browser, save state, authoring tools, Site Manager, library, and gallery reachable from one dark diagnostics surface.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 033</div>
+                <h2>Playground Admin Command Table</h2>
+              </div>
+              <a href="designs/design-033/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-033/index.html" title="Design 033 - Playground Admin Command Table" loading="lazy"></iframe>
+            </div>
+            <p>A dense WordPress-admin-like dashboard for plugin developers where a persistent command/search overlay drives a compact results pane, while saved sites, starts, Site Manager tools, blueprints, and transfer actions remain organized as admin tables.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 034</div>
+                <h2>Blueprint Marketplace Workspace</h2>
+              </div>
+              <a href="designs/design-034/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-034/index.html" title="Design 034 - Blueprint Marketplace Workspace" loading="lazy"></iframe>
+            </div>
+            <p>A visual-first Playground IA for documentation writers where the blueprint gallery is the default workspace and PR, GitHub, ZIP, save, saved management, and Site Manager flows remain adjacent actions.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 035</div>
+                <h2>Playground Run Monitor</h2>
+              </div>
+              <a href="designs/design-035/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-035/index.html" title="Design 035 - Playground Run Monitor" loading="lazy"></iframe>
+            </div>
+            <p>A diagnostics-first Playground redesign for educators running workshops: the first viewport is a run monitor with environment health, live logs, database state, and a compact live WordPress preview, while creation, saving, saved management, imports, exports, and gallery browsing live in a top-navigation contextual drawer.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 036</div>
+                <h2>Playground Local Dev Launcher</h2>
+              </div>
+              <a href="designs/design-036/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-036/index.html" title="Design 036 - Playground Local Dev Launcher" loading="lazy"></iframe>
+            </div>
+            <p>A single-column progressive disclosure interface that frames WordPress Playground around beginner-friendly local development jobs: start a test site, preview PRs, import code, edit files, run blueprints, inspect runtime state, and export results.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 037</div>
+                <h2>Playground Review Document</h2>
+              </div>
+              <a href="designs/design-037/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-037/index.html" title="Design 037 - Playground Review Document" loading="lazy"></iframe>
+            </div>
+            <p>A document-style Playground workspace for core contributors reviewing PRs: the active Playground is treated as a project document with inline start sources, save state, saved references, runtime settings, files, blueprint, database, logs, and export actions beside a split live preview and contextual editor.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 038</div>
+                <h2>Repro Tab Workspace</h2>
+              </div>
+              <a href="designs/design-038/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-038/index.html" title="Design 038 - Repro Tab Workspace" loading="lazy"></iframe>
+            </div>
+            <p>A friendly support-engineer workspace that treats each Playground as a top-level repro tab, then keeps Site, Files, Blueprint, Database, Logs, and Runtime as within-project tabs with all creation, saving, gallery, import, and export flows handled by inline panels.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 039</div>
+                <h2>Playground Register</h2>
+              </div>
+              <a href="designs/design-039/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-039/index.html" title="Design 039 - Playground Register" loading="lazy"></iframe>
+            </div>
+            <p>A minimal expert toolbar and table-led register for power users managing many saved Playgrounds, where creation, import, export, saving, and Site Manager actions are exposed through compact command menus and row inspectors instead of large onboarding panels.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 040</div>
+                <h2>Playground Action Cards</h2>
+              </div>
+              <a href="designs/design-040/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-040/index.html" title="Design 040 - Playground Action Cards" loading="lazy"></iframe>
+            </div>
+            <p>A beginner-oriented card-grid workspace for theme authors where plain-language action groups sit beside a detail drawer that explains consequences, required inputs, and safe destructive-action handling before each Playground task.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 041</div>
+                <h2>Repro Launch Runbook</h2>
+              </div>
+              <a href="designs/design-041/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-041/index.html" title="Design 041 - Repro Launch Runbook" loading="lazy"></iframe>
+            </div>
+            <p>A guided launch wizard for support engineers that treats every new Playground as a reproducible case: the first viewport is a step-by-step source, runtime, persistence, and handoff flow, while saved Playgrounds and Site Manager tools remain available as side tasks from the left navigation.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 042</div>
+                <h2>Playground Library Desk</h2>
+              </div>
+              <a href="designs/design-042/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-042/index.html" title="Design 042 - Playground Library Desk" loading="lazy"></iframe>
+            </div>
+            <p>A saved-sites-first enterprise dashboard where the first viewport is a dense browser-backed Playground library, creation and transfer workflows are actions on that library, and the active WordPress site remains secondary inside a contextual drawer or selected-site manager.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 043</div>
+                <h2>Blueprint Studio</h2>
+              </div>
+              <a href="designs/design-043/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-043/index.html" title="Design 043 - Blueprint Studio" loading="lazy"></iframe>
+            </div>
+            <p>A Blueprint-first Playground workspace for theme authors that starts with gallery filtering, Blueprint URL execution, and current blueprint editing before progressively revealing saved sites, settings, files, database, logs, and exports.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 044</div>
+                <h2>Playground IDE Workbench</h2>
+              </div>
+              <a href="designs/design-044/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-044/index.html" title="Design 044 - Playground IDE Workbench" loading="lazy"></iframe>
+            </div>
+            <p>A developer file-and-data IDE for agency developers testing client sites, with file tree, blueprint JSON, database tools, logs, runtime settings, and live WordPress preview visible as the primary workspace while creation, saving, saved management, import, and export remain discoverable through drawers and commands.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 045</div>
+                <h2>Playground Author Browser</h2>
+              </div>
+              <a href="designs/design-045/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-045/index.html" title="Design 045 - Playground Author Browser" loading="lazy"></iframe>
+            </div>
+            <p>A browser-chrome redesign for Blueprint authors where Playgrounds behave like browser tabs, creation and saved management live in a bookmark shelf, and Site Manager opens as inline authoring drawers beside the active WordPress page.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 046</div>
+                <h2>Playground Command Inspector</h2>
+              </div>
+              <a href="designs/design-046/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-046/index.html" title="Design 046 - Playground Command Inspector" loading="lazy"></iframe>
+            </div>
+            <p>A table-led management screen for plugin developers where a persistent command launcher is the primary discovery surface and every current Playground action resolves into a compact inspector with the right form, warning, or Site Manager tab.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 047</div>
+                <h2>Playground Demo Board</h2>
+              </div>
+              <a href="designs/design-047/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-047/index.html" title="Design 047 - Playground Demo Board" loading="lazy"></iframe>
+            </div>
+            <p>A compact enterprise task-board redesign for documentation writers, where Create, Save, Manage, Inspect, Export, and Debug lanes form a demo runbook and each workflow opens in a detail drawer while the live WordPress preview remains a board card.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 048</div>
+                <h2>Playground Pocket Workshop</h2>
+              </div>
+              <a href="designs/design-048/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-048/index.html" title="Design 048 - Playground Pocket Workshop" loading="lazy"></iframe>
+            </div>
+            <p>A mobile-first compact shell for educators running workshops: the first viewport is a thumb-reachable runboard with save state, path navigation, start actions, and a bottom navigation model that scales up beside a desktop preview.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 049</div>
+                <h2>Runtime Configuration Studio</h2>
+              </div>
+              <a href="designs/design-049/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-049/index.html" title="Design 049 - Runtime Configuration Studio" loading="lazy"></iframe>
+            </div>
+            <p>A settings-first, learner-oriented WordPress Playground workspace that makes WordPress, PHP, language, network, multisite, reset, and reload decisions the first visible task before routing users into launch, saved management, Site Manager tools, blueprint gallery, and portability flows.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 050</div>
+                <h2>Playground Transfer Command</h2>
+              </div>
+              <a href="designs/design-050/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-050/index.html" title="Design 050 - Playground Transfer Command" loading="lazy"></iframe>
+            </div>
+            <p>A portability-centered command/search workspace for core contributors reviewing PRs, where GitHub, ZIP, local directory, browser save, Blueprint bundle, and database artifacts are treated as first-class routes with a dense results pane.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 051</div>
+                <h2>Split Site Manager Takeover</h2>
+              </div>
+              <a href="designs/design-051/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-051/index.html" title="Design 051 - Split Site Manager Takeover" loading="lazy"></iframe>
+            </div>
+            <p>A support-engineer-focused Playground workspace that makes Site Manager the primary surface, keeps creation and saved management in a left navigation model, and compresses the active WordPress site into a narrow verification preview.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 052</div>
+                <h2>Playground Checklist Workspace</h2>
+              </div>
+              <a href="designs/design-052/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-052/index.html" title="Design 052 - Playground Checklist Workspace" loading="lazy"></iframe>
+            </div>
+            <p>A compact enterprise SaaS workspace that turns Playground discovery into an ordered runbook: start a site, save it, manage saved sessions, inspect Site Manager tools, and package work through a contextual drawer beside the active WordPress preview.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 053</div>
+                <h2>Playground Admin Workbench</h2>
+              </div>
+              <a href="designs/design-053/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-053/index.html" title="Design 053 - Playground Admin Workbench" loading="lazy"></iframe>
+            </div>
+            <p>A dense WordPress-admin-like dashboard for theme authors who repeatedly create, save, inspect, and export Playgrounds. The first viewport is a compact register table with progressive disclosure sections for creation, storage, Site Manager, and Blueprint gallery work.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 054</div>
+                <h2>Blueprint Exchange</h2>
+              </div>
+              <a href="designs/design-054/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-054/index.html" title="Design 054 - Blueprint Exchange" loading="lazy"></iframe>
+            </div>
+            <p>A visual blueprint marketplace for agency developers where the first viewport is the primary start surface: image-rich blueprint cards, category navigation, search, and adjacent PR/GitHub/ZIP/URL starts sit beside a persistent split WordPress preview and editor.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 055</div>
+                <h2>Playground Run Ledger</h2>
+              </div>
+              <a href="designs/design-055/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-055/index.html" title="Design 055 - Playground Run Ledger" loading="lazy"></iframe>
+            </div>
+            <p>A diagnostics-first WordPress Playground workspace for Blueprint authors that leads with runtime health, logs, database facts, and embedded site status while keeping creation, save, saved management, Site Manager, import, export, and Blueprint gallery flows available as modal-free inline panels.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 056</div>
+                <h2>Playground Dev Run Ledger</h2>
+              </div>
+              <a href="designs/design-056/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-056/index.html" title="Design 056 - Playground Dev Run Ledger" loading="lazy"></iframe>
+            </div>
+            <p>A table-led local development launcher for plugin developers that treats every saved site, temporary site, PR preview, GitHub import, Blueprint run, and zip transfer as a row in a dense development ledger with a contextual inspector and separate workbench surfaces.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 057</div>
+                <h2>Playground Demo Dossier</h2>
+              </div>
+              <a href="designs/design-057/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-057/index.html" title="Design 057 - Playground Demo Dossier" loading="lazy"></iframe>
+            </div>
+            <p>A document-style workspace for documentation writers where a Playground is managed as a compact project dossier: cover metadata, inline source/settings/library/artifact sections, and a contextual detail drawer replace app rails and modal stacks.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 058</div>
+                <h2>Playground Project Tabs</h2>
+              </div>
+              <a href="designs/design-058/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-058/index.html" title="Design 058 - Playground Project Tabs" loading="lazy"></iframe>
+            </div>
+            <p>A tabbed project workspace for educators running workshops: multiple Playgrounds stay open as project tabs, while each project exposes Site, Files, Blueprints, Database, Logs, and Settings as IDE-like inner tabs.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 059</div>
+                <h2>Playground Keybar</h2>
+              </div>
+              <a href="designs/design-059/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-059/index.html" title="Design 059 - Playground Keybar" loading="lazy"></iframe>
+            </div>
+            <p>A tabbed, keyboard-like Playground workspace for first-time learners who want expert affordances: the live WordPress browser is the first viewport, global creation/saving/import/export actions live in compact structured menus, and Site Manager tools are split into fast tabs rather than modal panels.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 060</div>
+                <h2>Playground Action Finder</h2>
+              </div>
+              <a href="designs/design-060/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-060/index.html" title="Design 060 - Playground Action Finder" loading="lazy"></iframe>
+            </div>
+            <p>A command/search overlay with grouped beginner action cards and a results pane, designed for core contributors who need clear PR review starts, safe save/reset messaging, and quick discovery of the full Playground toolset.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 061</div>
+                <h2>Workshop Launch Wizard</h2>
+              </div>
+              <a href="designs/design-061/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-061/index.html" title="Design 061 - Workshop Launch Wizard" loading="lazy"></iframe>
+            </div>
+            <p>A guided, educator-focused launch wizard that makes Playground creation the primary workflow, with a dark diagnostics shell, light decision cards, and a split live preview/editor area for verifying and managing the resulting site.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 062</div>
+                <h2>Playground Learning Library</h2>
+              </div>
+              <a href="designs/design-062/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-062/index.html" title="Design 062 - Playground Learning Library" loading="lazy"></iframe>
+            </div>
+            <p>A saved-sites-first Playground redesign for first-time WordPress learners where saved and unsaved Playgrounds are the primary library objects, creation and portability are inline actions on that library, and the active WordPress site becomes a secondary preview once a Playground is selected.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 063</div>
+                <h2>Blueprint Review Desk</h2>
+              </div>
+              <a href="designs/design-063/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-063/index.html" title="Design 063 - Blueprint Review Desk" loading="lazy"></iframe>
+            </div>
+            <p>A Blueprint-first, table-led WordPress Playground workspace for core contributors who need to inspect catalog entries, run Blueprint URLs, preview PR sources, and manage saved review Playgrounds without losing operational controls.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 064</div>
+                <h2>Playground Casebench IDE</h2>
+              </div>
+              <a href="designs/design-064/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-064/index.html" title="Design 064 - Playground Casebench IDE" loading="lazy"></iframe>
+            </div>
+            <p>A support-engineer file-and-data IDE that treats each Playground as a bug reproduction case: the first viewport is a light gray card grid of files, Blueprint JSON, database, logs, runtime, preview, source, save, and saved-management tasks, with a detail drawer for concrete actions and consequences.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 065</div>
+                <h2>Playground Browser Stack</h2>
+              </div>
+              <a href="designs/design-065/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-065/index.html" title="Design 065 - Playground Browser Stack" loading="lazy"></iframe>
+            </div>
+            <p>A browser-chrome redesign for power users managing many Playgrounds, with tabbed site identity, an address bar, colored save-state chips, side drawers for launch and management flows, and bottom navigation on small screens.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 066</div>
+                <h2>Command Palette Inspector</h2>
+              </div>
+              <a href="designs/design-066/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-066/index.html" title="Design 066 - Command Palette Inspector" loading="lazy"></iframe>
+            </div>
+            <p>A tabbed WordPress Playground workspace where the command palette is the first screen and primary discovery model. Actions resolve into a light inspector that shows the exact inputs, constraints, destructive consequences, progress, and resulting saved or portable state.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 067</div>
+                <h2>Playground Agency Task Board</h2>
+              </div>
+              <a href="designs/design-067/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-067/index.html" title="Design 067 - Playground Agency Task Board" loading="lazy"></iframe>
+            </div>
+            <p>A kanban-style agency workflow where Create, Save, Manage, Inspect, Export, and Debug lanes expose every current Playground capability, while a command/search overlay and result pane show exact inputs, progress, saved state, and consequences for the selected task.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 068</div>
+                <h2>Pocket Author Shell</h2>
+              </div>
+              <a href="designs/design-068/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-068/index.html" title="Design 068 - Pocket Author Shell" loading="lazy"></iframe>
+            </div>
+            <p>A mobile-first compact Playground shell for Blueprint authors, using bottom navigation on narrow screens and a left rail on desktop while keeping launch, save, run, and manager consequences in stacked task panels.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 069</div>
+                <h2>Runtime Contract Studio</h2>
+              </div>
+              <a href="designs/design-069/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-069/index.html" title="Design 069 - Runtime Contract Studio" loading="lazy"></iframe>
+            </div>
+            <p>A settings-first WordPress Playground configuration studio for plugin developers. The first viewport treats WordPress, PHP, language, network, multisite, and reset or reload impact as the primary working surface, while launch, saving, saved management, Site Manager tools, Blueprint gallery, and portability flows open through a top-navigation contextual drawer.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 070</div>
+                <h2>Playground Portability Hub</h2>
+              </div>
+              <a href="designs/design-070/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-070/index.html" title="Design 070 - Playground Portability Hub" loading="lazy"></iframe>
+            </div>
+            <p>A single-column progressive disclosure redesign that treats every Playground action as a portability step: start or import, save to browser or local directory, export to GitHub or zip, and package Blueprints for reuse.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 071</div>
+                <h2>Workshop Site Manager Takeover</h2>
+              </div>
+              <a href="designs/design-071/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-071/index.html" title="Design 071 - Workshop Site Manager Takeover" loading="lazy"></iframe>
+            </div>
+            <p>A Site Manager-first Playground redesign for educators running workshops: creation, save state, saved-site management, runtime settings, files, blueprint, database, logs, gallery, and portability all live inside a dark diagnostic manager while the WordPress site is kept as a narrow embedded preview.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 072</div>
+                <h2>Playground Lesson Path Workspace</h2>
+              </div>
+              <a href="designs/design-072/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-072/index.html" title="Design 072 - Playground Lesson Path Workspace" loading="lazy"></iframe>
+            </div>
+            <p>A modal-free onboarding checklist workspace that lets first-time WordPress learners discover Playground capabilities in sequence while keeping the live WordPress site visible.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 073</div>
+                <h2>Playground Admin Register</h2>
+              </div>
+              <a href="designs/design-073/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-073/index.html" title="Design 073 - Playground Admin Register" loading="lazy"></iframe>
+            </div>
+            <p>A dense WordPress-admin-like dashboard for repeat core contributor use, where the first viewport is a saved Playground register with filters, row actions, and an inline workflow inspector that exposes save destinations, destructive actions, route-specific launch inputs, and resulting states.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 074</div>
+                <h2>Blueprint Market Workbench</h2>
+              </div>
+              <a href="designs/design-074/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-074/index.html" title="Design 074 - Blueprint Market Workbench" loading="lazy"></iframe>
+            </div>
+            <p>A visual blueprint marketplace is the first usable screen, with support-engineer launch routes, save destinations, saved management, and Site Manager controls arranged as adjacent workbench actions.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 075</div>
+                <h2>Playground Operations Ledger</h2>
+              </div>
+              <a href="designs/design-075/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-075/index.html" title="Design 075 - Playground Operations Ledger" loading="lazy"></iframe>
+            </div>
+            <p>A diagnostics-first Playground redesign for power users managing many saved sites. The first viewport is an operations ledger that leads with health, logs, database details, storage status, and current-site consequences before exposing creation, saving, Site Manager, import/export, and Blueprint catalog tasks.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 076</div>
+                <h2>Playground Devbench</h2>
+              </div>
+              <a href="designs/design-076/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-076/index.html" title="Design 076 - Playground Devbench" loading="lazy"></iframe>
+            </div>
+            <p>A local-development launcher for theme authors that turns Playground into a tabbed run bench: route-specific PR, GitHub, Blueprint, and zip starts are first-class, while save state, manager tools, catalog inspection, and export results remain visible as workflow outputs.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 077</div>
+                <h2>Project Document Workspace</h2>
+              </div>
+              <a href="designs/design-077/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-077/index.html" title="Design 077 - Project Document Workspace" loading="lazy"></iframe>
+            </div>
+            <p>A document-style WordPress Playground workspace where launch sources, save state, Site Manager tools, catalog browsing, and import/export actions are organized as inline project sections with a command/search overlay and live results pane.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 078</div>
+                <h2>Tabbed Blueprint Project Workspace</h2>
+              </div>
+              <a href="designs/design-078/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-078/index.html" title="Design 078 - Tabbed Blueprint Project Workspace" loading="lazy"></iframe>
+            </div>
+            <p>A WordPress-admin-inspired Playground workspace where each Playground is an open project tab, and the selected project exposes Site, Files, Blueprint, Database, Logs, and Settings as within-project tabs. The first viewport centers Blueprint authoring while keeping launch routes, saved identity, destructive impacts, and portability outcomes visible.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 079</div>
+                <h2>Playground Command Bar</h2>
+              </div>
+              <a href="designs/design-079/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-079/index.html" title="Design 079 - Playground Command Bar" loading="lazy"></iframe>
+            </div>
+            <p>A minimalist expert workspace organized around a persistent command toolbar and a contextual drawer, keeping the live WordPress site visible while launch, save, management, Site Manager, and export/import operations are composed from compact menus.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 080</div>
+                <h2>Guided Playground Action Stack</h2>
+              </div>
+              <a href="designs/design-080/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-080/index.html" title="Design 080 - Guided Playground Action Stack" loading="lazy"></iframe>
+            </div>
+            <p>A beginner-card, single-column progressive disclosure redesign for documentation writers preparing demos. The active unsaved Playground appears first, followed by grouped action cards that reveal exact launch, save, management, Site Manager, Blueprint gallery, and portability consequences inline.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 081</div>
+                <h2>Launch Packet Wizard</h2>
+              </div>
+              <a href="designs/design-081/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-081/index.html" title="Design 081 - Launch Packet Wizard" loading="lazy"></iframe>
+            </div>
+            <p>A guided launch wizard for Blueprint authors that treats a Playground as a compact launch packet: source route, runtime, storage destination, and handoff result are assembled in a card grid with a contextual detail drawer, while saved Playgrounds and Site Manager remain available as side tasks.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 082</div>
+                <h2>Saved Sites Library</h2>
+              </div>
+              <a href="designs/design-082/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-082/index.html" title="Design 082 - Saved Sites Library" loading="lazy"></iframe>
+            </div>
+            <p>A library-first Playground interface for plugin developers where saved, local, and temporary Playgrounds are the primary workspace, while creation routes, save destinations, and Site Manager tools appear as actions on the selected site.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 083</div>
+                <h2>Blueprint Desk</h2>
+              </div>
+              <a href="designs/design-083/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-083/index.html" title="Design 083 - Blueprint Desk" loading="lazy"></iframe>
+            </div>
+            <p>A Blueprint-first, tabbed documentation workspace where the catalog, URL runner, current blueprint editor, route-specific launch forms, saved-state proof, and Site Manager tools are organized around preparing reproducible demos.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 084</div>
+                <h2>Workshop IDE Command Overlay</h2>
+              </div>
+              <a href="designs/design-084/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-084/index.html" title="Design 084 - Workshop IDE Command Overlay" loading="lazy"></iframe>
+            </div>
+            <p>A developer file-and-data IDE for educators running workshops, where the first viewport is a dense Site Manager workbench and creation, saving, saved management, imports, exports, and Blueprint browsing are discovered through a command/search overlay with a live results inspector.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 085</div>
+                <h2>Playground Browser Desk</h2>
+              </div>
+              <a href="designs/design-085/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-085/index.html" title="Design 085 - Playground Browser Desk" loading="lazy"></iframe>
+            </div>
+            <p>A browser-chrome redesign of WordPress Playground where Playgrounds are tabs, the WordPress path is a real address bar, and creation, saving, saved management, Site Manager drawers, Blueprints, and transfers are organized around browser-like controls for first-time learners.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 086</div>
+                <h2>Command Inspector Review Console</h2>
+              </div>
+              <a href="designs/design-086/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-086/index.html" title="Design 086 - Command Inspector Review Console" loading="lazy"></iframe>
+            </div>
+            <p>A command-palette-first Playground redesign for core contributors reviewing PRs: the omnibar and grouped command results are the primary discovery surface, while every current action opens a compact contextual inspector drawer beside the live WordPress preview.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 087</div>
+                <h2>Playground Repro Board</h2>
+              </div>
+              <a href="designs/design-087/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-087/index.html" title="Design 087 - Playground Repro Board" loading="lazy"></iframe>
+            </div>
+            <p>A single-column task-board workflow for support engineers reproducing bugs, where Create, Save, Manage, Inspect, Export, and Debug lanes behave like dense IDE tickets and the live WordPress site is a preview card inside the board.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 088</div>
+                <h2>Pocket Fleet Shell</h2>
+              </div>
+              <a href="designs/design-088/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-088/index.html" title="Design 088 - Pocket Fleet Shell" loading="lazy"></iframe>
+            </div>
+            <p>A mobile-first compact WordPress Playground shell for power users managing many saved sites, with bottom navigation, stacked touch panels, and a desktop split preview/editor workspace.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 089</div>
+                <h2>Playground Configuration Ledger</h2>
+              </div>
+              <a href="designs/design-089/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-089/index.html" title="Design 089 - Playground Configuration Ledger" loading="lazy"></iframe>
+            </div>
+            <p>A settings-first configuration studio for theme authors that treats WordPress, PHP, language, network, multisite, reset, reload, launch, save, and manager work as one modal-free ledger with visible consequences.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 090</div>
+                <h2>Playground Portability Ledger</h2>
+              </div>
+              <a href="designs/design-090/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-090/index.html" title="Design 090 - Playground Portability Ledger" loading="lazy"></iframe>
+            </div>
+            <p>A table-led import and export hub that treats every Playground as a portable work item, with browser saves, local directory saves, GitHub export, zip import, and Blueprint bundles visible from the first screen.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 091</div>
+                <h2>Blueprint Author Site Manager</h2>
+              </div>
+              <a href="designs/design-091/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-091/index.html" title="Design 091 - Blueprint Author Site Manager" loading="lazy"></iframe>
+            </div>
+            <p>A Site Manager takeover that makes the manager the main product surface, using compact card grids plus a detail drawer for launch, persistence, authoring, inspection, export, and saved-site consequences while the WordPress site remains a narrow preview.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 092</div>
+                <h2>Playground Runbook Workspace</h2>
+              </div>
+              <a href="designs/design-092/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-092/index.html" title="Design 092 - Playground Runbook Workspace" loading="lazy"></iframe>
+            </div>
+            <p>An IDE-like onboarding checklist that walks plugin developers through current WordPress Playground capabilities in sequence while keeping route contracts, save consequences, and the active site visible.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 093</div>
+                <h2>Playground Admin Ledger</h2>
+              </div>
+              <a href="designs/design-093/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-093/index.html" title="Design 093 - Playground Admin Ledger" loading="lazy"></iframe>
+            </div>
+            <p>A dense WordPress-admin-like dashboard for documentation writers preparing repeatable demos, with a tabbed workspace, saved-site ledger tables, compact source forms, and high-contrast black, white, and cyan technical styling.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 094</div>
+                <h2>Workshop Blueprint Market</h2>
+              </div>
+              <a href="designs/design-094/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-094/index.html" title="Design 094 - Workshop Blueprint Market" loading="lazy"></iframe>
+            </div>
+            <p>A visual Blueprint marketplace for educators where the first screen is a dense image-rich catalog with a command/search overlay, while PR starts, GitHub import, ZIP import, save destinations, saved management, and Site Manager tools remain adjacent and consequence-aware.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 095</div>
+                <h2>Playground Run Monitor</h2>
+              </div>
+              <a href="designs/design-095/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-095/index.html" title="Design 095 - Playground Run Monitor" loading="lazy"></iframe>
+            </div>
+            <p>A diagnostics-and-logs console for first-time WordPress learners: the first viewport explains the active run through health, logs, database state, save progress, and risk notices before revealing creation, saved management, Site Manager, Blueprint gallery, import, and export workflows.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 096</div>
+                <h2>Review Launcher</h2>
+              </div>
+              <a href="designs/design-096/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-096/index.html" title="Design 096 - Review Launcher" loading="lazy"></iframe>
+            </div>
+            <p>A compact local-development launcher for core contributors that separates PR, branch, GitHub, Blueprint, zip, and vanilla starts into distinct review routes while a contextual drawer exposes the exact inputs, save destinations, consequences, and results for the selected workflow.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 097</div>
+                <h2>Reproduction Dossier Workspace</h2>
+              </div>
+              <a href="designs/design-097/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-097/index.html" title="Design 097 - Reproduction Dossier Workspace" loading="lazy"></iframe>
+            </div>
+            <p>A document-style WordPress Playground workspace for support engineers where each Playground is a case file: source, persistence, saved identity, Site Manager tools, Blueprint catalog, and handoff actions appear as inline document clauses with contextual controls instead of app rails or modal stacks.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 098</div>
+                <h2>Playground Tab Matrix</h2>
+              </div>
+              <a href="designs/design-098/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-098/index.html" title="Design 098 - Playground Tab Matrix" loading="lazy"></iframe>
+            </div>
+            <p>A high-density tabbed project workspace for power users managing several Playgrounds at once, with project tabs across the shell, within-project tabs for Site Manager tools, and a split editor plus WordPress preview.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 099</div>
+                <h2>Playground Editor Bar</h2>
+              </div>
+              <a href="designs/design-099/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-099/index.html" title="Design 099 - Playground Editor Bar" loading="lazy"></iframe>
+            </div>
+            <p>A modal-free expert toolbar for theme authors that treats Playground work as compact command strips beside the live site: launch routes, save destinations, saved management, Site Manager tools, Blueprint catalog, and transfer commands stay inline with keyboard-like affordances and visible state changes.</p>
+          </article>
+          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">Design 100</div>
+                <h2>Client Site Workbench</h2>
+              </div>
+              <a href="designs/design-100/index.html">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="designs/design-100/index.html" title="Design 100 - Client Site Workbench" loading="lazy"></iframe>
+            </div>
+            <p>A table-led Playground manager for agency developers, with beginner-readable action cards, explicit save destinations, and consequence messaging shown before destructive changes.</p>
+          </article>
         </div>
       </div>
     </main>

@@ -64,13 +64,23 @@ function renderCards(designs) {
   return `<div class="grid">
 ${designs
   .map(
-    (design) => `          <a class="card" href="designs/${esc(design.path)}">
-            <div>
-              <h2>${esc(design.title)}</h2>
-              <p>${esc(design.concept)}</p>
+    (design) => {
+      const href = `designs/${esc(design.path)}`;
+      const label = `Design ${String(design.number).padStart(3, '0')}`;
+      return `          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">${label}</div>
+                <h2>${esc(design.title)}</h2>
+              </div>
+              <a href="${href}">Open</a>
             </div>
-            <div class="number">Design ${String(design.number).padStart(3, '0')}</div>
-          </a>`
+            <div class="frame-wrap">
+              <iframe src="${href}" title="${esc(label)} - ${esc(design.title)}" loading="lazy"></iframe>
+            </div>
+            <p>${esc(design.concept)}</p>
+          </article>`;
+    }
   )
   .join('\n')}
         </div>`;
@@ -129,7 +139,7 @@ function renderIndex(designs) {
       }
 
       .lede {
-        max-width: 760px;
+        max-width: 820px;
         margin: 14px 0 0;
         color: var(--muted);
         font-size: 17px;
@@ -172,46 +182,97 @@ function renderIndex(designs) {
 
       .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-        gap: 14px;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 520px), 1fr));
+        gap: 18px;
       }
 
-      .card {
-        min-height: 174px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+      .preview-card {
         border: 1px solid var(--line);
         border-radius: 8px;
         background: var(--panel);
-        padding: 16px;
-        text-decoration: none;
-        color: inherit;
+        overflow: hidden;
       }
 
-      .card:hover {
+      .preview-card:hover {
         border-color: var(--accent);
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
       }
 
-      .card h2 {
-        margin: 0 0 8px;
+      .preview-head {
+        min-height: 86px;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .preview-head h2 {
+        margin: 4px 0 0;
         font-size: 18px;
         line-height: 1.25;
       }
 
-      .card p {
+      .preview-head a {
+        align-self: flex-start;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 7px 10px;
+        color: var(--accent-dark);
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .preview-head a:hover {
+        border-color: var(--accent);
+      }
+
+      .frame-wrap {
+        aspect-ratio: 16 / 10;
+        background: #eef1f4;
+        border-bottom: 1px solid var(--line);
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        display: block;
+        border: 0;
+        background: #fff;
+      }
+
+      .preview-card p {
         margin: 0;
+        padding: 14px 16px 16px;
         color: var(--muted);
         font-size: 14px;
         line-height: 1.45;
       }
 
-      .card .number {
-        margin-top: 20px;
+      .number {
         color: var(--accent-dark);
         font-size: 13px;
         font-weight: 700;
+      }
+
+      @media (max-width: 640px) {
+        .wrap {
+          width: min(100% - 20px, 1180px);
+        }
+
+        .hero {
+          padding: 28px 0 22px;
+        }
+
+        .toolbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .preview-head {
+          min-height: 0;
+        }
       }
 
       .empty {
@@ -227,7 +288,7 @@ function renderIndex(designs) {
     <header>
       <div class="wrap hero">
         <h1>WordPress Playground UI Redesigns</h1>
-        <p class="lede">A running gallery of static redesign explorations for the current WordPress Playground interface, grounded in captured user flows and feature coverage.</p>
+        <p class="lede">A running iframe preview gallery of static redesign explorations for the current WordPress Playground interface, grounded in captured user flows and feature coverage.</p>
         <div class="meta">
           <span class="pill">${count} / 100 designs</span>
           <span class="pill">Live research captured May 21, 2026</span>
@@ -238,7 +299,7 @@ function renderIndex(designs) {
     <main>
       <div class="wrap">
         <div class="toolbar">
-          <strong>Design Gallery</strong>
+          <strong>Iframe Preview Gallery</strong>
           <a href="research/PLAYGROUND_UI_MAP.md">Current UI map</a>
         </div>
         ${renderCards(designs)}
@@ -254,4 +315,3 @@ await fs.mkdir(dataDir, { recursive: true });
 await fs.writeFile(path.join(dataDir, 'designs.json'), `${JSON.stringify(designs, null, 2)}\n`);
 await fs.writeFile(indexPath, renderIndex(designs));
 console.log(`Gallery built with ${designs.length} designs.`);
-
