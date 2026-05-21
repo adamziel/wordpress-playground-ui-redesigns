@@ -1044,5 +1044,58 @@
       "Transfer history showing save, rename, delete, import, export, database, file, and Blueprint events"
     ],
     "path": "v2-design-027/index.html"
+  },
+  {
+    "id": "v2-design-028",
+    "number": 28,
+    "title": "Runtime Control Room",
+    "concept": "A dense power-user command deck that makes WordPress, PHP, language, network, multisite, older-version, reset, reload, and local-directory consequences first-class while preserving the live WordPress shell beside save, management, Site Manager, Blueprint, database, log, and portability controls.",
+    "focus": [
+      "runtime settings as the primary object model",
+      "local-directory save flow with permission and reload consequences",
+      "dense labeled command deck for expert users",
+      "protected live WordPress preview",
+      "stateful file, database, saved-site, and transfer results"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start",
+      "WordPress PR preview with PR number or URL input",
+      "Gutenberg PR or branch preview with PR, URL, or branch input",
+      "GitHub import with account connection and token-not-stored caveat",
+      "Blueprint URL runner",
+      "Import .zip with native chooser framing and replacement warning",
+      "Blueprint gallery categories and search with honest representative subset of 43",
+      "Featured Blueprint shortcuts including Art Gallery, Coffee Shop, Friends feed reader, Gaming News, Non-profit Organization, and Personal Blog",
+      "Save temporary Playground in browser storage",
+      "Save to a local directory",
+      "Folder picker, permission grant/denial, progress, selected folder identity, local badge, and reconnect consequence",
+      "Save progress state",
+      "Saved, local-directory, and unsaved Playground list",
+      "Open and manage saved Playgrounds",
+      "Rename saved Playground",
+      "Delete saved Playground with confirmation and final fallback state",
+      "Current shell path input and refresh",
+      "Homepage and WP Admin shortcuts",
+      "Temporary, browser-saved, and local-directory storage badges",
+      "WordPress, PHP, and language settings",
+      "Include older WordPress versions option",
+      "Allow network access",
+      "Create multisite network",
+      "Destructive reset and stored Save & Reload behavior",
+      "Site Manager tabs for Settings, Files, Blueprint, Database, and Logs",
+      "File browser with create file, create folder, upload, browse, selected editor, dirty marker, save, and result state",
+      "Blueprint editor with JSON validation, copy link, download bundle, run, replacement warning, and result state",
+      "SQLite-backed database path, driver, and size",
+      "Download database.sqlite",
+      "Open Adminer",
+      "Open phpMyAdmin",
+      "Playground, WordPress, and PHP logs with empty and result states",
+      "Export to GitHub",
+      "Download active Playground as .zip",
+      "Database download",
+      "Blueprint bundle copy, download, and run actions",
+      "Transfer history for saves, runtime changes, files, database, Blueprint, GitHub, ZIP, rename, delete, and route preview events"
+    ],
+    "path": "v2-design-028/index.html"
   }
 ]
