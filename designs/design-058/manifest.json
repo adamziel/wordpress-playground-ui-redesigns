@@ -1,0 +1,51 @@
+{
+  "id": "design-058",
+  "title": "Playground Project Tabs",
+  "concept": "A tabbed project workspace for educators running workshops: multiple Playgrounds stay open as project tabs, while each project exposes Site, Files, Blueprints, Database, Logs, and Settings as IDE-like inner tabs.",
+  "focus": [
+    "project tabs for multiple Playgrounds",
+    "within-project Site Manager tabs",
+    "IDE-like file, code, and blueprint affordances",
+    "educator workshop launchpad and saved management",
+    "mobile bottom navigation for primary project sections"
+  ],
+  "flows": [
+    "Switch between saved, temporary, blueprint, and new Playground project tabs without leaving the workspace.",
+    "Use the first viewport to navigate the active WordPress path, refresh the embedded site, save temporary work, manage saved Playgrounds, and start common workshop sources.",
+    "Create Playgrounds from vanilla WordPress, WordPress PRs, Gutenberg PRs or branches, GitHub import, Blueprint URL, zip import, featured Blueprints, or the full Blueprint gallery.",
+    "Work inside project tabs for Site preview, File browser, Blueprint editor and gallery, Database tools, Logs, and runtime Settings.",
+    "Export to GitHub, download a Playground zip, copy or download Blueprint bundles, run Blueprints, and download database.sqlite."
+  ],
+  "featureCoverage": [
+    "create a vanilla Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub after account connection",
+    "run a Blueprint URL",
+    "import a .zip",
+    "browse and filter Blueprint gallery entries",
+    "select featured blueprint shortcuts",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "see save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh the active embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress/PHP/language settings",
+    "include older WordPress versions",
+    "allow network access",
+    "create a multisite network",
+    "understand destructive reset and stored Save and Reload behavior",
+    "use File browser with create folder/file, upload, browse, and code editing affordances",
+    "view, copy, download, and run the current Blueprint bundle",
+    "inspect database driver, path, and size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect logs and empty states",
+    "export to GitHub",
+    "download a .zip"
+  ]
+}
