@@ -1,0 +1,49 @@
+{
+  "id": "v2-design-007",
+  "title": "PR Contract Console",
+  "concept": "A large live-browser workspace with a right inspector that treats Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, and zip import as distinct launch contracts with typed inputs, constraints, progress, and resulting active Playground identity.",
+  "focus": [
+    "PR and branch preview contracts",
+    "large browser plus right inspector",
+    "stateful shell identity mutation",
+    "browser versus local save consequences",
+    "portability and replacement workflows"
+  ],
+  "flows": [
+    "Preview a Gutenberg PR or branch end to end: validate the route-specific input, build the runtime, update the active browser path and review identity, then unlock save and export availability.",
+    "Save an unsaved preview to browser storage or a local directory with distinct destination consequences, file-copy progress, saved row insertion, active title mutation, and reset versus Save & Reload behavior.",
+    "Manage saved and unsaved Playgrounds from the library, including open/manage affordances and a delete flow with confirmation and final row removal.",
+    "Use the Site Manager tabs for settings, files, Blueprint, database, logs, Export to GitHub, and Download as zip while the live WordPress shell stays visible.",
+    "Browse a representative subset of the 43 Blueprint gallery items with current categories, selected detail, validation, run result, copy, download, and bundle actions.",
+    "Use portability tools for GitHub import/export, zip import/download, database download, and Blueprint bundle actions, including a zip replacement confirmation that mutates the active Playground."
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start",
+    "WordPress PR preview",
+    "Gutenberg PR or branch preview",
+    "GitHub import with account connection and token caveat",
+    "Blueprint URL runner",
+    "Import zip trigger and replacement confirmation",
+    "Blueprint gallery categories and search",
+    "Featured blueprint shortcuts shown as a representative subset of 43",
+    "Save temporary Playground in browser storage",
+    "Save temporary Playground to a local directory",
+    "Visible save progress",
+    "Saved and unsaved Playground list",
+    "Open and manage saved Playgrounds",
+    "Rename/delete management represented through saved-row actions and delete confirmation",
+    "URL path navigation and refresh",
+    "Homepage and WP Admin shortcuts",
+    "Temporary, saved, local, and imported storage state badges",
+    "WordPress, PHP, language, older-version, network, and multisite settings",
+    "Destructive reset and saved reload consequences",
+    "File browser with create file, create folder, upload, browse, selected file editor, dirty state, and save result",
+    "Blueprint editor with copy, download, run, validation, and result state",
+    "Database driver, SQLite path, size, database download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs",
+    "Export to GitHub",
+    "Download as zip",
+    "Database download",
+    "Blueprint bundle portability actions"
+  ]
+}
