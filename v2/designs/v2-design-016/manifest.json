@@ -1,0 +1,48 @@
+{
+  "id": "v2-design-016",
+  "title": "Operations Ledger Workbench",
+  "concept": "A file and data operations workbench that keeps Site Manager files, Blueprint JSON, SQLite database, logs, portability actions, and a live WordPress shell in one two-column console, with every save, import, export, delete, and editor action recorded as an event on the same selected Playground object.",
+  "focus": [
+    "Site Manager-led file and data operations",
+    "operations ledger and event stream",
+    "visible selected Playground object mutation",
+    "local-directory save lifecycle",
+    "ZIP and GitHub transfer completion"
+  ],
+  "flows": [
+    "Save a temporary Playground to a local directory with folder picker state, permission denial, permission grant, progress, selected folder identity, local storage badge, saved-row mutation, reload consequence, and ledger event",
+    "Generate a ZIP download end to end with source status, packaging progress, generated archive result, selected Playground identity, and transfer history",
+    "Export the active Playground to GitHub with session-only account connection, repository target, progress, pushed result, token consequence, and transfer history",
+    "Manage the selected Playground through save in browser, rename, delete confirmation, cancel, confirmed deletion, final row state, and fallback to a temporary Playground",
+    "Use Site Manager Files, Blueprint, Database, Logs, and Settings beside the live site, including file dirty/save state, Blueprint validation/run/copy/download, database download, Adminer, phpMyAdmin, log warnings, and reset consequences",
+    "Start or replace through Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, and ZIP import with route-specific inputs, validation or replacement warnings, and active-object mutation"
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start route",
+    "WordPress PR preview input",
+    "Gutenberg PR or branch input",
+    "GitHub import with account connection and non-persistent token caveat",
+    "Blueprint URL runner",
+    "Import .zip with native chooser state, validation, replacement confirmation, progress, and imported result",
+    "Blueprint gallery categories and search with honest representative subset of 43",
+    "Featured Blueprint entries including Art Gallery, Coffee Shop, Feed Reader with the Friends Plugin, Gaming News, Non-profit Organization, and Personal Blog",
+    "Save in this browser with progress and saved identity mutation",
+    "Save to a local directory with folder picker, permission denied state, permission grant, progress, selected folder identity, local badge, and reload consequence",
+    "Saved and unsaved Playground list",
+    "Open, manage, rename, delete confirmation, cancel, confirmed deletion, final row state, and temporary fallback",
+    "Current shell path input and refresh",
+    "Homepage and WP Admin shortcuts",
+    "Temporary, browser-saved, and local-directory storage distinctions",
+    "WordPress version, PHP version, language, older versions, network access, and multisite controls",
+    "Destructive reset and saved/local reload consequences",
+    "File browser with create file, create folder, upload, browse files, selected editor, dirty state, save, and result state",
+    "Blueprint JSON editor with validation, copy link, download bundle, run, warning, and result state",
+    "SQLite-backed database driver, path, size, database download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs with realistic warning states",
+    "Export to GitHub with repository target and completion",
+    "Download active Playground as .zip with generated result",
+    "Database download",
+    "Blueprint bundle actions",
+    "Operations ledger and transfer history for saves, edits, downloads, imports, exports, delete, reset, and navigation"
+  ]
+}
