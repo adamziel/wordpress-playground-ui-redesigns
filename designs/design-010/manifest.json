@@ -1,0 +1,48 @@
+{
+  "id": "design-010",
+  "title": "Playground Workbench",
+  "concept": "A three-pane workbench that treats creation, saved Playgrounds, the live WordPress frame, and Site Manager operations as one continuous workspace instead of separate modal-first surfaces.",
+  "focus": [
+    "persistent saved/start rail",
+    "live site centered as the primary work object",
+    "right-side operations inspector for Site Manager tasks",
+    "modal flows only for high-intent starts, save, export, and gallery browsing"
+  ],
+  "flows": [
+    "create vanilla Playground",
+    "preview WordPress PR",
+    "preview Gutenberg PR or branch",
+    "import from GitHub",
+    "run Blueprint URL",
+    "import .zip",
+    "browse Blueprint gallery and category filters",
+    "save to browser or local directory",
+    "manage saved Playgrounds",
+    "navigate Homepage and WP Admin",
+    "inspect Site Manager tabs"
+  ],
+  "featureCoverage": [
+    "vanilla start",
+    "WordPress PR start",
+    "Gutenberg PR or branch start",
+    "GitHub import with account connection messaging",
+    "Blueprint URL start",
+    ".zip import",
+    "featured Blueprint shortcuts",
+    "all Blueprints gallery with filters",
+    "save modal with browser and local directory options",
+    "save progress",
+    "saved and unsaved Playground list",
+    "rename and delete saved Playground actions",
+    "URL path input and refresh control",
+    "Homepage and WP Admin controls",
+    "WordPress, PHP, language, older version, network, and multisite settings",
+    "destructive reset and saved reload messaging",
+    "file browser with create, upload, browse, tree, and code editor affordances",
+    "Blueprint file view with copy link, download bundle, and run controls",
+    "database driver, SQLite path, size, download, Adminer, and phpMyAdmin controls",
+    "logs empty state",
+    "export to GitHub",
+    "download as .zip"
+  ]
+}
