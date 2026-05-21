@@ -1,0 +1,53 @@
+{
+  "id": "design-075",
+  "title": "Playground Operations Ledger",
+  "concept": "A diagnostics-first Playground redesign for power users managing many saved sites. The first viewport is an operations ledger that leads with health, logs, database details, storage status, and current-site consequences before exposing creation, saving, Site Manager, import/export, and Blueprint catalog tasks.",
+  "focus": [
+    "diagnostics and logs console as the first viewport",
+    "operations ledger instead of a generic three-pane console",
+    "monochrome interface with colored status chips",
+    "saved Playground management for power users",
+    "bottom navigation for small screens"
+  ],
+  "flows": [
+    "Monitor active Playground health, logs, database details, save state, path navigation, Homepage, WP Admin, and embedded WordPress preview from the first screen",
+    "Start a Playground from Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, or imported .zip with route-specific inputs and consequences",
+    "Save a temporary Playground in browser storage or to a local directory with visible progress, destination-specific requirements, and resulting saved identity",
+    "Browse saved and unsaved Playgrounds, then open, rename, delete, or save entries with delete consequences visible",
+    "Use Site Manager surfaces for runtime settings, destructive reset/reload, file browsing, Blueprint editing, database tools, and logs",
+    "Move artifacts through GitHub export, zip download, zip import, Blueprint link copy, Blueprint bundle download, Blueprint run, and database.sqlite download",
+    "Browse, search, filter, inspect, and run Blueprint gallery entries from a catalog that represents the full 43 item gallery"
+  ],
+  "featureCoverage": [
+    "create a vanilla Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub after account connection",
+    "run a Blueprint URL",
+    "import a .zip",
+    "browse and filter Blueprint gallery entries",
+    "select featured blueprint shortcuts",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "see save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh the active embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress/PHP/language settings",
+    "include older WordPress versions",
+    "allow network access",
+    "create a multisite network",
+    "understand destructive reset/reload behavior",
+    "use File browser with create folder/file, upload, browse, and code editing affordances",
+    "view/copy/download/run the current Blueprint bundle",
+    "inspect database driver/path/size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect logs and empty/error states",
+    "export to GitHub",
+    "download a .zip"
+  ]
+}
