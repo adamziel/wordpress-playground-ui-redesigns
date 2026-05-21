@@ -534,5 +534,48 @@
       "Transfer and mutation event stream"
     ],
     "path": "v2-design-018/index.html"
+  },
+  {
+    "id": "v2-design-019",
+    "number": 19,
+    "title": "Support Ledger Console",
+    "concept": "A support diagnostics console that treats the active Playground as a ledger object: save, rename, delete, Blueprint replacement, import, export, database, logs, and file operations all append events while mutating the same protected live WordPress shell.",
+    "focus": [
+      "ledger-first support diagnostics",
+      "visible active Playground object mutation",
+      "protected live WordPress shell",
+      "database, logs, and transfer history prominence",
+      "stateful save and Blueprint replacement flows"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start route",
+      "WordPress PR preview route with PR number or URL",
+      "Gutenberg PR or branch route with PR, URL, or branch input",
+      "GitHub import with account connection and non-persistent token warning",
+      "Blueprint URL runner",
+      "Import .zip through native file chooser model with replacement warning",
+      "Blueprint gallery categories and search with honest representative subset of 43",
+      "Featured Blueprint shortcuts and selected Blueprint detail",
+      "Save in this browser",
+      "Save to a local directory",
+      "Folder permission cancellation and reconnect consequence",
+      "Save progress with file-copy counts",
+      "Saved and unsaved Playground list",
+      "Open, manage, rename, and delete saved Playgrounds",
+      "Delete confirmation and fallback active state",
+      "Active path input, refresh, Homepage, and WP Admin shortcuts",
+      "Temporary, saved, and local-directory shell states",
+      "WordPress version, PHP version, language, older versions, network, and multisite settings",
+      "Destructive reset versus stored Save & Reload behavior",
+      "File browser with create file, create folder, upload, browse files, selected editor, dirty state, and save result",
+      "Blueprint editor with URL, JSON validation, copy, download bundle, run, warning, progress, and result state",
+      "SQLite-backed database driver, path, size, database download, Adminer, and phpMyAdmin",
+      "Playground, WordPress, and PHP logs with realistic warning state",
+      "Export to GitHub",
+      "Download as .zip",
+      "Portability events for GitHub import/export, ZIP import/download, database download, and Blueprint bundle actions",
+      "Operations ledger and transfer history for save, rename, delete, import, export, settings, files, database, and Blueprint replacement"
+    ],
+    "path": "v2-design-019/index.html"
   }
 ]
