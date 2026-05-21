@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>V2 Design 047 - Review Contract Ledger</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="app" data-storage="temporary">
+      <header class="shell" aria-label="Playground shell">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">WP</span>
+          <div>
+            <strong id="shellTitle">Unsaved Playground</strong>
+            <span id="shellSubtitle">Vanilla WordPress contract, temporary runtime</span>
+          </div>
+        </div>
+        <div class="pathbar">
+          <button class="icon-button" id="refreshButton" type="button" aria-label="Refresh active WordPress page">R</button>
+          <label class="path-input">
+            <span class="sr-only">Active WordPress path</span>
+            <input id="pathInput" value="/hello-from-playground/">
+          </label>
+          <button class="ghost" id="homeButton" type="button">Homepage</button>
+          <button class="ghost" id="adminButton" type="button">WP Admin</button>
+        </div>
+        <div class="shell-actions">
+          <span class="runtime-pill" id="runtimeBadge">WP latest / PHP 8.3</span>
+          <span class="state-badge warning" id="storageBadge">Temporary</span>
+          <button class="primary" id="saveHeaderButton" type="button">Save</button>
+          <button class="ghost danger-text" id="resetHeaderButton" type="button">Reset</button>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <section class="ledger" aria-label="Playground contracts and transfers">
+          <div class="ledger-head">
+            <div>
+              <p class="eyebrow">Review Contract Ledger</p>
+              <h1>Launch, save, import, export, and manage one active Playground</h1>
+            </div>
+            <div class="summary-strip" aria-live="polite">
+              <span><strong id="summaryObjects">3</strong> objects</span>
+              <span><strong id="summaryTransfers">4</strong> transfers</span>
+              <span id="summaryStatus">1 temporary runtime active</span>
+            </div>
+          </div>
+
+          <nav class="view-tabs" aria-label="Ledger tables">
+            <button class="is-active" type="button" data-view="launch">Launch contracts</button>
+            <button type="button" data-view="objects">Saved objects</button>
+            <button type="button" data-view="manager">Site Manager</button>
+            <button type="button" data-view="transfers">Transfer history</button>
+          </nav>
+
+          <section class="table-panel is-active" data-panel="launch">
+            <div class="table-toolbar">
+              <strong>Distinct start routes</strong>
+              <span>Each row shows the required input, constraint, progress state, and resulting identity.</span>
+            </div>
+            <div class="admin-table" role="table" aria-label="Launch contracts">
+              <div class="table-row table-header" role="row">
+                <span>Route</span>
+                <span>Required input</span>
+                <span>Constraint</span>
+                <span>State</span>
+                <span>Action</span>
+              </div>
+              <button class="table-row is-selected" type="button" data-row="vanilla" data-detail="launch">
+                <span><strong>Vanilla WordPress</strong><small>Fresh runtime</small></span>
+                <span>None</span>
+                <span>Starts latest WordPress logged in as admin</span>
+                <span><em class="state-badge neutral">Draft</em></span>
+                <span class="linklike">Inspect</span>
+              </button>
+              <button class="table-row" type="button" data-row="wp-pr" data-detail="launch">
+                <span><strong>WordPress PR</strong><small>Core review</small></span>
+                <span><code>7821</code> or GitHub URL</span>
+                <span>Valid wordpress-develop PR number or URL</span>
+                <span><em class="state-badge neutral">Ready</em></span>
+                <span class="linklike">Preview</span>
+              </button>
+              <button class="table-row" type="button" data-row="gutenberg-pr" data-detail="launch">
+                <span><strong>Gutenberg PR or branch</strong><small>Plugin review</small></span>
+                <span><code>trunk</code>, branch, PR, or URL</span>
+                <span>Branch names allowed; PRs install Gutenberg build</span>
+                <span><em class="state-badge neutral">Ready</em></span>
+                <span class="linklike">Preview</span>
+              </button>
+              <button class="table-row" type="button" data-row="github-import" data-detail="launch">
+                <span><strong>From GitHub</strong><small>Import repository</small></span>
+                <span>Connected account and repo path</span>
+                <span>Token is not stored and refresh requires re-auth</span>
+                <span><em class="state-badge warning">Needs account</em></span>
+                <span class="linklike">Connect</span>
+              </button>
+              <button class="table-row" type="button" data-row="blueprint-url" data-detail="blueprint">
+                <span><strong>Blueprint URL</strong><small>Run hosted JSON</small></span>
+                <span>Public Blueprint URL</span>
+                <span>Validates JSON and warns before replacing content</span>
+                <span><em class="state-badge neutral" id="blueprintRouteState">Unvalidated</em></span>
+                <span class="linklike">Inspect JSON</span>
+              </button>
+              <button class="table-row" type="button" data-row="zip-import" data-detail="import">
+                <span><strong>Import .zip</strong><small>Native chooser</small></span>
+                <span>Selected archive</span>
+                <span>Replaces files and database after confirmation</span>
+                <span><em class="state-badge warning" id="zipState">Waiting for file</em></span>
+                <span class="linklike">Choose file</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="table-panel" data-panel="objects">
+            <div class="table-toolbar">
+              <strong>Your Playgrounds</strong>
+              <span>Rows mutate between temporary, saving, saved, local permission, and deleted states.</span>
+            </div>
+            <div class="admin-table objects-table" role="table" aria-label="Saved and unsaved Playgrounds">
+              <div class="table-row table-header" role="row">
+                <span>Name</span>
+                <span>Storage</span>
+                <span>Runtime</span>
+                <span>State</span>
+                <span>Action</span>
+              </div>
+              <button class="table-row is-selected" type="button" data-row="active-object" data-detail="save">
+                <span><strong id="activeObjectName">Unsaved Playground</strong><small id="activeObjectMeta">Not saved to browser storage</small></span>
+                <span id="activeObjectStorage">Temporary session</span>
+                <span id="activeObjectRuntime">WP latest / PHP 8.3 / English</span>
+                <span><em class="state-badge warning" id="activeObjectState">Temporary</em></span>
+                <span class="linklike">Save</span>
+              </button>
+              <button class="table-row" type="button" data-row="browser-object" data-detail="object">
+                <span><strong>Research Browser Playground</strong><small>Created May 21, 2026</small></span>
+                <span>Browser storage slug <code>/research-browser/</code></span>
+                <span>WP 6.8 / PHP 8.3</span>
+                <span><em class="state-badge success">Saved</em></span>
+                <span class="row-actions"><b data-object-action="rename">Rename</b><b data-object-action="delete">Delete</b></span>
+              </button>
+              <button class="table-row" type="button" data-row="local-object" data-detail="object">
+                <span><strong>Local Theme Lab</strong><small>Folder-backed working copy</small></span>
+                <span><code>~/Sites/playground-theme-lab</code></span>
+                <span>WP latest / PHP 8.2</span>
+                <span><em class="state-badge warning">Local permission needed</em></span>
+                <span class="row-actions"><b>Reconnect</b><b data-object-action="delete">Delete</b></span>
+              </button>
+              <button class="table-row deleted-row" type="button" data-row="deleted-object" data-detail="object">
+                <span><strong>Deleted import test</strong><small>Final state retained in activity</small></span>
+                <span>Browser storage removed</span>
+                <span>WP 6.7 / PHP 8.1</span>
+                <span><em class="state-badge danger">Deleted</em></span>
+                <span>Removed</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="table-panel" data-panel="manager">
+            <div class="table-toolbar">
+              <strong>Site Manager operations</strong>
+              <span>Settings, Files, Blueprint, Database, Logs, Export to GitHub, and Download as zip remain available beside the live preview.</span>
+            </div>
+            <div class="manager-tabs" aria-label="Site Manager tabs">
+              <button class="is-active" type="button" data-manager="settings">Settings</button>
+              <button type="button" data-manager="files">Files</button>
+              <button type="button" data-manager="blueprint">Blueprint</button>
+              <button type="button" data-manager="database">Database</button>
+              <button type="button" data-manager="logs">Logs</button>
+              <button type="button" data-detail="export">Export to GitHub</button>
+              <button type="button" data-detail="download">Download .zip</button>
+            </div>
+            <div class="manager-shell">
+              <aside class="manager-index">
+                <button class="is-active" type="button" data-manager="settings">Runtime settings</button>
+                <button type="button" data-manager="files">File browser</button>
+                <button type="button" data-manager="blueprint">Blueprint bundle</button>
+                <button type="button" data-manager="database">SQLite database</button>
+                <button type="button" data-manager="logs">Runtime logs</button>
+              </aside>
+              <article class="manager-panel" id="managerPanel" aria-live="polite"></article>
+            </div>
+          </section>
+
+          <section class="table-panel" data-panel="transfers">
+            <div class="table-toolbar">
+              <strong>Portability and activity history</strong>
+              <span>Saved rows, imported rows, exported rows, and downloads update the same active Playground objects.</span>
+            </div>
+            <div class="admin-table transfers-table" id="transferTable" role="table" aria-label="Transfer history">
+              <div class="table-row table-header" role="row">
+                <span>When</span>
+                <span>Transfer</span>
+                <span>Target</span>
+                <span>State</span>
+                <span>Result</span>
+              </div>
+              <button class="table-row" type="button" data-row="transfer-save" data-detail="save">
+                <span>10:42</span>
+                <span>Browser save</span>
+                <span>Unsaved Playground</span>
+                <span><em class="state-badge warning" id="transferSaveState">Temporary</em></span>
+                <span id="transferSaveResult">Ready to copy 3,751 files</span>
+              </button>
+              <button class="table-row" type="button" data-row="transfer-local" data-detail="save">
+                <span>10:39</span>
+                <span>Local directory save</span>
+                <span><code>~/Sites/playground-review</code></span>
+                <span><em class="state-badge warning">Local permission</em></span>
+                <span>Reconnect required after refresh</span>
+              </button>
+              <button class="table-row" type="button" data-row="transfer-import" data-detail="import">
+                <span>10:36</span>
+                <span>ZIP import</span>
+                <span><code>plugin-review.zip</code></span>
+                <span><em class="state-badge neutral" id="transferImportState">Selected</em></span>
+                <span id="transferImportResult">Archive not applied yet</span>
+              </button>
+              <button class="table-row" type="button" data-row="transfer-export" data-detail="export">
+                <span>10:33</span>
+                <span>GitHub export</span>
+                <span><code>acme/playground-review</code></span>
+                <span><em class="state-badge success" id="transferExportState">Exported</em></span>
+                <span>Pushed files, blueprint, and database snapshot</span>
+              </button>
+            </div>
+          </section>
+        </section>
+
+        <aside class="detail" aria-label="Selected Playground detail">
+          <section class="preview-card" aria-label="Live WordPress preview">
+            <div class="preview-toolbar">
+              <span class="wp-dot">W</span>
+              <strong id="previewTitle">My WordPress Website</strong>
+              <span id="previewPath">/hello-from-playground/</span>
+            </div>
+            <div class="wp-adminbar">
+              <span>My WordPress Website</span>
+              <span>Edit Site</span>
+              <span>+ New</span>
+              <span>Howdy, admin</span>
+            </div>
+            <article class="preview-surface" id="previewSurface">
+              <div>
+                <p class="eyebrow" id="previewLabel">Active preview</p>
+                <h2 id="previewHeadline">Hello from WordPress Playground!</h2>
+                <p id="previewCopy">The live shell remains visible while launch contracts, saved objects, manager tools, and transfers update around it.</p>
+                <button type="button" class="wp-cta">Discover the mission behind Playground</button>
+              </div>
+              <div class="wp-art" aria-hidden="true">
+                <span>W</span>
+              </div>
+            </article>
+          </section>
+
+          <section class="detail-card" aria-live="polite">
+            <div class="detail-head">
+              <div>
+                <p class="eyebrow" id="detailKicker">Selected row</p>
+                <h2 id="detailTitle">Vanilla WordPress contract</h2>
+              </div>
+              <span class="state-badge neutral" id="detailState">Draft</span>
+            </div>
+            <div id="detailBody"></div>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
