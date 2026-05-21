@@ -2030,5 +2030,49 @@
       "Transfer history recording save, local permission, rename, delete, import, export, file, database, Blueprint, path, and runtime events"
     ],
     "path": "v2-design-048/index.html"
+  },
+  {
+    "id": "v2-design-049",
+    "number": 49,
+    "title": "Support Diagnostics Console",
+    "concept": "A table-led support console for WordPress Playground where saved objects and transfer history drive a selected detail panel while the live WordPress preview stays protected on screen.",
+    "focus": [
+      "status-first diagnostics",
+      "table-led saved and transfer management",
+      "selected Playground detail",
+      "PR and branch preview lifecycle",
+      "storage consequence clarity"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start",
+      "WordPress PR preview",
+      "Gutenberg PR or branch preview",
+      "GitHub import with account connection",
+      "Blueprint URL runner",
+      "Import .zip with replacement confirmation",
+      "Blueprint gallery categories and search with honest subset label",
+      "Featured Blueprint selection detail",
+      "Save temporary Playground in browser storage",
+      "Save to local directory with permission distinction",
+      "Visible save progress",
+      "Saved and unsaved Playground table",
+      "Rename saved Playground",
+      "Delete saved Playground with final deleted state",
+      "Active WordPress path input and refresh",
+      "Homepage and WP Admin shortcuts",
+      "WordPress/PHP/language/settings consequence copy",
+      "Older-version, network, and multisite capability context",
+      "Destructive reset and saved reload distinction",
+      "File browser with create file, create folder, upload, browse, selected editor, dirty state, and save result",
+      "Blueprint copy, download, run, validation, URL, and editor",
+      "SQLite database path and size",
+      "Download database.sqlite",
+      "Open Adminer and phpMyAdmin",
+      "Playground, WordPress, and PHP logs with warning state",
+      "Export to GitHub",
+      "Download as .zip",
+      "Transfer history for saving, local permission, imported, exported, deleted, and downloaded states"
+    ],
+    "path": "v2-design-049/index.html"
   }
 ]

@@ -1,0 +1,49 @@
+{
+  "id": "v2-design-049",
+  "title": "Support Diagnostics Console",
+  "concept": "A table-led support console for WordPress Playground where saved objects and transfer history drive a selected detail panel while the live WordPress preview stays protected on screen.",
+  "focus": [
+    "status-first diagnostics",
+    "table-led saved and transfer management",
+    "selected Playground detail",
+    "PR and branch preview lifecycle",
+    "storage consequence clarity"
+  ],
+  "flows": [
+    "Preview a Gutenberg PR or branch with route-specific input, validation, loading, resulting preview identity, and save/export availability",
+    "Save a temporary Playground in browser storage with file-copy progress, saved row insertion, active shell title update, and reset/reload behavior change",
+    "Distinguish local-directory saving from browser storage with folder permission and reconnect consequences",
+    "Delete a saved Playground with confirmation, deleted final row state, transfer history, and active fallback",
+    "Manage Site Manager diagnostics, files, Blueprint gallery/editor, database tools, logs, GitHub export, zip download, and zip replacement import"
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start",
+    "WordPress PR preview",
+    "Gutenberg PR or branch preview",
+    "GitHub import with account connection",
+    "Blueprint URL runner",
+    "Import .zip with replacement confirmation",
+    "Blueprint gallery categories and search with honest subset label",
+    "Featured Blueprint selection detail",
+    "Save temporary Playground in browser storage",
+    "Save to local directory with permission distinction",
+    "Visible save progress",
+    "Saved and unsaved Playground table",
+    "Rename saved Playground",
+    "Delete saved Playground with final deleted state",
+    "Active WordPress path input and refresh",
+    "Homepage and WP Admin shortcuts",
+    "WordPress/PHP/language/settings consequence copy",
+    "Older-version, network, and multisite capability context",
+    "Destructive reset and saved reload distinction",
+    "File browser with create file, create folder, upload, browse, selected editor, dirty state, and save result",
+    "Blueprint copy, download, run, validation, URL, and editor",
+    "SQLite database path and size",
+    "Download database.sqlite",
+    "Open Adminer and phpMyAdmin",
+    "Playground, WordPress, and PHP logs with warning state",
+    "Export to GitHub",
+    "Download as .zip",
+    "Transfer history for saving, local permission, imported, exported, deleted, and downloaded states"
+  ]
+}
