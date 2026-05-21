@@ -1,0 +1,47 @@
+{
+  "id": "design-003",
+  "title": "Playground Command Deck",
+  "concept": "A split command-deck interface that keeps create, saved management, Site Manager, blueprint gallery, and portability workflows in one persistent workbench beside the live WordPress site.",
+  "focus": [
+    "Persistent navigation instead of disconnected modal-first flows",
+    "High-density operational workbench for repeat Playground users",
+    "Live site context retained while managing files, settings, blueprints, database, and logs"
+  ],
+  "flows": [
+    "Start a vanilla Playground, WordPress PR, Gutenberg PR, GitHub import, Blueprint URL, or zip import from the launch deck",
+    "Save a temporary Playground to browser storage or a local directory with visible file-copy progress",
+    "Manage saved and unsaved Playgrounds with rename, delete, and open/manage actions",
+    "Use Site Manager tabs for settings, file browser, blueprint editing, database tools, and logs while the live site remains visible",
+    "Browse and filter the Blueprint gallery, then select featured or full-gallery blueprints",
+    "Export to GitHub, download a zip bundle, import a zip, and copy/download/run the current blueprint bundle"
+  ],
+  "featureCoverage": [
+    "create vanilla WordPress Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub with account connection",
+    "run Blueprint URL",
+    "import .zip",
+    "browse and filter Blueprint gallery entries",
+    "select featured blueprint shortcuts",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "show save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress, PHP, language, network, older versions, and multisite settings",
+    "communicate destructive reset and stored Save & Reload behavior",
+    "file browser with create file, create folder, upload, browse, and code editing affordances",
+    "view, copy, download, and run the current Blueprint bundle",
+    "inspect database driver, path, and size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect Playground, WordPress, and PHP logs",
+    "export to GitHub",
+    "download a .zip"
+  ]
+}
