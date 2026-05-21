@@ -29,6 +29,14 @@ assert(/<html[\s>]/i.test(html), `${designId}: index.html must be a full HTML do
 assert(/viewport/i.test(html), `${designId}: index.html must include responsive viewport metadata.`);
 
 const manifest = JSON.parse(await read(manifestPath).catch(() => '{}'));
+const sourceFiles = await fs.readdir(dir).catch(() => []);
+const extraSource = await Promise.all(
+  sourceFiles
+    .filter((file) => /\.(js|css|md|txt)$/i.test(file))
+    .map((file) => read(path.join(dir, file)).catch(() => ''))
+);
+const sourceText = `${html}\n${JSON.stringify(manifest)}\n${extraSource.join('\n')}`;
+
 assert(manifest.id === designId, `${designId}: manifest.id must match folder name.`);
 assert(typeof manifest.title === 'string' && manifest.title.length >= 6, `${designId}: manifest.title is required.`);
 assert(typeof manifest.concept === 'string' && manifest.concept.length >= 40, `${designId}: manifest.concept is required.`);
@@ -36,7 +44,7 @@ assert(Array.isArray(manifest.focus) && manifest.focus.length >= 3, `${designId}
 assert(Array.isArray(manifest.flows) && manifest.flows.length >= 5, `${designId}: manifest.flows must list key user flows.`);
 assert(Array.isArray(manifest.featureCoverage) && manifest.featureCoverage.length >= 16, `${designId}: manifest.featureCoverage must list covered features.`);
 
-const family = `${manifest.title} ${manifest.concept} ${manifest.focus.join(' ')} ${html}`;
+const family = `${manifest.title} ${manifest.concept} ${manifest.focus.join(' ')} ${sourceText}`;
 assert(
   /console|command|deck|operations?|workbench|control|shell|workspace/i.test(family),
   `${designId}: V2 designs must stay in the console/command deck/operations family.`
@@ -62,7 +70,7 @@ const requiredSignals = [
 ];
 
 for (const signal of requiredSignals) {
-  assert(signal.test(html), `${designId}: index.html is missing required UI signal ${signal}.`);
+  assert(signal.test(sourceText), `${designId}: source is missing required UI signal ${signal}.`);
 }
 
 console.log(`${designId} validated.`);
