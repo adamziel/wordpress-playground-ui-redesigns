@@ -5,12 +5,12 @@ Date: May 21, 2026
 Scope read:
 - `research/PLAYGROUND_UI_MAP.md`
 - `data/designs.json`
-- completed design folders under `designs/` present during this pass: `design-001` through `design-059`
+- completed design folders under `designs/` present during this pass: `design-001` through `design-060`
 - existing audits `audits/critic-round-020.md`, `audits/critic-round-032.md`, and `audits/critic-round-042.md`
 
 Method:
 - Used `critic-round-020`, `critic-round-032`, and `critic-round-042` as continuity for `design-001` through `design-047`.
-- Performed focused manifest, HTML, CSS, and JavaScript review for newly completed designs `design-048` through `design-059`.
+- Performed focused manifest, HTML, CSS, and JavaScript review for newly completed designs `design-048` through `design-060`.
 - Ran `node scripts/validate-design.mjs` for each newly reviewed design; all validated.
 - Attempted a fresh Playwright render/overflow check, but Chromium could not launch in this environment because `libglib-2.0.so.0` is missing. Mobile notes below therefore combine source review with prior measured findings rather than new screenshots.
 - No design files were edited.
@@ -29,6 +29,7 @@ The stronger news in this round is that the newer work mostly stops producing ge
 - `design-054` is a more complete Blueprint marketplace/studio.
 - `design-055` is the best diagnostics-first entry since `design-035`.
 - `design-056` turns saved sites, temporary runs, PR previews, GitHub imports, Blueprint runs, and ZIP transfers into a single development ledger.
+- `design-060` combines beginner-readable action cards with a command/results pane for PR review and safe discovery.
 
 The recurring weakness remains flow completion. Most designs can name the current product's capabilities, but many still do not prove that users can complete the flows safely: save progress rarely lands in a saved slug and updated saved list, local-directory save rarely has a chosen-directory state, rename/delete rarely has confirmation and result state, ZIP import rarely shows selected-file and replacement consequences, Blueprint run rarely distinguishes gallery item versus URL versus current `blueprint.json`, and file editors rarely show dirty/save states.
 
@@ -101,28 +102,34 @@ Future direction:
 - Make runtime-first a contextual mode for users changing versions, not necessarily the default landing state.
 - Replace toast-only confirmations with actual inline or modal confirmation/result states.
 
-### Transfer and Command Routing: `design-050`, `design-059`
+### Transfer, Command Routing, and Action Finder: `design-050`, `design-059`, `design-060`
 
 Strengths:
 - `design-050` is one of the strongest command/router concepts because it treats portability as a real taxonomy: Bring in, Store, Send out, Review, and Site tools.
 - Its selected-route pane is concrete: GitHub import, ZIP import/export, browser save, local directory, PR previews, Blueprint URL, Blueprint bundle, database artifacts, gallery, settings, and saved sites each have tailored copy and form fields.
 - `design-059` brings expert keybar affordances to a browser-first shell. The command menus make New, Import, Save, Export, Runtime, Saved, and Manage globally reachable without replacing the live site.
 - Keyboard shortcuts in `design-059` are a useful affordance for repeat users, and the live browser remains the first viewport.
+- `design-060` is the most approachable command/action hybrid. It keeps a live WordPress first viewport, groups actions by Review, Start/Import, and Keep/Inspect/Move, and updates a selected results pane with source-specific controls.
+- `design-060` gives WordPress PR review a strong default state and uses consequence copy well, including the note that PR preview starts a separate Playground and leaves the current unsaved site untouched.
 
 Usability risks:
 - Command-first UI only improves discoverability if default grouping and synonyms are excellent. The prototypes show some filtering/search, but not enough query quality for terms like "folder", "snapshot", "template", "branch", "plugin", "database", "download", or "reset".
 - `design-050` centers portability so strongly that live WordPress navigation and Site Manager can feel secondary.
 - `design-059` is compact and fast, but it risks looking like a generic developer keyboard UI rather than WordPress Playground. It also assumes comfort with key labels and command menus.
 - In `design-059`, some menu actions are dense and close together; Save, Reset, ZIP import, and Delete need stronger separation from harmless navigation.
+- `design-060`'s command search is visually present but not functionally wired; action cards update results, but typed search does not filter or route actions.
+- `design-060` says rename/delete are behind row menus with confirmation copy, but the visible saved rows still expose Rename and Delete directly without modeled confirmation.
 
 Missing flow coverage:
 - Selected command execution does not complete. It changes the inspector or menu, but does not show post-action states.
 - GitHub export/import have fields but no connection/authenticated/reauth states.
 - Import `.zip` still lacks selected file, validation, and "replace current versus start new" outcome in `design-059`; `design-050` models this better but still does not complete it.
 - Saved rename/delete remain exposed without confirmation/result.
+- `design-060` preserves save progress but does not complete the save into a saved slug, saved-list update, or post-save reset/reload branch.
 
 Future direction:
 - Carry forward `design-050`'s route taxonomy and `design-059`'s compact keybar as complementary patterns.
+- Carry forward `design-060`'s grouped action cards and selected-results pane for beginner discoverability.
 - Make command results scoped: current site, saved library, start new, Site Manager, transfer.
 - For each command, show exact current-product flow: required input, cancel, submit, progress, completion, and state change.
 
@@ -292,7 +299,7 @@ Future direction:
 
 Carry forward strongly:
 - `design-022`, `design-042`, and `design-053` for saved-library/register modeling.
-- `design-026`, `design-033`, `design-039`, `design-046`, `design-050`, and `design-059` for command/search/keybar routing.
+- `design-026`, `design-033`, `design-039`, `design-046`, `design-050`, `design-059`, and `design-060` for command/search/keybar/action routing.
 - `design-023`, `design-034`, `design-043`, and `design-054` for Blueprint discovery and authoring.
 - `design-024`, `design-031`, `design-044`, `design-051`, `design-053`, and `design-058` for advanced Site Manager and IDE-like workflows.
 - `design-056` for table-led run management and selected-run inspection.
