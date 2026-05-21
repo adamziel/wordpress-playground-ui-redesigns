@@ -1,0 +1,47 @@
+{
+  "id": "v2-design-027",
+  "title": "Branch Review Command Deck",
+  "concept": "A dense WordPress Playground command deck that treats Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, and ZIP import as distinct launch contracts with visible constraints, validation, progress, and resulting active Playground identity.",
+  "focus": [
+    "PR and branch review console object model",
+    "dense command deck with readable keyboard-like labels",
+    "protected live WordPress shell",
+    "stateful browser save and Blueprint replacement flows",
+    "explicit saved, local, and temporary storage consequences"
+  ],
+  "flows": [
+    "Choose between Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, and .zip import contracts with route-specific inputs and constraints",
+    "Finish Save in this browser from an unsaved state through destination choice, file-copy progress, saved row insertion, active title update, storage badge mutation, and reset action changing to Save & Reload",
+    "Save to a local directory as a distinct destination with folder permission and reconnect consequences",
+    "Select a Blueprint from an honestly labeled subset of the 43-entry gallery, inspect JSON, validate, warn about replacing current content, run progress, and update the active preview and database state",
+    "Manage saved and unsaved Playgrounds with open/manage, rename mutation, delete confirmation, final removal, and fallback to an Unsaved Playground",
+    "Use Site Manager settings, files, Blueprint, database, logs, Export to GitHub, Download as zip, database download, Adminer, phpMyAdmin, and Blueprint bundle actions without hiding the live WordPress shell"
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start route",
+    "WordPress PR preview route with PR number or URL",
+    "Gutenberg PR or branch route with PR, URL, or branch input",
+    "GitHub import with account connection and token-not-stored warning",
+    "Blueprint URL runner",
+    "Import .zip with native chooser and replacement warning",
+    "Blueprint gallery categories and search with representative subset labeled 6 shown of 43",
+    "Featured Blueprint shortcuts and selected Blueprint detail",
+    "Save in this browser",
+    "Save to a local directory",
+    "Save progress with file-copy counts",
+    "Saved and unsaved Playground list",
+    "Rename and delete saved Playgrounds with confirmation and final state",
+    "Active path input, refresh, Homepage, and WP Admin shortcuts",
+    "Temporary, browser-saved, and local-directory storage states",
+    "WordPress version, PHP version, language, older versions, network, and multisite settings",
+    "Destructive reset and stored Save & Reload behavior",
+    "File browser with create file, create folder, upload, browse files, selected editor, dirty state, and save result",
+    "Blueprint editor with JSON validation, copy, download bundle, run, replacement warning, progress, and result state",
+    "SQLite-backed database driver, path, size, database download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs",
+    "Export to GitHub",
+    "Download as .zip",
+    "Portability actions for GitHub import/export, ZIP import/download, database download, and Blueprint bundles",
+    "Transfer history showing save, rename, delete, import, export, database, file, and Blueprint events"
+  ]
+}
