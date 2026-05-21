@@ -4121,6 +4121,47 @@
     "path": "design-090/index.html"
   },
   {
+    "id": "design-091",
+    "number": 91,
+    "title": "Blueprint Author Site Manager",
+    "concept": "A Site Manager takeover that makes the manager the main product surface, using compact card grids plus a detail drawer for launch, persistence, authoring, inspection, export, and saved-site consequences while the WordPress site remains a narrow preview.",
+    "focus": [
+      "Site Manager as primary app surface",
+      "Blueprint author workflow density",
+      "distinct launch and import routes",
+      "browser versus local-directory persistence",
+      "visible destructive consequences"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start",
+      "WordPress PR preview",
+      "Gutenberg PR or branch preview",
+      "GitHub import with account connection note",
+      "Blueprint URL run",
+      ".zip import with current-site replacement warning",
+      "Blueprint gallery category filters and search",
+      "featured Blueprint shortcuts represented in catalog",
+      "Save in this browser",
+      "Save to a local directory",
+      "save progress",
+      "saved and unsaved Playground management",
+      "rename saved Playground",
+      "delete saved Playground",
+      "URL path navigation and refresh",
+      "Homepage and WP Admin shortcuts",
+      "WordPress version, older versions, PHP, language, network, and multisite settings",
+      "destructive Apply Settings and Reset Playground",
+      "saved Playground Save and Reload",
+      "File browser with create, upload, browse, tree, and code editor",
+      "Blueprint editor with copy link, download bundle, and run",
+      "database driver, SQLite path, size, download, Adminer, and phpMyAdmin",
+      "Playground, WordPress, and PHP logs",
+      "Export to GitHub",
+      "Download as .zip"
+    ],
+    "path": "design-091/index.html"
+  },
+  {
     "id": "design-092",
     "number": 92,
     "title": "Playground Runbook Workspace",

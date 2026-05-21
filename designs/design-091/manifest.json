@@ -1,0 +1,48 @@
+{
+  "id": "design-091",
+  "title": "Blueprint Author Site Manager",
+  "concept": "A Site Manager takeover that makes the manager the main product surface, using compact card grids plus a detail drawer for launch, persistence, authoring, inspection, export, and saved-site consequences while the WordPress site remains a narrow preview.",
+  "focus": [
+    "Site Manager as primary app surface",
+    "Blueprint author workflow density",
+    "distinct launch and import routes",
+    "browser versus local-directory persistence",
+    "visible destructive consequences"
+  ],
+  "flows": [
+    "select a launch route such as Gutenberg branch and see its required input in the detail drawer",
+    "save a temporary Playground in browser storage with file-copy progress and a saved slug",
+    "choose a local directory save destination with a separate resulting state",
+    "manage saved and unsaved Playgrounds with visible rename and delete consequences",
+    "edit settings, reset unsaved sites, and reload stored sites from the Settings tab",
+    "browse files, edit wp-config.php, author blueprint.json, inspect database, view logs, export to GitHub, download a zip, and import a zip",
+    "filter the Blueprint gallery, inspect catalog entries, and run a selected Blueprint"
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start",
+    "WordPress PR preview",
+    "Gutenberg PR or branch preview",
+    "GitHub import with account connection note",
+    "Blueprint URL run",
+    ".zip import with current-site replacement warning",
+    "Blueprint gallery category filters and search",
+    "featured Blueprint shortcuts represented in catalog",
+    "Save in this browser",
+    "Save to a local directory",
+    "save progress",
+    "saved and unsaved Playground management",
+    "rename saved Playground",
+    "delete saved Playground",
+    "URL path navigation and refresh",
+    "Homepage and WP Admin shortcuts",
+    "WordPress version, older versions, PHP, language, network, and multisite settings",
+    "destructive Apply Settings and Reset Playground",
+    "saved Playground Save and Reload",
+    "File browser with create, upload, browse, tree, and code editor",
+    "Blueprint editor with copy link, download bundle, and run",
+    "database driver, SQLite path, size, download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs",
+    "Export to GitHub",
+    "Download as .zip"
+  ]
+}
