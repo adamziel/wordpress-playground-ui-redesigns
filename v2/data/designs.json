@@ -373,6 +373,47 @@
     "path": "v2-design-009/index.html"
   },
   {
+    "id": "v2-design-013",
+    "number": 13,
+    "title": "Playground Object Ledger",
+    "concept": "A saved-object control center that treats temporary, browser-saved, and local-directory Playgrounds as first-class ledger objects while every save, rename, delete, Blueprint, settings, import, and export event mutates the same active shell.",
+    "focus": [
+      "saved object ledger with temporary, browser, and local identities",
+      "event stream and transfer ledger as first-class operation feedback",
+      "end-to-end Blueprint replacement flow",
+      "stored settings Save & Reload versus temporary reset behavior",
+      "protected live WordPress shell beside dense object controls"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start route",
+      "WordPress PR preview input",
+      "Gutenberg PR or branch input",
+      "GitHub import with account connection and token-not-stored consequence",
+      "Blueprint URL runner",
+      "Import .zip route with validation and replacement warning",
+      "Blueprint gallery categories and search with honest representative subset of 43",
+      "Featured Blueprint shortcuts with captured names",
+      "Blueprint JSON editor with validation, copy, download, run, replacement warning, progress, and result state",
+      "Save temporary Playground in browser storage",
+      "Save to a local directory with folder permission and reconnect consequence",
+      "Save progress with file counts",
+      "Saved, local-directory, and unsaved Playground object differences",
+      "Saved Playground open, manage, rename, delete confirmation, row removal, and fallback state",
+      "Current shell path input and refresh",
+      "Homepage and WP Admin shortcuts",
+      "Temporary and saved shell states",
+      "Settings for WordPress version, older versions, PHP version, language, network access, and multisite",
+      "Destructive unsaved reset warning and stored Save & Reload behavior",
+      "File browser with create file, create folder, upload, browse, selected editor, dirty, and save result states",
+      "Database driver, SQLite path, size, database download, Adminer, and phpMyAdmin",
+      "Playground, WordPress, and PHP logs with empty and warning states",
+      "Export to GitHub",
+      "Download as zip",
+      "Transfer history for GitHub, ZIP, database, Blueprint, settings, save, rename, delete, and file actions"
+    ],
+    "path": "v2-design-013/index.html"
+  },
+  {
     "id": "v2-design-016",
     "number": 16,
     "title": "Operations Ledger Workbench",
