@@ -4121,5 +4121,51 @@
       "download a .zip"
     ],
     "path": "design-093/index.html"
+  },
+  {
+    "id": "design-094",
+    "number": 94,
+    "title": "Workshop Blueprint Market",
+    "concept": "A visual Blueprint marketplace for educators where the first screen is a dense image-rich catalog with a command/search overlay, while PR starts, GitHub import, ZIP import, save destinations, saved management, and Site Manager tools remain adjacent and consequence-aware.",
+    "focus": [
+      "image-rich Blueprint marketplace as the first usable screen",
+      "command/search overlay with route-specific launch forms",
+      "educator workshop flow proof for launch, save, progress, and result",
+      "browser save versus local directory save distinction",
+      "Site Manager coverage without making the first screen a generic operations console"
+    ],
+    "featureCoverage": [
+      "create a vanilla Playground",
+      "create from WordPress PR",
+      "create from Gutenberg PR or branch",
+      "import from GitHub after account connection",
+      "run a Blueprint URL",
+      "import a .zip",
+      "browse and filter Blueprint gallery entries",
+      "select featured blueprint shortcuts",
+      "save temporary Playground in browser storage",
+      "save to a local directory",
+      "see save progress",
+      "browse saved and unsaved Playgrounds",
+      "rename a saved Playground",
+      "delete a saved Playground",
+      "navigate active WordPress paths with URL input",
+      "refresh the active embedded WordPress page",
+      "open Homepage and WP Admin",
+      "edit WordPress/PHP/language settings",
+      "include older WordPress versions",
+      "allow network access",
+      "create a multisite network",
+      "understand destructive reset/reload behavior",
+      "use File browser with create folder/file, upload, browse, and code editing affordances",
+      "view/copy/download/run the current Blueprint bundle",
+      "inspect database driver/path/size",
+      "download database.sqlite",
+      "open Adminer and phpMyAdmin",
+      "inspect logs and empty/error states",
+      "export to GitHub",
+      "download a .zip"
+    ],
+    "path": "design-094/index.html"
   }
 ]
