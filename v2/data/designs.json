@@ -1987,5 +1987,48 @@
       "Transfer history tied to the active Playground identity and preview state"
     ],
     "path": "v2-design-047/index.html"
+  },
+  {
+    "id": "v2-design-048",
+    "number": 48,
+    "title": "Runtime Table Control Room",
+    "concept": "A table-led WordPress Playground operations workspace that makes runtime settings, saved/local/temporary storage, replacement consequences, manager tools, command search, and transfer states mutate one selected Playground object beside a protected live WordPress shell.",
+    "focus": [
+      "runtime settings control room with visible reset and reload consequences",
+      "admin table plus selected detail object model",
+      "stateful saved, local, temporary, imported, exported, and deleted rows",
+      "command search discovery with grouped results and executable forms",
+      "protected embedded live WordPress preview"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start route",
+      "WordPress PR preview with PR number or URL",
+      "Gutenberg PR or branch preview with PR, URL, or branch input",
+      "GitHub import with account connection and token-not-stored caveat",
+      "Blueprint URL runner",
+      "Import .zip with native chooser framing, validation, replacement warning, progress, and imported active identity",
+      "Blueprint gallery categories and search with representative subset labeled 6 shown of 43",
+      "Featured Blueprint shortcuts including Art Gallery, Coffee Shop, Friends feed reader, Gaming News, Non-profit Organization, and Personal Blog",
+      "Save temporary Playground in browser storage",
+      "Save to a local directory with folder permission and reconnect consequence",
+      "Save progress with file-copy counts",
+      "Saved and unsaved Playground list in an admin table",
+      "Rename saved Playground",
+      "Delete saved Playground with confirmation and final deleted state",
+      "Active path input, refresh, Homepage, and WP Admin shortcuts",
+      "Temporary, browser-saved, local-directory, imported, exported, and deleted row states",
+      "WordPress version, PHP version, language, older versions, network, and multisite settings",
+      "Destructive reset for temporary sites and Save & Reload for saved/local sites",
+      "Site Manager settings, file browser, Blueprint, database, and logs tabs",
+      "File browser with create file, create folder, upload, browse files, selected editor, dirty state, save progress, and result",
+      "Blueprint editor with validation, copy link, download bundle, run, replacement warning, progress, and result",
+      "SQLite-backed database driver, path, size, database download, Adminer, and phpMyAdmin",
+      "Playground, WordPress, and PHP logs with operation results",
+      "Export to GitHub with account connection, progress, and exported row state",
+      "Download as .zip",
+      "Portability actions for GitHub import/export, ZIP import/download, database download, and Blueprint bundle download",
+      "Transfer history recording save, local permission, rename, delete, import, export, file, database, Blueprint, path, and runtime events"
+    ],
+    "path": "v2-design-048/index.html"
   }
 ]

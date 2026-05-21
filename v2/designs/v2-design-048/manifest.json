@@ -1,0 +1,51 @@
+{
+  "id": "v2-design-048",
+  "title": "Runtime Table Control Room",
+  "concept": "A table-led WordPress Playground operations workspace that makes runtime settings, saved/local/temporary storage, replacement consequences, manager tools, command search, and transfer states mutate one selected Playground object beside a protected live WordPress shell.",
+  "focus": [
+    "runtime settings control room with visible reset and reload consequences",
+    "admin table plus selected detail object model",
+    "stateful saved, local, temporary, imported, exported, and deleted rows",
+    "command search discovery with grouped results and executable forms",
+    "protected embedded live WordPress preview"
+  ],
+  "flows": [
+    "Transform the active temporary row through Save in this browser with file-copy progress, saved identity, shell title, path, storage badge, table row, preview, and event history updates.",
+    "Save to a local directory as a distinct destination with folder permission, copy progress, local storage identity, reconnect-after-refresh consequence, and Save & Reload behavior.",
+    "Complete a file and database operation end to end: edit wp-config.php into a dirty state, save it with validation/progress/log result, and download database.sqlite with progress, size mutation, and event record.",
+    "Use command search end to end by querying grouped commands, selecting a command form, running progress, and mutating the active path, runtime selector, database row, or GitHub export row.",
+    "Confirm destructive or replacement flows for delete, runtime reset, Blueprint run, and ZIP import, with cancel, progress, final row state, active shell fallback, and preview mutation.",
+    "Use Site Manager tabs for Settings, Files, Blueprint, Database, Logs, Export to GitHub, and Download as zip without hiding the live WordPress shell.",
+    "Start new Playgrounds from Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import with account connection, Blueprint URL, and .zip import using route-specific inputs and constraints.",
+    "Browse an honestly labeled representative subset of the 43-entry Blueprint gallery with categories, search, selected detail, copy, download, validation, and run actions."
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start route",
+    "WordPress PR preview with PR number or URL",
+    "Gutenberg PR or branch preview with PR, URL, or branch input",
+    "GitHub import with account connection and token-not-stored caveat",
+    "Blueprint URL runner",
+    "Import .zip with native chooser framing, validation, replacement warning, progress, and imported active identity",
+    "Blueprint gallery categories and search with representative subset labeled 6 shown of 43",
+    "Featured Blueprint shortcuts including Art Gallery, Coffee Shop, Friends feed reader, Gaming News, Non-profit Organization, and Personal Blog",
+    "Save temporary Playground in browser storage",
+    "Save to a local directory with folder permission and reconnect consequence",
+    "Save progress with file-copy counts",
+    "Saved and unsaved Playground list in an admin table",
+    "Rename saved Playground",
+    "Delete saved Playground with confirmation and final deleted state",
+    "Active path input, refresh, Homepage, and WP Admin shortcuts",
+    "Temporary, browser-saved, local-directory, imported, exported, and deleted row states",
+    "WordPress version, PHP version, language, older versions, network, and multisite settings",
+    "Destructive reset for temporary sites and Save & Reload for saved/local sites",
+    "Site Manager settings, file browser, Blueprint, database, and logs tabs",
+    "File browser with create file, create folder, upload, browse files, selected editor, dirty state, save progress, and result",
+    "Blueprint editor with validation, copy link, download bundle, run, replacement warning, progress, and result",
+    "SQLite-backed database driver, path, size, database download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs with operation results",
+    "Export to GitHub with account connection, progress, and exported row state",
+    "Download as .zip",
+    "Portability actions for GitHub import/export, ZIP import/download, database download, and Blueprint bundle download",
+    "Transfer history recording save, local permission, rename, delete, import, export, file, database, Blueprint, path, and runtime events"
+  ]
+}
