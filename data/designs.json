@@ -3714,5 +3714,51 @@
       "download a .zip"
     ],
     "path": "design-081/index.html"
+  },
+  {
+    "id": "design-085",
+    "number": 85,
+    "title": "Playground Browser Desk",
+    "concept": "A browser-chrome redesign of WordPress Playground where Playgrounds are tabs, the WordPress path is a real address bar, and creation, saving, saved management, Site Manager drawers, Blueprints, and transfers are organized around browser-like controls for first-time learners.",
+    "focus": [
+      "browser tabs, address bar, reload, Homepage, WP Admin, save state, and Site Manager controls in the chrome",
+      "left navigation plus full-height content instead of modal-first management",
+      "route-specific launch drawers for Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, and .zip import",
+      "visible save destination, save progress, saved identity, rename, delete, reset, reload, and import consequences",
+      "credible Blueprint catalog with filters, dense results, selected detail, inspect, copy, download, and run actions"
+    ],
+    "featureCoverage": [
+      "create a vanilla Playground",
+      "create from WordPress PR",
+      "create from Gutenberg PR or branch",
+      "import from GitHub after account connection",
+      "run a Blueprint URL",
+      "import a .zip",
+      "browse and filter Blueprint gallery entries",
+      "select featured Blueprint shortcuts",
+      "save temporary Playground in browser storage",
+      "save to a local directory",
+      "see save progress",
+      "browse saved and unsaved Playgrounds",
+      "rename a saved Playground",
+      "delete a saved Playground",
+      "navigate active WordPress paths with URL input",
+      "refresh the active embedded WordPress page",
+      "open Homepage and WP Admin",
+      "edit WordPress/PHP/language settings",
+      "include older WordPress versions",
+      "allow network access",
+      "create a multisite network",
+      "understand destructive reset/reload behavior",
+      "use File browser with create folder/file, upload, browse, and code editing affordances",
+      "view/copy/download/run the current Blueprint bundle",
+      "inspect database driver/path/size",
+      "download database.sqlite",
+      "open Adminer and phpMyAdmin",
+      "inspect logs and empty/error states",
+      "export to GitHub",
+      "download a .zip"
+    ],
+    "path": "design-085/index.html"
   }
 ]
