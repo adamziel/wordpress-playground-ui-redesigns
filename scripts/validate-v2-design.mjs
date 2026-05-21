@@ -44,7 +44,7 @@ assert(
 
 const requiredSignals = [
   /save/i,
-  /local directory/i,
+  /local (directory|folder)|folder picker/i,
   /saved playground/i,
   /site manager/i,
   /blueprint/i,
