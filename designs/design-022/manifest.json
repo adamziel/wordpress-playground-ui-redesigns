@@ -1,0 +1,50 @@
+{
+  "id": "design-022",
+  "title": "Playground Library",
+  "concept": "A saved-sites-first dashboard where temporary and browser-backed Playgrounds are the primary objects, creation and portability are actions on the library, and the active WordPress site only expands after a Playground is selected.",
+  "focus": [
+    "saved-sites library as the first viewport",
+    "tabbed workspace instead of modal stacks",
+    "Blueprint author workflow with library, gallery, blueprint editor, and export handoff",
+    "dark diagnostics surface with light operational cards"
+  ],
+  "flows": [
+    "Browse saved and unsaved Playgrounds, select one, then open its preview or Site Manager",
+    "Create from vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, zip import, featured blueprints, or the full Blueprint gallery",
+    "Save temporary work in browser storage or a local directory with visible file-copy progress",
+    "Use Site Manager tabs for settings, file browsing, Blueprint editing, database tools, logs, and additional actions",
+    "Export to GitHub, download a zip, import a zip, copy Blueprint links, download Blueprint bundles, and run Blueprints"
+  ],
+  "featureCoverage": [
+    "create vanilla WordPress Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub after account connection",
+    "run a Blueprint URL",
+    "import a .zip",
+    "browse and filter Blueprint gallery entries",
+    "select featured blueprint shortcuts",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "see save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh the active embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress/PHP/language settings",
+    "include older WordPress versions",
+    "allow network access",
+    "create a multisite network",
+    "understand destructive reset and stored Save & Reload behavior",
+    "use File browser with create folder/file, upload, browse, and code editing affordances",
+    "view/copy/download/run the current Blueprint bundle",
+    "inspect database driver/path/size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect logs and empty/error states",
+    "export to GitHub",
+    "download a .zip"
+  ]
+}
