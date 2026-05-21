@@ -1,0 +1,51 @@
+{
+  "id": "design-032",
+  "title": "Guided Author Workspace",
+  "concept": "A checklist-led, tabbed Playground workspace for Blueprint authors that teaches the existing capabilities in sequence while keeping the active WordPress browser, save state, authoring tools, Site Manager, library, and gallery reachable from one dark diagnostics surface.",
+  "focus": [
+    "onboarding checklist workspace",
+    "Blueprint author first viewport",
+    "tabbed information architecture",
+    "dark diagnostics surface with light work cards",
+    "progressive discovery without new product features"
+  ],
+  "flows": [
+    "Use the default checklist to move through start source selection, saving, blueprint authoring, file inspection, database checks, and export actions.",
+    "Start a Playground from vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, import zip, featured Blueprint shortcuts, or the full gallery.",
+    "Save a temporary Playground in browser storage or to a local directory with file-copy progress, then manage saved and unsaved Playgrounds with rename and delete actions.",
+    "Use Site Manager tabs for runtime settings, file browser, Blueprint editing, database tools, logs, Homepage, WP Admin, export to GitHub, and zip download.",
+    "Browse and filter the Blueprint gallery by category and run selected gallery entries."
+  ],
+  "featureCoverage": [
+    "create a vanilla Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub after account connection",
+    "run a Blueprint URL",
+    "import a .zip",
+    "browse and filter Blueprint gallery entries",
+    "select featured blueprint shortcuts",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "see save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh the active embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress/PHP/language settings",
+    "include older WordPress versions",
+    "allow network access",
+    "create a multisite network",
+    "understand destructive reset and stored Save & Reload behavior",
+    "use File browser with create folder/file, upload, browse, and code editing affordances",
+    "view/copy/download/run the current Blueprint bundle",
+    "inspect database driver/path/size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect logs and empty/error states",
+    "export to GitHub",
+    "download a .zip"
+  ]
+}
