@@ -1,0 +1,51 @@
+{
+  "id": "design-070",
+  "title": "Playground Portability Hub",
+  "concept": "A single-column progressive disclosure redesign that treats every Playground action as a portability step: start or import, save to browser or local directory, export to GitHub or zip, and package Blueprints for reuse.",
+  "focus": [
+    "Import/export hub",
+    "Distinct launch routes with route-specific inputs",
+    "Browser save versus local directory save",
+    "Blueprint catalog inspection and bundle actions",
+    "Temporary state and destructive action visibility"
+  ],
+  "flows": [
+    "Select Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, or zip import",
+    "Save a temporary Playground to browser storage or a local directory with file-copy progress",
+    "Manage saved Playgrounds with rename and delete states",
+    "Inspect a Blueprint, copy its link, download its bundle, or run it over the current site",
+    "Use Site Manager settings, files, blueprint, database, logs, and export actions from one progressive page"
+  ],
+  "featureCoverage": [
+    "create vanilla Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub after account connection",
+    "run Blueprint URL",
+    "import .zip",
+    "browse and filter Blueprint gallery entries",
+    "select featured blueprint shortcuts",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "see save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh the active embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress/PHP/language settings",
+    "include older WordPress versions",
+    "allow network access",
+    "create a multisite network",
+    "understand destructive reset/reload behavior",
+    "use File browser with create folder/file, upload, browse, and code editing affordances",
+    "view/copy/download/run the current Blueprint bundle",
+    "inspect database driver/path/size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect logs and empty/error states",
+    "export to GitHub",
+    "download a .zip"
+  ]
+}

@@ -2895,5 +2895,51 @@
       "download a .zip"
     ],
     "path": "design-064/index.html"
+  },
+  {
+    "id": "design-070",
+    "number": 70,
+    "title": "Playground Portability Hub",
+    "concept": "A single-column progressive disclosure redesign that treats every Playground action as a portability step: start or import, save to browser or local directory, export to GitHub or zip, and package Blueprints for reuse.",
+    "focus": [
+      "Import/export hub",
+      "Distinct launch routes with route-specific inputs",
+      "Browser save versus local directory save",
+      "Blueprint catalog inspection and bundle actions",
+      "Temporary state and destructive action visibility"
+    ],
+    "featureCoverage": [
+      "create vanilla Playground",
+      "create from WordPress PR",
+      "create from Gutenberg PR or branch",
+      "import from GitHub after account connection",
+      "run Blueprint URL",
+      "import .zip",
+      "browse and filter Blueprint gallery entries",
+      "select featured blueprint shortcuts",
+      "save temporary Playground in browser storage",
+      "save to a local directory",
+      "see save progress",
+      "browse saved and unsaved Playgrounds",
+      "rename a saved Playground",
+      "delete a saved Playground",
+      "navigate active WordPress paths with URL input",
+      "refresh the active embedded WordPress page",
+      "open Homepage and WP Admin",
+      "edit WordPress/PHP/language settings",
+      "include older WordPress versions",
+      "allow network access",
+      "create a multisite network",
+      "understand destructive reset/reload behavior",
+      "use File browser with create folder/file, upload, browse, and code editing affordances",
+      "view/copy/download/run the current Blueprint bundle",
+      "inspect database driver/path/size",
+      "download database.sqlite",
+      "open Adminer and phpMyAdmin",
+      "inspect logs and empty/error states",
+      "export to GitHub",
+      "download a .zip"
+    ],
+    "path": "design-070/index.html"
   }
 ]
