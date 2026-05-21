@@ -1,0 +1,50 @@
+{
+  "id": "v2-design-038",
+  "title": "Runtime Settings Control Room",
+  "concept": "A responsive tabbed operations workspace that treats the active Playground runtime profile as the primary object, making WordPress version, PHP version, language, network, multisite, older versions, reset, saved reload, save destinations, ZIP import replacement, and portability outcomes discoverable without hiding the live WordPress shell.",
+  "focus": [
+    "runtime settings control room",
+    "responsive tabbed console with mobile bottom navigation",
+    "protected live WordPress shell",
+    "stateful ZIP import replacement flow",
+    "stateful ZIP download transfer flow",
+    "saved, local-directory, temporary, and imported storage consequences"
+  ],
+  "flows": [
+    "Change WordPress version, PHP version, language, older-version availability, network, and multisite controls, then apply either destructive unsaved reset or stored Save & Reload with progress and active runtime badge mutation.",
+    "Finish ZIP import end to end with source selection, replacement warning, cancel option, progress, success state, database size mutation, active Playground title update, path update, saved-object row mutation, preview copy mutation, and transfer history.",
+    "Finish ZIP download end to end with source status, progress, generated archive result, and transfer history tied to the active Playground identity.",
+    "Save the current temporary Playground in browser storage or to a local directory with distinct destination consequences, progress, storage badge mutation, slug or folder identity, saved row transformation, and reset versus reload behavior.",
+    "Manage saved and unsaved Playgrounds with open/manage, rename mutation, delete confirmation, cancel, final row removal, and active-shell fallback to an Unsaved Playground.",
+    "Use Site Manager tabs for Settings, Files, Blueprint, Database, Logs, Export to GitHub, and Download as zip while the live WordPress preview remains visible.",
+    "Launch or replace through Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import with account connection, Blueprint URL, and .zip import using route-specific inputs and constraints."
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start route",
+    "WordPress PR preview with PR number or URL input",
+    "Gutenberg PR or branch preview with PR, URL, or branch input",
+    "GitHub import with account connection and token-not-stored consequence",
+    "Blueprint URL runner",
+    "Import .zip with selected source, replacement warning, cancel, progress, and active identity update",
+    "Blueprint gallery categories and search with representative subset labeled 6 shown of 43",
+    "Featured Blueprint shortcuts including Art Gallery, Coffee Shop, Feed Reader with the Friends Plugin, Gaming News, Non-profit Organization, and Personal Blog",
+    "Save temporary Playground in browser storage",
+    "Save to a local directory with folder permission and reconnect consequence",
+    "Save progress with file-copy counts",
+    "Saved, unsaved, local-directory, and temporary imported Playground list",
+    "Open, rename, delete confirmation, cancel, row removal, and fallback state",
+    "Current shell path input, refresh, Homepage, and WP Admin shortcuts",
+    "Temporary, browser-saved, local-directory, and imported storage badges",
+    "WordPress version, PHP version, language, older versions, network access, and multisite controls",
+    "Destructive Apply Settings & Reset Playground and stored Save & Reload consequences",
+    "Site Manager Settings, Files, Blueprint, Database, Logs, Export to GitHub, and Download as zip",
+    "File browser with create file, create folder, upload, browse files, selected wp-config.php editor, dirty state, save, and result state",
+    "Blueprint editor with Blueprint URL, validation, copy link, download bundle, run, replacement consequence, and result state",
+    "SQLite-backed database driver, path, size, database download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs with realistic notice state",
+    "GitHub import and export",
+    "ZIP import and ZIP download",
+    "Database download and Blueprint bundle portability actions",
+    "Transfer history for saves, runtime changes, files, database, Blueprint, GitHub, ZIP, delete, rename, and navigation"
+  ]
+}
