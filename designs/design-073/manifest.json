@@ -1,0 +1,51 @@
+{
+  "id": "design-073",
+  "title": "Playground Admin Register",
+  "concept": "A dense WordPress-admin-like dashboard for repeat core contributor use, where the first viewport is a saved Playground register with filters, row actions, and an inline workflow inspector that exposes save destinations, destructive actions, route-specific launch inputs, and resulting states.",
+  "focus": [
+    "professional admin dashboard",
+    "table-led saved Playground management",
+    "core contributor PR review workflows",
+    "compact consequence-aware action inspector",
+    "neutral WordPress admin palette with one blue accent"
+  ],
+  "flows": [
+    "Manage temporary, browser-saved, and local-directory Playgrounds from a first-viewport register with save, rename, delete, reset, export, file, database, and log row actions.",
+    "Save an unsaved Playground in browser storage or to a local directory with distinct destination controls, progress, and resulting saved-state rows.",
+    "Start or replace the current Playground from Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, or zip import with route-specific inputs and visible replacement consequences.",
+    "Browse a credible Blueprint catalog with category filters, search, 1-12 of 43 density, selected detail, run selected, and inspect JSON behavior.",
+    "Use Site Manager settings, file browser, Blueprint editor, database tools, logs, Homepage, WP Admin, path navigation, reset/reload warnings, export to GitHub, and zip download."
+  ],
+  "featureCoverage": [
+    "create a vanilla WordPress Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub after account connection",
+    "run Blueprint URL",
+    "import .zip",
+    "browse and filter Blueprint gallery entries",
+    "select featured Blueprint shortcuts",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "see save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh the active embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress version, PHP version, and language settings",
+    "include older WordPress versions",
+    "allow network access",
+    "create a multisite network",
+    "understand destructive reset and stored Save & Reload behavior",
+    "use File browser with create folder, create file, upload, browse, and code editing affordances",
+    "view, copy, download, and run the current Blueprint bundle",
+    "inspect database driver, path, and size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect Playground, WordPress, and PHP logs with empty states",
+    "export to GitHub",
+    "download a .zip"
+  ]
+}
