@@ -1600,5 +1600,51 @@
       "download a .zip"
     ],
     "path": "design-035/index.html"
+  },
+  {
+    "id": "design-037",
+    "number": 37,
+    "title": "Playground Review Document",
+    "concept": "A document-style Playground workspace for core contributors reviewing PRs: the active Playground is treated as a project document with inline start sources, save state, saved references, runtime settings, files, blueprint, database, logs, and export actions beside a split live preview and contextual editor.",
+    "focus": [
+      "document-style information architecture",
+      "core contributor PR review workflow",
+      "split preview and editor",
+      "inline settings and contextual actions",
+      "dark diagnostics surface with light document cards"
+    ],
+    "featureCoverage": [
+      "create a vanilla Playground",
+      "create from WordPress PR",
+      "create from Gutenberg PR or branch",
+      "import from GitHub after account connection",
+      "run a Blueprint URL",
+      "import a .zip",
+      "browse and filter Blueprint gallery entries",
+      "select featured blueprint shortcuts",
+      "save temporary Playground in browser storage",
+      "save to a local directory",
+      "see save progress",
+      "browse saved and unsaved Playgrounds",
+      "rename a saved Playground",
+      "delete a saved Playground",
+      "navigate active WordPress paths with URL input",
+      "refresh the active embedded WordPress page",
+      "open Homepage and WP Admin",
+      "edit WordPress/PHP/language settings",
+      "include older WordPress versions",
+      "allow network access",
+      "create a multisite network",
+      "understand destructive reset and stored Save and Reload behavior",
+      "use File browser with create folder/file, upload, browse, and code editing affordances",
+      "view/copy/download/run the current Blueprint bundle",
+      "inspect database driver/path/size",
+      "download database.sqlite",
+      "open Adminer and phpMyAdmin",
+      "inspect logs and empty/error states",
+      "export to GitHub",
+      "download a .zip"
+    ],
+    "path": "design-037/index.html"
   }
 ]
