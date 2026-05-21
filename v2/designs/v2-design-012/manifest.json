@@ -1,0 +1,46 @@
+{
+  "id": "v2-design-012",
+  "title": "Operations Rail Ledger",
+  "concept": "A light technical Playground console with a left operational rail, persistent live WordPress preview, operations ledger, and event stream where create, save, rename, delete, import, and export actions mutate the same active Playground object.",
+  "focus": [
+    "left operations rail",
+    "ledger and event stream",
+    "visible active-object mutation",
+    "ZIP import replacement flow",
+    "transfer history"
+  ],
+  "flows": [
+    "Import a ZIP archive end to end with source selection, invalid-file failure, validation, replacement warning, progress, success state, and active Playground identity update",
+    "Export the active Playground to GitHub or download a ZIP with destination state, progress, generated result, and transfer history",
+    "Save a temporary Playground either in browser storage or to a local directory with distinct progress and consequences",
+    "Manage saved and unsaved Playgrounds with open, rename, delete confirmation, row removal, and active-site fallback",
+    "Use Site Manager settings, files, Blueprint, database, logs, and additional transfer actions while the live WordPress preview remains visible"
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start",
+    "WordPress PR preview",
+    "Gutenberg PR or branch preview",
+    "GitHub import with account connection",
+    "Blueprint URL runner",
+    "Import zip trigger and complete replacement flow",
+    "Blueprint gallery with current categories, search, and honest representative subset label",
+    "Featured blueprint shortcuts",
+    "Browser storage save",
+    "Local directory save with permission consequence",
+    "Save progress state",
+    "Saved and unsaved Playground list",
+    "Rename saved Playground",
+    "Delete saved Playground with confirmation and fallback",
+    "Path input navigation and refresh",
+    "Homepage and WP Admin shortcuts",
+    "WordPress, PHP, language, network, older versions, and multisite settings",
+    "Destructive reset and stored Save & Reload behavior",
+    "File browser with new file, new folder, upload, browse, editor, dirty state, and save result",
+    "Blueprint editor with copy, download, run, validation, and replacement warning",
+    "Database driver, SQLite path, size, database download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs with realistic warning state",
+    "Export to GitHub",
+    "Download as zip",
+    "Transfer history for ZIP, GitHub, Blueprint, and database actions"
+  ]
+}

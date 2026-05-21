@@ -412,6 +412,47 @@
     "path": "v2-design-011/index.html"
   },
   {
+    "id": "v2-design-012",
+    "number": 12,
+    "title": "Operations Rail Ledger",
+    "concept": "A light technical Playground console with a left operational rail, persistent live WordPress preview, operations ledger, and event stream where create, save, rename, delete, import, and export actions mutate the same active Playground object.",
+    "focus": [
+      "left operations rail",
+      "ledger and event stream",
+      "visible active-object mutation",
+      "ZIP import replacement flow",
+      "transfer history"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start",
+      "WordPress PR preview",
+      "Gutenberg PR or branch preview",
+      "GitHub import with account connection",
+      "Blueprint URL runner",
+      "Import zip trigger and complete replacement flow",
+      "Blueprint gallery with current categories, search, and honest representative subset label",
+      "Featured blueprint shortcuts",
+      "Browser storage save",
+      "Local directory save with permission consequence",
+      "Save progress state",
+      "Saved and unsaved Playground list",
+      "Rename saved Playground",
+      "Delete saved Playground with confirmation and fallback",
+      "Path input navigation and refresh",
+      "Homepage and WP Admin shortcuts",
+      "WordPress, PHP, language, network, older versions, and multisite settings",
+      "Destructive reset and stored Save & Reload behavior",
+      "File browser with new file, new folder, upload, browse, editor, dirty state, and save result",
+      "Blueprint editor with copy, download, run, validation, and replacement warning",
+      "Database driver, SQLite path, size, database download, Adminer, and phpMyAdmin",
+      "Playground, WordPress, and PHP logs with realistic warning state",
+      "Export to GitHub",
+      "Download as zip",
+      "Transfer history for ZIP, GitHub, Blueprint, and database actions"
+    ],
+    "path": "v2-design-012/index.html"
+  },
+  {
     "id": "v2-design-013",
     "number": 13,
     "title": "Playground Object Ledger",
