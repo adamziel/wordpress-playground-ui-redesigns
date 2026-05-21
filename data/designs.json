@@ -3448,6 +3448,48 @@
     "path": "design-076/index.html"
   },
   {
+    "id": "design-077",
+    "number": 77,
+    "title": "Project Document Workspace",
+    "concept": "A document-style WordPress Playground workspace where launch sources, save state, Site Manager tools, catalog browsing, and import/export actions are organized as inline project sections with a command/search overlay and live results pane.",
+    "focus": [
+      "document-style workspace",
+      "command/search overlay",
+      "complete visible save and launch sequence",
+      "beginner-friendly agency testing workflow",
+      "dense Blueprint catalog with selected detail"
+    ],
+    "featureCoverage": [
+      "create a vanilla WordPress Playground",
+      "preview a WordPress PR",
+      "preview a Gutenberg PR or branch",
+      "import from GitHub after account connection",
+      "run a Blueprint URL",
+      "import a .zip archive",
+      "browse and filter Blueprint gallery entries",
+      "select featured Blueprint shortcuts",
+      "save temporary Playground in browser storage",
+      "save to a local directory",
+      "see save progress and resulting saved state",
+      "browse unsaved and saved Playgrounds",
+      "rename a saved Playground",
+      "delete a saved Playground with consequence copy",
+      "navigate and refresh active WordPress paths",
+      "open Homepage and WP Admin",
+      "edit WordPress version, PHP version, language, network, older versions, and multisite settings",
+      "understand destructive reset and stored reload behavior",
+      "use File browser with new file, new folder, upload, browse, and code editing affordances",
+      "view, copy, download, and run the current Blueprint bundle",
+      "inspect database driver, path, and size",
+      "download database.sqlite",
+      "open Adminer and phpMyAdmin",
+      "inspect Playground, WordPress, and PHP logs",
+      "export to GitHub",
+      "download the current Playground as .zip"
+    ],
+    "path": "design-077/index.html"
+  },
+  {
     "id": "design-078",
     "number": 78,
     "title": "Tabbed Blueprint Project Workspace",
