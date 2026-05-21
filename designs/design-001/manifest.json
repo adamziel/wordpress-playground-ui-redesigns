@@ -1,0 +1,43 @@
+{
+  "id": "design-001",
+  "title": "Playground Console",
+  "concept": "A dense console-style workspace that keeps the live WordPress preview visible while creation, saved management, Site Manager tools, and export actions live in a persistent command panel.",
+  "focus": [
+    "persistent preview",
+    "command-panel navigation",
+    "workflow continuity",
+    "dense operational controls"
+  ],
+  "flows": [
+    "Start a new Playground from vanilla WordPress, PRs, GitHub, Blueprint URL, zip import, or gallery templates",
+    "Save a temporary Playground to browser storage or a local directory with visible progress",
+    "Manage saved and unsaved Playgrounds with rename and delete actions",
+    "Use Site Manager tabs for settings, file browser, Blueprint, database, logs, and exports"
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start",
+    "WordPress PR preview",
+    "Gutenberg PR or branch preview",
+    "GitHub import with account connection",
+    "Blueprint URL runner",
+    "Import zip trigger",
+    "Blueprint gallery with filters and search",
+    "Featured blueprint shortcuts",
+    "Browser and local-directory saving",
+    "Save progress state",
+    "Saved Playground list",
+    "Rename and delete saved sites",
+    "URL path navigation and refresh",
+    "Homepage and WP Admin shortcuts",
+    "WordPress/PHP/language settings",
+    "Older WordPress versions option",
+    "Network and multisite toggles",
+    "Destructive reset and saved reload behavior",
+    "File browser with new file, new folder, upload, browse, and editor",
+    "Blueprint copy, download, run, and editor",
+    "Database driver, path, size, download, Adminer, and phpMyAdmin",
+    "Logs with empty state",
+    "Export to GitHub",
+    "Download as zip"
+  ]
+}
