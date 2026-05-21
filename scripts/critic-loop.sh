@@ -59,7 +59,7 @@ while true; do
     exit 0
   fi
 
-  if (( count > last && ( count % 10 == 0 || count == TOTAL_DESIGNS ) )); then
+  if (( count > last && ( count - last >= 10 || count == TOTAL_DESIGNS ) )); then
     echo "critic: reviewing $count completed designs"
     if run_critic "$count"; then
       flock "$LOCK_DIR/integrate.lock" bash -c '
