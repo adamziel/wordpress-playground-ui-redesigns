@@ -1,5 +1,47 @@
 [
   {
+    "id": "v2-design-001",
+    "number": 1,
+    "title": "Preview-Protecting Command Deck",
+    "concept": "A live-browser-first Playground shell with a right inspector that exposes save destinations, launch routes, saved management, Site Manager tools, Blueprint runs, and transfer history while keeping the WordPress preview large and persistent.",
+    "focus": [
+      "persistent live WordPress browser",
+      "right inspector command deck",
+      "stateful browser save flow",
+      "replacement-safe Blueprint run",
+      "portable Playground object model"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start",
+      "WordPress PR preview",
+      "Gutenberg PR or branch preview",
+      "GitHub import with account connection and non-persistent token warning",
+      "Blueprint URL runner",
+      "Import .zip with file chooser and replacement warning",
+      "Blueprint gallery categories and search with honest representative subset of 43",
+      "Featured Blueprint shortcuts and selected Blueprint detail",
+      "Save in this browser",
+      "Save to a local directory",
+      "Save progress state",
+      "Saved and unsaved Playground list",
+      "Local-directory Playground distinction and reconnect consequence",
+      "Rename and delete saved Playgrounds with confirmation and final state",
+      "Active path input and refresh",
+      "Homepage and WP Admin shortcuts",
+      "Temporary, saved, and local storage badges",
+      "WordPress, PHP, language, older versions, network, and multisite settings",
+      "Destructive reset versus saved Save & Reload behavior",
+      "File browser with new file, new folder, upload, browse, selected editor, dirty state, and save result",
+      "Blueprint editor with validation, copy, download, run, warning, progress, and result state",
+      "SQLite database path, size, download, Adminer, and phpMyAdmin",
+      "Playground, WordPress, and PHP logs with warning state",
+      "Export to GitHub",
+      "Download as zip",
+      "Transfer history for imports, exports, downloads, saves, and Blueprint runs"
+    ],
+    "path": "v2-design-001/index.html"
+  },
+  {
     "id": "v2-design-002",
     "number": 2,
     "title": "Operations Rail Console",
