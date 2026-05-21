@@ -840,6 +840,47 @@
     "path": "v2-design-021/index.html"
   },
   {
+    "id": "v2-design-022",
+    "number": 22,
+    "title": "Operations Rail Console",
+    "concept": "A dense power-user Playground console with a labeled left operations rail, a protected live WordPress shell, and a command deck where Create, Save, Library, Manage, Blueprints, Data, Logs, and Transfer modes mutate the same active Playground object.",
+    "focus": [
+      "left operational rail with readable labels",
+      "dense command deck for power users",
+      "stateful database and file operations",
+      "command search discovery with executable forms",
+      "high-contrast shell with readable white panels"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start route",
+      "WordPress PR preview route",
+      "Gutenberg PR or branch preview route",
+      "GitHub import with account connection and non-persistent token consequence",
+      "Blueprint URL runner",
+      "Import .zip with validation and replacement consequence",
+      "Blueprint gallery categories and search with honest representative subset of 43",
+      "Featured Blueprint shortcuts including Art Gallery, Coffee Shop, Friends feed reader, Gaming News, Non-profit Organization, and Personal Blog",
+      "Save temporary Playground in browser storage",
+      "Save temporary Playground to a local directory",
+      "Browser and local save progress states",
+      "Saved, unsaved, and local-directory Playground differences",
+      "Saved Playground open, rename, delete confirmation, cancel, row removal, and fallback state",
+      "Current shell path input and refresh",
+      "Homepage and WP Admin shortcuts",
+      "Temporary, saved, and local storage badges with reset or reload consequences",
+      "WordPress version, PHP version, language, older-version, network, and multisite settings",
+      "Destructive reset and stored Save & Reload behavior",
+      "File browser with create file, create folder, upload, browse, selected editor, dirty marker, save, and result state",
+      "Blueprint editor with URL, validation, copy link, download bundle, run replacement, and result state",
+      "SQLite-backed database driver, path, size, database download progress, Adminer, and phpMyAdmin",
+      "Playground, WordPress, and PHP logs with warning and success events",
+      "Export to GitHub",
+      "Download active Playground as .zip",
+      "Portability history for GitHub import/export, ZIP import/download, database download, and Blueprint bundle actions"
+    ],
+    "path": "v2-design-022/index.html"
+  },
+  {
     "id": "v2-design-023",
     "number": 23,
     "title": "Saved Object Command Deck",
