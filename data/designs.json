@@ -3491,5 +3491,50 @@
       "download a .zip"
     ],
     "path": "design-078/index.html"
+  },
+  {
+    "id": "design-080",
+    "number": 80,
+    "title": "Guided Playground Action Stack",
+    "concept": "A beginner-card, single-column progressive disclosure redesign for documentation writers preparing demos. The active unsaved Playground appears first, followed by grouped action cards that reveal exact launch, save, management, Site Manager, Blueprint gallery, and portability consequences inline.",
+    "focus": [
+      "single-column progressive disclosure instead of a split operations console",
+      "beginner action cards with concrete inputs, progress, and result states",
+      "monochrome interface with colored status chips for temporary, saved, destructive, and informational states",
+      "documentation writer workflow for preparing, saving, inspecting, and exporting demo sites"
+    ],
+    "featureCoverage": [
+      "create a vanilla Playground",
+      "create from WordPress PR",
+      "create from Gutenberg PR or branch",
+      "import from GitHub after account connection",
+      "run a Blueprint URL",
+      "import a .zip",
+      "browse and filter Blueprint gallery entries",
+      "select featured blueprint shortcuts",
+      "save temporary Playground in browser storage",
+      "save to a local directory",
+      "see save progress",
+      "browse saved and unsaved Playgrounds",
+      "rename a saved Playground",
+      "delete a saved Playground",
+      "navigate active WordPress paths with URL input",
+      "refresh the active embedded WordPress page",
+      "open Homepage and WP Admin",
+      "edit WordPress/PHP/language settings",
+      "include older WordPress versions",
+      "allow network access",
+      "create a multisite network",
+      "understand destructive reset/reload behavior",
+      "use File browser with create folder/file, upload, browse, and code editing affordances",
+      "view/copy/download/run the current Blueprint bundle",
+      "inspect database driver/path/size",
+      "download database.sqlite",
+      "open Adminer and phpMyAdmin",
+      "inspect logs and empty/error states",
+      "export to GitHub",
+      "download a .zip"
+    ],
+    "path": "design-080/index.html"
   }
 ]
