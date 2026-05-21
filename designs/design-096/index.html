@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design 096 - Playground Review Launcher</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar" aria-label="Playground workspace">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">P</span>
+        <div>
+          <strong>Playground Review</strong>
+          <span>Local development launcher</span>
+        </div>
+      </div>
+      <nav class="nav-tabs" aria-label="Primary">
+        <button class="nav-tab is-active" data-view="launch">Launch</button>
+        <button class="nav-tab" data-view="sites">Saved Sites</button>
+        <button class="nav-tab" data-view="manager">Site Manager</button>
+        <button class="nav-tab" data-view="blueprints">Blueprints</button>
+        <button class="nav-tab" data-view="transfer">Transfer</button>
+      </nav>
+      <div class="runtime-controls">
+        <button class="icon-button" title="Refresh active WordPress page">↻</button>
+        <label class="path-label" for="path-input">Path</label>
+        <input id="path-input" value="/hello-from-playground/" aria-label="Active WordPress path">
+        <span class="save-state unsaved">Unsaved</span>
+        <button class="primary compact" data-view="transfer" data-drawer="save">Save</button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="content-column">
+        <section class="hero-panel view is-active" data-panel="launch" aria-labelledby="launch-heading">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Start a disposable review site</p>
+              <h1 id="launch-heading">Launch sources are separated by what a core contributor needs to prove.</h1>
+            </div>
+            <div class="status-cluster">
+              <span class="pill blue">WP latest</span>
+              <span class="pill green">PHP 8.3</span>
+              <span class="pill">Network on</span>
+            </div>
+          </div>
+
+          <div class="launch-grid" aria-label="Launch source choices">
+            <button class="source-card is-selected" data-drawer="wordpress-pr">
+              <span class="source-kicker">Core patch</span>
+              <strong>WordPress PR</strong>
+              <span>Requires PR number or GitHub URL. Builds a WordPress checkout for review.</span>
+              <code>PR #72042</code>
+            </button>
+            <button class="source-card" data-drawer="gutenberg-pr">
+              <span class="source-kicker">Editor patch</span>
+              <strong>Gutenberg PR or branch</strong>
+              <span>Accepts PR number, URL, or branch name before previewing.</span>
+              <code>try/blocks-list-view</code>
+            </button>
+            <button class="source-card" data-drawer="github">
+              <span class="source-kicker">Repository</span>
+              <strong>GitHub import</strong>
+              <span>Connects to GitHub, then imports a plugin, theme, or wp-content repo.</span>
+              <code>owner/repo/path</code>
+            </button>
+            <button class="source-card" data-drawer="blueprint-url">
+              <span class="source-kicker">Recipe</span>
+              <strong>Blueprint URL</strong>
+              <span>Runs a remote blueprint.json against the current runtime.</span>
+              <code>https://.../blueprint.json</code>
+            </button>
+            <button class="source-card" data-drawer="zip">
+              <span class="source-kicker">Archive</span>
+              <strong>Import .zip</strong>
+              <span>Uses a local zip file and warns before replacing the current site.</span>
+              <code>site-export.zip</code>
+            </button>
+            <button class="source-card" data-drawer="vanilla">
+              <span class="source-kicker">Clean install</span>
+              <strong>Vanilla WordPress</strong>
+              <span>Starts immediately from selected WP, PHP, language, and network settings.</span>
+              <code>No external input</code>
+            </button>
+          </div>
+
+          <div class="proof-flow" aria-label="Complete flow proof">
+            <div class="flow-header">
+              <div>
+                <strong>Visible end-to-end run</strong>
+                <span>Gutenberg PR #61234 review saved to browser, renamed, reset, exported, and imported over current site.</span>
+              </div>
+              <button class="secondary" data-drawer="run-proof">Inspect sequence</button>
+            </div>
+            <ol class="timeline">
+              <li class="done"><span>Launch source</span><strong>Gutenberg PR #61234</strong><em>Branch or PR accepted</em></li>
+              <li class="done"><span>Save destination</span><strong>Browser storage</strong><em>3,751 files copied</em></li>
+              <li class="done"><span>Saved identity</span><strong>Block Hooks Review</strong><em>Slug: block-hooks-review</em></li>
+              <li class="warn"><span>Reload settings</span><strong>PHP 8.3, network on</strong><em>Reload keeps saved site</em></li>
+              <li class="done"><span>Export result</span><strong>review-bundle.zip</strong><em>Ready for local handoff</em></li>
+              <li class="danger"><span>Import consequence</span><strong>Replace current site</strong><em>Requires confirmation</em></li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="view" data-panel="sites" aria-labelledby="sites-heading">
+          <div class="section-head compact-head">
+            <div>
+              <p class="eyebrow">Browser-backed inventory</p>
+              <h2 id="sites-heading">Saved Playgrounds</h2>
+            </div>
+            <button class="primary" data-drawer="save">Save current temporary site</button>
+          </div>
+          <div class="saved-layout">
+            <div class="table-card">
+              <div class="table-toolbar">
+                <input value="review" aria-label="Filter saved Playgrounds">
+                <button class="secondary">Sort by recent</button>
+              </div>
+              <div class="site-row active">
+                <span class="wp-dot">W</span>
+                <div><strong>Block Hooks Review</strong><small>Saved in this browser a moment ago · /block-hooks-review/</small></div>
+                <span class="tag saved">Saved</span>
+                <button data-drawer="rename-delete">Rename / Delete</button>
+              </div>
+              <div class="site-row">
+                <span class="wp-dot muted">W</span>
+                <div><strong>Unsaved Playground</strong><small>Temporary session, lost on refresh or close</small></div>
+                <span class="tag warning">Temporary</span>
+                <button data-drawer="save">Choose save destination</button>
+              </div>
+              <div class="site-row">
+                <span class="wp-dot">W</span>
+                <div><strong>Research Browser Playground</strong><small>Created May 21, 2026 · /research-browser-playground/</small></div>
+                <span class="tag saved">Saved</span>
+                <button data-drawer="rename-delete">Actions</button>
+              </div>
+            </div>
+            <div class="impact-card">
+              <strong>Current action preview</strong>
+              <p>Deleting a saved Playground removes the browser-backed files and site slug. Unsaved sessions remain listed so reviewers can save before closing.</p>
+              <div class="danger-strip">Delete requires confirmation; reset and import over current site are destructive.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-panel="manager" aria-labelledby="manager-heading">
+          <div class="manager-header">
+            <div class="site-title-block">
+              <span class="wp-logo">W</span>
+              <div>
+                <p class="eyebrow">Saved Playground</p>
+                <h2 id="manager-heading">Block Hooks Review</h2>
+                <span>Saved in this browser · WP Admin and Homepage open in the live preview.</span>
+              </div>
+            </div>
+            <div class="manager-actions">
+              <button class="secondary">WP Admin</button>
+              <button class="secondary">Homepage</button>
+              <button class="primary" data-view="transfer">Export</button>
+            </div>
+          </div>
+          <div class="manager-tabs" role="tablist" aria-label="Site Manager tools">
+            <button class="manager-tab is-active" data-tool="settings">Settings</button>
+            <button class="manager-tab" data-tool="files">Files</button>
+            <button class="manager-tab" data-tool="blueprint">Blueprint</button>
+            <button class="manager-tab" data-tool="database">Database</button>
+            <button class="manager-tab" data-tool="logs">Logs</button>
+          </div>
+
+          <div class="tool-panel is-active" data-tool-panel="settings">
+            <div class="form-grid">
+              <label>WordPress Version<select><option>Latest</option><option>6.5</option><option>6.4</option></select></label>
+              <label>PHP Version<select><option>PHP 8.3</option><option>PHP 8.2</option><option>PHP 8.1</option></select></label>
+              <label>Language<select><option>English (United States)</option><option>Polish</option><option>German</option></select></label>
+              <label class="check"><input type="checkbox" checked> Include older versions</label>
+              <label class="check"><input type="checkbox" checked> Allow network access</label>
+              <label class="check"><input type="checkbox"> Create a multisite network</label>
+            </div>
+            <div class="notice amber"><strong>Save & Reload</strong> reloads this saved Playground with the selected runtime. Unsaved sites show a destructive reset action here.</div>
+            <button class="primary" data-drawer="settings-reset">Save & Reload</button>
+          </div>
+
+          <div class="tool-panel" data-tool-panel="files">
+            <div class="file-browser">
+              <aside>
+                <div class="mini-toolbar"><button>New File</button><button>New Folder</button><button>Upload</button></div>
+                <ul class="file-tree">
+                  <li class="open">/wordpress</li>
+                  <li>wp-admin</li><li>wp-content</li><li>wp-includes</li>
+                  <li class="selected">wp-config.php</li><li>index.php</li><li>wp-settings.php</li>
+                </ul>
+              </aside>
+              <div class="code-pane">
+                <div class="code-head"><span>/wordpress/wp-config.php</span><button>Browse files</button></div>
+                <pre><code>define( 'DB_NAME', 'database_name_here' );
+define( 'DB_USER', 'username_here' );
+define( 'DB_HOST', 'localhost' );
+define( 'WP_DEBUG', true );</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="tool-panel" data-tool-panel="blueprint">
+            <div class="blueprint-editor">
+              <div class="blueprint-actions"><button>Copy link</button><button>Download bundle</button><button class="primary">Run Blueprint</button></div>
+              <pre><code>{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "login": true,
+  "landingPage": "/hello-from-playground/",
+  "preferredVersions": { "php": "8.3", "wp": "latest" }
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="tool-panel" data-tool-panel="database">
+            <div class="database-panel">
+              <div class="notice blue"><strong>Database management is early access.</strong> Playground emulates MySQL using SQLite.</div>
+              <dl>
+                <dt>Database driver</dt><dd>MySQL emulation backed by SQLite</dd>
+                <dt>SQLite database path</dt><dd>/wordpress/wp-content/database/.ht.sqlite</dd>
+                <dt>Size</dt><dd>452 KB</dd>
+              </dl>
+              <button>Download database.sqlite</button><button class="secondary">Open Adminer</button><button class="secondary">Open phpMyAdmin</button>
+            </div>
+          </div>
+
+          <div class="tool-panel" data-tool-panel="logs">
+            <div class="logs-grid">
+              <div><strong>Playground</strong><pre>No problems so far.</pre></div>
+              <div><strong>WordPress</strong><pre>[notice] Plugin review loaded.</pre></div>
+              <div><strong>PHP</strong><pre>No PHP warnings.</pre></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-panel="blueprints" aria-labelledby="blueprints-heading">
+          <div class="section-head compact-head">
+            <div>
+              <p class="eyebrow">Blueprint catalog</p>
+              <h2 id="blueprints-heading">Search, inspect, then run a recipe</h2>
+            </div>
+            <button class="primary" data-drawer="blueprint-url">Run Blueprint URL</button>
+          </div>
+          <div class="catalog-layout">
+            <aside class="filters" aria-label="Blueprint filters">
+              <input value="plugin" aria-label="Search blueprints">
+              <button class="is-active">All <span>43</span></button>
+              <button>Featured <span>8</span></button>
+              <button>Website <span>17</span></button>
+              <button>Personal <span>7</span></button>
+              <button>Content <span>6</span></button>
+              <button>Themes <span>11</span></button>
+              <button>Gutenberg <span>5</span></button>
+              <button>Experiments <span>4</span></button>
+              <button>WooCommerce <span>3</span></button>
+              <button>News <span>2</span></button>
+            </aside>
+            <div class="catalog-table">
+              <div class="catalog-row selected"><strong>Feed Reader with the Friends Plugin</strong><span>rss · social web · plugin</span><button data-drawer="blueprint-detail">Inspect</button></div>
+              <div class="catalog-row"><strong>Art Gallery</strong><span>website · personal · theme</span><button data-drawer="blueprint-detail">Inspect</button></div>
+              <div class="catalog-row"><strong>Coffee Shop</strong><span>WooCommerce · store · content</span><button data-drawer="blueprint-detail">Inspect</button></div>
+              <div class="catalog-row"><strong>Gaming News</strong><span>website · news · theme</span><button data-drawer="blueprint-detail">Inspect</button></div>
+              <div class="catalog-row"><strong>Non-profit Organization</strong><span>website · organization</span><button data-drawer="blueprint-detail">Inspect</button></div>
+              <div class="catalog-row"><strong>Personal Blog</strong><span>personal · blog · content</span><button data-drawer="blueprint-detail">Inspect</button></div>
+              <div class="catalog-row"><strong>Block Theme Starter</strong><span>gutenberg · theme</span><button data-drawer="blueprint-detail">Inspect</button></div>
+              <div class="catalog-row"><strong>Interactivity API Demo</strong><span>gutenberg · experiments</span><button data-drawer="blueprint-detail">Inspect</button></div>
+              <div class="catalog-row"><strong>Pattern Directory Demo</strong><span>content · themes</span><button data-drawer="blueprint-detail">Inspect</button></div>
+              <div class="catalog-row"><strong>SQLite Database Tools</strong><span>experiments · database</span><button data-drawer="blueprint-detail">Inspect</button></div>
+              <div class="catalog-foot">Showing 10 of 43 indexed blueprints. Category chips and search narrow the same catalog.</div>
+            </div>
+            <aside class="blueprint-detail">
+              <strong>Selected blueprint</strong>
+              <h3>Feed Reader with the Friends Plugin</h3>
+              <p>Installs and configures the Friends plugin so reviewers can test feeds inside Playground.</p>
+              <dl><dt>Author</dt><dd>Playground examples</dd><dt>Steps</dt><dd>Install plugin, login, seed content, open main feed</dd></dl>
+              <button class="primary">Run selected</button>
+              <button class="secondary">Inspect JSON</button>
+            </aside>
+          </div>
+        </section>
+
+        <section class="view" data-panel="transfer" aria-labelledby="transfer-heading">
+          <div class="section-head compact-head">
+            <div>
+              <p class="eyebrow">Portability and save destinations</p>
+              <h2 id="transfer-heading">Save, export, import, or hand off the current Playground</h2>
+            </div>
+            <button class="danger" data-drawer="zip">Import over current site</button>
+          </div>
+          <div class="transfer-grid">
+            <article class="transfer-card selected">
+              <span>Destination A</span><h3>Save in this browser</h3>
+              <p>Creates a browser-backed Playground with a slug and saved identity.</p>
+              <div class="progress"><span style="width: 81%"></span></div>
+              <small>Saving 3028 / 3751 files</small>
+              <button class="primary" data-drawer="save-browser">Use browser storage</button>
+            </article>
+            <article class="transfer-card">
+              <span>Destination B</span><h3>Save to a local directory</h3>
+              <p>Prompts for a local folder and writes Playground files there.</p>
+              <div class="folder-choice">Selected: ~/Sites/block-hooks-review</div>
+              <button data-drawer="save-local">Choose directory</button>
+            </article>
+            <article class="transfer-card">
+              <span>Export</span><h3>Download as .zip</h3>
+              <p>Packages the current site for import into another Playground.</p>
+              <button>Download review-bundle.zip</button>
+            </article>
+            <article class="transfer-card">
+              <span>Export</span><h3>Export to GitHub</h3>
+              <p>Requires connecting a GitHub account. The token is not stored after refresh.</p>
+              <button data-drawer="github">Connect GitHub</button>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <aside class="preview-column" aria-label="Live WordPress preview">
+        <div class="preview-toolbar">
+          <span class="browser-dot"></span>
+          <input value="/hello-from-playground/" aria-label="Preview path">
+          <button>WP Admin</button>
+          <button>Homepage</button>
+        </div>
+        <div class="wp-preview">
+          <header><strong>My WordPress Website</strong><nav>Hello from WordPress Playground! · Sample Page</nav></header>
+          <div class="wp-content">
+            <div>
+              <h2>Hello from <span>WordPress Playground!</span></h2>
+              <p>This is Playground, a WordPress that runs client-side in your browser. It is ready for PR review, plugin testing, and blueprint runs.</p>
+              <mark>Logged in as admin</mark>
+              <button>Discover the mission behind Playground</button>
+            </div>
+            <div class="wp-orbit" aria-hidden="true">W</div>
+          </div>
+        </div>
+      </aside>
+
+      <aside class="context-drawer" aria-label="Contextual workflow drawer">
+        <div class="drawer-head">
+          <div>
+            <span class="eyebrow">Context</span>
+            <h2 id="drawer-title">Preview a WordPress PR</h2>
+          </div>
+          <button class="icon-button" data-drawer="default" title="Reset drawer">×</button>
+        </div>
+        <div id="drawer-body" class="drawer-body"></div>
+      </aside>
+    </main>
+  </div>
+
+  <template id="drawer-default">
+    <p class="drawer-copy">Choose a launch source, saved Playground, Site Manager tab, catalog row, or transfer destination to see the exact controls and consequences.</p>
+    <div class="drawer-panel">
+      <strong>Current site</strong>
+      <dl><dt>Status</dt><dd>Temporary, unsaved</dd><dt>Runtime</dt><dd>WordPress latest · PHP 8.3</dd><dt>Path</dt><dd>/hello-from-playground/</dd></dl>
+    </div>
+  </template>
+
+  <template id="drawer-wordpress-pr">
+    <label>PR number or URL<input value="https://github.com/WordPress/wordpress-develop/pull/72042"></label>
+    <div class="constraint">Only a WordPress core PR number or GitHub PR URL is valid for this route.</div>
+    <button class="primary wide">Preview WordPress PR</button><button class="secondary wide">Cancel</button>
+  </template>
+
+  <template id="drawer-gutenberg-pr">
+    <label>PR number, URL, or branch<input value="61234"></label>
+    <div class="constraint">Supports Gutenberg PRs and branch names; use this for editor package review.</div>
+    <button class="primary wide">Preview Gutenberg build</button><button class="secondary wide">Cancel</button>
+  </template>
+
+  <template id="drawer-github">
+    <p class="drawer-copy">Import a public GitHub plugin, theme, or wp-content directory after connecting an account. Access tokens are not stored and refresh requires re-authentication.</p>
+    <label>Repository path<input value="wordpress/wordpress-playground"></label>
+    <button class="primary wide">Connect GitHub account</button>
+  </template>
+
+  <template id="drawer-blueprint-url">
+    <label>Blueprint URL<input value="https://example.com/blueprint.json"></label>
+    <div class="constraint">Runs the remote blueprint against the active Playground runtime.</div>
+    <button class="primary wide">Run Blueprint</button><button class="secondary wide">Cancel</button>
+  </template>
+
+  <template id="drawer-zip">
+    <label>Zip file<button class="file-pick">Choose site-export.zip</button></label>
+    <div class="danger-strip">Importing a zip replaces the current Playground files. Save or export before continuing.</div>
+    <button class="danger wide">Import over current site</button>
+  </template>
+
+  <template id="drawer-vanilla">
+    <dl><dt>WordPress</dt><dd>Latest</dd><dt>PHP</dt><dd>8.3</dd><dt>Language</dt><dd>English (United States)</dd></dl>
+    <button class="primary wide">Start Vanilla WordPress</button>
+  </template>
+
+  <template id="drawer-run-proof">
+    <div class="sequence-list">
+      <div><strong>1. Launch</strong><span>Gutenberg PR #61234 started from the editor patch route.</span></div>
+      <div><strong>2. Save</strong><span>Browser storage selected, progress reached 3751 / 3751 files.</span></div>
+      <div><strong>3. Result</strong><span>Saved as Block Hooks Review with slug /block-hooks-review/.</span></div>
+      <div><strong>4. Manage</strong><span>Rename and delete actions stay beside the saved row.</span></div>
+      <div><strong>5. Reset or reload</strong><span>Saved site uses Save & Reload; unsaved site warns before destructive reset.</span></div>
+      <div><strong>6. Transfer</strong><span>Export .zip is ready; importing a zip warns it replaces current files.</span></div>
+    </div>
+  </template>
+
+  <template id="drawer-save">
+    <label>Playground name<input value="Block Hooks Review"></label>
+    <div class="save-choice selected"><strong>Save in this browser</strong><span>Creates a browser-backed saved site and slug.</span><div class="progress"><span style="width: 81%"></span></div><small>Saving 3028 / 3751 files</small></div>
+    <div class="save-choice"><strong>Save to a local directory</strong><span>Opens a directory picker and writes files to a folder you choose.</span><code>~/Sites/block-hooks-review</code></div>
+    <button class="primary wide">Save Playground</button>
+  </template>
+
+  <template id="drawer-save-browser">
+    <label>Playground name<input value="Block Hooks Review"></label>
+    <div class="progress large"><span style="width: 100%"></span></div>
+    <p class="success-text">Saved Playground · slug /block-hooks-review/ · created May 21, 2026.</p>
+  </template>
+
+  <template id="drawer-save-local">
+    <label>Local directory<button class="file-pick">Choose ~/Sites/block-hooks-review</button></label>
+    <div class="constraint">This is separate from browser storage and persists as a local directory.</div>
+    <button class="primary wide">Save to selected directory</button>
+  </template>
+
+  <template id="drawer-rename-delete">
+    <label>Playground name<input value="Block Hooks Review"></label>
+    <button class="primary wide">Rename saved Playground</button>
+    <div class="danger-strip">Deleting removes this saved browser-backed Playground and its slug.</div>
+    <button class="danger wide">Delete saved Playground</button>
+  </template>
+
+  <template id="drawer-settings-reset">
+    <div class="notice amber"><strong>Saved site reload</strong><span>Runtime changes reload the saved Playground. Unsaved sites use Apply Settings & Reset Playground and lose temporary changes.</span></div>
+    <button class="primary wide">Save & Reload</button>
+    <button class="danger wide">Apply Settings & Reset Unsaved Site</button>
+  </template>
+
+  <template id="drawer-blueprint-detail">
+    <h3>Feed Reader with the Friends Plugin</h3>
+    <p class="drawer-copy">Selected from the catalog. Inspect JSON before running or run immediately in the current Playground.</p>
+    <dl><dt>Tags</dt><dd>rss, social web, plugin</dd><dt>Steps</dt><dd>Install plugin, seed content, login, open feed page</dd></dl>
+    <button class="primary wide">Run selected blueprint</button>
+    <button class="secondary wide">Inspect blueprint.json</button>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

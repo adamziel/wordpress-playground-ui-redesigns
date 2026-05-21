@@ -1,0 +1,48 @@
+{
+  "id": "design-096",
+  "title": "Review Launcher",
+  "concept": "A compact local-development launcher for core contributors that separates PR, branch, GitHub, Blueprint, zip, and vanilla starts into distinct review routes while a contextual drawer exposes the exact inputs, save destinations, consequences, and results for the selected workflow.",
+  "focus": [
+    "developer workflow launch routes",
+    "top navigation with contextual drawer",
+    "compact enterprise SaaS styling",
+    "visible save and transfer consequences",
+    "high-density Blueprint catalog inspection"
+  ],
+  "flows": [
+    "Launch a Gutenberg PR, save it in browser storage with file-copy progress, receive a saved Playground identity, rename or delete it, reload settings, export a zip, and confirm import-over-current-site consequences.",
+    "Choose among Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, and .zip import with route-specific inputs and constraints.",
+    "Save the same temporary Playground either in browser storage or to a selected local directory as distinct destinations.",
+    "Manage saved and unsaved Playgrounds, including filtering, current-site identity, rename, delete, and temporary-state warnings.",
+    "Use Site Manager settings, file browser, Blueprint editor, database tools, logs, WP Admin, Homepage, reset or reload, and export actions while the live WordPress preview remains visible.",
+    "Search and filter the Blueprint catalog, inspect a selected Blueprint detail, run it, or inspect its JSON before execution."
+  ],
+  "featureCoverage": [
+    "create vanilla Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub with account connection and token caveat",
+    "run Blueprint URL",
+    "import .zip with replacement warning",
+    "browse and filter Blueprint gallery entries",
+    "select featured Blueprint detail and run or inspect it",
+    "save temporary Playground in browser storage",
+    "save temporary Playground to a local directory",
+    "show save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths and refresh the embedded page",
+    "open Homepage and WP Admin",
+    "edit WordPress, PHP, language, older-version, network, and multisite settings",
+    "show destructive reset and saved reload behavior",
+    "use file browser with new file, new folder, upload, browse, and code editing affordances",
+    "view, copy, download, and run the current Blueprint bundle",
+    "inspect database driver, path, and size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect Playground, WordPress, and PHP logs",
+    "export to GitHub",
+    "download as .zip"
+  ]
+}
