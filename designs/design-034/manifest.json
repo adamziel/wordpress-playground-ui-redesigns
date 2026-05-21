@@ -1,0 +1,51 @@
+{
+  "id": "design-034",
+  "title": "Blueprint Marketplace Workspace",
+  "concept": "A visual-first Playground IA for documentation writers where the blueprint gallery is the default workspace and PR, GitHub, ZIP, save, saved management, and Site Manager flows remain adjacent actions.",
+  "focus": [
+    "image-rich blueprint discovery as first viewport",
+    "left navigation with marketplace-oriented terminology",
+    "context rail for selected blueprint and adjacent creation actions",
+    "full Site Manager preserved as a secondary workspace"
+  ],
+  "flows": [
+    "browse, filter, search, and select Blueprint gallery entries",
+    "start Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, and .zip import",
+    "save a temporary Playground to browser storage or local directory with progress",
+    "manage saved and unsaved Playgrounds including rename and delete affordances",
+    "open Site Manager tabs for settings, file browser, blueprint, database, and logs",
+    "export to GitHub and download a Playground as .zip"
+  ],
+  "featureCoverage": [
+    "create a vanilla Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub after account connection",
+    "run a Blueprint URL",
+    "import a .zip",
+    "browse and filter Blueprint gallery entries",
+    "select featured blueprint shortcuts",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "see save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh the active embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress/PHP/language settings",
+    "include older WordPress versions",
+    "allow network access",
+    "create a multisite network",
+    "understand destructive reset/reload behavior",
+    "use File browser with create folder/file, upload, browse, and code editing affordances",
+    "view/copy/download/run the current Blueprint bundle",
+    "inspect database driver/path/size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect logs and empty/error states",
+    "export to GitHub",
+    "download a .zip"
+  ]
+}
