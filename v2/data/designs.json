@@ -915,5 +915,50 @@
       "Transfer history that records saves, PR previews, Blueprint runs, ZIP replacement, database download, GitHub export, rename, delete, file edits, and path navigation"
     ],
     "path": "v2-design-023/index.html"
+  },
+  {
+    "id": "v2-design-025",
+    "number": 25,
+    "title": "Transfer Portability Deck",
+    "concept": "A dense command deck that treats browser save, local directory save, GitHub import/export, ZIP import/download, database download, and Blueprint bundle actions as related operational transfers while keeping the live WordPress shell protected.",
+    "focus": [
+      "transfer-centered Playground object model",
+      "dense command deck for power users",
+      "protected live WordPress shell",
+      "distinct browser and local-directory save consequences",
+      "stateful settings reload and destructive delete flows"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start",
+      "WordPress PR preview with PR number or URL",
+      "Gutenberg PR or branch preview with branch input",
+      "GitHub import with account connection and non-persistent token caveat",
+      "Blueprint URL runner",
+      "Import .zip with validation and replacement warning",
+      "Blueprint gallery categories and search with honest representative subset of 43",
+      "Featured Blueprint shortcuts and selected Blueprint detail",
+      "Save in this browser",
+      "Save to a local directory",
+      "Save progress with file-copy counts",
+      "Saved and unsaved Playground list",
+      "Local-directory storage distinction and reconnect consequence",
+      "Open, rename, delete, and manage saved Playgrounds",
+      "Delete confirmation with cancel, progress, final row removal, and active fallback",
+      "URL path input and refresh",
+      "Homepage and WP Admin shortcuts",
+      "Temporary, saved, and local shell states",
+      "WordPress version, PHP version, language, older versions, network, and multisite settings",
+      "Unsaved destructive reset warning and stored Save & Reload behavior",
+      "File browser with create file, create folder, upload, browse files, selected editor, dirty state, and save result",
+      "Blueprint editor with URL, validation, copy, download, run, warning, progress, and result state",
+      "SQLite-backed database driver, path, size, database download, Adminer, and phpMyAdmin",
+      "Playground, WordPress, and PHP logs with realistic warning state",
+      "Export to GitHub",
+      "Download as .zip",
+      "Database download",
+      "Blueprint bundle copy, download, and run actions",
+      "Transfer history for saves, reloads, imports, exports, downloads, file edits, deletes, and Blueprint runs"
+    ],
+    "path": "v2-design-025/index.html"
   }
 ]

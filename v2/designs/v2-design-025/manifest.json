@@ -1,0 +1,52 @@
+{
+  "id": "v2-design-025",
+  "title": "Transfer Portability Deck",
+  "concept": "A dense command deck that treats browser save, local directory save, GitHub import/export, ZIP import/download, database download, and Blueprint bundle actions as related operational transfers while keeping the live WordPress shell protected.",
+  "focus": [
+    "transfer-centered Playground object model",
+    "dense command deck for power users",
+    "protected live WordPress shell",
+    "distinct browser and local-directory save consequences",
+    "stateful settings reload and destructive delete flows"
+  ],
+  "flows": [
+    "Finish settings Save & Reload end to end for a stored Playground: change WordPress version, PHP version, language, network, and multisite controls, save settings, reload the runtime, update the shell badge, and append transfer history.",
+    "Show the unsaved reset warning for temporary Playgrounds, then confirm the destructive Apply Settings & Reset flow with progress and final runtime state.",
+    "Delete a saved Playground end to end with warning, cancel support, confirmation, row removal, transfer history, and active-site fallback to an Unsaved Playground.",
+    "Save to browser storage or a local directory with distinct destination copy, permission consequence, file-copy progress, active identity mutation, saved row state, and history result.",
+    "Launch or import through Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import with account connection, Blueprint URL, and .zip import with validation and replacement warning.",
+    "Use Site Manager tabs for Settings, Files, Blueprint, Database, and Logs while the active WordPress preview stays visible.",
+    "Run portability transfers for Export to GitHub, Download as zip, Import zip, Download database.sqlite, Copy or Download Blueprint bundle, and Run Blueprint with visible result states."
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start",
+    "WordPress PR preview with PR number or URL",
+    "Gutenberg PR or branch preview with branch input",
+    "GitHub import with account connection and non-persistent token caveat",
+    "Blueprint URL runner",
+    "Import .zip with validation and replacement warning",
+    "Blueprint gallery categories and search with honest representative subset of 43",
+    "Featured Blueprint shortcuts and selected Blueprint detail",
+    "Save in this browser",
+    "Save to a local directory",
+    "Save progress with file-copy counts",
+    "Saved and unsaved Playground list",
+    "Local-directory storage distinction and reconnect consequence",
+    "Open, rename, delete, and manage saved Playgrounds",
+    "Delete confirmation with cancel, progress, final row removal, and active fallback",
+    "URL path input and refresh",
+    "Homepage and WP Admin shortcuts",
+    "Temporary, saved, and local shell states",
+    "WordPress version, PHP version, language, older versions, network, and multisite settings",
+    "Unsaved destructive reset warning and stored Save & Reload behavior",
+    "File browser with create file, create folder, upload, browse files, selected editor, dirty state, and save result",
+    "Blueprint editor with URL, validation, copy, download, run, warning, progress, and result state",
+    "SQLite-backed database driver, path, size, database download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs with realistic warning state",
+    "Export to GitHub",
+    "Download as .zip",
+    "Database download",
+    "Blueprint bundle copy, download, and run actions",
+    "Transfer history for saves, reloads, imports, exports, downloads, file edits, deletes, and Blueprint runs"
+  ]
+}
