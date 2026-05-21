@@ -1,0 +1,52 @@
+{
+  "id": "design-015",
+  "title": "Playground Diagnostics Console",
+  "concept": "A tabbed support-engineer workspace that leads with runtime status, logs, database details, and environment health while keeping creation, save, management, editor, blueprint, gallery, import, and export flows one tab away.",
+  "focus": [
+    "diagnostics-first first viewport",
+    "tabbed workspace navigation",
+    "log and database prominence",
+    "high-contrast technical palette",
+    "support reproduction workflow"
+  ],
+  "flows": [
+    "Monitor active Playground status, logs, database, storage, network, and live WordPress page context from the first viewport",
+    "Start a Playground from vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, .zip import, or featured Blueprint shortcuts",
+    "Save a temporary Playground to browser storage or a local directory with visible file-copy progress",
+    "Manage saved and unsaved Playgrounds with rename and delete actions",
+    "Use Site Manager settings, file browser, Blueprint editor, database tools, logs, and export actions through workspace tabs",
+    "Browse and filter the full Blueprint gallery before running a selected Blueprint"
+  ],
+  "featureCoverage": [
+    "create a vanilla Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub after account connection",
+    "run a Blueprint URL",
+    "import a .zip",
+    "browse and filter Blueprint gallery entries",
+    "select featured blueprint shortcuts",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "see save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh the active embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress, PHP, and language settings",
+    "include older WordPress versions",
+    "allow network access",
+    "create a multisite network",
+    "understand destructive reset and saved reload behavior",
+    "use File browser with create folder, create file, upload, browse, and code editing affordances",
+    "view, copy, download, and run the current Blueprint bundle",
+    "inspect database driver, path, and size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect Playground, WordPress, and PHP logs with empty and warning states",
+    "export to GitHub",
+    "download a .zip"
+  ]
+}
