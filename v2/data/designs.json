@@ -917,6 +917,45 @@
     "path": "v2-design-023/index.html"
   },
   {
+    "id": "v2-design-024",
+    "number": 24,
+    "title": "Blueprint Command Console",
+    "concept": "A dense Blueprint-first command deck for power users that keeps the live WordPress shell protected while centralizing Blueprint gallery search, selected detail, URL runs, JSON editing, replace-current warnings, local-folder saving, and portability transfer history.",
+    "focus": [
+      "Blueprint-centered command workflow",
+      "protected live WordPress preview",
+      "local-directory save consequences",
+      "operational ZIP download flow",
+      "stateful replacement warnings and results"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start route",
+      "WordPress PR preview with PR number or URL",
+      "Gutenberg PR or branch preview",
+      "GitHub import with account connection and token persistence caveat",
+      "Blueprint URL runner",
+      "Import .zip with native chooser model and replacement warning",
+      "Blueprint gallery categories and search with honest representative subset of 43",
+      "Selected Blueprint detail with description and categories",
+      "Blueprint JSON editor with dirty, validation, copy, download, run, progress, replacement warning, and result state",
+      "Save in this browser with file-copy progress and browser identity",
+      "Save to a local directory with folder picker, permission state, progress, folder identity, local badge, and reconnect consequence",
+      "Saved, local-directory, imported, and unsaved Playground object list",
+      "Open/manage, rename, delete confirmation, delete cancel, final row/fallback state",
+      "Current shell path input, refresh, Homepage, WP Admin, temporary/saved/local state, Save, and reset/reload consequences",
+      "WordPress, PHP, language, older versions, network access, and multisite settings",
+      "File browser with create file, create folder, upload, browse files, selected editor, dirty state, save, and result history",
+      "Site Manager tabs for Settings, Files, Blueprint, Database, and Logs",
+      "SQLite-backed database driver, path, size, database download, Adminer, and phpMyAdmin",
+      "Playground, WordPress, and PHP logs with a realistic PHP notice",
+      "Export to GitHub and GitHub import",
+      "ZIP import and ZIP download",
+      "Database download and Blueprint bundle portability actions",
+      "Transfer history for saves, Blueprint runs, imports, exports, downloads, and manager actions"
+    ],
+    "path": "v2-design-024/index.html"
+  },
+  {
     "id": "v2-design-025",
     "number": 25,
     "title": "Transfer Portability Deck",
