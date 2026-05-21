@@ -1,0 +1,52 @@
+{
+  "id": "design-056",
+  "title": "Playground Dev Run Ledger",
+  "concept": "A table-led local development launcher for plugin developers that treats every saved site, temporary site, PR preview, GitHub import, Blueprint run, and zip transfer as a row in a dense development ledger with a contextual inspector and separate workbench surfaces.",
+  "focus": [
+    "table-led management first viewport",
+    "plugin developer run workflows",
+    "PR, GitHub, Blueprint, and zip starts",
+    "contextual run inspector instead of card onboarding",
+    "blue, green, and amber operational states"
+  ],
+  "flows": [
+    "Manage saved and unsaved Playgrounds from a development run ledger with rename, delete, save, local save, export, and continue actions",
+    "Start new runs from vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import after account connection, Blueprint URL, imported zip, featured blueprints, or the full Blueprint gallery",
+    "Save temporary Playgrounds in browser storage or to a local directory with visible file-copy progress",
+    "Navigate the active WordPress path, refresh it, and open Homepage or WP Admin from the shell and Site Manager",
+    "Use Site Manager tabs for runtime settings, file browser, Blueprint editing, database tools, and logs",
+    "Move results through Export to GitHub, Download as .zip, Blueprint bundle download, database.sqlite download, GitHub import, zip import, and Blueprint URL import"
+  ],
+  "featureCoverage": [
+    "create a vanilla Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub after account connection",
+    "run a Blueprint URL",
+    "import a .zip",
+    "browse and filter Blueprint gallery entries",
+    "select featured blueprint shortcuts",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "see save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh the active embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress/PHP/language settings",
+    "include older WordPress versions",
+    "allow network access",
+    "create a multisite network",
+    "understand destructive reset and saved reload behavior",
+    "use File browser with create folder/file, upload, browse, and code editing affordances",
+    "view/copy/download/run the current Blueprint bundle",
+    "inspect database driver/path/size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect logs and empty/error states",
+    "export to GitHub",
+    "download a .zip"
+  ]
+}
