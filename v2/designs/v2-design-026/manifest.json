@@ -1,0 +1,49 @@
+{
+  "id": "v2-design-026",
+  "title": "File Data Operations Workbench",
+  "concept": "A dense command-deck workbench for power users that leads with Site Manager files, Blueprint JSON, SQLite database tools, logs, command search, and portability operations while keeping the live WordPress shell protected beside every mutation.",
+  "focus": [
+    "file and data operations workbench",
+    "command search with grouped results and executable forms",
+    "protected live WordPress shell",
+    "ZIP import replacement lifecycle",
+    "credible editor, database, Blueprint, and log outcomes"
+  ],
+  "flows": [
+    "Discover a file command through command search, inspect grouped results, select the Save selected file form, run progress, and clear the dirty wp-config.php state while mutating preview state and transfer history",
+    "Import a ZIP end to end with represented native source selection, replacement warning, validation failure option, success progress, active Playground identity update, database size mutation, path update, and preview mutation",
+    "Save the active temporary Playground in browser storage or to a local directory with distinct destination consequences, file-copy progress, storage badge changes, saved-row insertion, path mutation, and reload/reconnect copy",
+    "Use Site Manager Files, Blueprint, Database, Logs, Settings, Saved, and Launch tabs beside the live site, including editor dirty/save, Blueprint validation/run/copy/download, database download, Adminer, phpMyAdmin, log updates, and reset/reload consequences",
+    "Manage saved and unsaved Playgrounds with open, save, rename affordance, delete confirmation, cancel, confirmed row removal, and active fallback to an Unsaved Playground",
+    "Launch or replace through Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import with account connection, Blueprint URL, and ZIP import while keeping route-specific inputs and constraints visible"
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start route",
+    "WordPress PR preview input",
+    "Gutenberg PR or branch input",
+    "GitHub import with account connection and token-not-stored consequence",
+    "Blueprint URL runner",
+    "Import .zip with source selection, validation failure, replacement warning, progress, success state, and identity update",
+    "Blueprint gallery categories and search with honest representative subset of 43",
+    "Featured Blueprint entries including Art Gallery, Coffee Shop, Feed Reader with the Friends Plugin, Gaming News, Non-profit Organization, and Personal Blog",
+    "Save in this browser with progress and saved slug identity",
+    "Save to a local directory with folder permission and reconnect consequence",
+    "Saved, local-directory, and temporary Playground differences",
+    "Saved and unsaved Playground list",
+    "Open/manage, rename affordance, delete confirmation, cancel, final row removal, and fallback state",
+    "Current shell path input and refresh",
+    "Homepage and WP Admin shortcuts",
+    "Temporary/saved/local storage badge and shell title mutation",
+    "WordPress version, PHP version, language, older versions, network access, and multisite settings",
+    "Destructive Apply Settings & Reset Playground and stored Save & Reload consequences",
+    "Site Manager Settings, Files, Blueprint, Database, Logs, Export to GitHub, and Download as zip",
+    "Files create file, create folder, upload, browse files, selected editor, dirty state, save, discard, and result state",
+    "Blueprint JSON editor with Blueprint URL, validation, copy link, download bundle, run, warning, progress, and result state",
+    "SQLite-backed database driver, path, size, database download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs with realistic notice and warning states",
+    "GitHub import and Export to GitHub",
+    "ZIP import and Download as zip",
+    "Database download and Blueprint bundle actions",
+    "Transfer history for saves, edits, downloads, imports, exports, delete, reset, navigation, database, Blueprint, and file operations"
+  ]
+}
