@@ -1,0 +1,49 @@
+{
+  "id": "v2-design-037",
+  "title": "Review Contract Console",
+  "concept": "A responsive tabbed Playground console that treats Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, and ZIP import as launch contracts with inputs, validation, progress, and resulting active Playground identity.",
+  "focus": [
+    "PR and branch review contracts",
+    "responsive tabbed operations workspace",
+    "protected live WordPress shell",
+    "stateful destructive delete fallback",
+    "distinct browser and local-directory save consequences"
+  ],
+  "flows": [
+    "Preview a WordPress PR or Gutenberg branch end to end with route-specific input, validation, progress, active path mutation, preview identity update, and save/export availability.",
+    "Delete a saved Playground end to end with warning, cancel support, confirmation, progress, final row removal, transfer history, and active fallback to an Unsaved Playground when needed.",
+    "Save the active temporary Playground in browser storage or to a local directory with distinct destination copy, permission/reconnect consequence, file-copy progress, shell title mutation, storage badge update, and saved row insertion.",
+    "Use Site Manager tabs for Settings, Files, Blueprint, Database, and Logs while keeping Homepage, WP Admin, path input, refresh, temporary/saved/local state, Save, reset/reload, Export to GitHub, and Download as zip visible.",
+    "Browse an honestly labeled representative subset of the 43 Blueprint gallery entries with categories/search, selected detail, Blueprint URL, editor, copy, download, run, validation, replacement result, and database/preview mutation.",
+    "Run portability actions for GitHub import/export, ZIP import/download, database download, Adminer, phpMyAdmin, and Blueprint bundles with result history tied to the same active Playground."
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start route",
+    "WordPress PR preview with PR number or URL",
+    "Gutenberg PR or branch preview with PR, URL, or branch name",
+    "GitHub import with account connection and token-not-stored caveat",
+    "Blueprint URL runner",
+    "Import .zip with native chooser framing and replacement warning",
+    "Blueprint gallery categories and search with representative subset labeled 6 shown of 43",
+    "Featured Blueprint shortcuts including Art Gallery, Coffee Shop, Feed Reader with the Friends Plugin, Gaming News, Non-profit Organization, and Personal Blog",
+    "Save temporary Playground in browser storage",
+    "Save to a local directory with folder permission and reconnect consequence",
+    "Save progress with file-copy counts",
+    "Saved, local-directory, and unsaved Playground list",
+    "Open, manage, rename, and delete saved Playgrounds",
+    "Delete confirmation with cancel, progress, final row removal, and active fallback",
+    "Current shell path input, refresh, Homepage, and WP Admin shortcuts",
+    "Temporary, browser-saved, and local-directory storage badges and reset/reload differences",
+    "WordPress version, PHP version, language, older versions, network access, and multisite settings",
+    "Destructive Apply Settings & Reset Playground and stored Save & Reload behavior",
+    "Site Manager tabs for Settings, Files, Blueprint, Database, and Logs",
+    "File browser with create file, create folder, upload, browse files, selected editor, dirty state, save, discard, and result state",
+    "Blueprint editor with URL, validation, copy link, download bundle, run, replacement warning, progress, and result state",
+    "SQLite-backed database driver, path, size, database download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs with empty, notice, and warning states",
+    "Export to GitHub",
+    "Download active Playground as .zip",
+    "GitHub import/export, ZIP import/download, database download, and Blueprint bundle portability actions",
+    "Transfer history for route previews, saves, rename, delete, file edits, database downloads, Blueprint runs, GitHub actions, ZIP actions, reset, and reload"
+  ]
+}
