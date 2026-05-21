@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>V2 Design 023 - Saved Object Command Deck</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app" data-view="launch">
+    <header class="topbar" aria-label="Playground shell">
+      <div class="brand">
+        <span class="mark">WP</span>
+        <div>
+          <strong id="shellTitle">Unsaved Playground</strong>
+          <span id="shellSubtitle">Temporary object - changes disappear on refresh</span>
+        </div>
+      </div>
+      <form class="pathbar" id="pathForm">
+        <button type="button" id="refreshBtn" class="iconButton" aria-label="Refresh current WordPress page">Refresh</button>
+        <input id="pathInput" aria-label="WordPress path" value="/hello-from-playground/">
+        <button type="submit">Go</button>
+      </form>
+      <div class="shellActions">
+        <span id="storageBadge" class="status warning">Temporary</span>
+        <button type="button" data-shell-path="/">Homepage</button>
+        <button type="button" data-shell-path="/wp-admin/">WP Admin</button>
+        <button type="button" id="saveTopBtn" class="primary">Save</button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <aside class="objectsPanel panel" aria-label="Playground objects">
+        <div class="panelHeader compact">
+          <div>
+            <p class="eyebrow">Object Control</p>
+            <h1>Playgrounds</h1>
+          </div>
+          <button type="button" id="newTempBtn">New temp</button>
+        </div>
+
+        <div class="objectSummary">
+          <div>
+            <span class="metric" id="objectCount">3</span>
+            <span>tracked objects</span>
+          </div>
+          <div>
+            <span class="metric" id="eventCount">2</span>
+            <span>events - WP latest / PHP 8.3</span>
+          </div>
+        </div>
+
+        <div class="objectList" id="objectList"></div>
+
+        <section class="miniSection">
+          <div class="sectionTitle">
+            <h2>Available launch routes</h2>
+            <span>route-specific inputs</span>
+          </div>
+          <div class="routeGrid" id="routeGrid">
+            <button type="button" class="route active" data-route="gutenberg">
+              <strong>Gutenberg PR or branch</strong>
+              <span>PR number, URL, or branch name</span>
+            </button>
+            <button type="button" class="route" data-route="wordpress">
+              <strong>WordPress PR</strong>
+              <span>PR number or URL</span>
+            </button>
+            <button type="button" class="route" data-route="vanilla">
+              <strong>Vanilla WordPress</strong>
+              <span>fresh latest runtime</span>
+            </button>
+            <button type="button" class="route" data-route="github">
+              <strong>From GitHub</strong>
+              <span>connect account, token not stored</span>
+            </button>
+            <button type="button" class="route" data-route="blueprint-url">
+              <strong>Blueprint URL</strong>
+              <span>validate and run JSON</span>
+            </button>
+            <button type="button" class="route" data-route="zip">
+              <strong>Import .zip</strong>
+              <span>native chooser, replaces current site</span>
+            </button>
+          </div>
+        </section>
+      </aside>
+
+      <section class="previewPanel" aria-label="Live WordPress preview">
+        <div class="browserChrome">
+          <div>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          </div>
+          <span id="previewUrl">playground.local/hello-from-playground/</span>
+          <span id="previewState">Ready</span>
+        </div>
+        <div class="wpAdminBar">
+          <span class="wpIcon">W</span>
+          <span>My WordPress Website</span>
+          <span>Edit Site</span>
+          <span>0</span>
+          <span>New</span>
+          <span>Edit Page</span>
+          <span class="push">Howdy, admin</span>
+        </div>
+        <div class="sitePreview" id="sitePreview">
+          <nav>
+            <strong>My WordPress Website</strong>
+            <span>Hello from WordPress Playground!</span>
+            <span>Sample Page</span>
+          </nav>
+          <div class="hero">
+            <div class="heroCopy">
+              <p class="previewKicker" id="previewKicker">Temporary playground</p>
+              <h2 id="previewHeading">Hello from WordPress Playground!</h2>
+              <p id="previewBody">This Playground runs client-side in your browser. Save it to browser storage or a local directory before refreshing if you need to keep the files and database.</p>
+              <div class="notice" id="previewNotice">Unsaved: refresh resets this site. Settings use Apply & Reset.</div>
+              <button type="button" id="previewCta">Discover the mission behind Playground</button>
+            </div>
+            <div class="previewGlyph" aria-hidden="true">
+              <span>W</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="commandPanel panel" aria-label="Command deck">
+        <nav class="modeTabs" aria-label="Command modes">
+          <button type="button" class="active" data-view="launch">Launch</button>
+          <button type="button" data-view="save">Save</button>
+          <button type="button" data-view="manage">Manage</button>
+          <button type="button" data-view="site">Site Manager</button>
+          <button type="button" data-view="blueprints">Blueprints</button>
+          <button type="button" data-view="transfers">Transfers</button>
+        </nav>
+
+        <section class="view active" id="view-launch">
+          <div class="panelHeader">
+            <div>
+              <p class="eyebrow">Primary flow</p>
+              <h2 id="routeTitle">Preview Gutenberg PR or Branch</h2>
+            </div>
+            <span id="routeStatus" class="status">Idle</span>
+          </div>
+          <div id="routeDetails" class="commandStack"></div>
+        </section>
+
+        <section class="view" id="view-save">
+          <div class="panelHeader">
+            <div>
+              <p class="eyebrow">Secondary flow</p>
+              <h2>Save active object</h2>
+            </div>
+            <span id="saveStatus" class="status warning">Unsaved</span>
+          </div>
+          <div class="saveChoice">
+            <label class="choice active">
+              <input type="radio" name="saveDestination" value="browser" checked>
+              <span>
+                <strong>Save in this browser</strong>
+                <small>Creates a browser-backed slug and survives reload in this browser.</small>
+              </span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="saveDestination" value="local">
+              <span>
+                <strong>Save to a local directory</strong>
+                <small>Requires folder permission. After refresh, reconnect the folder.</small>
+              </span>
+            </label>
+          </div>
+          <label class="field">
+            <span>Playground name</span>
+            <input id="saveName" value="Gutenberg trunk preview">
+          </label>
+          <div class="folderGrant" id="folderGrant">
+            <span>Folder: no local directory selected</span>
+            <button type="button" id="grantFolderBtn">Choose folder</button>
+          </div>
+          <div class="progressBlock" id="saveProgressBlock">
+            <div class="progressLine"><span id="saveProgressLabel">Ready to copy files</span><span id="saveProgressCount">0 / 3751</span></div>
+            <div class="progress"><span id="saveProgressBar"></span></div>
+          </div>
+          <div class="buttonRow">
+            <button type="button" id="startSaveBtn" class="primary">Start save</button>
+            <button type="button" id="cancelSaveBtn">Cancel</button>
+          </div>
+          <div id="saveResult" class="resultBox">Unsaved Playgrounds are lost on refresh or close. Browser and local saves produce different reload behavior.</div>
+        </section>
+
+        <section class="view" id="view-manage">
+          <div class="panelHeader">
+            <div>
+              <p class="eyebrow">Saved management</p>
+              <h2>Open, rename, delete</h2>
+            </div>
+            <span id="manageStatus" class="status">Selected object</span>
+          </div>
+          <div id="manageCard" class="commandStack"></div>
+        </section>
+
+        <section class="view" id="view-site">
+          <div class="panelHeader">
+            <div>
+              <p class="eyebrow">Site Manager</p>
+              <h2>Controls beside preview</h2>
+            </div>
+            <span id="resetMode" class="status warning">Apply & Reset</span>
+          </div>
+          <div class="managerTabs" id="managerTabs">
+            <button type="button" class="active" data-tab="settings">Settings</button>
+            <button type="button" data-tab="files">Files</button>
+            <button type="button" data-tab="blueprint">Blueprint</button>
+            <button type="button" data-tab="database">Database</button>
+            <button type="button" data-tab="logs">Logs</button>
+          </div>
+          <div id="managerBody"></div>
+        </section>
+
+        <section class="view" id="view-blueprints">
+          <div class="panelHeader">
+            <div>
+              <p class="eyebrow">Blueprint gallery</p>
+              <h2>Representative subset of 43</h2>
+            </div>
+            <span id="blueprintStatus" class="status">6 shown</span>
+          </div>
+          <div class="filterLine">
+            <input id="blueprintSearch" placeholder="Search Blueprints" aria-label="Search Blueprints">
+            <select id="blueprintCategory" aria-label="Blueprint category">
+              <option>All</option>
+              <option>Featured</option>
+              <option>Website</option>
+              <option>Personal</option>
+              <option>Content</option>
+              <option>Themes</option>
+              <option>Gutenberg</option>
+              <option>Experiments</option>
+              <option>WooCommerce</option>
+              <option>News</option>
+            </select>
+          </div>
+          <div id="blueprintList" class="blueprintList"></div>
+          <div id="blueprintDetail" class="detailBox"></div>
+        </section>
+
+        <section class="view" id="view-transfers">
+          <div class="panelHeader">
+            <div>
+              <p class="eyebrow">Portability</p>
+              <h2>Transfer history</h2>
+            </div>
+            <span class="status ok" id="transferStatus">Ready</span>
+          </div>
+          <div class="transferActions">
+            <button type="button" id="exportGithubBtn">Export to GitHub</button>
+            <button type="button" id="downloadZipBtn">Download as .zip</button>
+            <button type="button" id="downloadDbBtn">Download database.sqlite</button>
+            <button type="button" id="importZipBtn">Import .zip</button>
+          </div>
+          <div class="destructiveBox" id="zipConfirm">
+            <strong>Replace current Playground from .zip?</strong>
+            <span>Importing a zip replaces files and the SQLite database for the active object.</span>
+            <div class="buttonRow">
+              <button type="button" id="confirmZipBtn" class="danger">Import selected zip</button>
+              <button type="button" id="cancelZipBtn">Cancel</button>
+            </div>
+          </div>
+          <ol id="eventLog" class="eventLog"></ol>
+        </section>
+      </aside>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

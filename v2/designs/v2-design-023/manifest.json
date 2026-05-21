@@ -1,0 +1,42 @@
+{
+  "id": "v2-design-023",
+  "title": "Saved Object Command Deck",
+  "concept": "A dense saved-object control center where temporary, browser-saved, local-directory, preview, and imported Playgrounds are first-class objects with storage-specific actions, visible command availability, and a protected live WordPress shell.",
+  "focus": [
+    "first-class Playground object model",
+    "dense power-user command deck",
+    "PR and branch preview lifecycle",
+    "browser save object mutation",
+    "storage-specific reset, reload, export, and delete consequences"
+  ],
+  "flows": [
+    "Preview a Gutenberg PR or branch end to end with route-specific input, validation, loading, resulting preview identity, path mutation, and save/export availability",
+    "Save an unsaved or preview Playground in browser storage with destination choice, file-copy progress, saved-row mutation, active title update, browser slug path, storage badge, and Save & Reload consequence",
+    "Save to a local directory with folder permission, different reload consequence, local-directory storage badge, and transfer history",
+    "Manage saved, local, temporary, preview, and imported Playgrounds with open, Site Manager, rename, delete confirmation, cancel, final row removal, and active fallback",
+    "Use Site Manager settings, Files, Blueprint, Database, Logs, Export to GitHub, Download as zip, database download, and Blueprint bundle actions without hiding the live WordPress shell",
+    "Run or import replacement flows through Blueprint gallery and ZIP import with warnings, completed result state, active object mutation, preview path update, and transfer history"
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start route",
+    "WordPress PR preview route with PR number or URL",
+    "Gutenberg PR or branch route with validation and preview result",
+    "GitHub import with account connection and token persistence caveat",
+    "Blueprint URL runner",
+    "Import .zip with native chooser model, replacement confirmation, and final imported state",
+    "Blueprint gallery categories and search with an honest representative subset of 43 entries",
+    "Featured Blueprint shortcuts including Art Gallery, Coffee Shop, Feed Reader with the Friends Plugin, Gaming News, Non-profit Organization, and Personal Blog",
+    "Save in this browser with file-copy progress and browser-backed slug",
+    "Save to a local directory with folder permission and reconnect consequence",
+    "Saved, unsaved, local-directory, preview, and imported Playground object list",
+    "Open, manage, rename, delete confirmation, delete cancel, delete progress outcome, row removal, and fallback state",
+    "Active shell path input, refresh, Homepage, WP Admin, temporary/saved/local state, Save, and reset/reload consequences",
+    "Site Manager Settings, Files, Blueprint, Database, Logs, Export to GitHub, and Download as zip",
+    "Files create file, create folder, upload, browse files, selected editor, dirty state, save, and result state",
+    "Blueprint editor, Blueprint URL, copy, download, run, validation, replacement warning, and result state",
+    "SQLite-backed database path, size, database download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs with a realistic notice state",
+    "Portability actions for GitHub import/export, ZIP import/download, database download, and Blueprint bundle actions",
+    "Transfer history that records saves, PR previews, Blueprint runs, ZIP replacement, database download, GitHub export, rename, delete, file edits, and path navigation"
+  ]
+}
