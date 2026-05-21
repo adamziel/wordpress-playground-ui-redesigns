@@ -1,0 +1,53 @@
+{
+  "id": "v2-design-002",
+  "title": "Operations Rail Console",
+  "concept": "A full-width live WordPress browser protected by a compact command bar, a left operations rail, and a right inspector where Create, Save, Library, Manage, Blueprints, Data, Logs, and Transfer modes mutate the same active Playground object.",
+  "focus": [
+    "left operational rail",
+    "large live browser with right inspector",
+    "stateful local-directory save",
+    "database operation lifecycle",
+    "saved identity and transfer history mutation"
+  ],
+  "flows": [
+    "Save a temporary Playground to a local directory with folder picker, permission grant or denial, file-copy progress, selected folder identity, local badge, saved-library row transformation, and reload consequence",
+    "Download database.sqlite from the SQLite-backed database with selected database state, progress, success result, transfer history, logs, and preview update",
+    "Start or import through Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, and .zip import with replacement confirmation",
+    "Manage saved and unsaved Playgrounds with open, manage, rename, delete confirmation, final row removal, and active-site fallback",
+    "Use Site Manager settings, files, Blueprint editor, database tools, logs, Export to GitHub, and Download as zip while the live WordPress shell remains visible",
+    "Browse a representative subset of the 43 Blueprint gallery entries with categories, search, selected detail, URL, copy, download, run, validation, and result state"
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start",
+    "WordPress PR preview",
+    "Gutenberg PR or branch preview",
+    "GitHub import with account connection",
+    "Blueprint URL runner",
+    "Import zip trigger",
+    "Blueprint gallery categories and search",
+    "Featured blueprint shortcuts and selected detail",
+    "Save temporary Playground in browser storage",
+    "Save to a local directory",
+    "Folder permission grant, denial, cancellation, and reload consequence",
+    "Save progress state",
+    "Saved and unsaved Playground list",
+    "Open, manage, rename, and delete saved sites",
+    "Delete confirmation and fallback active state",
+    "URL path navigation and refresh",
+    "Homepage and WP Admin shortcuts",
+    "Temporary, browser-saved, and local-directory identity badges",
+    "WordPress/PHP/language settings",
+    "Older WordPress versions option",
+    "Network and multisite toggles",
+    "Destructive reset and saved reload behavior",
+    "File browser with new file, new folder, upload, browse, selected editor, dirty marker, save, and result state",
+    "Blueprint editor with JSON validation, copy, download, run, and result state",
+    "Database driver, path, size, selected state, download progress, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs with event records",
+    "Export to GitHub",
+    "Download as zip",
+    "Database download",
+    "Blueprint bundle actions",
+    "Transfer history for GitHub, ZIP, database, Blueprint, local save, and browser save"
+  ]
+}
