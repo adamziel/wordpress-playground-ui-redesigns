@@ -1,0 +1,45 @@
+{
+  "id": "v2-design-050",
+  "title": "Playground Command Table Cockpit",
+  "concept": "A command-search cockpit where grouped command results drive route-specific forms while a table-led admin surface, selected detail panel, transfer history, and protected live WordPress preview mutate together.",
+  "focus": [
+    "command search as the discovery layer",
+    "table-led saved and transfer state management",
+    "persistent selected-detail execution panel",
+    "protected live WordPress shell",
+    "stateful save, import, export, delete, file, Blueprint, database, and log workflows"
+  ],
+  "flows": [
+    "Search and run Playground commands from grouped results with visible constraints, validation, progress, confirmation, and final result state",
+    "Finish ZIP download and GitHub export flows with source status, progress, generated result, transfer history row, and live preview preservation",
+    "Finish local-directory save with folder picker, permission grant, copy progress, selected folder identity, local storage badge, and Save & Reload consequence",
+    "Transform saved-table rows through temporary, browser saved, local permission, imported, exported, deleted, renamed, and active selected states",
+    "Start or import from Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, and .zip with real inputs and replacement warnings",
+    "Use Site Manager Settings, Files, Blueprint, Database, Logs, Export to GitHub, and Download as zip without hiding the active WordPress shell",
+    "Run destructive or replacement flows including delete saved Playground, ZIP import over current, Blueprint run over current, and settings reset or Save & Reload",
+    "Browse a labeled Blueprint gallery subset with current categories, search, selected Blueprint detail, URL field, editor, copy, download, run, validation, and result state"
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start route",
+    "WordPress PR preview route with PR number or URL",
+    "Gutenberg PR or branch preview route",
+    "GitHub import with account connection and token caveat",
+    "Blueprint URL runner",
+    "Import .zip with chooser, validation, confirmation, progress, and imported result",
+    "Blueprint gallery categories and search with honest 43 available, 9 shown labeling",
+    "Featured Blueprint shortcuts and selected Blueprint detail",
+    "Save temporary Playground in browser storage with progress and slug",
+    "Save to local directory with folder picker, permission state, progress, folder identity, and reload consequence",
+    "Saved and unsaved Playground table with open/manage, rename, delete, final deleted state, and selected detail",
+    "Current shell path input, refresh, Homepage, WP Admin, temporary/saved/local/imported state, Save, reset, and reload consequences",
+    "Site Manager tabs for Settings, Files, Blueprint, Database, and Logs",
+    "Settings for WordPress version, older versions, PHP version, language, network access, multisite, destructive reset, and Save & Reload",
+    "File browser with create file, create folder, upload, browse files, selected file editor, dirty state, save result, and revert",
+    "Blueprint tools with blueprint.json editor, Blueprint URL, copy link, download bundle, run Blueprint, validation, and result state",
+    "Database driver, SQLite path, size, database.sqlite download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs with empty and warning examples",
+    "Export to GitHub with connection, repository, branch, progress, commit result, and transfer row",
+    "Download as zip with source status, progress, generated archive, and transfer history",
+    "Portability surfaces for GitHub import/export, ZIP import/download, database download, and Blueprint bundle actions"
+  ]
+}
