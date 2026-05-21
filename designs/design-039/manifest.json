@@ -1,0 +1,51 @@
+{
+  "id": "design-039",
+  "title": "Playground Register",
+  "concept": "A minimal expert toolbar and table-led register for power users managing many saved Playgrounds, where creation, import, export, saving, and Site Manager actions are exposed through compact command menus and row inspectors instead of large onboarding panels.",
+  "focus": [
+    "minimal expert toolbar",
+    "table-led saved Playground management",
+    "compact command menus with keyboard-like affordances",
+    "neutral WordPress admin-inspired palette with one blue accent",
+    "row inspector for source, storage, runtime, and artifact commands"
+  ],
+  "flows": [
+    "Manage saved and unsaved Playgrounds from the first viewport table with open, rename, delete, save, local directory save, zip download, and export commands.",
+    "Start a new Playground from Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, or imported zip through compact toolbar menus and register rows.",
+    "Use Site Manager sections for settings, file browser, Blueprint bundle, database tools, logs, Homepage, WP Admin, GitHub export, and zip download.",
+    "Browse the Blueprint gallery with category filters and featured entries while preserving access to all 43 blueprints.",
+    "Navigate and refresh the active embedded WordPress page from the persistent path command bar."
+  ],
+  "featureCoverage": [
+    "create a vanilla Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub after account connection",
+    "run a Blueprint URL",
+    "import a .zip",
+    "browse and filter Blueprint gallery entries",
+    "select featured blueprint shortcuts",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "see save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh the active embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress/PHP/language settings",
+    "include older WordPress versions",
+    "allow network access",
+    "create a multisite network",
+    "understand destructive reset and stored Save & Reload behavior",
+    "use File browser with create folder/file, upload, browse, and code editing affordances",
+    "view/copy/download/run the current Blueprint bundle",
+    "inspect database driver/path/size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect logs and empty/error states",
+    "export to GitHub",
+    "download a .zip"
+  ]
+}
