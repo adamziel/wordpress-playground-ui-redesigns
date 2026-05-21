@@ -1,0 +1,47 @@
+{
+  "id": "v2-design-004",
+  "title": "Blueprint Command Console",
+  "concept": "A V2 Playground console with the live WordPress browser protected on the left and a right inspector centered on Blueprint search, URL runs, JSON editing, ZIP replacement, save identity, and transfer history.",
+  "focus": [
+    "large browser plus right inspector",
+    "Blueprint-first command model",
+    "stateful import, export, save, and destructive flows",
+    "neutral WordPress admin palette with blue, green, amber, and red state accents"
+  ],
+  "flows": [
+    "Search representative Blueprint entries with captured categories, inspect selected detail, edit JSON, validate, copy, download, and run with replacement confirmation",
+    "Import a ZIP end to end with source selection, invalid file failure, validation, replacement warning, progress, success state, active identity update, path update, and transfer history",
+    "Generate a ZIP download end to end with source status, bundling progress, generated archive result, and transfer history",
+    "Save a temporary Playground in browser storage or to a local directory with distinct consequences, progress, saved identity, slug or folder state, and saved list mutation",
+    "Manage saved, local, and temporary Playgrounds with open, rename, delete confirmation, final row removal, and active fallback",
+    "Use Site Manager settings, files, Blueprint, database, logs, Export to GitHub, and Download as zip while the live browser remains visible",
+    "Start from Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, or ZIP import without leaving the command console"
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start",
+    "WordPress PR preview",
+    "Gutenberg PR or branch preview",
+    "GitHub import with account connection and token caveat",
+    "Blueprint URL runner",
+    "Import .zip with validation and replacement warning",
+    "Blueprint gallery categories and search with honest representative subset label",
+    "Selected Blueprint detail with tags",
+    "Blueprint JSON editor with dirty and validation state",
+    "Blueprint copy link, download bundle, and run actions",
+    "Save in this browser",
+    "Save to a local directory",
+    "Save progress state",
+    "Saved, local, and temporary Playground differences",
+    "Saved Playground open, rename, delete confirmation, and final deleted state",
+    "Current shell path input and refresh",
+    "Homepage and WP Admin shortcuts",
+    "Temporary, saved, local, ZIP import, PR preview, and Blueprint result identity states",
+    "Settings with WordPress, PHP, language, older versions, network, multisite, reset, and reload consequences",
+    "File browser with create file, create folder, upload, browse, selected editor, dirty state, and save result",
+    "Database driver, SQLite path, size, database download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs with empty and warning states",
+    "GitHub export with connection and result",
+    "Download as zip with progress and generated result",
+    "Transfer history for imports, exports, saves, downloads, and destructive actions"
+  ]
+}
