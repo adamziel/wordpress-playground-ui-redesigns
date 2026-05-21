@@ -373,6 +373,45 @@
     "path": "v2-design-009/index.html"
   },
   {
+    "id": "v2-design-011",
+    "number": 11,
+    "title": "Preview Ledger Command Deck",
+    "concept": "A preview-protecting two-column command deck where the live WordPress shell remains large and persistent while saved objects, launch routes, Site Manager tools, Blueprint gallery, and portability actions write visible mutations into an operations ledger and event stream.",
+    "focus": [
+      "large protected WordPress preview",
+      "object ledger for temporary, saved, local, PR, GitHub, ZIP, and Blueprint states",
+      "event stream for save, rename, delete, import, export, reset, and file edits",
+      "light technical console with thin borders and status chips"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start",
+      "WordPress PR preview",
+      "Gutenberg PR or branch preview",
+      "GitHub import with account connection and token caveat",
+      "Blueprint URL runner",
+      "Import .zip with validation and replacement result",
+      "Blueprint gallery categories and search with honest representative subset label",
+      "Featured Blueprint shortcuts through representative gallery entries",
+      "Save in this browser",
+      "Save to a local directory",
+      "Save progress state",
+      "Saved, local, and temporary Playground differences",
+      "Saved Playground open, rename, delete confirmation, and final row removal",
+      "Current shell path input and refresh",
+      "Homepage and WP Admin shortcuts",
+      "Temporary, saved, local, PR preview, GitHub import, ZIP import, and Blueprint result identity states",
+      "Settings with WordPress, PHP, language, older versions, network, multisite, destructive reset, and stored Save & Reload behavior",
+      "File browser with create file, create folder, upload, browse, selected editor, dirty state, and save result",
+      "Blueprint editor with copy link, download bundle, run action, dirty state, and replacement result",
+      "Database driver, SQLite path, size, database download, Adminer, and phpMyAdmin",
+      "Playground, WordPress, and PHP logs with empty and warning states",
+      "Export to GitHub with connection and result",
+      "Download as .zip with generated result",
+      "Transfer and mutation history for imports, exports, saves, downloads, reset, rename, delete, and file edits"
+    ],
+    "path": "v2-design-011/index.html"
+  },
+  {
     "id": "v2-design-013",
     "number": 13,
     "title": "Playground Object Ledger",
