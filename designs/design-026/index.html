@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design 026 - Playground Command Inspector</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar" aria-label="Playground shell">
+    <div class="brand">
+      <span class="logo-mark" aria-hidden="true">W</span>
+      <div>
+        <strong>Playground</strong>
+        <span>Command Inspector</span>
+      </div>
+    </div>
+    <div class="topbar-path" aria-label="Active WordPress address">
+      <button class="icon-button" title="Refresh active WordPress page" aria-label="Refresh active WordPress page">↻</button>
+      <label class="path-field">
+        <span class="visually-hidden">WordPress path</span>
+        <input value="/hello-from-playground/" aria-label="WordPress path">
+      </label>
+    </div>
+    <div class="topbar-actions">
+      <span class="status-chip chip-amber">Unsaved</span>
+      <button class="button dark" data-command-jump="save">Save</button>
+      <button class="icon-button" title="Saved Playgrounds" aria-label="Saved Playgrounds">▦</button>
+      <button class="icon-button" title="Site Manager" aria-label="Site Manager">◨</button>
+      <button class="icon-button" title="Playground settings" aria-label="Playground settings">⚙</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero-workspace" aria-labelledby="workspace-title">
+      <div class="workspace-title">
+        <div>
+          <p class="eyebrow">Current Playground</p>
+          <h1 id="workspace-title">Find a task, then inspect the exact next step.</h1>
+        </div>
+        <div class="workspace-actions">
+          <button class="button secondary">Homepage</button>
+          <button class="button secondary">WP Admin</button>
+        </div>
+      </div>
+
+      <div class="active-summary">
+        <div class="site-identity">
+          <span class="site-icon" aria-hidden="true">W</span>
+          <div>
+            <strong>Unsaved Playground</strong>
+            <span>Temporary site running WordPress latest with PHP 8.3</span>
+          </div>
+        </div>
+        <div class="summary-grid" aria-label="Runtime state">
+          <span><strong>Path</strong> /hello-from-playground/</span>
+          <span><strong>Storage</strong> Browser not saved</span>
+          <span><strong>Network</strong> <span class="status-chip chip-green">Allowed</span></span>
+          <span><strong>Database</strong> SQLite, 452 KB</span>
+        </div>
+        <div class="mini-site" aria-label="Embedded WordPress site preview">
+          <div class="mini-site-bar">
+            <span></span><span></span><span></span>
+            <em>My WordPress Website</em>
+          </div>
+          <div class="mini-site-body">
+            <div>
+              <p class="mini-title">Hello from <span>WordPress Playground!</span></p>
+              <p>This is Playground, a WordPress that runs client-side in your browser.</p>
+              <mark>Logged in as admin</mark>
+            </div>
+            <div class="mini-rings" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="command-surface" aria-labelledby="command-title">
+      <div class="command-header">
+        <p class="eyebrow">Command palette</p>
+        <h2 id="command-title">Search every Playground action</h2>
+        <p>Type a task name or pick a group. Results stay on this page and open an inspector below the list.</p>
+      </div>
+
+      <label class="command-input">
+        <span class="command-prefix">Find</span>
+        <input id="commandSearch" type="search" placeholder="Try: save, PR, files, database, logs, blueprint, export" autocomplete="off">
+        <kbd>/</kbd>
+      </label>
+
+      <div class="filter-row" aria-label="Command groups">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="start">Start</button>
+        <button class="filter" data-filter="save">Save</button>
+        <button class="filter" data-filter="manage">Manage</button>
+        <button class="filter" data-filter="site">Site Manager</button>
+        <button class="filter" data-filter="move">Import / Export</button>
+      </div>
+
+      <div class="results" id="commandResults" aria-live="polite">
+        <button class="result-row active" data-group="start" data-key="new" data-search="create start new vanilla wordpress wordpress pr gutenberg branch github blueprint url import zip gallery">
+          <span class="result-icon">+</span>
+          <span><strong>Start a Playground</strong><em>Vanilla WordPress, PR previews, GitHub import, Blueprint URL, zip import, and template shortcuts.</em></span>
+          <span class="status-chip chip-blue">6 starts</span>
+        </button>
+        <button class="result-row" data-group="save" data-key="save" data-search="save playground browser local directory progress temporary unsaved">
+          <span class="result-icon">✓</span>
+          <span><strong>Save this Playground</strong><em>Choose browser storage or a local directory, then watch file-copy progress.</em></span>
+          <span class="status-chip chip-amber">Unsaved</span>
+        </button>
+        <button class="result-row" data-group="manage" data-key="library" data-search="saved playgrounds list rename delete unsaved created browser storage">
+          <span class="result-icon">▦</span>
+          <span><strong>Open saved Playgrounds</strong><em>Resume, rename, or delete browser-backed sites and keep the unsaved site visible.</em></span>
+          <span class="status-chip chip-green">2 saved</span>
+        </button>
+        <button class="result-row" data-group="site" data-key="settings" data-search="settings wordpress version php language older versions network multisite reset reload">
+          <span class="result-icon">⚙</span>
+          <span><strong>Adjust runtime settings</strong><em>WordPress, PHP, language, network, multisite, destructive reset, and saved reload behavior.</em></span>
+          <span class="status-chip chip-red">Reset risk</span>
+        </button>
+        <button class="result-row" data-group="site" data-key="files" data-search="file browser files folder upload browse code editor wp-config wordpress">
+          <span class="result-icon">⌘</span>
+          <span><strong>Browse and edit files</strong><em>Create files and folders, upload or browse files, and inspect wp-config.php in a code editor.</em></span>
+          <span class="status-chip chip-neutral">Editor</span>
+        </button>
+        <button class="result-row" data-group="site" data-key="blueprint" data-search="blueprint json copy link download bundle run editor gallery filters">
+          <span class="result-icon">{ }</span>
+          <span><strong>Inspect the Blueprint</strong><em>Edit blueprint.json, copy a link, download a bundle, or run the current Blueprint.</em></span>
+          <span class="status-chip chip-blue">JSON</span>
+        </button>
+        <button class="result-row" data-group="site" data-key="database" data-search="database sqlite driver path size download adminer phpmyadmin">
+          <span class="result-icon">db</span>
+          <span><strong>Database tools</strong><em>See SQLite details, download database.sqlite, open Adminer, or open phpMyAdmin.</em></span>
+          <span class="status-chip chip-green">452 KB</span>
+        </button>
+        <button class="result-row" data-group="site" data-key="logs" data-search="logs playground wordpress php empty errors">
+          <span class="result-icon">!</span>
+          <span><strong>Review logs</strong><em>Switch between Playground, WordPress, and PHP logs, including empty states.</em></span>
+          <span class="status-chip chip-green">No errors</span>
+        </button>
+        <button class="result-row" data-group="move" data-key="move" data-search="export github download zip import zip portability">
+          <span class="result-icon">⇅</span>
+          <span><strong>Move work in or out</strong><em>Export to GitHub, download a zip, or import a zip into a new Playground.</em></span>
+          <span class="status-chip chip-neutral">Portable</span>
+        </button>
+      </div>
+
+      <article class="inspector" id="inspector" aria-labelledby="inspectorTitle"></article>
+    </section>
+
+    <section class="blueprint-gallery" id="gallery" aria-labelledby="gallery-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Blueprint gallery</p>
+          <h2 id="gallery-title">Browse 43 starting points without leaving search mode</h2>
+        </div>
+        <button class="button secondary" data-command-jump="new">Run selected Blueprint</button>
+      </div>
+      <div class="filter-row wrap" aria-label="Blueprint categories">
+        <button class="filter active">All</button>
+        <button class="filter">Featured</button>
+        <button class="filter">Website</button>
+        <button class="filter">Personal</button>
+        <button class="filter">Content</button>
+        <button class="filter">Themes</button>
+        <button class="filter">Gutenberg</button>
+        <button class="filter">Experiments</button>
+        <button class="filter">WooCommerce</button>
+        <button class="filter">News</button>
+      </div>
+      <div class="gallery-grid">
+        <button class="blueprint-card selected">
+          <span class="mock art"></span>
+          <strong>Art Gallery</strong>
+          <em>An art gallery created with the Vueo theme.</em>
+          <span><span class="status-chip chip-neutral">Website</span><span class="status-chip chip-neutral">Personal</span></span>
+        </button>
+        <button class="blueprint-card">
+          <span class="mock coffee"></span>
+          <strong>Coffee Shop</strong>
+          <em>A stylish WooCommerce storefront with demo products.</em>
+          <span><span class="status-chip chip-neutral">WooCommerce</span><span class="status-chip chip-neutral">Store</span></span>
+        </button>
+        <button class="blueprint-card">
+          <span class="mock feed"></span>
+          <strong>Feed Reader with the Friends Plugin</strong>
+          <em>Read social feeds and subscriptions from the web.</em>
+          <span><span class="status-chip chip-neutral">rss</span><span class="status-chip chip-neutral">social web</span></span>
+        </button>
+        <button class="blueprint-card">
+          <span class="mock gaming"></span>
+          <strong>Gaming News</strong>
+          <em>A gaming news site created with the Spiel theme.</em>
+          <span><span class="status-chip chip-neutral">News</span><span class="status-chip chip-neutral">Website</span></span>
+        </button>
+        <button class="blueprint-card">
+          <span class="mock nonprofit"></span>
+          <strong>Non-profit Organization</strong>
+          <em>A nonprofit site created with the Koinonia theme.</em>
+          <span><span class="status-chip chip-neutral">Organization</span><span class="status-chip chip-neutral">Content</span></span>
+        </button>
+        <button class="blueprint-card">
+          <span class="mock personal"></span>
+          <strong>Personal Blog</strong>
+          <em>A personal blog created with the Substrata theme.</em>
+          <span><span class="status-chip chip-neutral">Personal</span><span class="status-chip chip-neutral">Blog</span></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="manager-stack" aria-labelledby="manager-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Site Manager stack</p>
+          <h2 id="manager-title">All manager tabs appear as searchable destinations</h2>
+        </div>
+        <span class="status-chip chip-green">Saved view supported</span>
+      </div>
+
+      <details class="manager-panel" open>
+        <summary><span>Settings</span><span>Versions, language, network, reset</span></summary>
+        <div class="settings-grid">
+          <label>WordPress Version<select><option>latest</option><option>6.9</option><option>6.8</option></select></label>
+          <label>PHP Version<select><option>PHP 8.3</option><option>PHP 8.2</option><option>PHP 8.1</option></select></label>
+          <label>Language<select><option>English (United States)</option><option>Polski</option><option>Deutsch</option></select></label>
+          <label class="check"><input type="checkbox"> Include older versions</label>
+          <label class="check"><input type="checkbox" checked> Allow network access</label>
+          <label class="check"><input type="checkbox"> Create a multisite network</label>
+        </div>
+        <div class="warning-line">Applying these settings resets an unsaved Playground. Stored Playgrounds use Save & Reload.</div>
+      </details>
+
+      <details class="manager-panel">
+        <summary><span>File Browser</span><span>Tree, create, upload, browse, edit</span></summary>
+        <div class="file-browser">
+          <div class="tree">
+            <button class="button secondary">New File</button>
+            <button class="button secondary">New Folder</button>
+            <button class="button secondary">Upload</button>
+            <button class="button secondary">Browse files</button>
+            <ul>
+              <li class="open">/wordpress</li>
+              <li>wp-admin</li>
+              <li>wp-content</li>
+              <li>wp-includes</li>
+              <li class="selected">wp-config.php</li>
+              <li>index.php</li>
+            </ul>
+          </div>
+          <pre class="code-view"><code>1  &lt;?php define('CONCATENATE_SCRIPTS', false);
+2
+3  /** Database settings */
+4  define('DB_NAME', 'database_name_here');
+5  define('DB_USER', 'username_here');
+6  define('DB_PASSWORD', 'password_here');
+7  define('DB_HOST', 'localhost');</code></pre>
+        </div>
+      </details>
+
+      <details class="manager-panel">
+        <summary><span>Blueprint</span><span>Copy, download, run, edit JSON</span></summary>
+        <div class="blueprint-tools">
+          <div class="button-row">
+            <button class="button secondary">Copy link</button>
+            <button class="button secondary">Download bundle</button>
+            <button class="button dark">Run Blueprint</button>
+          </div>
+          <pre class="code-view compact"><code>{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "login": true,
+  "landingPage": "/hello-from-playground/",
+  "preferredVersions": { "php": "8.3", "wp": "latest" }
+}</code></pre>
+        </div>
+      </details>
+
+      <details class="manager-panel">
+        <summary><span>Database</span><span>SQLite details and admin tools</span></summary>
+        <div class="database-grid">
+          <span><strong>Driver</strong> MySQL emulation backed by SQLite</span>
+          <span><strong>Path</strong> /wordpress/wp-content/database/.ht.sqlite</span>
+          <span><strong>Size</strong> 452 KB</span>
+          <div class="button-row">
+            <button class="button secondary">Download database.sqlite</button>
+            <button class="button secondary">Open Adminer</button>
+            <button class="button secondary">Open phpMyAdmin</button>
+          </div>
+        </div>
+      </details>
+
+      <details class="manager-panel">
+        <summary><span>Logs and portability</span><span>Empty states, GitHub export, zip download</span></summary>
+        <div class="log-grid">
+          <div><strong>Playground</strong><p>No problems so far.</p></div>
+          <div><strong>WordPress</strong><p>No errors recorded.</p></div>
+          <div><strong>PHP</strong><p>No warnings or fatal errors.</p></div>
+        </div>
+        <div class="button-row">
+          <button class="button secondary">Export to GitHub</button>
+          <button class="button secondary">Download as .zip</button>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <template id="panel-new">
+    <div class="inspector-head">
+      <div><p class="eyebrow">Selected command</p><h3 id="inspectorTitle">Start a Playground</h3></div>
+      <span class="status-chip chip-blue">Creation flow</span>
+    </div>
+    <div class="start-grid">
+      <div class="task-card primary"><strong>Vanilla WordPress</strong><span>Start fresh with the default welcome site.</span><button class="button secondary">Start vanilla</button></div>
+      <div class="task-card"><strong>WordPress PR</strong><span>Preview by PR number or URL.</span><input placeholder="PR number or URL"><button class="button secondary">Preview</button></div>
+      <div class="task-card"><strong>Gutenberg PR or branch</strong><span>Preview a PR, URL, or branch name.</span><input placeholder="PR, URL, or branch"><button class="button secondary">Preview</button></div>
+      <div class="task-card"><strong>From GitHub</strong><span>Import a public plugin, theme, or wp-content directory after connecting an account.</span><button class="button secondary">Connect GitHub</button></div>
+      <div class="task-card"><strong>Blueprint URL</strong><span>Run a Blueprint from a public URL.</span><input placeholder="https://example.com/blueprint.json"><button class="button secondary">Run URL</button></div>
+      <div class="task-card"><strong>Import .zip</strong><span>Open the system file picker and import a Playground bundle.</span><button class="button secondary">Choose zip</button></div>
+    </div>
+  </template>
+
+  <template id="panel-save">
+    <div class="inspector-head">
+      <div><p class="eyebrow">Selected command</p><h3 id="inspectorTitle">Save this Playground</h3></div>
+      <span class="status-chip chip-amber">Temporary</span>
+    </div>
+    <div class="save-layout">
+      <label>Playground name<input value="Research Browser Playground"></label>
+      <div class="destination-list">
+        <label class="radio-row"><input type="radio" name="save" checked> Save in this browser <span>Fast browser-backed storage.</span></label>
+        <label class="radio-row"><input type="radio" name="save"> Save to a local directory <span>Pick a folder on this device.</span></label>
+      </div>
+      <div class="progress-block">
+        <div><strong>Saving files</strong><span>3028 / 3751 copied</span></div>
+        <meter min="0" max="3751" value="3028">80%</meter>
+      </div>
+      <div class="button-row"><button class="button secondary">Cancel</button><button class="button dark">Save Playground</button></div>
+    </div>
+  </template>
+
+  <template id="panel-library">
+    <div class="inspector-head">
+      <div><p class="eyebrow">Selected command</p><h3 id="inspectorTitle">Open saved Playgrounds</h3></div>
+      <span class="status-chip chip-green">Browser storage</span>
+    </div>
+    <div class="library-list">
+      <div class="library-row"><span class="site-icon">W</span><strong>Unsaved Playground</strong><span>Not saved to browser storage</span><button class="button secondary">Save</button></div>
+      <div class="library-row active"><span class="site-icon">W</span><strong>Research Browser Playground</strong><span>Created May 21, 2026</span><button class="button secondary">Rename</button><button class="button secondary">Delete</button></div>
+      <div class="library-row"><span class="site-icon">W</span><strong>Plugin Test Playground</strong><span>Saved in this browser</span><button class="button secondary">Rename</button><button class="button secondary">Delete</button></div>
+    </div>
+  </template>
+
+  <template id="panel-settings">
+    <div class="inspector-head">
+      <div><p class="eyebrow">Selected command</p><h3 id="inspectorTitle">Adjust runtime settings</h3></div>
+      <span class="status-chip chip-red">Destructive reset</span>
+    </div>
+    <p class="plain-copy">For unsaved sites, applying settings starts a new runtime. For stored Playgrounds, the action is Save & Reload with limited configuration options.</p>
+    <div class="settings-grid short">
+      <label>WordPress Version<select><option>latest</option><option>Include older versions first</option></select></label>
+      <label>PHP Version<select><option>PHP 8.3</option></select></label>
+      <label>Language<select><option>English (United States)</option></select></label>
+      <label class="check"><input type="checkbox" checked> Allow network access</label>
+      <label class="check"><input type="checkbox"> Create a multisite network</label>
+    </div>
+    <button class="button dark">Apply Settings & Reset Playground</button>
+  </template>
+
+  <template id="panel-files">
+    <div class="inspector-head">
+      <div><p class="eyebrow">Selected command</p><h3 id="inspectorTitle">Browse and edit files</h3></div>
+      <span class="status-chip chip-neutral">/wordpress</span>
+    </div>
+    <div class="button-row"><button class="button secondary">New File</button><button class="button secondary">New Folder</button><button class="button secondary">Upload</button><button class="button secondary">Browse files</button></div>
+    <pre class="code-view compact"><code>/wordpress
+  wp-admin
+  wp-content
+  wp-includes
+  wp-config.php  selected</code></pre>
+  </template>
+
+  <template id="panel-blueprint">
+    <div class="inspector-head">
+      <div><p class="eyebrow">Selected command</p><h3 id="inspectorTitle">Inspect the Blueprint</h3></div>
+      <span class="status-chip chip-blue">blueprint.json</span>
+    </div>
+    <div class="button-row"><button class="button secondary">Copy link</button><button class="button secondary">Download bundle</button><button class="button dark">Run Blueprint</button><a class="button secondary" href="#gallery">View all 43 blueprints</a></div>
+    <pre class="code-view compact"><code>"landingPage": "/hello-from-playground/",
+"preferredVersions": { "php": "8.3", "wp": "latest" }</code></pre>
+  </template>
+
+  <template id="panel-database">
+    <div class="inspector-head">
+      <div><p class="eyebrow">Selected command</p><h3 id="inspectorTitle">Database tools</h3></div>
+      <span class="status-chip chip-green">SQLite</span>
+    </div>
+    <div class="database-grid">
+      <span><strong>Database driver</strong> MySQL emulation backed by SQLite</span>
+      <span><strong>SQLite database path</strong> /wordpress/wp-content/database/.ht.sqlite</span>
+      <span><strong>Size</strong> 452 KB</span>
+    </div>
+    <div class="button-row"><button class="button secondary">Download database.sqlite</button><button class="button secondary">Open Adminer</button><button class="button secondary">Open phpMyAdmin</button></div>
+  </template>
+
+  <template id="panel-logs">
+    <div class="inspector-head">
+      <div><p class="eyebrow">Selected command</p><h3 id="inspectorTitle">Review logs</h3></div>
+      <span class="status-chip chip-green">No problems</span>
+    </div>
+    <div class="log-grid">
+      <div><strong>Playground</strong><p>No problems so far.</p></div>
+      <div><strong>WordPress</strong><p>No errors recorded.</p></div>
+      <div><strong>PHP</strong><p>No warnings or fatal errors.</p></div>
+    </div>
+  </template>
+
+  <template id="panel-move">
+    <div class="inspector-head">
+      <div><p class="eyebrow">Selected command</p><h3 id="inspectorTitle">Move work in or out</h3></div>
+      <span class="status-chip chip-neutral">Portability</span>
+    </div>
+    <div class="start-grid small">
+      <div class="task-card"><strong>Export to GitHub</strong><span>Send this Playground to a GitHub repository.</span><button class="button secondary">Export</button></div>
+      <div class="task-card"><strong>Download as .zip</strong><span>Download a portable Playground bundle.</span><button class="button secondary">Download</button></div>
+      <div class="task-card"><strong>Import .zip</strong><span>Start from an existing zip bundle.</span><button class="button secondary">Choose zip</button></div>
+      <div class="task-card"><strong>Download database.sqlite</strong><span>Export the SQLite database separately.</span><button class="button secondary">Download database</button></div>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
