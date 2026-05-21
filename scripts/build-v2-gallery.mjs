@@ -1,0 +1,342 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const v2Root = path.join(root, 'v2');
+const designsDir = path.join(v2Root, 'designs');
+const dataDir = path.join(v2Root, 'data');
+const indexPath = path.join(v2Root, 'index.html');
+
+async function exists(filePath) {
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function readJson(filePath) {
+  return JSON.parse(await fs.readFile(filePath, 'utf8'));
+}
+
+function esc(value) {
+  return String(value ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;');
+}
+
+async function collectDesigns() {
+  await fs.mkdir(designsDir, { recursive: true });
+  const entries = await fs.readdir(designsDir, { withFileTypes: true });
+  const designs = [];
+
+  for (const entry of entries) {
+    if (!entry.isDirectory() || !/^v2-design-\d{3}$/.test(entry.name)) continue;
+
+    const dir = path.join(designsDir, entry.name);
+    const manifestPath = path.join(dir, 'manifest.json');
+    const htmlPath = path.join(dir, 'index.html');
+    if (!(await exists(manifestPath)) || !(await exists(htmlPath))) continue;
+
+    const manifest = await readJson(manifestPath);
+    designs.push({
+      id: entry.name,
+      number: Number(entry.name.slice(-3)),
+      title: manifest.title || entry.name,
+      concept: manifest.concept || '',
+      focus: manifest.focus || [],
+      featureCoverage: manifest.featureCoverage || [],
+      path: `${entry.name}/index.html`,
+    });
+  }
+
+  designs.sort((a, b) => a.number - b.number);
+  return designs;
+}
+
+function renderCards(designs) {
+  if (designs.length === 0) {
+    return '<div class="empty">The V2 worker swarm is preparing the first console-style redesigns. This page updates as designs are integrated and pushed.</div>';
+  }
+
+  return `<div class="previews">
+${designs
+  .map((design) => {
+    const href = `designs/${esc(design.path)}`;
+    const label = `V2 Design ${String(design.number).padStart(3, '0')}`;
+    return `          <article class="preview-card">
+            <div class="preview-head">
+              <div>
+                <div class="number">${label}</div>
+                <h2>${esc(design.title)}</h2>
+              </div>
+              <a href="${href}">Open</a>
+            </div>
+            <div class="frame-wrap">
+              <iframe src="${href}" title="${esc(label)} - ${esc(design.title)}" loading="lazy"></iframe>
+            </div>
+            <p>${esc(design.concept)}</p>
+          </article>`;
+  })
+  .join('\n')}
+        </div>`;
+}
+
+function renderIndex(designs) {
+  const count = designs.length;
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WordPress Playground UI Redesigns V2</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f5f6f7;
+        --ink: #101517;
+        --muted: #5f6a70;
+        --line: #dcdcde;
+        --panel: #fff;
+        --accent: #007cba;
+        --accent-dark: #005a87;
+        --ok: #008a20;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+      }
+
+      header {
+        border-bottom: 1px solid var(--line);
+        background: var(--panel);
+      }
+
+      .wrap {
+        width: calc(100% - 32px);
+        margin: 0 auto;
+      }
+
+      .hero {
+        padding: 30px 0 24px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(28px, 4vw, 46px);
+        line-height: 1.05;
+        letter-spacing: 0;
+      }
+
+      .lede {
+        max-width: 980px;
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.55;
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .pill {
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 999px;
+        padding: 7px 10px;
+        color: #2f3a40;
+        font-size: 13px;
+      }
+
+      .pill.strong {
+        border-color: rgba(0, 138, 32, 0.35);
+        color: var(--ok);
+      }
+
+      main {
+        padding: 22px 0 48px;
+      }
+
+      .toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        margin-bottom: 18px;
+      }
+
+      .toolbar nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .toolbar a {
+        color: var(--accent-dark);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .previews {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .preview-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        overflow: hidden;
+      }
+
+      .preview-card:hover {
+        border-color: var(--accent);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+
+      .preview-head {
+        min-height: 84px;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .preview-head h2 {
+        margin: 4px 0 0;
+        font-size: 18px;
+        line-height: 1.25;
+        letter-spacing: 0;
+      }
+
+      .preview-head a {
+        align-self: flex-start;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 7px 10px;
+        color: var(--accent-dark);
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .preview-head a:hover {
+        border-color: var(--accent);
+      }
+
+      .frame-wrap {
+        width: 100%;
+        height: clamp(760px, 72vw, 980px);
+        min-height: 760px;
+        background: #eef1f4;
+        border-bottom: 1px solid var(--line);
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        display: block;
+        border: 0;
+        background: #fff;
+      }
+
+      .preview-card p {
+        margin: 0;
+        padding: 14px 16px 16px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .number {
+        color: var(--accent-dark);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .empty {
+        border: 1px dashed var(--line);
+        border-radius: 8px;
+        background: #fff;
+        padding: 28px;
+        color: var(--muted);
+      }
+
+      @media (max-width: 760px) {
+        .wrap {
+          width: calc(100% - 20px);
+        }
+
+        .hero {
+          padding: 26px 0 20px;
+        }
+
+        .toolbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .preview-head {
+          min-height: 0;
+        }
+
+        .frame-wrap {
+          height: 680px;
+          min-height: 680px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap hero">
+        <h1>WordPress Playground UI Redesigns V2</h1>
+        <p class="lede">Fifty additional high-fidelity redesign explorations focused on the strongest console, command deck, and operations console directions from the first 100-design run. Every preview is rendered in a full-width iframe so desktop layouts stay visible.</p>
+        <div class="meta">
+          <span class="pill strong">${count} / 50 V2 designs</span>
+          <span class="pill">Console and operations family</span>
+          <span class="pill">Static HTML/CSS/JS</span>
+          <span class="pill">Research captured May 21, 2026</span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="wrap">
+        <div class="toolbar">
+          <strong>Full-Width Iframe Preview Gallery</strong>
+          <nav>
+            <a href="../">First 100 designs</a>
+            <a href="../research/PLAYGROUND_UI_MAP.md">Current UI map</a>
+            <a href="data/designs.json">V2 registry</a>
+          </nav>
+        </div>
+        ${renderCards(designs)}
+      </div>
+    </main>
+  </body>
+</html>
+`;
+}
+
+const designs = await collectDesigns();
+await fs.mkdir(dataDir, { recursive: true });
+await fs.writeFile(path.join(dataDir, 'designs.json'), `${JSON.stringify(designs, null, 2)}\n`);
+await fs.writeFile(indexPath, renderIndex(designs));
+console.log(`V2 gallery built with ${designs.length} designs.`);

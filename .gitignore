@@ -5,4 +5,10 @@ node_modules/
 .orchestrator/next_design.txt
 .orchestrator/critic_last_count.txt
 .worktrees/
+.orchestrator-v2/logs/
+.orchestrator-v2/tmp/
+.orchestrator-v2/locks/
+.orchestrator-v2/claims/
+.orchestrator-v2/critic_last_count.txt
+.worktrees-v2/
 *.log

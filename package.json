@@ -4,10 +4,12 @@
   "description": "High-fidelity redesign explorations for the WordPress Playground UI",
   "scripts": {
     "build:gallery": "node scripts/build-gallery.mjs",
+    "build:v2": "node scripts/build-v2-gallery.mjs",
     "capture:basic": "node scripts/capture-playground.mjs",
     "capture:flows": "node scripts/explore-playground-flows.mjs",
     "capture:advanced": "node scripts/explore-advanced-flows.mjs",
-    "validate:design": "node scripts/validate-design.mjs"
+    "validate:design": "node scripts/validate-design.mjs",
+    "validate:v2": "node scripts/validate-v2-design.mjs"
   },
   "repository": {
     "type": "git",
