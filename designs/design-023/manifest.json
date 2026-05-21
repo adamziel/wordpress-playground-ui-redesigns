@@ -1,0 +1,51 @@
+{
+  "id": "design-023",
+  "title": "Blueprint Launchpad",
+  "concept": "A Blueprint-first Playground redesign where search, category filters, featured Blueprint cards, Blueprint URL entry, and current blueprint.json actions form the home surface, while saved management and Site Manager tools sit in compact workspace bands.",
+  "focus": [
+    "Blueprint-first information architecture",
+    "command/search overlay plus results pane",
+    "beginner-friendly plugin developer workflows",
+    "current Blueprint run/copy/download prominence",
+    "restrained color blocks with clear operational states"
+  ],
+  "flows": [
+    "Search and filter the full Blueprint gallery, select a featured Blueprint, inspect runtime details, then run, copy, download, or open blueprint.json.",
+    "Run a Blueprint from URL or use the current blueprint.json editor with copy link, download bundle, and run actions.",
+    "Start from vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, or zip import from the command source strip and starts panel.",
+    "Save a temporary Playground to browser storage or a local directory with visible file-copy progress, then manage saved and unsaved Playgrounds with rename and delete actions.",
+    "Use Site Manager workspace panels for settings, file browser, Blueprint editing, database tools, logs, export to GitHub, and download as zip while retaining the active WordPress preview."
+  ],
+  "featureCoverage": [
+    "create vanilla WordPress Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub after account connection",
+    "run Blueprint URL",
+    "import .zip",
+    "browse and filter Blueprint gallery entries",
+    "select featured Blueprint shortcuts",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "see save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh active embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress version, PHP version, and language settings",
+    "include older WordPress versions",
+    "allow network access",
+    "create a multisite network",
+    "understand destructive reset and stored Save & Reload behavior",
+    "use File browser with create file, create folder, upload, browse, and code editing affordances",
+    "view, copy, download, and run the current Blueprint bundle",
+    "inspect database driver, path, and size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect Playground, WordPress, and PHP logs with empty states",
+    "export to GitHub",
+    "download as .zip"
+  ]
+}
