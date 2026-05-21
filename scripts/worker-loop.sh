@@ -64,6 +64,14 @@ Hard constraints:
 - Make the first viewport an actual usable app screen, not a marketing page.
 - Keep it responsive for desktop and mobile. Avoid overlapping text, one-note palettes, and decorative filler.
 
+Quality bar from the critic audits:
+- Prove at least one complete current-product flow in the wireframe, not just labels. Show a visible sequence such as launch source selection, save destination, progress/result, saved Playground identity, rename/delete, settings reset/reload, and export/import result.
+- Distinguish the launch/import routes with their real inputs and constraints: Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, and .zip import should not look interchangeable.
+- Treat Save in this browser and Save to a local directory as distinct destinations with concrete selection, progress, and resulting saved state.
+- Make the Blueprint gallery credible as a catalog: category/search/filter density, selected Blueprint detail, and run/inspect behavior. Do not claim "all 43" with only a few generic cards.
+- Keep temporary/unsaved state, reset/reload, delete, and import-over-current-site consequences visible at the moment of action.
+- Verify the mobile layout intentionally. Avoid horizontal scrolling, clipped primary controls, and a raw desktop-panel stack on narrow screens.
+
 Required output:
 - designs/${design_id}/index.html
 - designs/${design_id}/manifest.json
