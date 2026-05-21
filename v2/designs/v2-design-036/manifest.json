@@ -1,0 +1,48 @@
+{
+  "id": "v2-design-036",
+  "title": "Playground Data Workbench",
+  "concept": "A responsive tabbed operations workspace that leads with Site Manager files, Blueprint JSON, database tools, and logs while keeping the live WordPress shell protected beside it.",
+  "focus": [
+    "file and data operations",
+    "local-directory save lifecycle",
+    "stateful destructive replacement",
+    "responsive tabbed console",
+    "portable Playground artifacts"
+  ],
+  "flows": [
+    "Save a temporary Playground to a local directory with folder picker state, permission grant, copy progress, selected folder identity, local storage badge, saved row mutation, and reload consequence",
+    "Edit and save a selected WordPress file with dirty state, save result, activity history, and WordPress log mutation",
+    "Download the SQLite-backed database and open Adminer or phpMyAdmin with progress and resulting activity records",
+    "Validate, copy, download, and run Blueprint JSON while browsing an honestly labeled representative subset of the 43-blueprint gallery",
+    "Import a zip with archive validation, replacement confirmation, progress, final preview/path mutation, temporary storage state, and logs",
+    "Manage saved and unsaved Playgrounds with open, manage, rename, delete confirmation, final row removal, and active-site fallback"
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start",
+    "WordPress PR preview input",
+    "Gutenberg PR or branch input",
+    "GitHub import with account connection and token caveat",
+    "Blueprint URL runner",
+    "Import zip trigger and replacement confirmation",
+    "Blueprint gallery categories and search with representative subset label",
+    "Featured blueprint shortcuts",
+    "Save temporary Playground in browser storage",
+    "Save to a local directory",
+    "Save progress state",
+    "Saved and unsaved Playground list",
+    "Rename and delete saved sites",
+    "Path navigation and refresh",
+    "Homepage and WP Admin shortcuts",
+    "WordPress/PHP/language settings",
+    "Older WordPress versions option",
+    "Network access and multisite toggles",
+    "Destructive reset and stored Save & Reload behavior",
+    "File browser with create file, create folder, upload, browse, selected editor, dirty state, and save result",
+    "Blueprint editor with validate, copy, download, run, and result state",
+    "Database driver, path, size, database download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs",
+    "Export to GitHub",
+    "Download as zip",
+    "Database download and Blueprint bundle portability"
+  ]
+}

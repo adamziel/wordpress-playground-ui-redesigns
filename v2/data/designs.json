@@ -1396,5 +1396,47 @@
       "Transfer history for saves, imports, exports, downloads, file edits, deletes, settings reloads, and Blueprint runs"
     ],
     "path": "v2-design-035/index.html"
+  },
+  {
+    "id": "v2-design-036",
+    "number": 36,
+    "title": "Playground Data Workbench",
+    "concept": "A responsive tabbed operations workspace that leads with Site Manager files, Blueprint JSON, database tools, and logs while keeping the live WordPress shell protected beside it.",
+    "focus": [
+      "file and data operations",
+      "local-directory save lifecycle",
+      "stateful destructive replacement",
+      "responsive tabbed console",
+      "portable Playground artifacts"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start",
+      "WordPress PR preview input",
+      "Gutenberg PR or branch input",
+      "GitHub import with account connection and token caveat",
+      "Blueprint URL runner",
+      "Import zip trigger and replacement confirmation",
+      "Blueprint gallery categories and search with representative subset label",
+      "Featured blueprint shortcuts",
+      "Save temporary Playground in browser storage",
+      "Save to a local directory",
+      "Save progress state",
+      "Saved and unsaved Playground list",
+      "Rename and delete saved sites",
+      "Path navigation and refresh",
+      "Homepage and WP Admin shortcuts",
+      "WordPress/PHP/language settings",
+      "Older WordPress versions option",
+      "Network access and multisite toggles",
+      "Destructive reset and stored Save & Reload behavior",
+      "File browser with create file, create folder, upload, browse, selected editor, dirty state, and save result",
+      "Blueprint editor with validate, copy, download, run, and result state",
+      "Database driver, path, size, database download, Adminer, and phpMyAdmin",
+      "Playground, WordPress, and PHP logs",
+      "Export to GitHub",
+      "Download as zip",
+      "Database download and Blueprint bundle portability"
+    ],
+    "path": "v2-design-036/index.html"
   }
 ]
