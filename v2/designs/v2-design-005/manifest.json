@@ -1,0 +1,50 @@
+{
+  "id": "v2-design-005",
+  "title": "Playground Transfer Deck",
+  "concept": "A transfer-first WordPress Playground console with a protected live browser on the left and a right inspector that treats browser save, local directory save, GitHub import/export, ZIP import/download, database download, and Blueprint bundle operations as one operational deck.",
+  "focus": [
+    "large live browser plus right inspector",
+    "portability workflow object model",
+    "stateful Blueprint replacement flow",
+    "settings Save & Reload consequences",
+    "distinct browser, local-directory, and temporary identities"
+  ],
+  "flows": [
+    "Inspect a selected Blueprint, validate its JSON, confirm current-content replacement, run progress, and update the preview, path, database size, Blueprint status, and transfer history",
+    "Change runtime settings, show destructive unsaved reset behavior or stored Save & Reload behavior, run reload progress, and update runtime badges and preview state",
+    "Save a temporary Playground to browser storage or to a local directory with visible file-copy progress and resulting saved identity",
+    "Launch from Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, or ZIP import with route-specific inputs and constraints",
+    "Manage saved and unsaved Playgrounds with open, rename, delete confirmation, final fallback state, and saved-row mutation",
+    "Use Site Manager files, Blueprint tools, database, logs, GitHub export, ZIP download, ZIP import, and database download while the live browser remains visible"
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start",
+    "WordPress PR preview",
+    "Gutenberg PR or branch preview",
+    "GitHub import with account connection",
+    "Blueprint URL runner",
+    "Import .zip trigger",
+    "Blueprint gallery categories and search with an honest representative subset of 43 entries",
+    "Featured Blueprint shortcuts",
+    "Save temporary Playground in browser storage",
+    "Save to a local directory",
+    "Save progress state",
+    "Saved and unsaved Playground list",
+    "Rename saved Playground",
+    "Delete saved Playground with confirmation and final fallback state",
+    "URL path navigation and refresh",
+    "Homepage and WP Admin shortcuts",
+    "Temporary, saved, and local-directory shell state",
+    "WordPress, PHP, language, older versions, network, and multisite settings",
+    "Destructive reset and stored Save & Reload behavior",
+    "File browser with create file, create folder, upload, browse, selected file, editor, and result state",
+    "Blueprint editor with copy, download, run, validation, warning, progress, and result state",
+    "Database driver, path, size, database.sqlite download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs",
+    "Export to GitHub",
+    "Download as .zip",
+    "ZIP import and download portability actions",
+    "Database download",
+    "Blueprint bundle copy and download"
+  ]
+}
