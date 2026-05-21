@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>V2 Design 030 - Command Search Cockpit</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="app" data-storage="temporary">
+      <header class="shell" aria-label="Playground shell">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">WP</span>
+          <div>
+            <strong>Playground</strong>
+            <span>Command search cockpit</span>
+          </div>
+        </div>
+
+        <div class="path-bar">
+          <button class="icon-text" type="button" id="refreshBtn">Refresh</button>
+          <label class="path-field">
+            <span class="sr-only">Active WordPress path</span>
+            <input id="pathInput" value="/hello-from-playground/" autocomplete="off">
+          </label>
+          <button type="button" class="compact" id="homeBtn">Homepage</button>
+          <button type="button" class="compact" id="adminBtn">WP Admin</button>
+        </div>
+
+        <div class="shell-state" aria-live="polite">
+          <span id="shellBadge" class="badge warning">Temporary</span>
+          <strong id="shellName">Unsaved Playground</strong>
+          <button type="button" class="primary" data-command-jump="save-browser">Save</button>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <aside class="cockpit" aria-label="Command search and grouped results">
+          <section class="search-card">
+            <label for="commandSearch">Command search</label>
+            <div class="search-input">
+              <span aria-hidden="true">Cmd K</span>
+              <input id="commandSearch" placeholder="Try import zip, GitHub, save, database..." autocomplete="off" aria-describedby="searchHint">
+            </div>
+            <p id="searchHint">Search by action, route, storage, local folder, folder picker, file, database, Blueprint, GitHub, ZIP, or manager tab.</p>
+          </section>
+
+          <nav class="command-results" id="commandResults" aria-label="Grouped command results"></nav>
+
+          <section class="object-stack" aria-label="Playground objects">
+            <div class="section-head">
+              <h2>Playgrounds</h2>
+              <button type="button" data-command-jump="launch-vanilla">New</button>
+            </div>
+            <div id="objectList" class="object-list"></div>
+          </section>
+        </aside>
+
+        <section class="preview-column" aria-label="Live WordPress shell">
+          <div class="identity-strip">
+            <div>
+              <span class="eyebrow">Active Playground</span>
+              <h1 id="activeTitle">Unsaved Playground</h1>
+            </div>
+            <dl>
+              <div><dt>Storage</dt><dd id="activeStorage">Temporary, not saved</dd></div>
+              <div><dt>Runtime</dt><dd id="runtimeMeta">WP latest / PHP 8.3 / network on</dd></div>
+              <div><dt>Reset / reload rule</dt><dd id="resetRule">Settings reset discards this session; saved sites use Save & Reload</dd></div>
+            </dl>
+          </div>
+
+          <div class="browser" id="browser">
+            <div class="browser-toolbar">
+              <span class="window-dot"></span>
+              <span class="window-dot"></span>
+              <span class="window-dot"></span>
+              <span id="browserUrl">playground.local/hello-from-playground/</span>
+            </div>
+            <div class="wp-adminbar">
+              <span class="wp-logo">W</span>
+              <span>My WordPress Website</span>
+              <button type="button" data-manager-tab="settings">Edit Site</button>
+              <span>0</span>
+              <span>New</span>
+              <span>Edit Page</span>
+              <span class="push">Howdy, admin</span>
+            </div>
+            <div class="wp-site-nav">
+              <strong id="siteTitle">My WordPress Website</strong>
+              <nav>
+                <button type="button" id="previewHomeLink">Hello from WordPress Playground!</button>
+                <button type="button">Sample Page</button>
+              </nav>
+            </div>
+            <article class="wp-preview" id="previewSurface">
+              <div class="preview-copy">
+                <p class="eyebrow" id="previewKicker">Live WordPress preview</p>
+                <h2 id="previewHeadline">Hello from <span>WordPress Playground!</span></h2>
+                <p id="previewText">This Playground runs client-side in your browser. The command cockpit can start routes, save storage, inspect files, run Blueprints, and move ZIP or GitHub bundles without hiding this shell.</p>
+                <p class="highlight" id="previewNote">Logged in as admin. Temporary changes are lost on refresh until saved.</p>
+                <button type="button">Discover the mission behind Playground</button>
+              </div>
+              <div class="preview-mark" aria-hidden="true">
+                <span class="ring"></span>
+                <span class="arc"></span>
+                <strong>W</strong>
+              </div>
+            </article>
+          </div>
+
+          <section class="manager-dock" aria-label="Site Manager">
+            <div class="dock-top">
+              <div>
+                <span class="eyebrow">Site Manager</span>
+                <h2 id="dockTitle">Files</h2>
+              </div>
+              <div class="dock-actions">
+                <button type="button" data-command-jump="github-export">Export to GitHub</button>
+                <button type="button" data-command-jump="zip-download">Download .zip</button>
+              </div>
+            </div>
+            <nav class="dock-tabs" aria-label="Manager tabs">
+              <button class="is-active" type="button" data-manager-tab="files">Files</button>
+              <button type="button" data-manager-tab="settings">Settings</button>
+              <button type="button" data-manager-tab="blueprint">Blueprint</button>
+              <button type="button" data-manager-tab="database">Database</button>
+              <button type="button" data-manager-tab="logs">Logs</button>
+            </nav>
+            <div id="managerPanel" class="manager-panel"></div>
+          </section>
+        </section>
+
+        <aside class="executor" aria-label="Selected command">
+          <section class="command-panel">
+            <div class="panel-head">
+              <div>
+                <span class="eyebrow">Selected command</span>
+                <h2 id="commandTitle">Import .zip</h2>
+              </div>
+              <span id="commandState" class="badge info">Source required</span>
+            </div>
+            <div id="commandBody"></div>
+          </section>
+
+          <section class="transfer-panel" aria-label="Transfer history">
+            <div class="section-head">
+              <h2>Transfer history</h2>
+              <span id="historyCount">2 events</span>
+            </div>
+            <ol id="transferHistory" class="history"></ol>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
