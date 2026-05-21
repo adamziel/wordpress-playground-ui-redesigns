@@ -1,0 +1,53 @@
+{
+  "id": "design-007",
+  "title": "Playground Operations Console",
+  "concept": "A persistent command-center interface that replaces modal-first navigation with a left workflow rail, a dense operational workbench, and a live WordPress preview kept in context.",
+  "focus": [
+    "workflow-first information architecture",
+    "persistent site context",
+    "dense operational controls",
+    "integrated saved-site management",
+    "responsive console layout"
+  ],
+  "flows": [
+    "Start a new Playground from vanilla WordPress, WordPress PR, Gutenberg PR, GitHub import, Blueprint URL, or .zip import",
+    "Save a temporary Playground in browser storage or to a local directory with visible copy progress",
+    "Browse, rename, delete, and reopen saved Playgrounds from the Library view",
+    "Open Site Manager settings, switch Homepage or WP Admin, reset/reload runtime settings, export to GitHub, or download a .zip",
+    "Use the file browser to create, upload, browse, and edit WordPress files",
+    "Browse/filter the Blueprint gallery, edit blueprint.json, copy links, download bundles, and run blueprints",
+    "Inspect database details, download database.sqlite, open Adminer or phpMyAdmin, and review Playground, WordPress, and PHP logs"
+  ],
+  "featureCoverage": [
+    "create vanilla Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub after account connection",
+    "run Blueprint URL",
+    "import .zip",
+    "browse and filter Blueprint gallery entries",
+    "select featured blueprint shortcuts",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "show save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename saved Playground",
+    "delete saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh active embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress/PHP/language settings",
+    "include older WordPress versions",
+    "allow network access",
+    "create multisite network",
+    "communicate destructive reset/reload behavior",
+    "file browser with create folder/file upload browse and code editing",
+    "view copy download and run current Blueprint bundle",
+    "inspect database driver path and size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect logs and empty states",
+    "export to GitHub",
+    "download .zip"
+  ]
+}
