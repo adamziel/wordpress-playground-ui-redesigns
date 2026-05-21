@@ -1,0 +1,50 @@
+{
+  "id": "v2-design-034",
+  "title": "Blueprint Command Console",
+  "concept": "A responsive tabbed operations workspace that makes Blueprint command search, gallery selection, URL editing, validation, run/copy/download actions, and replace-current warnings the primary workflow while preserving the active WordPress shell.",
+  "focus": [
+    "Blueprint-first command discovery",
+    "Stateful replacement and import flows",
+    "Protected live WordPress preview",
+    "Responsive tabbed console with mobile bottom navigation",
+    "Save, library, Site Manager, and portability continuity"
+  ],
+  "flows": [
+    "Search Blueprint commands, see grouped results, select a gallery entry, validate JSON, confirm replacement, run progress, and update the active shell and preview",
+    "Import a ZIP archive from Launch or Portability, validate the selected source, confirm replacement, show progress, and update the active Playground identity",
+    "Save the current temporary Playground to browser storage or to a local directory with distinct progress, storage badges, saved rows, and reload consequences",
+    "Manage saved and unsaved Playgrounds with open/manage, rename, delete confirmation, row removal, and active fallback state",
+    "Use Site Manager tabs for settings, files, Blueprint, database, and logs while Homepage, WP Admin, path, refresh, and storage state remain visible"
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start",
+    "WordPress PR preview",
+    "Gutenberg PR or branch preview",
+    "GitHub import with account connection",
+    "Blueprint URL runner",
+    "Import .zip trigger and replacement flow",
+    "Blueprint gallery categories and search",
+    "Representative captured Blueprint shortcuts",
+    "Browser storage save",
+    "Local directory save",
+    "Save progress state",
+    "Saved and unsaved Playground list",
+    "Rename saved Playground",
+    "Delete saved Playground with confirmation and final state",
+    "URL path navigation and refresh",
+    "Homepage and WP Admin shortcuts",
+    "WordPress, PHP, and language settings",
+    "Include older WordPress versions",
+    "Allow network access",
+    "Create multisite network",
+    "Destructive reset and saved Save & Reload consequences",
+    "File browser with create file, create folder, upload, browse, selected editor, dirty and saved states",
+    "Blueprint editor with validation, copy, download, run, warning, progress, and result states",
+    "SQLite-backed database driver, path, size, download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs with realistic warning state",
+    "Export to GitHub",
+    "Download as .zip",
+    "Download database.sqlite",
+    "Transfer history for GitHub, ZIP, database, and Blueprint bundle actions"
+  ]
+}
