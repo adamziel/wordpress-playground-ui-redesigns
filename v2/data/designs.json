@@ -632,6 +632,46 @@
     "path": "v2-design-016/index.html"
   },
   {
+    "id": "v2-design-017",
+    "number": 17,
+    "title": "PR and Branch Review Ledger",
+    "concept": "A two-column Playground console that treats vanilla starts, WordPress PR previews, Gutenberg PR or branch previews, GitHub imports, Blueprint URLs, and ZIP imports as launch contracts recorded in an operations ledger beside a protected live WordPress shell.",
+    "focus": [
+      "PR and branch launch contracts",
+      "operations ledger and event stream",
+      "visible active-object mutation",
+      "settings Save & Reload lifecycle",
+      "destructive delete and reset consequences"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start",
+      "WordPress PR preview with PR number or URL input",
+      "Gutenberg PR or branch preview with PR, URL, or branch input",
+      "GitHub import with account connection and non-persistent token caveat",
+      "Blueprint URL runner",
+      "Import .zip with chooser state and replacement warning",
+      "Blueprint gallery categories and search with honest representative subset of 43",
+      "Featured Blueprint shortcuts and selected Blueprint detail",
+      "Save temporary Playground in browser storage",
+      "Save to a local directory with folder permission consequence",
+      "Save progress with file counts",
+      "Saved, local-directory, and unsaved Playground list",
+      "Open, manage, rename, delete confirmation, delete cancel, delete progress, row removal, and fallback state",
+      "Active path input, refresh, Homepage, WP Admin, temporary/saved/local state, Save, and reset/reload consequences",
+      "Site Manager settings, file browser, Blueprint, database, logs, Export to GitHub, and Download as zip",
+      "Files create file, create folder, upload, browse files, selected editor, dirty marker, save, and result state",
+      "Blueprint editor with URL, copy, download, run, validation, and result state",
+      "SQLite-backed database driver, path, size, database download, Adminer, and phpMyAdmin",
+      "Playground, WordPress, and PHP logs with realistic notice state",
+      "GitHub import/export",
+      "ZIP import/download",
+      "database download",
+      "Blueprint bundle actions",
+      "Transfer history and event stream for save, rename, delete, import, export, download, settings, and preview actions"
+    ],
+    "path": "v2-design-017/index.html"
+  },
+  {
     "id": "v2-design-018",
     "number": 18,
     "title": "Runtime Ledger Control Room",
