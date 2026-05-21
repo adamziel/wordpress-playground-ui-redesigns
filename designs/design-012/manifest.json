@@ -1,0 +1,50 @@
+{
+  "id": "design-012",
+  "title": "Guided Workshop Checklist",
+  "concept": "A table-led onboarding workspace for educators that keeps saved Playground management as the first screen while a progress checklist walks users through creation, saving, runtime settings, Site Manager tools, blueprint browsing, and portability.",
+  "focus": [
+    "onboarding checklist workspace",
+    "table-led saved management",
+    "educator-friendly sequencing",
+    "blue green amber operational states"
+  ],
+  "flows": [
+    "Choose a start source from vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, zip import, or featured blueprints.",
+    "Save a temporary Playground to browser storage or a local directory with visible file-copy progress.",
+    "Manage saved and unsaved browser Playgrounds with open, rename, and delete actions from the primary table.",
+    "Use Site Manager tabs for settings, file browser, Blueprint editor, database tools, logs, and additional export actions.",
+    "Browse and filter all Blueprint gallery entries while keeping the guided checklist context visible."
+  ],
+  "featureCoverage": [
+    "create vanilla WordPress Playground",
+    "preview WordPress PR",
+    "preview Gutenberg PR or branch",
+    "import from GitHub with account connection messaging",
+    "run Blueprint URL",
+    "import .zip trigger",
+    "browse Blueprint gallery with filters",
+    "select featured blueprint shortcuts",
+    "save in browser storage",
+    "save to a local directory",
+    "see save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh active embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress, PHP, and language settings",
+    "include older WordPress versions",
+    "allow network access",
+    "create a multisite network",
+    "understand destructive reset and saved reload behavior",
+    "use File browser with create file, create folder, upload, browse, and code editing affordances",
+    "view, copy, download, and run the current Blueprint bundle",
+    "inspect database driver, path, and size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect logs and empty states",
+    "export to GitHub",
+    "download as .zip"
+  ]
+}
