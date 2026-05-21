@@ -123,7 +123,7 @@ function renderIndex(designs) {
       }
 
       .wrap {
-        width: min(1180px, calc(100% - 32px));
+        width: calc(100% - 32px);
         margin: 0 auto;
       }
 
@@ -182,8 +182,8 @@ function renderIndex(designs) {
 
       .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(min(100%, 520px), 1fr));
-        gap: 18px;
+        grid-template-columns: 1fr;
+        gap: 24px;
       }
 
       .preview-card {
@@ -229,7 +229,8 @@ function renderIndex(designs) {
       }
 
       .frame-wrap {
-        aspect-ratio: 16 / 10;
+        aspect-ratio: 16 / 9;
+        min-height: 720px;
         background: #eef1f4;
         border-bottom: 1px solid var(--line);
       }
@@ -258,7 +259,7 @@ function renderIndex(designs) {
 
       @media (max-width: 640px) {
         .wrap {
-          width: min(100% - 20px, 1180px);
+          width: calc(100% - 20px);
         }
 
         .hero {
@@ -272,6 +273,10 @@ function renderIndex(designs) {
 
         .preview-head {
           min-height: 0;
+        }
+
+        .frame-wrap {
+          min-height: 560px;
         }
       }
 
