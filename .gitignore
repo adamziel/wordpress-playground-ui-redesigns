@@ -2,6 +2,7 @@ node_modules/
 .orchestrator/logs/
 .orchestrator/tmp/
 .orchestrator/locks/
+.orchestrator/next_design.txt
+.orchestrator/critic_last_count.txt
 .worktrees/
 *.log
-

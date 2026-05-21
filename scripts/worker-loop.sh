@@ -4,6 +4,7 @@ set -u -o pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 WORKER_ID="${1:?worker id required}"
 TOTAL_DESIGNS="${TOTAL_DESIGNS:-100}"
+MAX_ATTEMPTS="${MAX_ATTEMPTS:-3}"
 MODEL="${MODEL:-gpt-5.5}"
 EFFORT="${EFFORT:-high}"
 STATE_DIR="$ROOT/.orchestrator"
@@ -89,6 +90,7 @@ run_codex() {
     -i "$worktree/research/screenshots/23-site-manager-blueprint.png" \
     -i "$worktree/research/screenshots/24-site-manager-database.png" \
     -i "$worktree/research/screenshots/34-blueprints-gallery.png" \
+    -- \
     "$(cat "$prompt_file")" \
     >"$log_file" 2>&1
 }
@@ -171,9 +173,10 @@ while true; do
 
     cleanup_worktree "$design_id" "$worktree"
     attempt=$((attempt + 1))
-    if (( attempt > 3 )); then
-      echo "$design_id failed after 3 attempts by worker $WORKER_ID" | tee -a "$LOG_DIR/failed.log"
-      break
+    if (( attempt > MAX_ATTEMPTS )); then
+      echo "$design_id failed after $MAX_ATTEMPTS attempts by worker $WORKER_ID; pausing before retrying same design" | tee -a "$LOG_DIR/failed.log"
+      sleep 120
+      attempt=1
     fi
   done
 done

@@ -67,9 +67,8 @@ while true; do
         root="$1"
         count="$2"
         cd "$root"
-        git add audits .orchestrator/critic_last_count.txt
         printf "%s" "$count" > .orchestrator/critic_last_count.txt
-        git add .orchestrator/critic_last_count.txt
+        git add audits
         if ! git diff --cached --quiet; then
           git commit -m "Add critic audit for ${count} designs"
           git push origin master
@@ -82,4 +81,3 @@ while true; do
 
   sleep 45
 done
-
