@@ -1,0 +1,46 @@
+{
+  "id": "design-060",
+  "title": "Playground Action Finder",
+  "concept": "A command/search overlay with grouped beginner action cards and a results pane, designed for core contributors who need clear PR review starts, safe save/reset messaging, and quick discovery of the full Playground toolset.",
+  "focus": [
+    "Command/search overlay plus selected-action results pane instead of a traditional modal launcher",
+    "Beginner-readable grouped action cards with destructive behavior called out at the point of action",
+    "Warm editorial accents used around dense controls without turning the first viewport into a marketing page"
+  ],
+  "flows": [
+    "Search or select action cards for WordPress PR review, Gutenberg PR or branch review, vanilla WordPress, GitHub import, Blueprint URL, zip import, saved sites, save, Site Manager, and export",
+    "Save an unsaved Playground to browser storage or a local directory while showing file-copy progress",
+    "Manage unsaved and saved Playgrounds, including opening, renaming, and deleting saved browser-backed sites",
+    "Use Site Manager tabs for settings, file browser, blueprint JSON, database tools, logs, and export/import actions",
+    "Browse featured Blueprint shortcuts and the full Blueprint gallery with category filters"
+  ],
+  "featureCoverage": [
+    "create vanilla WordPress Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub with account connection",
+    "run Blueprint URL",
+    "import .zip",
+    "browse and filter Blueprint gallery entries",
+    "select featured blueprint shortcuts",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "show save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress, PHP, language, network, older versions, and multisite settings",
+    "understand destructive reset and stored Save & Reload behavior",
+    "file browser with create file, create folder, upload, browse, and code editing affordances",
+    "view, copy, download, and run the current Blueprint bundle",
+    "inspect database driver, path, and size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect Playground, WordPress, and PHP logs",
+    "export to GitHub",
+    "download a .zip"
+  ]
+}
