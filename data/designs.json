@@ -1141,5 +1141,51 @@
       "download a .zip"
     ],
     "path": "design-027/index.html"
+  },
+  {
+    "id": "design-028",
+    "number": 28,
+    "title": "Pocket Repro Shell",
+    "concept": "A mobile-first Playground redesign for support engineers that turns the app into a compact reproduction kit: the active site, save status, next launch actions, saved Playgrounds, Site Manager tools, gallery, imports, and exports are all reachable from a persistent bottom dock without modal overlays.",
+    "focus": [
+      "mobile-first bottom navigation",
+      "modal-free inline panels",
+      "support reproduction workflow",
+      "compact beginner-friendly controls",
+      "stacked Site Manager surfaces"
+    ],
+    "featureCoverage": [
+      "create a vanilla Playground",
+      "create from WordPress PR",
+      "create from Gutenberg PR or branch",
+      "import from GitHub after account connection",
+      "run a Blueprint URL",
+      "import a .zip",
+      "browse and filter Blueprint gallery entries",
+      "select featured blueprint shortcuts",
+      "save temporary Playground in browser storage",
+      "save to a local directory",
+      "see save progress",
+      "browse saved and unsaved Playgrounds",
+      "rename a saved Playground",
+      "delete a saved Playground",
+      "navigate active WordPress paths with URL input",
+      "refresh the active embedded WordPress page",
+      "open Homepage and WP Admin",
+      "edit WordPress version, PHP version, and language settings",
+      "include older WordPress versions",
+      "allow network access",
+      "create a multisite network",
+      "understand destructive reset and stored Save and Reload behavior",
+      "use File browser with create file, create folder, upload, browse, and code editing affordances",
+      "view, copy, download, and run the current Blueprint bundle",
+      "inspect database driver, path, and size",
+      "download database.sqlite",
+      "open Adminer and phpMyAdmin",
+      "inspect Playground, WordPress, and PHP logs with empty states",
+      "export to GitHub",
+      "download a .zip"
+    ],
+    "path": "design-028/index.html"
   }
 ]
