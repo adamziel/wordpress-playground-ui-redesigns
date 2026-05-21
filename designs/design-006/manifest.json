@@ -1,0 +1,48 @@
+{
+  "id": "design-006",
+  "title": "Playground Command Lens",
+  "concept": "A command-palette-first redesign where search is the primary navigation model, grouped results expose every Playground action, and an inspector pane explains the selected workflow without hiding the active WordPress context.",
+  "focus": [
+    "command palette as primary discovery",
+    "result grouping for power users",
+    "inspector-driven action details",
+    "saved Playground management at launcher level",
+    "warm editorial accents with dense operational controls"
+  ],
+  "flows": [
+    "Search or filter commands to create a vanilla Playground, preview WordPress PRs, preview Gutenberg PRs or branches, import from GitHub, run a Blueprint URL, or import a zip.",
+    "Save a temporary Playground to browser storage or a local directory with progress visible beside the command inspector.",
+    "Manage saved and unsaved Playgrounds from the launcher, including opening, renaming, and deleting browser-backed entries.",
+    "Open Site Manager surfaces for settings, file browser, Blueprint editing, database tools, logs, and additional export actions.",
+    "Browse featured Blueprint shortcuts or the full 43-item Blueprint gallery with category filters."
+  ],
+  "featureCoverage": [
+    "create vanilla WordPress Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub after account connection",
+    "run a Blueprint URL",
+    "import a .zip",
+    "browse and filter Blueprint gallery entries",
+    "select featured Blueprint shortcuts",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "see save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh the active embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress version, PHP version, language, network, older versions, and multisite settings",
+    "understand destructive reset and stored Save & Reload behavior",
+    "use File browser with create folder, create file, upload, browse, and code editing affordances",
+    "view, copy, download, and run the current Blueprint bundle",
+    "inspect database driver, path, and size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect Playground, WordPress, and PHP logs",
+    "export to GitHub",
+    "download a .zip"
+  ]
+}
