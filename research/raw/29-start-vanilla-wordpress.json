@@ -1,0 +1,149 @@
+{
+  "name": "29-start-vanilla-wordpress",
+  "notes": "Start a new Playground flow: Vanilla WordPress.",
+  "url": "https://playground.wordpress.net/?random=m4tvg4xiee8",
+  "title": "WordPress Playground",
+  "frames": [
+    {
+      "url": "https://playground.wordpress.net/?random=m4tvg4xiee8",
+      "name": "",
+      "text": "Unsaved Playground\nSave",
+      "controls": [
+        {
+          "tag": "main",
+          "role": "",
+          "label": "Unsaved Playground Save",
+          "type": "",
+          "href": "",
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 1000
+        },
+        {
+          "tag": "header",
+          "role": "",
+          "label": "Unsaved Playground Save",
+          "type": "",
+          "href": "",
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 50
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "Refresh page",
+          "type": "button",
+          "href": "",
+          "x": 12,
+          "y": 12,
+          "width": 26,
+          "height": 26
+        },
+        {
+          "tag": "input",
+          "role": "",
+          "label": "URL to visit in the WordPress site, like \"/wp-admin\"",
+          "type": "text",
+          "href": "",
+          "x": 46,
+          "y": 12,
+          "width": 1030,
+          "height": 26
+        },
+        {
+          "tag": "input",
+          "role": "",
+          "label": "",
+          "type": "submit",
+          "href": "",
+          "x": -99988,
+          "y": -99988,
+          "width": 16,
+          "height": 6
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "Save",
+          "type": "button",
+          "href": "",
+          "x": 1246,
+          "y": 11,
+          "width": 52,
+          "height": 28
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "Saved Playgrounds",
+          "type": "",
+          "href": "",
+          "x": 1308,
+          "y": 5,
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "Open Site Manager",
+          "type": "",
+          "href": "",
+          "x": 1348,
+          "y": 5,
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "Edit Playground settings",
+          "type": "",
+          "href": "",
+          "x": 1388,
+          "y": 5,
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "iframe",
+          "role": "",
+          "label": "WordPress Playground wrapper (the actual WordPress site is in another, nested iframe)",
+          "type": "",
+          "href": "",
+          "x": 0,
+          "y": 50,
+          "width": 1440,
+          "height": 950
+        }
+      ]
+    },
+    {
+      "url": "https://playground.wordpress.net/remote.html?v=1e9ece691d6dde932de41480e31e245f6d95b7c0&progressbar=true&blueprints-runner=v1",
+      "name": "",
+      "text": "Preparing WordPress...",
+      "controls": [
+        {
+          "tag": "iframe",
+          "role": "",
+          "label": "The WordPress site",
+          "type": "",
+          "href": "",
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 950
+        }
+      ]
+    },
+    {
+      "url": "about:blank",
+      "name": "wp",
+      "text": "",
+      "controls": []
+    }
+  ]
+}

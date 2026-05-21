@@ -1,0 +1,52 @@
+[
+  {
+    "pattern": "/settings/i",
+    "name": "02-settings",
+    "clicked": true
+  },
+  {
+    "pattern": "/storage/i",
+    "name": "03-storage",
+    "clicked": false
+  },
+  {
+    "pattern": "/save/i",
+    "name": "04-save",
+    "clicked": true
+  },
+  {
+    "pattern": "/share/i",
+    "name": "05-share",
+    "clicked": false
+  },
+  {
+    "pattern": "/export/i",
+    "name": "06-export",
+    "clicked": false
+  },
+  {
+    "pattern": "/import/i",
+    "name": "07-import",
+    "clicked": false
+  },
+  {
+    "pattern": "/blueprint/i",
+    "name": "08-blueprint",
+    "clicked": false
+  },
+  {
+    "pattern": "/new/i",
+    "name": "09-new",
+    "clicked": false
+  },
+  {
+    "pattern": "/php/i",
+    "name": "10-php-version",
+    "clicked": false
+  },
+  {
+    "pattern": "/wordpress/i",
+    "name": "11-wordpress-version",
+    "clicked": false
+  }
+]

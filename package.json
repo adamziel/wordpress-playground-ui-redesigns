@@ -1,0 +1,26 @@
+{
+  "name": "wordpress-playground-ui-redesigns",
+  "version": "1.0.0",
+  "description": "High-fidelity redesign explorations for the WordPress Playground UI",
+  "scripts": {
+    "build:gallery": "node scripts/build-gallery.mjs",
+    "capture:basic": "node scripts/capture-playground.mjs",
+    "capture:flows": "node scripts/explore-playground-flows.mjs",
+    "capture:advanced": "node scripts/explore-advanced-flows.mjs",
+    "validate:design": "node scripts/validate-design.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamziel/wordpress-playground-ui-redesigns.git"
+  },
+  "keywords": [],
+  "author": "Adam Zielinski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adamziel/wordpress-playground-ui-redesigns/issues"
+  },
+  "homepage": "https://github.com/adamziel/wordpress-playground-ui-redesigns#readme",
+  "devDependencies": {
+    "playwright": "^1.60.0"
+  }
+}

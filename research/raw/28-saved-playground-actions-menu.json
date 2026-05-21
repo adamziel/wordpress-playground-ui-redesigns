@@ -1,0 +1,634 @@
+{
+  "name": "28-saved-playground-actions-menu",
+  "notes": "Actions menu for a saved Playground entry.",
+  "url": "https://playground.wordpress.net/?site-slug=curious-abandoned-park",
+  "title": "WordPress Playground",
+  "frames": [
+    {
+      "url": "https://playground.wordpress.net/?site-slug=curious-abandoned-park",
+      "name": "",
+      "text": "Saved Playground\nPlayground\nStart a new Playground\nVanilla WordPress\nWordPress PR\nGutenberg PR\nFrom GitHub\nBlueprint URL\nImport .zip\nStart from a Blueprint\nArt Gallery\nCoffee Shop\nFeed Reader with the Friends Plugin\nGaming News\nNon-profit Organization\nView all 43 blueprints\nYour Playgrounds\nUnsaved Playground\nNot saved to browser storage\nAdvanced Flow Saved Playground\nCreated May 21, 2026\nRename\nDelete",
+      "controls": [
+        {
+          "tag": "main",
+          "role": "",
+          "label": "Saved Playground Playground Start a new Playground Vanilla WordPress WordPress PR Gutenberg PR From GitHub Blueprint URL Import .zip Start from a Blueprint Art Gallery Coffee Shop Feed Reader with the Friends Plugin Gaming News Non-profit Organization View all 43 blueprints Your Playgrounds Unsaved Playground Not saved to browser storage Advanced Flow Saved Playground Created May 21, 2026",
+          "type": "",
+          "href": "",
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 1000
+        },
+        {
+          "tag": "header",
+          "role": "",
+          "label": "Saved Playground",
+          "type": "",
+          "href": "",
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 50
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "Refresh page",
+          "type": "button",
+          "href": "",
+          "x": 12,
+          "y": 12,
+          "width": 26,
+          "height": 26
+        },
+        {
+          "tag": "input",
+          "role": "",
+          "label": "URL to visit in the WordPress site, like \"/wp-admin\"",
+          "type": "text",
+          "href": "",
+          "x": 46,
+          "y": 12,
+          "width": 1106,
+          "height": 26
+        },
+        {
+          "tag": "input",
+          "role": "",
+          "label": "",
+          "type": "submit",
+          "href": "",
+          "x": -99988,
+          "y": -99988,
+          "width": 16,
+          "height": 6
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "Saved Playgrounds",
+          "type": "",
+          "href": "",
+          "x": 1308,
+          "y": 5,
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "Open Site Manager",
+          "type": "",
+          "href": "",
+          "x": 1348,
+          "y": 5,
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "Edit Playground settings",
+          "type": "",
+          "href": "",
+          "x": 1388,
+          "y": 5,
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "iframe",
+          "role": "",
+          "label": "WordPress Playground wrapper (the actual WordPress site is in another, nested iframe)",
+          "type": "",
+          "href": "",
+          "x": 0,
+          "y": 50,
+          "width": 1440,
+          "height": 950
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "Close",
+          "type": "button",
+          "href": "",
+          "x": 1252,
+          "y": 20,
+          "width": 36,
+          "height": 36
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "Vanilla WordPress",
+          "type": "",
+          "href": "",
+          "x": 152,
+          "y": 154,
+          "width": 140,
+          "height": 92
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "WordPress PR",
+          "type": "",
+          "href": "",
+          "x": 304,
+          "y": 154,
+          "width": 116,
+          "height": 92
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "Gutenberg PR",
+          "type": "",
+          "href": "",
+          "x": 432,
+          "y": 154,
+          "width": 113,
+          "height": 92
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "From GitHub",
+          "type": "",
+          "href": "",
+          "x": 557,
+          "y": 154,
+          "width": 105,
+          "height": 92
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "Blueprint URL",
+          "type": "",
+          "href": "",
+          "x": 674,
+          "y": 154,
+          "width": 112,
+          "height": 92
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "Import .zip",
+          "type": "",
+          "href": "",
+          "x": 797,
+          "y": 154,
+          "width": 100,
+          "height": 92
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "Art Gallery",
+          "type": "",
+          "href": "",
+          "x": 152,
+          "y": 322,
+          "width": 176,
+          "height": 179
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "Coffee Shop",
+          "type": "",
+          "href": "",
+          "x": 344,
+          "y": 322,
+          "width": 176,
+          "height": 179
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "Feed Reader with the Friends Plugin",
+          "type": "",
+          "href": "",
+          "x": 536,
+          "y": 322,
+          "width": 176,
+          "height": 179
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "Gaming News",
+          "type": "",
+          "href": "",
+          "x": 728,
+          "y": 322,
+          "width": 176,
+          "height": 179
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "Non-profit Organization",
+          "type": "",
+          "href": "",
+          "x": 920,
+          "y": 322,
+          "width": 176,
+          "height": 179
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "View all 43 blueprints",
+          "type": "",
+          "href": "",
+          "x": 1112,
+          "y": 322,
+          "width": 176,
+          "height": 179
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "Unsaved Playground Not saved to browser storage",
+          "type": "",
+          "href": "",
+          "x": 153,
+          "y": 587,
+          "width": 1134,
+          "height": 72
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "Advanced Flow Saved Playground Created May 21, 2026",
+          "type": "",
+          "href": "",
+          "x": 156,
+          "y": 660,
+          "width": 1083,
+          "height": 72
+        },
+        {
+          "tag": "button",
+          "role": "",
+          "label": "Site actions",
+          "type": "button",
+          "href": "",
+          "x": 1239,
+          "y": 678,
+          "width": 36,
+          "height": 36
+        },
+        {
+          "tag": "div",
+          "role": "menu",
+          "label": "Rename Delete",
+          "type": "",
+          "href": "",
+          "x": 1091,
+          "y": 727,
+          "width": 176,
+          "height": 105
+        },
+        {
+          "tag": "button",
+          "role": "menuitem",
+          "label": "Rename",
+          "type": "button",
+          "href": "",
+          "x": 1091,
+          "y": 735,
+          "width": 176,
+          "height": 36
+        },
+        {
+          "tag": "button",
+          "role": "menuitem",
+          "label": "Delete",
+          "type": "button",
+          "href": "",
+          "x": 1091,
+          "y": 788,
+          "width": 176,
+          "height": 36
+        }
+      ]
+    },
+    {
+      "url": "https://playground.wordpress.net/remote.html?v=1e9ece691d6dde932de41480e31e245f6d95b7c0&progressbar=true&blueprints-runner=v1",
+      "name": "",
+      "text": "",
+      "controls": [
+        {
+          "tag": "iframe",
+          "role": "",
+          "label": "The WordPress site",
+          "type": "",
+          "href": "",
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 950
+        }
+      ]
+    },
+    {
+      "url": "https://playground.wordpress.net/scope:curious-abandoned-park/",
+      "name": "wp",
+      "text": "About WordPress\nMy WordPress Website\nEdit Site\n0\n0 Comments in moderation\nNew\nHowdy, admin\nSearch\nSkip to content\n\nMy WordPress Website\n\nHello from WordPress Playground!\nSample Page\nBlog\nHello world!\n\nWelcome to WordPress. This is your first post. Edit or delete it, then start writing!\n\nMay 20, 2026\nMy WordPress Website\nBlog\nAbout\nFAQs\nAuthors\nEvents\nShop\nPatterns\nThemes\n\nTwenty Twenty-Five\n\nDesigned with WordPress",
+      "controls": [
+        {
+          "tag": "a",
+          "role": "menuitem",
+          "label": "About WordPress",
+          "type": "",
+          "href": "https://playground.wordpress.net/scope:curious-abandoned-park/wp-admin/about.php",
+          "x": 0,
+          "y": 0,
+          "width": 35,
+          "height": 32
+        },
+        {
+          "tag": "a",
+          "role": "menuitem",
+          "label": "My WordPress Website",
+          "type": "",
+          "href": "https://playground.wordpress.net/scope:curious-abandoned-park/wp-admin/",
+          "x": 35,
+          "y": 0,
+          "width": 188,
+          "height": 32
+        },
+        {
+          "tag": "a",
+          "role": "menuitem",
+          "label": "Edit Site",
+          "type": "",
+          "href": "https://playground.wordpress.net/scope:curious-abandoned-park/wp-admin/site-editor.php?postType=wp_template&postId=twentytwentyfive//home&canvas=edit",
+          "x": 223,
+          "y": 0,
+          "width": 95,
+          "height": 32
+        },
+        {
+          "tag": "a",
+          "role": "menuitem",
+          "label": "0 0 Comments in moderation",
+          "type": "",
+          "href": "https://playground.wordpress.net/scope:curious-abandoned-park/wp-admin/edit-comments.php",
+          "x": 318,
+          "y": 0,
+          "width": 49,
+          "height": 32
+        },
+        {
+          "tag": "a",
+          "role": "menuitem",
+          "label": "New",
+          "type": "",
+          "href": "https://playground.wordpress.net/scope:curious-abandoned-park/wp-admin/post-new.php",
+          "x": 367,
+          "y": 0,
+          "width": 69,
+          "height": 32
+        },
+        {
+          "tag": "a",
+          "role": "menuitem",
+          "label": "Howdy, admin",
+          "type": "",
+          "href": "https://playground.wordpress.net/scope:curious-abandoned-park/wp-admin/profile.php",
+          "x": 1277,
+          "y": 0,
+          "width": 132,
+          "height": 32
+        },
+        {
+          "tag": "div",
+          "role": "menuitem",
+          "label": "Search",
+          "type": "",
+          "href": "",
+          "x": 1409,
+          "y": 0,
+          "width": 31,
+          "height": 32
+        },
+        {
+          "tag": "input",
+          "role": "",
+          "label": "",
+          "type": "text",
+          "href": "",
+          "x": 1411,
+          "y": 4,
+          "width": 27,
+          "height": 24
+        },
+        {
+          "tag": "a",
+          "role": "",
+          "label": "Skip to content",
+          "type": "",
+          "href": "#wp--skip-link--target",
+          "x": -1,
+          "y": 31,
+          "width": 1,
+          "height": 1
+        },
+        {
+          "tag": "a",
+          "role": "",
+          "label": "My WordPress Website",
+          "type": "",
+          "href": "https://playground.wordpress.net/scope:curious-abandoned-park",
+          "x": 50,
+          "y": 52,
+          "width": 232,
+          "height": 30
+        },
+        {
+          "tag": "a",
+          "role": "",
+          "label": "Hello from WordPress Playground!",
+          "type": "",
+          "href": "https://playground.wordpress.net/scope:curious-abandoned-park/hello-from-playground/",
+          "x": 995,
+          "y": 55,
+          "width": 272,
+          "height": 25
+        },
+        {
+          "tag": "a",
+          "role": "",
+          "label": "Sample Page",
+          "type": "",
+          "href": "https://playground.wordpress.net/scope:curious-abandoned-park/sample-page/",
+          "x": 1286,
+          "y": 55,
+          "width": 104,
+          "height": 25
+        },
+        {
+          "tag": "a",
+          "role": "",
+          "label": "Hello world!",
+          "type": "",
+          "href": "https://playground.wordpress.net/scope:curious-abandoned-park/2026/05/20/hello-world/",
+          "x": 398,
+          "y": 316,
+          "width": 171,
+          "height": 36
+        },
+        {
+          "tag": "a",
+          "role": "",
+          "label": "May 20, 2026",
+          "type": "",
+          "href": "https://playground.wordpress.net/scope:curious-abandoned-park/2026/05/20/hello-world/",
+          "x": 398,
+          "y": 426,
+          "width": 83,
+          "height": 19
+        },
+        {
+          "tag": "a",
+          "role": "",
+          "label": "My WordPress Website",
+          "type": "",
+          "href": "https://playground.wordpress.net/scope:curious-abandoned-park",
+          "x": 50,
+          "y": 760,
+          "width": 343,
+          "height": 44
+        },
+        {
+          "tag": "nav",
+          "role": "",
+          "label": "Blog About FAQs Authors",
+          "type": "",
+          "href": "",
+          "x": 1116,
+          "y": 764,
+          "width": 64,
+          "height": 158
+        },
+        {
+          "tag": "a",
+          "role": "",
+          "label": "Blog",
+          "type": "",
+          "href": "#",
+          "x": 1116,
+          "y": 764,
+          "width": 35,
+          "height": 25
+        },
+        {
+          "tag": "a",
+          "role": "",
+          "label": "About",
+          "type": "",
+          "href": "#",
+          "x": 1116,
+          "y": 809,
+          "width": 49,
+          "height": 25
+        },
+        {
+          "tag": "a",
+          "role": "",
+          "label": "FAQs",
+          "type": "",
+          "href": "#",
+          "x": 1116,
+          "y": 853,
+          "width": 41,
+          "height": 25
+        },
+        {
+          "tag": "a",
+          "role": "",
+          "label": "Authors",
+          "type": "",
+          "href": "#",
+          "x": 1116,
+          "y": 897,
+          "width": 64,
+          "height": 25
+        },
+        {
+          "tag": "nav",
+          "role": "",
+          "label": "Events Shop Patterns Themes",
+          "type": "",
+          "href": "",
+          "x": 1320,
+          "y": 764,
+          "width": 70,
+          "height": 158
+        },
+        {
+          "tag": "a",
+          "role": "",
+          "label": "Events",
+          "type": "",
+          "href": "#",
+          "x": 1320,
+          "y": 764,
+          "width": 55,
+          "height": 25
+        },
+        {
+          "tag": "a",
+          "role": "",
+          "label": "Shop",
+          "type": "",
+          "href": "#",
+          "x": 1320,
+          "y": 809,
+          "width": 42,
+          "height": 25
+        },
+        {
+          "tag": "a",
+          "role": "",
+          "label": "Patterns",
+          "type": "",
+          "href": "#",
+          "x": 1320,
+          "y": 853,
+          "width": 70,
+          "height": 25
+        },
+        {
+          "tag": "a",
+          "role": "",
+          "label": "Themes",
+          "type": "",
+          "href": "#",
+          "x": 1320,
+          "y": 897,
+          "width": 65,
+          "height": 25
+        },
+        {
+          "tag": "a",
+          "role": "",
+          "label": "WordPress",
+          "type": "",
+          "href": "https://wordpress.org",
+          "x": 1322,
+          "y": 1051,
+          "width": 68,
+          "height": 19
+        }
+      ]
+    }
+  ]
+}
