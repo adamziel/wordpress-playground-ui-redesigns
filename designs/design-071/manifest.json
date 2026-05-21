@@ -1,0 +1,52 @@
+{
+  "id": "design-071",
+  "title": "Workshop Site Manager Takeover",
+  "concept": "A Site Manager-first Playground redesign for educators running workshops: creation, save state, saved-site management, runtime settings, files, blueprint, database, logs, gallery, and portability all live inside a dark diagnostic manager while the WordPress site is kept as a narrow embedded preview.",
+  "focus": [
+    "Site Manager as the primary product surface",
+    "split preview and editor layout with narrow live WordPress preview",
+    "dark diagnostics surface with light content cards",
+    "educator workshop run sequence",
+    "concrete source, save, reset, export, import, and Blueprint gallery consequences"
+  ],
+  "flows": [
+    "Choose a launch source from Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, or .zip import with distinct inputs and constraints.",
+    "Save an unsaved Playground to browser storage or to a local directory, showing copy progress and the resulting saved slug.",
+    "Manage saved and unsaved Playgrounds with visible saved identity, rename, delete, and open-list actions.",
+    "Use Site Manager tabs for Settings, Files, Blueprint, Database, and Logs while the active WordPress site remains visible in a narrow preview.",
+    "Browse the Blueprint gallery with category filters, search, a selected detail card, run, and inspect behavior across a represented 43-entry catalog.",
+    "Apply reset/reload decisions, export to GitHub, download a .zip, import a .zip over the current site, download database.sqlite, and open Adminer or phpMyAdmin."
+  ],
+  "featureCoverage": [
+    "create a vanilla Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub after account connection",
+    "run a Blueprint URL",
+    "import a .zip",
+    "browse and filter Blueprint gallery entries",
+    "select featured blueprint shortcuts",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "see save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh the active embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress/PHP/language settings",
+    "include older WordPress versions",
+    "allow network access",
+    "create a multisite network",
+    "understand destructive reset/reload behavior",
+    "use File browser with create folder/file, upload, browse, and code editing affordances",
+    "view/copy/download/run the current Blueprint bundle",
+    "inspect database driver/path/size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect logs and empty/error states",
+    "export to GitHub",
+    "download a .zip"
+  ]
+}
