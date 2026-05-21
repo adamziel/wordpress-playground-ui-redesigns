@@ -2850,6 +2850,44 @@
     "path": "design-062/index.html"
   },
   {
+    "id": "design-063",
+    "number": 63,
+    "title": "Blueprint Review Desk",
+    "concept": "A Blueprint-first, table-led WordPress Playground workspace for core contributors who need to inspect catalog entries, run Blueprint URLs, preview PR sources, and manage saved review Playgrounds without losing operational controls.",
+    "focus": [
+      "Blueprint catalog as the first viewport",
+      "Dense management table with persistent selected Blueprint inspector",
+      "Distinct launch routes for PRs, GitHub import, Blueprint URL, Vanilla WordPress, and .zip import",
+      "Visible save destination and saved-site lifecycle states"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start",
+      "WordPress PR preview",
+      "Gutenberg PR or branch preview",
+      "GitHub import with account connection",
+      "Blueprint URL runner",
+      ".zip import",
+      "Blueprint gallery categories, search, selected detail, inspect, run, copy, and download",
+      "Save in browser storage",
+      "Save to local directory",
+      "Save progress",
+      "Saved and unsaved Playground management",
+      "Rename saved Playground",
+      "Delete saved Playground",
+      "WordPress path navigation and refresh",
+      "Homepage and WP Admin navigation",
+      "WordPress, PHP, language, older version, network, and multisite settings",
+      "Destructive reset and saved reload behavior",
+      "File browser with new file, new folder, upload, browse, tree, and code editor",
+      "Current Blueprint file editing, run, copy, and download",
+      "Database driver, SQLite path, size, download, Adminer, and phpMyAdmin",
+      "Playground, WordPress, and PHP logs",
+      "Export to GitHub",
+      "Download as .zip"
+    ],
+    "path": "design-063/index.html"
+  },
+  {
     "id": "design-064",
     "number": 64,
     "title": "Playground Casebench IDE",
