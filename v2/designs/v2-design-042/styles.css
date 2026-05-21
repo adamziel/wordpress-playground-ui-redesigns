@@ -1,0 +1,976 @@
+:root {
+  --bg: #f3f5f7;
+  --panel: #ffffff;
+  --ink: #17202a;
+  --muted: #66727f;
+  --line: #d9e1e8;
+  --rail: #151b22;
+  --railActive: #25303a;
+  --blue: #2457d6;
+  --blueSoft: #eaf0ff;
+  --green: #16734d;
+  --greenSoft: #e8f6ee;
+  --amber: #936300;
+  --amberSoft: #fff4d8;
+  --red: #b3261e;
+  --redSoft: #fde9e7;
+  --shadow: 0 18px 40px rgba(24, 32, 42, 0.12);
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  min-height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fff;
+  color: var(--ink);
+  padding: 0 11px;
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: #a8b5c2;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
+input,
+select {
+  width: 100%;
+  min-width: 0;
+  min-height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fff;
+  color: var(--ink);
+  padding: 7px 9px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+pre {
+  overflow: auto;
+  margin: 0;
+  border-radius: 8px;
+  background: #111820;
+  color: #eaf1f8;
+  padding: 14px;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.shell {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: minmax(250px, 330px) minmax(260px, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  min-height: 62px;
+  padding: 10px 16px;
+  border-bottom: 1px solid #101820;
+  background: #1c232b;
+  color: #f7f9fb;
+}
+
+.identity {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  min-width: 0;
+}
+
+.identity strong,
+.identity span:not(.wpMark) {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.identity span:not(.wpMark) {
+  color: #aeb8c3;
+  font-size: 12px;
+}
+
+.wpMark {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  font-weight: 800;
+}
+
+.pathBar {
+  display: grid;
+  grid-template-columns: auto minmax(130px, 1fr) auto;
+  gap: 8px;
+  min-width: 0;
+}
+
+.pathBar input,
+.pathBar button,
+.shellActions button {
+  border-color: #414b55;
+  background: #2b343d;
+  color: #edf2f6;
+}
+
+.shellActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+}
+
+.primary,
+.shellActions .primary {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #fff;
+}
+
+.danger {
+  border-color: var(--red);
+  background: var(--red);
+  color: #fff;
+}
+
+.dangerSoft {
+  border-color: #efb8b1;
+  background: var(--redSoft);
+  color: var(--red);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 86px minmax(500px, 1.05fr) minmax(430px, 0.95fr);
+  min-height: calc(100vh - 62px);
+}
+
+.rail {
+  position: sticky;
+  top: 62px;
+  height: calc(100vh - 62px);
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding: 12px 8px;
+  background: var(--rail);
+}
+
+.railBtn {
+  min-height: 56px;
+  border-color: transparent;
+  background: transparent;
+  color: #b8c3ce;
+  padding: 6px 4px;
+  font-size: 12px;
+}
+
+.railBtn.active {
+  border-color: #53606c;
+  background: var(--railActive);
+  color: #fff;
+  box-shadow: inset 3px 0 0 var(--blue);
+}
+
+.workbench,
+.detailPane {
+  min-width: 0;
+}
+
+.workbench {
+  border-right: 1px solid var(--line);
+  background: #f8fafc;
+  overflow: auto;
+}
+
+.detailPane {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: 12px;
+  overflow: auto;
+}
+
+.commandBox,
+.modeHeader,
+.modePanel,
+.selectedDetail,
+.previewShell,
+.history {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.commandBox {
+  margin: 12px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+
+.sectionTop,
+.modeHeader,
+.tableHead,
+.editorTop,
+.progressLine,
+.browserTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.sectionTop.compact,
+.editorTop,
+.progressLine,
+.browserTop {
+  align-items: center;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-size: 22px;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: 18px;
+}
+
+h3 {
+  margin-bottom: 8px;
+  font-size: 17px;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.badge {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 24px;
+  border-radius: 999px;
+  background: #eef2f5;
+  color: var(--ink);
+  padding: 3px 9px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.badge.blue {
+  background: var(--blueSoft);
+  color: var(--blue);
+}
+
+.badge.ok {
+  background: var(--greenSoft);
+  color: var(--green);
+}
+
+.badge.warn {
+  background: var(--amberSoft);
+  color: var(--amber);
+}
+
+.badge.bad {
+  background: var(--redSoft);
+  color: var(--red);
+}
+
+.commandInput {
+  margin-top: 12px;
+}
+
+.commandGrid {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.85fr) minmax(260px, 1.15fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.commandResults {
+  display: grid;
+  gap: 10px;
+}
+
+.commandGroup {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.commandGroup h3 {
+  margin: 0;
+  padding: 9px 10px;
+  border-bottom: 1px solid var(--line);
+  background: #f5f7fa;
+  font-size: 13px;
+}
+
+.commandResult {
+  width: 100%;
+  min-height: 54px;
+  display: grid;
+  justify-items: start;
+  gap: 3px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  text-align: left;
+}
+
+.commandResult:last-child {
+  border-bottom: 0;
+}
+
+.commandResult.active {
+  background: var(--blueSoft);
+  color: #153da0;
+}
+
+.commandResult span,
+.route span,
+.choice span,
+.notice,
+.tableHead span,
+.detailList dd,
+.transferGrid span,
+.dataBox p,
+.commandForm p,
+.confirm span {
+  color: var(--muted);
+}
+
+.commandForm {
+  min-height: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #fff;
+}
+
+.modeHeader {
+  position: sticky;
+  top: 62px;
+  z-index: 10;
+  margin: 0 12px;
+  padding: 13px 14px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+}
+
+.modePanel {
+  display: none;
+  margin: 12px;
+  padding: 14px;
+}
+
+.modePanel.active {
+  display: block;
+}
+
+.routes,
+.saveGrid,
+.transferGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.route,
+.choice,
+.permission,
+.progressCard,
+.notice,
+.confirm,
+.tableCard,
+.blueprintDetail,
+.dataBox,
+.transferGrid article {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.route,
+.choice,
+.permission,
+.progressCard,
+.notice,
+.confirm,
+.blueprintDetail,
+.dataBox,
+.transferGrid article {
+  padding: 12px;
+}
+
+.route {
+  display: grid;
+  align-content: start;
+  gap: 9px;
+}
+
+.warningRoute {
+  border-color: #edc76e;
+  background: #fffaf0;
+}
+
+.tableCard {
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.tableCard.flush {
+  margin-top: 0;
+}
+
+.tableHead {
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.objectTableWrap {
+  overflow: auto;
+}
+
+.objectTable {
+  width: 100%;
+  min-width: 660px;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.objectTable th,
+.objectTable td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.objectTable th {
+  background: #f5f7fa;
+  color: #53606c;
+  font-size: 12px;
+}
+
+.objectTable tr.active td {
+  background: var(--blueSoft);
+}
+
+.objectTable tr.deleted td {
+  background: #fafafa;
+  color: #8a96a2;
+  text-decoration: line-through;
+}
+
+.rowActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.rowActions button {
+  min-height: 28px;
+  padding: 0 8px;
+  font-size: 12px;
+}
+
+.field,
+.permission,
+.progressCard,
+.notice,
+.confirm {
+  margin-top: 12px;
+}
+
+.choice {
+  display: block;
+  min-height: 90px;
+  text-align: left;
+}
+
+.choice.active {
+  border-color: var(--blue);
+  background: var(--blueSoft);
+  box-shadow: inset 0 0 0 1px var(--blue);
+}
+
+.permission {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.meter {
+  height: 9px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #dde5ed;
+}
+
+.meter span {
+  display: block;
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--blue), var(--green));
+  transition: width 0.22s ease;
+}
+
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.libraryTools {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) auto auto;
+  gap: 8px;
+  align-items: end;
+  margin-bottom: 12px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.tabs,
+.filters,
+.logTabs,
+.fileTools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.tabs button.active,
+.filters button.active,
+.logTabs button.active {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #fff;
+}
+
+.managerPanel {
+  display: none;
+}
+
+.managerPanel.active {
+  display: block;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+}
+
+.check input {
+  width: auto;
+  min-height: 0;
+}
+
+.warnNotice {
+  border-color: #efc66b;
+  background: var(--amberSoft);
+}
+
+.editorGrid,
+.blueprintLayout {
+  display: grid;
+  grid-template-columns: minmax(140px, 0.7fr) minmax(230px, 1.3fr);
+  gap: 12px;
+}
+
+.tree {
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.tree li {
+  padding: 8px;
+  border-radius: 6px;
+  color: #4f5b66;
+}
+
+.tree li.selected {
+  background: var(--blueSoft);
+  color: var(--blue);
+}
+
+.editor {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.editorTop {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.editor .buttonRow {
+  padding: 0 12px 12px;
+}
+
+.dataBox dl,
+.detailList {
+  display: grid;
+  grid-template-columns: minmax(130px, 0.45fr) minmax(180px, 1fr);
+  gap: 8px 12px;
+  margin: 12px 0 0;
+}
+
+.dataBox dt,
+.detailList dt {
+  color: #4d5965;
+  font-weight: 700;
+}
+
+.dataBox dd,
+.detailList dd {
+  margin: 0;
+  min-width: 0;
+  word-break: break-word;
+}
+
+.logStream {
+  display: grid;
+  gap: 8px;
+}
+
+.logLine {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.logLine.warning {
+  border-color: #edc76e;
+  background: #fffaf0;
+}
+
+.logLine.error {
+  border-color: #efb8b1;
+  background: #fff7f6;
+}
+
+.blueprintCards {
+  display: grid;
+  gap: 8px;
+}
+
+.blueprintCard {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 10px;
+  width: 100%;
+  min-height: 78px;
+  text-align: left;
+}
+
+.blueprintCard.active {
+  border-color: var(--blue);
+  background: var(--blueSoft);
+}
+
+.thumb {
+  display: grid;
+  place-items: center;
+  min-height: 58px;
+  border-radius: 6px;
+  background: #29323c;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.thumb.coffee {
+  background: #76502b;
+}
+
+.thumb.feed {
+  background: #e9eefc;
+  color: #2547b8;
+}
+
+.thumb.news {
+  background: #111;
+}
+
+.thumb.nonprofit {
+  background: #7c3a14;
+}
+
+.thumb.blog {
+  background: #7e1745;
+}
+
+.thumb.shop {
+  background: #11665c;
+}
+
+.thumb.gutenberg {
+  background: #314db8;
+}
+
+.selectedDetail {
+  padding: 14px;
+}
+
+.previewShell {
+  overflow: hidden;
+}
+
+.browserTop {
+  padding: 9px 10px;
+  background: #1c232b;
+  color: #e8edf2;
+  font-size: 13px;
+}
+
+.wpAdminBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 8px 10px;
+  background: #232a31;
+  color: #e9eef4;
+  font-size: 12px;
+}
+
+.previewBody {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.75fr) minmax(160px, 0.55fr);
+  gap: 14px;
+  align-items: center;
+  min-height: 360px;
+  padding: 34px 26px;
+  background: #fff;
+}
+
+.previewBody h2 {
+  margin: 0 0 16px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+.previewBody h2 span {
+  color: #315cf6;
+}
+
+.previewBody p {
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.previewBody mark {
+  display: inline;
+  background: #fff0a8;
+}
+
+.previewBody button {
+  display: block;
+  width: min(100%, 360px);
+  margin-top: 20px;
+  border-color: #315cf6;
+  background: #315cf6;
+  color: #fff;
+}
+
+.previewGraphic {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  border: 22px solid #30e774;
+  border-radius: 50%;
+  color: #1d1d1d;
+  font-size: clamp(52px, 9vw, 120px);
+  font-weight: 900;
+}
+
+.history {
+  padding: 14px;
+}
+
+.history ol {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding-left: 22px;
+  color: #4f5b66;
+  font-size: 13px;
+}
+
+@media (max-width: 1180px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  .shellActions {
+    justify-content: flex-start;
+  }
+
+  .layout {
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+
+  .detailPane {
+    grid-column: 2;
+  }
+
+  .rail {
+    grid-row: 1 / span 2;
+  }
+}
+
+@media (max-width: 760px) {
+  .layout {
+    display: block;
+  }
+
+  .rail {
+    position: sticky;
+    top: 0;
+    z-index: 25;
+    height: auto;
+    display: flex;
+    overflow-x: auto;
+    padding: 8px;
+  }
+
+  .railBtn {
+    min-width: 92px;
+    min-height: 42px;
+  }
+
+  .shell {
+    position: relative;
+  }
+
+  .workbench {
+    border-right: 0;
+  }
+
+  .commandGrid,
+  .routes,
+  .saveGrid,
+  .transferGrid,
+  .formGrid,
+  .editorGrid,
+  .blueprintLayout,
+  .previewBody,
+  .libraryTools {
+    grid-template-columns: 1fr;
+  }
+
+  .permission,
+  .sectionTop,
+  .modeHeader,
+  .tableHead {
+    display: grid;
+  }
+
+  .modeHeader {
+    position: static;
+  }
+
+  .previewBody {
+    min-height: auto;
+    padding: 24px 18px;
+  }
+
+  .previewGraphic {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .objectTable {
+    min-width: 600px;
+  }
+}
