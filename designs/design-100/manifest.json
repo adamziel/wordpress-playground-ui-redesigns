@@ -1,0 +1,51 @@
+{
+  "id": "design-100",
+  "title": "Client Site Workbench",
+  "concept": "A table-led Playground manager for agency developers, with beginner-readable action cards, explicit save destinations, and consequence messaging shown before destructive changes.",
+  "focus": [
+    "table-led saved Playground management",
+    "distinct beginner launch and import cards",
+    "safe destructive-action messaging",
+    "visible save, import, reset, and export outcomes",
+    "responsive mobile work queue"
+  ],
+  "flows": [
+    "select a temporary Playground, choose Save in this browser or Save to a local directory, watch progress, and see the saved table state",
+    "start from Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, or zip import with route-specific inputs",
+    "browse Blueprint categories, search cards, inspect a selected Blueprint, and run it over the current site",
+    "open Site Manager tabs for settings, file browser, blueprint, database, and logs",
+    "rename, delete, reset/reload, export to GitHub, and download zip with visible consequence notices"
+  ],
+  "featureCoverage": [
+    "create a vanilla Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub after account connection",
+    "run a Blueprint URL",
+    "import a .zip",
+    "browse and filter Blueprint gallery entries",
+    "select featured blueprint shortcuts",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "see save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh the active embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress/PHP/language settings",
+    "include older WordPress versions",
+    "allow network access",
+    "create a multisite network",
+    "understand destructive reset/reload behavior",
+    "use File browser with create folder/file, upload, browse, and code editing affordances",
+    "view/copy/download/run the current Blueprint bundle",
+    "inspect database driver/path/size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect logs and empty/error states",
+    "export to GitHub",
+    "download a .zip"
+  ]
+}
