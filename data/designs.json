@@ -866,5 +866,51 @@
       "download as .zip"
     ],
     "path": "design-019/index.html"
+  },
+  {
+    "id": "design-020",
+    "number": 20,
+    "title": "Playground Action Cards",
+    "concept": "A beginner-oriented action board for plugin developers that groups Playground creation, saving, management, inspection, and export tasks into clear cards beside a split live preview and contextual editor.",
+    "focus": [
+      "beginner cards and actions",
+      "safe destructive-action messaging",
+      "split preview and editor",
+      "plugin developer workflow discovery",
+      "high-contrast black white and cyan palette"
+    ],
+    "featureCoverage": [
+      "create a vanilla Playground",
+      "create from WordPress PR",
+      "create from Gutenberg PR or branch",
+      "import from GitHub after account connection",
+      "run a Blueprint URL",
+      "import a .zip",
+      "browse and filter Blueprint gallery entries",
+      "select featured blueprint shortcuts",
+      "save temporary Playground in browser storage",
+      "save to a local directory",
+      "see save progress",
+      "browse saved and unsaved Playgrounds",
+      "rename a saved Playground",
+      "delete a saved Playground",
+      "navigate active WordPress paths with URL input",
+      "refresh the active embedded WordPress page",
+      "open Homepage and WP Admin",
+      "edit WordPress/PHP/language settings",
+      "include older WordPress versions",
+      "allow network access",
+      "create a multisite network",
+      "understand destructive reset and saved reload behavior",
+      "use File browser with create folder/file, upload, browse, and code editing affordances",
+      "view/copy/download/run the current Blueprint bundle",
+      "inspect database driver/path/size",
+      "download database.sqlite",
+      "open Adminer and phpMyAdmin",
+      "inspect logs and empty/error states",
+      "export to GitHub",
+      "download a .zip"
+    ],
+    "path": "design-020/index.html"
   }
 ]
