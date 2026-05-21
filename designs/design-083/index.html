@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design 083 - Blueprint Desk</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar" aria-label="Playground shell">
+      <div class="brand">
+        <span class="brand-mark">WP</span>
+        <div>
+          <strong>Playground Blueprint Desk</strong>
+          <span>Documentation demo workspace</span>
+        </div>
+      </div>
+
+      <div class="pathbar" aria-label="Active WordPress navigation">
+        <button class="icon-button" type="button" title="Refresh current WordPress page">R</button>
+        <label class="path-input">
+          <span>Path</span>
+          <input value="/hello-from-playground/" aria-label="WordPress path">
+        </label>
+      </div>
+
+      <div class="shell-actions">
+        <span class="status status-warn">Unsaved temporary site</span>
+        <button class="primary small" type="button" data-open-tab="saves">Save</button>
+        <button class="ghost small" type="button" data-open-tab="saves">Saved</button>
+        <button class="ghost small" type="button" data-open-tab="site">Manager</button>
+        <button class="icon-button" type="button" title="Playground settings">S</button>
+      </div>
+    </header>
+
+    <nav class="workspace-tabs" aria-label="Workspace">
+      <button class="tab active" type="button" data-tab="catalog">Blueprint Catalog</button>
+      <button class="tab" type="button" data-tab="launch">Launch Routes</button>
+      <button class="tab" type="button" data-tab="site">Current Site Manager</button>
+      <button class="tab" type="button" data-tab="saves">Saves and Transfers</button>
+    </nav>
+
+    <main>
+      <section class="workspace-panel active" id="catalog" aria-labelledby="catalog-tab">
+        <div class="catalog-layout">
+          <aside class="catalog-sidebar">
+            <div class="panel-heading">
+              <p class="eyebrow">Blueprints first</p>
+              <h1>Find, inspect, and run reproducible demos.</h1>
+            </div>
+
+            <label class="searchbox">
+              <span>Search blueprints</span>
+              <input id="blueprintSearch" type="search" placeholder="friends, woo, blog, gallery">
+            </label>
+
+            <div class="filter-group" aria-label="Blueprint filters">
+              <button class="filter active" type="button" data-filter="all">All <span>43</span></button>
+              <button class="filter" type="button" data-filter="featured">Featured <span>8</span></button>
+              <button class="filter" type="button" data-filter="website">Website <span>19</span></button>
+              <button class="filter" type="button" data-filter="personal">Personal <span>7</span></button>
+              <button class="filter" type="button" data-filter="content">Content <span>9</span></button>
+              <button class="filter" type="button" data-filter="themes">Themes <span>11</span></button>
+              <button class="filter" type="button" data-filter="gutenberg">Gutenberg <span>5</span></button>
+              <button class="filter" type="button" data-filter="experiments">Experiments <span>4</span></button>
+              <button class="filter" type="button" data-filter="woocommerce">WooCommerce <span>3</span></button>
+              <button class="filter" type="button" data-filter="news">News <span>4</span></button>
+            </div>
+
+            <div class="url-runner">
+              <div>
+                <strong>Run Blueprint URL</strong>
+                <span>Requires a public URL returning blueprint JSON.</span>
+              </div>
+              <input value="https://example.com/demo-blueprint.json" aria-label="Blueprint URL">
+              <button class="primary" type="button">Run URL</button>
+            </div>
+          </aside>
+
+          <section class="catalog-results" aria-label="Blueprint gallery">
+            <div class="section-toolbar">
+              <div>
+                <p class="eyebrow">Catalog index</p>
+                <h2>Showing captured gallery examples and dense category coverage</h2>
+              </div>
+              <div class="toolbar-actions">
+                <button class="ghost small" type="button">Inspect JSON</button>
+                <button class="ghost small" type="button">Copy share link</button>
+              </div>
+            </div>
+
+            <div class="blueprint-grid" id="blueprintGrid">
+              <article class="blueprint-card selected" data-blueprint data-cats="featured website content" data-name="Feed Reader with the Friends Plugin">
+                <div class="thumb feed"></div>
+                <div class="card-body">
+                  <strong>Feed Reader with the Friends Plugin</strong>
+                  <p>Demo feeds, subscriptions, and compact social reading in Playground.</p>
+                  <span>rss</span><span>social web</span><span>featured</span>
+                </div>
+              </article>
+              <article class="blueprint-card" data-blueprint data-cats="featured website personal themes" data-name="Art Gallery">
+                <div class="thumb gallery"></div>
+                <div class="card-body">
+                  <strong>Art Gallery</strong>
+                  <p>Gallery site prepared with the Vueo theme and sample artwork.</p>
+                  <span>website</span><span>personal</span>
+                </div>
+              </article>
+              <article class="blueprint-card" data-blueprint data-cats="featured woocommerce website" data-name="Coffee Shop">
+                <div class="thumb coffee"></div>
+                <div class="card-body">
+                  <strong>Coffee Shop</strong>
+                  <p>WooCommerce storefront with products, cart, checkout, and custom theme.</p>
+                  <span>woocommerce</span><span>store</span>
+                </div>
+              </article>
+              <article class="blueprint-card" data-blueprint data-cats="featured website news themes" data-name="Gaming News">
+                <div class="thumb news"></div>
+                <div class="card-body">
+                  <strong>Gaming News</strong>
+                  <p>Spiel theme news layout with posts, menus, and image-heavy articles.</p>
+                  <span>news</span><span>theme</span>
+                </div>
+              </article>
+              <article class="blueprint-card" data-blueprint data-cats="featured website content" data-name="Non-profit Organization">
+                <div class="thumb nonprofit"></div>
+                <div class="card-body">
+                  <strong>Non-profit Organization</strong>
+                  <p>Donation-oriented site with pages, navigation, and benefit copy.</p>
+                  <span>website</span><span>organization</span>
+                </div>
+              </article>
+              <article class="blueprint-card" data-blueprint data-cats="website personal content" data-name="Personal Blog">
+                <div class="thumb blog"></div>
+                <div class="card-body">
+                  <strong>Personal Blog</strong>
+                  <p>Long-form publishing demo with posts, archive navigation, and theme styling.</p>
+                  <span>personal</span><span>blog</span>
+                </div>
+              </article>
+              <article class="blueprint-card" data-blueprint data-cats="gutenberg experiments content" data-name="Block Theme Starter">
+                <div class="thumb blocks"></div>
+                <div class="card-body">
+                  <strong>Block Theme Starter</strong>
+                  <p>Site Editor-ready starter with theme.json and sample block templates.</p>
+                  <span>gutenberg</span><span>themes</span>
+                </div>
+              </article>
+              <article class="blueprint-card" data-blueprint data-cats="experiments content" data-name="Content Playground">
+                <div class="thumb content"></div>
+                <div class="card-body">
+                  <strong>Content Playground</strong>
+                  <p>Fixture content for testing page, post, media, and menu behavior.</p>
+                  <span>content</span><span>fixtures</span>
+                </div>
+              </article>
+              <article class="blueprint-card" data-blueprint data-cats="website themes" data-name="Theme Preview Lab">
+                <div class="thumb theme"></div>
+                <div class="card-body">
+                  <strong>Theme Preview Lab</strong>
+                  <p>Theme comparison setup with style variations and template parts.</p>
+                  <span>themes</span><span>website</span>
+                </div>
+              </article>
+            </div>
+
+            <section class="blueprint-index" aria-label="Full captured Blueprint index">
+              <div class="index-heading">
+                <strong>Full captured gallery index</strong>
+                <span>43 entries from the current Blueprint gallery</span>
+              </div>
+              <ol>
+                <li>Art Gallery</li>
+                <li>Coffee Shop</li>
+                <li>Feed Reader with the Friends Plugin</li>
+                <li>Gaming News</li>
+                <li>Non-profit Organization</li>
+                <li>Personal Blog</li>
+                <li>Personal Resume</li>
+                <li>Photography Portfolio</li>
+                <li>Skincare Blog</li>
+                <li>University Website</li>
+                <li>Create Block Theme</li>
+                <li>Creating a new user for the blog</li>
+                <li>Custom Post Type: Books</li>
+                <li>Demo of Twenty-Twenty-Five theme</li>
+                <li>Display Admin Notice</li>
+                <li>Enable all three Dataview Experiments in Gutenberg</li>
+                <li>Fancy Dashboard Widget</li>
+                <li>Grid Variations Experiments enabled</li>
+                <li>Gutenberg Guidelines Experiment enabled</li>
+                <li>Import Theme Starter Content</li>
+                <li>Import a standalone starter content via a blueprint step</li>
+                <li>Install WordPress language packs</li>
+                <li>Install plugin from a gist</li>
+                <li>Latest Gutenberg plugin</li>
+                <li>Loading, activating, and configuring a theme from a GitHub repository</li>
+                <li>Login as an editor</li>
+                <li>Markdown and Trac Syntax Editor</li>
+                <li>Minimal WooCommerce Setup with Sample Products, Shipping, and Payment Method</li>
+                <li>My WordPress</li>
+                <li>Playground Welcome Landing Page</li>
+                <li>Pretty permalinks</li>
+                <li>Reset data and import content (with logs)</li>
+                <li>Serve media files from another host</li>
+                <li>Set the admin color scheme</li>
+                <li>Showcase plugin</li>
+                <li>Stylish Press</li>
+                <li>Theme Tester</li>
+                <li>Use WPGraphQL to query WordPress</li>
+                <li>Use wp-cli command to add posts</li>
+                <li>Use wp-cli to add a post with image</li>
+                <li>Weather Shortcode Plugin</li>
+                <li>WooCommerce product feed</li>
+                <li>WordPress Beta</li>
+              </ol>
+            </section>
+          </section>
+
+          <aside class="blueprint-detail">
+            <div class="detail-card">
+              <p class="eyebrow">Selected blueprint</p>
+              <h2 id="selectedTitle">Feed Reader with the Friends Plugin</h2>
+              <p class="muted">Runs from the captured gallery. Demo writers can inspect the setup steps before replacing the current temporary site.</p>
+              <div class="action-stack">
+                <button class="primary" type="button" data-open-tab="site">Run Blueprint</button>
+                <button class="ghost" type="button">Inspect current JSON</button>
+                <button class="ghost" type="button">Copy Blueprint link</button>
+                <button class="ghost" type="button">Download bundle</button>
+              </div>
+            </div>
+
+            <div class="flow-proof">
+              <p class="eyebrow">Visible flow proof</p>
+              <ol>
+                <li class="done">Select catalog source: Feed Reader blueprint</li>
+                <li class="active">Run replaces the current unsaved site after confirmation</li>
+                <li>Save destination: browser storage or local directory</li>
+                <li>Result: named saved Playground with rename and delete actions</li>
+              </ol>
+            </div>
+
+            <div class="code-preview">
+              <div class="code-title">
+                <strong>blueprint.json</strong>
+                <span>editable</span>
+              </div>
+<pre>{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/hello-from-playground/",
+  "preferredVersions": { "php": "8.3", "wp": "latest" },
+  "steps": [
+    { "step": "login" },
+    { "step": "installPlugin", "pluginData": "friends.zip" },
+    { "step": "runPHP", "code": "wp_insert_post(...)" }
+  ]
+}</pre>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="workspace-panel" id="launch" aria-labelledby="launch-tab">
+        <div class="route-board">
+          <div class="section-toolbar">
+            <div>
+              <p class="eyebrow">Start a new Playground</p>
+              <h2>Every launch route has its own required input and consequence.</h2>
+            </div>
+            <span class="status status-warn">Starting replaces the current unsaved site</span>
+          </div>
+
+          <div class="route-grid">
+            <article class="route-card">
+              <strong>Vanilla WordPress</strong>
+              <p>No input required. Starts a clean logged-in WordPress site.</p>
+              <button class="primary" type="button">Start clean site</button>
+            </article>
+            <article class="route-card">
+              <strong>WordPress PR</strong>
+              <p>Preview a core pull request by number or GitHub URL.</p>
+              <label>PR number or URL<input value="https://github.com/WordPress/wordpress-develop/pull/7123"></label>
+              <button type="button">Preview PR</button>
+            </article>
+            <article class="route-card">
+              <strong>Gutenberg PR or Branch</strong>
+              <p>Accepts a Gutenberg PR number, URL, or branch name.</p>
+              <label>PR, URL, or branch<input value="trunk"></label>
+              <button type="button">Preview Gutenberg</button>
+            </article>
+            <article class="route-card">
+              <strong>Import from GitHub</strong>
+              <p>Imports public plugins, themes, or wp-content directories after account connection. Token is not stored.</p>
+              <label>Repository path<input value="wordpress/twentytwentyfour"></label>
+              <button type="button">Connect GitHub</button>
+            </article>
+            <article class="route-card">
+              <strong>Blueprint URL</strong>
+              <p>Runs a public blueprint JSON URL and applies its steps to a new Playground.</p>
+              <label>Blueprint URL<input value="https://example.com/blueprints/demo.json"></label>
+              <button type="button">Run Blueprint</button>
+            </article>
+            <article class="route-card">
+              <strong>Import .zip</strong>
+              <p>Opens a file picker. Importing a Playground zip replaces the current site contents.</p>
+              <label>Selected file<input value="demo-site-export.zip"></label>
+              <button type="button">Choose .zip</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace-panel" id="site" aria-labelledby="site-tab">
+        <div class="manager-layout">
+          <aside class="site-identity">
+            <div class="identity-card">
+              <span class="wp-disc">WP</span>
+              <div>
+                <h2>Research Browser Playground</h2>
+                <p>Saved in this browser a moment ago</p>
+              </div>
+            </div>
+            <div class="identity-actions">
+              <button type="button">WP Admin</button>
+              <button type="button">Homepage</button>
+              <button type="button">Rename</button>
+            </div>
+            <div class="mini-browser">
+              <div class="browser-top">
+                <span>/hello-from-playground/</span>
+                <button type="button">Refresh</button>
+              </div>
+              <div class="browser-preview">
+                <h3>Hello from WordPress Playground!</h3>
+                <p>This embedded site preview stays visible while editing settings, files, blueprints, database, and logs.</p>
+                <button type="button">Discover the mission behind Playground</button>
+              </div>
+            </div>
+          </aside>
+
+          <section class="manager-panel">
+            <nav class="manager-tabs" aria-label="Site manager tabs">
+              <button class="manager-tab active" type="button" data-manager="settings">Settings</button>
+              <button class="manager-tab" type="button" data-manager="files">Files</button>
+              <button class="manager-tab" type="button" data-manager="blueprint">Blueprint</button>
+              <button class="manager-tab" type="button" data-manager="database">Database</button>
+              <button class="manager-tab" type="button" data-manager="logs">Logs</button>
+            </nav>
+
+            <div class="manager-view active" id="settings-view">
+              <div class="warning-strip">Applying settings resets an unsaved Playground. Stored Playgrounds use Save & Reload with limited options.</div>
+              <div class="settings-grid">
+                <label>WordPress version<select><option>Latest</option><option>6.8</option><option>6.7</option></select></label>
+                <label>PHP version<select><option>PHP 8.3</option><option>PHP 8.2</option><option>PHP 7.4</option></select></label>
+                <label>Language<select><option>English (United States)</option><option>Polish</option><option>Spanish</option></select></label>
+                <label class="check"><input type="checkbox" checked> Include older WordPress versions</label>
+                <label class="check"><input type="checkbox" checked> Allow network access</label>
+                <label class="check"><input type="checkbox"> Create a multisite network</label>
+              </div>
+              <div class="button-row">
+                <button class="danger" type="button">Apply Settings & Reset Playground</button>
+                <button type="button">Save & Reload stored site</button>
+              </div>
+            </div>
+
+            <div class="manager-view" id="files-view">
+              <div class="file-workspace">
+                <div class="file-tree">
+                  <div class="tree-actions">
+                    <button type="button">New File</button>
+                    <button type="button">New Folder</button>
+                    <button type="button">Upload</button>
+                    <button type="button">Browse files</button>
+                  </div>
+                  <ul>
+                    <li class="open">/wordpress</li>
+                    <li>wp-admin</li>
+                    <li>wp-content</li>
+                    <li>wp-includes</li>
+                    <li>index.php</li>
+                    <li class="selected-row">wp-config.php</li>
+                    <li>wp-settings.php</li>
+                  </ul>
+                </div>
+                <div class="editor">
+                  <div class="code-title"><strong>/wordpress/wp-config.php</strong><span>editable</span></div>
+<pre>define( 'DB_NAME', 'database_name_here' );
+define( 'DB_USER', 'username_here' );
+define( 'DB_PASSWORD', 'password_here' );
+define( 'DB_HOST', 'localhost' );
+define( 'DB_CHARSET', 'utf8mb4' );</pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="manager-view" id="blueprint-view">
+              <div class="blueprint-actions">
+                <button type="button">Create file</button>
+                <button type="button">Create folder</button>
+                <button type="button">Upload files</button>
+                <button type="button">Browse files</button>
+                <button type="button">Copy link</button>
+                <button type="button">Download bundle</button>
+                <button class="primary" type="button">Run Blueprint</button>
+              </div>
+              <div class="editor wide">
+                <div class="code-title"><strong>/blueprint.json</strong><span>current bundle</span></div>
+<pre>{
+  "meta": {
+    "title": "Documentation demo",
+    "description": "Reusable setup for a Playground article"
+  },
+  "login": true,
+  "steps": [
+    { "step": "installPlugin", "pluginData": "friends.zip" },
+    { "step": "setSiteOptions", "options": { "blogname": "Research Browser" } }
+  ]
+}</pre>
+              </div>
+            </div>
+
+            <div class="manager-view" id="database-view">
+              <div class="notice">
+                <strong>Database management is an early access feature</strong>
+                <p>WordPress Playground emulates MySQL using SQLite.</p>
+              </div>
+              <dl class="data-list">
+                <div><dt>Database driver</dt><dd>MySQL emulation backed by SQLite</dd></div>
+                <div><dt>SQLite database path</dt><dd>/wordpress/wp-content/database/.ht.sqlite</dd></div>
+                <div><dt>Size</dt><dd>452 KB</dd></div>
+              </dl>
+              <div class="button-row">
+                <button type="button">Download database.sqlite</button>
+                <button type="button">Open Adminer</button>
+                <button type="button">Open phpMyAdmin</button>
+              </div>
+            </div>
+
+            <div class="manager-view" id="logs-view">
+              <div class="log-grid">
+                <article><strong>Playground logs</strong><p>No problems so far.</p></article>
+                <article><strong>WordPress logs</strong><p>No PHP notices captured.</p></article>
+                <article><strong>PHP logs</strong><p>No fatal errors captured.</p></article>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="workspace-panel" id="saves" aria-labelledby="saves-tab">
+        <div class="saves-layout">
+          <section class="save-panel">
+            <div class="section-toolbar">
+              <div>
+                <p class="eyebrow">Save temporary Playground</p>
+                <h2>Choose a storage destination before the browser is closed.</h2>
+              </div>
+              <span class="status status-warn">Temporary sites are lost on refresh or close</span>
+            </div>
+
+            <label class="wide-label">Playground name<input value="Research Browser Playground"></label>
+            <div class="destination-toggle" role="radiogroup" aria-label="Storage location">
+              <button class="destination active" type="button" data-destination="browser">
+                <strong>Save in this browser</strong>
+                <span>Stores the site locally in browser storage and creates a site-slug URL.</span>
+              </button>
+              <button class="destination" type="button" data-destination="local">
+                <strong>Save to a local directory</strong>
+                <span>Requests directory access and syncs Playground files to the selected folder.</span>
+              </button>
+            </div>
+
+            <div class="progress-card" id="saveProgress">
+              <div>
+                <strong>Saving 3028 / 3751 files</strong>
+                <span id="destinationText">Browser storage destination selected</span>
+              </div>
+              <div class="progress"><span></span></div>
+              <p>Result: Saved Playground, created May 21, 2026, available from Saved Playgrounds.</p>
+            </div>
+          </section>
+
+          <aside class="saved-list">
+            <div class="section-toolbar compact">
+              <div>
+                <p class="eyebrow">Saved management</p>
+                <h2>Open, rename, delete, export, and import.</h2>
+              </div>
+            </div>
+            <article class="saved-row unsaved">
+              <span class="wp-disc">WP</span>
+              <div>
+                <strong>Unsaved Playground</strong>
+                <p>Not saved to browser storage</p>
+              </div>
+              <button type="button">Save</button>
+            </article>
+            <article class="saved-row selected-row">
+              <span class="wp-disc">WP</span>
+              <div>
+                <strong>Research Browser Playground</strong>
+                <p>Saved in browser storage - created May 21, 2026</p>
+              </div>
+              <button type="button">Rename</button>
+              <button class="danger" type="button">Delete</button>
+            </article>
+            <div class="transfer-grid">
+              <button type="button">Export to GitHub</button>
+              <button type="button">Download as .zip</button>
+              <button type="button">Import .zip over current site</button>
+              <button type="button">Open Saved Playgrounds panel</button>
+            </div>
+            <div class="warning-strip">Deleting a saved Playground removes the browser-backed copy. Importing a .zip replaces the current Playground state.</div>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
