@@ -1858,5 +1858,48 @@
       "Transfer history for saves, imports, exports, file edits, database downloads, deletes, path navigation, and Blueprint runs"
     ],
     "path": "v2-design-044/index.html"
+  },
+  {
+    "id": "v2-design-046",
+    "number": 46,
+    "title": "File Operations Workbench",
+    "concept": "A table-led Playground operations workbench where saved objects, transfer rows, Site Manager files, Blueprint JSON, database tools, logs, and a protected live WordPress preview stay visible while import, export, save, and destructive replacement flows mutate the same active Playground state.",
+    "focus": [
+      "file and data operations workbench",
+      "table-led saved and transfer management",
+      "stateful ZIP import and GitHub export completion",
+      "credible editor dirty and save states",
+      "persistent live WordPress shell"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start",
+      "WordPress PR preview with PR URL input",
+      "Gutenberg PR or branch preview with branch input",
+      "GitHub import with account connection and token-not-stored caveat",
+      "Blueprint URL runner",
+      "Import .zip with selected source, validation, replacement confirmation, progress, success state, and active identity update",
+      "Blueprint gallery categories and search with representative subset labeled 8 shown of 43",
+      "Featured Blueprint shortcuts including Art Gallery, Coffee Shop, Feed Reader with the Friends Plugin, Gaming News, Non-profit Organization, and Personal Blog",
+      "Save temporary Playground in browser storage",
+      "Save to a local directory with folder permission and reconnect consequence",
+      "Save progress with file-copy counts",
+      "Saved, local-directory, and unsaved Playground object table",
+      "Open, manage, rename, delete, delete confirmation, row removal, and active fallback",
+      "Current shell path input and refresh",
+      "Homepage and WP Admin shortcuts",
+      "Temporary, browser-saved, and local-directory storage badges",
+      "WordPress version, PHP version, language, include older versions, network access, and multisite settings",
+      "Destructive Apply Settings & Reset Playground and stored Save & Reload behavior",
+      "Site Manager Files, Blueprint, Database, Logs, Settings, Export to GitHub, and Download as zip",
+      "File browser create file, create folder, upload, browse files, selected editor, dirty state, save, and result state",
+      "Blueprint editor with validation, copy, download bundle, run, replacement result, and preview mutation",
+      "SQLite-backed database driver, path, size, database download, Adminer, and phpMyAdmin",
+      "Playground, WordPress, and PHP logs with warning and result states",
+      "GitHub import and Export to GitHub",
+      "ZIP import and Download as .zip",
+      "Database download and Blueprint bundle portability",
+      "Transfer history for imports, exports, downloads, saves, file edits, delete, settings reset, and Blueprint runs"
+    ],
+    "path": "v2-design-046/index.html"
   }
 ]
