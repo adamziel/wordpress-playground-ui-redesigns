@@ -133,6 +133,42 @@
     "path": "design-003/index.html"
   },
   {
+    "id": "design-004",
+    "number": 4,
+    "title": "Playground Workbench",
+    "concept": "A single workspace that keeps creation, saved Playground management, the active WordPress preview, and Site Manager inspection visible at once instead of sending users through separate overlays.",
+    "focus": [
+      "persistent creation and saved-site rail",
+      "side-by-side WordPress preview and Site Manager",
+      "reduced modal switching for operational tasks",
+      "dense but readable technical controls"
+    ],
+    "featureCoverage": [
+      "vanilla Playground creation",
+      "WordPress PR creation",
+      "Gutenberg PR or branch creation",
+      "GitHub import after account connection",
+      "Blueprint URL runner",
+      ".zip import",
+      "Blueprint gallery categories and featured shortcuts",
+      "browser and local-directory save destinations",
+      "save progress",
+      "saved and unsaved Playground list",
+      "rename and delete saved Playground actions",
+      "URL/path input and refresh",
+      "Homepage and WP Admin shortcuts",
+      "WordPress, PHP, language, older-version, network, and multisite settings",
+      "destructive reset and stored reload actions",
+      "file browser create folder/file, upload, browse, and code editing",
+      "Blueprint file browser, copy link, download bundle, and run action",
+      "database driver, path, size, download, Adminer, and phpMyAdmin",
+      "Playground, WordPress, and PHP logs",
+      "export to GitHub",
+      "download .zip"
+    ],
+    "path": "design-004/index.html"
+  },
+  {
     "id": "design-007",
     "number": 7,
     "title": "Playground Operations Console",
