@@ -493,5 +493,46 @@
       "Operations ledger and transfer history for saves, edits, downloads, imports, exports, delete, reset, and navigation"
     ],
     "path": "v2-design-016/index.html"
+  },
+  {
+    "id": "v2-design-018",
+    "number": 18,
+    "title": "Runtime Ledger Control Room",
+    "concept": "A light technical control-room interface that makes runtime settings, reset/reload consequences, command search, saved-object mutation, import replacement, and portability events visible beside a protected live WordPress shell.",
+    "focus": [
+      "runtime settings discoverability",
+      "command search with grouped results",
+      "operations ledger and event stream",
+      "visible Playground object mutation",
+      "protected live WordPress shell"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start route",
+      "WordPress PR number or URL route",
+      "Gutenberg PR or branch route",
+      "GitHub import with account connection and token persistence warning",
+      "Blueprint URL runner",
+      "Import .zip with native-source model, replacement warning, validation failure, progress, and success",
+      "Blueprint gallery categories and search with honest representative subset of 43",
+      "Featured Blueprint shortcuts and selected Blueprint detail",
+      "Save temporary Playground in browser storage",
+      "Save to a local directory with folder permission consequence",
+      "Save progress with file counts",
+      "Saved, local, imported, and unsaved Playground ledger",
+      "Open, rename, delete confirmation, delete cancel, delete progress, row mutation, and active fallback",
+      "Path input, refresh, Homepage, WP Admin, temporary/saved/local state, Save, reset, and reload consequences",
+      "WordPress version, PHP version, language, older versions, network access, and multisite controls",
+      "Destructive Apply Settings & Reset versus saved/local Save & Reload behavior",
+      "Site Manager Settings, Files, Blueprint, Database, Logs, Export to GitHub, and Download as zip",
+      "Files create file, create folder, upload, browse files, selected editor, dirty/save/result affordances",
+      "Blueprint editor, Blueprint URL, copy, download, run, validation, and result state",
+      "SQLite-backed database path, driver, size, database download, Adminer, and phpMyAdmin",
+      "Playground, WordPress, and PHP logs with realistic notice state",
+      "GitHub import and export",
+      "ZIP import and ZIP download",
+      "Database download and Blueprint bundle actions",
+      "Transfer and mutation event stream"
+    ],
+    "path": "v2-design-018/index.html"
   }
 ]
