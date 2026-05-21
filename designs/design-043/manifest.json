@@ -1,0 +1,52 @@
+{
+  "id": "design-043",
+  "title": "Blueprint Studio",
+  "concept": "A Blueprint-first Playground workspace for theme authors that starts with gallery filtering, Blueprint URL execution, and current blueprint editing before progressively revealing saved sites, settings, files, database, logs, and exports.",
+  "focus": [
+    "Blueprints as the primary organizing object",
+    "single-column progressive disclosure",
+    "IDE-like file and code affordances",
+    "theme author workflow density",
+    "gallery-to-blueprint-to-preview continuity"
+  ],
+  "flows": [
+    "Browse and filter Blueprint gallery cards, select featured Blueprints, inspect blueprint JSON, and run the chosen Blueprint",
+    "Run a Blueprint from URL, copy the current Blueprint link, download its bundle, and edit the current blueprint.json",
+    "Start a new Playground from vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, or .zip import",
+    "Save a temporary Playground in browser storage or to a local directory with visible progress",
+    "Manage unsaved and saved Playgrounds with rename and delete actions",
+    "Use Site Manager disclosures for settings, file browser, database inspection, logs, export to GitHub, and zip download"
+  ],
+  "featureCoverage": [
+    "create a vanilla Playground",
+    "create from WordPress PR",
+    "create from Gutenberg PR or branch",
+    "import from GitHub after account connection",
+    "run a Blueprint URL",
+    "import a .zip",
+    "browse and filter Blueprint gallery entries",
+    "select featured blueprint shortcuts",
+    "save temporary Playground in browser storage",
+    "save to a local directory",
+    "see save progress",
+    "browse saved and unsaved Playgrounds",
+    "rename a saved Playground",
+    "delete a saved Playground",
+    "navigate active WordPress paths with URL input",
+    "refresh the active embedded WordPress page",
+    "open Homepage and WP Admin",
+    "edit WordPress/PHP/language settings",
+    "include older WordPress versions",
+    "allow network access",
+    "create a multisite network",
+    "understand destructive reset/reload behavior",
+    "use File browser with create folder/file, upload, browse, and code editing affordances",
+    "view/copy/download/run the current Blueprint bundle",
+    "inspect database driver/path/size",
+    "download database.sqlite",
+    "open Adminer and phpMyAdmin",
+    "inspect logs and empty/error states",
+    "export to GitHub",
+    "download a .zip"
+  ]
+}
