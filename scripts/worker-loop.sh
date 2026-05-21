@@ -21,22 +21,31 @@ allocate_design() {
     set -euo pipefail
     next_file="$1"
     total="$2"
+    root="$3"
     if [[ ! -f "$next_file" ]]; then
       printf "1" > "$next_file"
     fi
     next="$(cat "$next_file")"
-    if (( next > total )); then
-      exit 10
-    fi
-    printf "%s" "$((next + 1))" > "$next_file"
-    printf "%s\n" "$next"
-  ' _ "$STATE_DIR/next_design.txt" "$TOTAL_DESIGNS"
+    while (( next <= total )); do
+      design_id="design-$(printf "%03d" "$next")"
+      if [[ ! -f "$root/designs/$design_id/manifest.json" ]]; then
+        printf "%s" "$((next + 1))" > "$next_file"
+        printf "%s\n" "$next"
+        exit 0
+      fi
+      next=$((next + 1))
+    done
+    printf "%s" "$next" > "$next_file"
+    exit 10
+  ' _ "$STATE_DIR/next_design.txt" "$TOTAL_DESIGNS" "$ROOT"
 }
 
 write_prompt() {
   local design_num="$1"
   local design_id="$2"
   local prompt_file="$3"
+  local brief
+  brief="$(node "$ROOT/scripts/design-brief.mjs" "$design_num")"
   cat > "$prompt_file" <<PROMPT
 You are worker ${WORKER_ID} producing ${design_id}, one of 100 independent WordPress Playground UI redesign explorations.
 
@@ -71,6 +80,11 @@ manifest.json must include:
 }
 
 Make ${design_id} meaningfully different from the other designs by choosing a distinct information architecture, navigation model, density, terminology strategy, or workflow emphasis. Do not produce a shallow restyle.
+
+Assigned redesign direction for this session:
+${brief}
+
+Treat the assigned direction as mandatory. If it conflicts with your first instinct, follow the assigned direction. Preserve all current Playground capabilities, but force the information architecture, visual model, and first viewport to match the assigned direction. Avoid defaulting to a generic three-pane operations console unless the assigned direction explicitly asks for that.
 PROMPT
 }
 
