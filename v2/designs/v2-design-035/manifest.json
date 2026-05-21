@@ -1,0 +1,51 @@
+{
+  "id": "v2-design-035",
+  "title": "Transfer Console Tabs",
+  "concept": "A responsive tabbed operations console that treats browser save, local directory save, GitHub import/export, ZIP import/download, database download, and Blueprint bundle actions as one transfer deck while keeping the live WordPress shell protected.",
+  "focus": [
+    "transfer-centered object model",
+    "responsive tabbed console",
+    "protected live WordPress preview",
+    "stateful browser save completion",
+    "Blueprint replacement with validation and warning",
+    "saved, local, and temporary storage consequences"
+  ],
+  "flows": [
+    "Finish Save in this browser from an unsaved state with destination choice, file-copy progress, saved-row insertion, active title and slug update, storage badge mutation, transfer history, and reset action changing to Save & Reload.",
+    "Save to a local directory as a distinct destination with folder permission language, sync progress, local identity, saved-row insertion, transfer history, and reconnect consequences.",
+    "Select a Blueprint from a labeled representative subset of the 43-entry gallery, inspect JSON, validate, warn about replacing current content, confirm, run progress, and update preview, path, database size, and transfer history.",
+    "Use transfer cards for GitHub import/export, ZIP import/download, database download, Blueprint copy/download/run, and current package history.",
+    "Manage saved, local, and temporary Playgrounds with open/manage, rename, delete confirmation, final row removal, and active fallback when needed.",
+    "Use Site Manager tabs for settings, files, Blueprint, database, logs, Export to GitHub, Download as zip, database download, Adminer, phpMyAdmin, and file editor dirty/save states."
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start",
+    "WordPress PR preview with PR number or URL",
+    "Gutenberg PR or branch preview with PR, URL, or branch input",
+    "GitHub import with account connection and token-not-stored consequence",
+    "Blueprint URL runner",
+    "Import .zip with native chooser framing and replacement warning",
+    "Blueprint gallery categories and search with representative subset labeled 6 shown of 43",
+    "Featured Blueprint shortcuts and selected Blueprint detail",
+    "Save in this browser",
+    "Save to a local directory",
+    "Save progress with file-copy counts",
+    "Saved and unsaved Playground list",
+    "Local-directory storage distinction and reconnect consequence",
+    "Open/manage, rename, delete confirmation, delete final state, and active fallback",
+    "Current shell path input and refresh",
+    "Homepage and WP Admin shortcuts",
+    "Temporary, browser-saved, and local-directory state badges",
+    "WordPress version, PHP version, language, older versions, network access, and multisite settings",
+    "Destructive Apply Settings & Reset Playground and stored Save & Reload behavior",
+    "Site Manager Settings, Files, Blueprint, Database, Logs, Export to GitHub, and Download as zip",
+    "Files create file, create folder, upload, browse files, selected editor, dirty state, save, and result state",
+    "Blueprint editor with URL, validation, copy, download bundle, run, replacement warning, progress, and result state",
+    "SQLite-backed database driver, path, size, database download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs with realistic notice and warning states",
+    "GitHub import and Export to GitHub",
+    "ZIP import and Download as zip",
+    "Database download and Blueprint bundle actions",
+    "Transfer history for saves, imports, exports, downloads, file edits, deletes, settings reloads, and Blueprint runs"
+  ]
+}
