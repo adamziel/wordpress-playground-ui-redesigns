@@ -799,6 +799,47 @@
     "path": "v2-design-020/index.html"
   },
   {
+    "id": "v2-design-021",
+    "number": 21,
+    "title": "Preview Lock Command Grid",
+    "concept": "A dense power-user command deck that keeps the live WordPress preview locked as the dominant workspace while readable command tiles expose Blueprint runs, runtime Save & Reload, save destinations, launch routes, Site Manager tools, saved management, and transfer history.",
+    "focus": [
+      "preview-protecting shell layout",
+      "dense command grid with readable keyboard-like affordances",
+      "stateful Blueprint replacement flow",
+      "settings Save & Reload consequences",
+      "shared active Playground object mutation"
+    ],
+    "featureCoverage": [
+      "Vanilla WordPress start route",
+      "WordPress PR preview input",
+      "Gutenberg PR or branch input",
+      "GitHub import with account connection and non-persistent token warning",
+      "Blueprint URL runner",
+      "Import .zip with native chooser, validation, and replacement warning",
+      "Blueprint gallery categories and search with representative subset labeled as 6 of 43",
+      "Featured Blueprint entries including Art Gallery, Coffee Shop, Feed Reader with the Friends Plugin, Gaming News, Non-profit Organization, and Personal Blog",
+      "Save in this browser with file-copy progress and slug identity",
+      "Save to a local directory with folder permission and reconnect consequence",
+      "Saved and unsaved Playground list",
+      "Open, rename, delete confirmation, confirmed delete, row removal, and temporary fallback",
+      "Current shell path input and refresh",
+      "Homepage and WP Admin shortcuts",
+      "Temporary, browser-saved, and local-directory storage distinctions",
+      "WordPress version, PHP version, language, older versions, network access, and multisite controls",
+      "Destructive temporary reset and stored Save & Reload behavior",
+      "File browser with create file, create folder, upload, browse files, selected editor, dirty state, save, and result state",
+      "Blueprint editor with URL, validation, copy link, download bundle, replacement confirmation, run progress, and result state",
+      "SQLite-backed database driver, path, size, database download, Adminer, and phpMyAdmin",
+      "Playground, WordPress, and PHP logs with realistic notice states",
+      "Export to GitHub with completion state",
+      "Download active Playground as .zip",
+      "Database download",
+      "Command history and transfer ledger for saves, Blueprint runs, imports, exports, downloads, deletes, settings reloads, and navigation"
+    ],
+    "path": "v2-design-021/index.html"
+  },
+  {
     "id": "v2-design-023",
     "number": 23,
     "title": "Saved Object Command Deck",

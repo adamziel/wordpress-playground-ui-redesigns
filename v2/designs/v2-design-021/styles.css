@@ -1,0 +1,1089 @@
+:root {
+  --black: #111315;
+  --ink: #17191c;
+  --muted: #68707a;
+  --line: #d9dde3;
+  --soft: #f2f4f7;
+  --panel: #ffffff;
+  --blue: #3655f2;
+  --blue-dark: #243dd6;
+  --green: #19b96c;
+  --yellow: #ffd94a;
+  --red: #c9362c;
+  --shadow: 0 18px 50px rgba(17, 19, 21, 0.16);
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--ink);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.shellbar {
+  min-height: 58px;
+  display: grid;
+  grid-template-columns: minmax(210px, 0.8fr) minmax(360px, 1.5fr) minmax(420px, 1fr);
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px;
+  background: #1d2227;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand,
+.shell-state,
+.path-stack,
+.preview-controls,
+.deck-title,
+.panel-head,
+.editor-head,
+.button-row,
+.tool-row,
+.row-actions {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  gap: 12px;
+  min-width: 0;
+}
+
+.brand strong,
+.deck-title h2,
+.preview-head h1,
+.panel-head h3,
+.route-card strong {
+  letter-spacing: 0;
+}
+
+.brand span:last-child {
+  display: block;
+  color: #b7c0cc;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  border: 2px solid #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  border-radius: 8px;
+}
+
+.path-stack {
+  gap: 8px;
+  min-width: 0;
+}
+
+.path-field {
+  flex: 1;
+  min-width: 120px;
+}
+
+.path-field input,
+.field input,
+.field select,
+.mini-field input,
+.search input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  min-height: 38px;
+  padding: 8px 10px;
+  background: #fff;
+  color: var(--ink);
+}
+
+.path-field input {
+  background: #3b434c;
+  border-color: #4a535d;
+  color: #fff;
+}
+
+.shell-state {
+  justify-content: flex-end;
+  gap: 8px;
+  min-width: 0;
+}
+
+.icon-text,
+.plain,
+.primary,
+.danger,
+.wp-button,
+.tool-row button,
+.row-actions button {
+  min-height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 7px 11px;
+  background: #fff;
+  color: var(--ink);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.shellbar .plain,
+.shellbar .icon-text {
+  background: transparent;
+  color: #f5f7f9;
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.primary {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  color: #141414;
+}
+
+.command-deck .primary,
+.wp-button {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+
+.danger {
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+}
+
+.compact {
+  min-height: 30px;
+  padding: 5px 9px;
+  font-size: 12px;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #e9eef5;
+  color: #24303c;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.status.warning {
+  background: #fff3b4;
+  color: #735500;
+}
+
+.status.success {
+  background: #dff8eb;
+  color: #08623a;
+}
+
+.status.danger {
+  background: #ffe4e2;
+  color: #8d2019;
+}
+
+.workspace {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(540px, 1.45fr) minmax(430px, 0.8fr);
+  gap: 12px;
+  padding: 12px;
+  min-height: 0;
+}
+
+.preview-lock {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.preview-head,
+.object-strip,
+.command-deck,
+.panel,
+.route-card,
+.saved-row,
+.consequence,
+.replace-warning,
+.progress-card,
+.local-box {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.preview-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px 16px;
+}
+
+.preview-head h1,
+.deck-title h2,
+.panel-head h3 {
+  margin: 2px 0 3px;
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.preview-head p,
+.deck-title p,
+.panel-head p,
+.route-card p,
+.result,
+.microcopy {
+  margin: 0;
+  color: var(--muted);
+}
+
+.eyebrow,
+.label {
+  margin: 0;
+  color: #707780;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.eyebrow.blue {
+  color: var(--blue);
+}
+
+.preview-controls {
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+#previewPath {
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-weight: 800;
+}
+
+.browser-frame {
+  flex: 1;
+  min-height: 520px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid #2b3035;
+  display: flex;
+  flex-direction: column;
+}
+
+.mini-browser,
+.wp-adminbar {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 32px;
+  padding: 0 12px;
+  background: #20262c;
+  color: #f8fafc;
+  font-size: 12px;
+}
+
+.mini-browser {
+  background: #111315;
+}
+
+.mini-browser strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #9aa5b1;
+}
+
+.wp-logo {
+  width: 23px;
+  height: 23px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  font-weight: 900;
+}
+
+.wp-adminbar button,
+.wp-nav button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+.push {
+  margin-left: auto;
+}
+
+.wp-nav {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0 28px;
+  color: #1a1d21;
+  border-bottom: 1px solid #eef0f3;
+}
+
+.wp-nav strong {
+  margin-right: auto;
+  font-size: 20px;
+}
+
+.wp-preview {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(300px, 1fr);
+  align-items: center;
+  gap: 24px;
+  padding: 44px 36px;
+  overflow: hidden;
+}
+
+.wp-copy {
+  max-width: 500px;
+  z-index: 1;
+}
+
+.wp-copy h2 {
+  margin: 8px 0 16px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 4vw, 56px);
+  line-height: 1.08;
+  font-weight: 400;
+}
+
+.wp-copy h2 span {
+  color: var(--blue);
+}
+
+.wp-copy p {
+  font-size: 20px;
+  line-height: 1.45;
+}
+
+.wp-copy mark {
+  display: inline;
+  margin-top: 14px;
+  background: #ffe983;
+  color: #111;
+  line-height: 1.4;
+}
+
+.wp-button {
+  display: block;
+  margin-top: 22px;
+  min-height: 44px;
+  min-width: 260px;
+}
+
+.wp-art {
+  position: relative;
+  min-height: 420px;
+}
+
+.green-loop {
+  position: absolute;
+  border: 48px solid #31e978;
+  border-radius: 50%;
+  width: 520px;
+  height: 260px;
+  right: -130px;
+}
+
+.green-loop.one {
+  top: 80px;
+}
+
+.green-loop.two {
+  top: 230px;
+}
+
+.wp-letter {
+  position: absolute;
+  top: 10px;
+  right: 60px;
+  width: 270px;
+  height: 270px;
+  border: 16px solid #1d1d1d;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: Georgia, serif;
+  font-size: 190px;
+  font-weight: 900;
+  color: #1d1d1d;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.object-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  overflow: hidden;
+}
+
+.object-strip div {
+  padding: 13px 15px;
+  background: #fff;
+  min-width: 0;
+}
+
+.object-strip strong,
+.object-strip small,
+.saved-row strong,
+.saved-row span {
+  display: block;
+}
+
+.object-strip strong,
+.object-strip small {
+  overflow-wrap: anywhere;
+}
+
+.object-strip small {
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.command-deck {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 82px);
+  overflow: hidden;
+}
+
+.deck-title,
+.panel-head {
+  justify-content: space-between;
+  gap: 10px;
+  padding: 13px 14px;
+}
+
+.deck-title {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+
+.command-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  padding: 10px;
+  background: #f7f8fa;
+  border-bottom: 1px solid var(--line);
+}
+
+.command-tile {
+  text-align: left;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fff;
+  min-height: 74px;
+  padding: 9px;
+}
+
+.command-tile.active {
+  border-color: var(--blue);
+  box-shadow: inset 0 0 0 1px var(--blue);
+}
+
+.command-tile strong,
+.command-tile small,
+.key {
+  display: block;
+}
+
+.command-tile strong {
+  margin: 5px 0 3px;
+}
+
+.command-tile small {
+  color: var(--muted);
+}
+
+.key {
+  width: max-content;
+  padding: 2px 6px;
+  border: 1px solid #cfd5de;
+  border-bottom-width: 3px;
+  border-radius: 5px;
+  background: #f4f6f8;
+  color: #27313c;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.panel {
+  display: none;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  border-width: 0;
+  border-radius: 0;
+}
+
+.panel.active {
+  display: block;
+}
+
+.gallery-tools,
+.blueprint-detail,
+.form-grid,
+.route-stack,
+.transfer-grid,
+.saved-list {
+  padding: 0 14px 14px;
+}
+
+.filter-row {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.filter-row button,
+.manager-tabs button {
+  min-height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  padding: 5px 10px;
+  font-weight: 800;
+}
+
+.filter-row button.active,
+.manager-tabs button.active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+
+.search span,
+.field span,
+.mini-field,
+.check-card {
+  display: block;
+}
+
+.search span,
+.field span,
+.mini-field {
+  font-size: 12px;
+  color: #5d6670;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.microcopy {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.blueprint-layout {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.65fr) minmax(240px, 1fr);
+  gap: 10px;
+  padding: 0 14px 14px;
+}
+
+.blueprint-list {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.blueprint-item {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fff;
+  padding: 9px;
+  text-align: left;
+}
+
+.blueprint-item.active {
+  border-color: var(--blue);
+  box-shadow: inset 0 0 0 1px var(--blue);
+}
+
+.blueprint-item strong,
+.blueprint-item span {
+  display: block;
+}
+
+.blueprint-item span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.blueprint-detail {
+  padding: 0;
+}
+
+.detail-card,
+.editor-card {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.detail-card h4 {
+  margin: 4px 0 6px;
+  font-size: 18px;
+}
+
+.detail-card p {
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+
+.tag-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tag-row span {
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: #47515d;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.editor-head {
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.editor-head span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+pre {
+  margin: 0;
+  max-height: 230px;
+  overflow: auto;
+  padding: 10px;
+  border-radius: 6px;
+  background: #111315;
+  color: #f9fafb;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.button-row,
+.tool-row {
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.replace-warning,
+.consequence,
+.progress-card,
+.local-box {
+  padding: 11px;
+  margin: 10px 0;
+}
+
+.replace-warning {
+  border-color: #f0b0aa;
+  background: #fff2f1;
+}
+
+.replace-warning p,
+.consequence span,
+.local-box span,
+.progress-card span,
+.result {
+  display: block;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.progress-card {
+  background: #f9fbff;
+}
+
+.progress-card > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.meter {
+  height: 8px;
+  border-radius: 999px;
+  background: #dfe4ea;
+  overflow: hidden;
+  margin-top: 9px;
+}
+
+.meter span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--blue);
+  transition: width 0.2s ease;
+}
+
+.result {
+  padding: 10px 14px 14px;
+  font-size: 13px;
+}
+
+.form-grid,
+.destination-grid,
+.transfer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.field {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.check-card,
+.destination,
+.transfer-grid button {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fff;
+  padding: 10px;
+  min-width: 0;
+}
+
+.destination.active {
+  border-color: var(--blue);
+  box-shadow: inset 0 0 0 1px var(--blue);
+}
+
+.check-card small,
+.destination small,
+.transfer-grid span,
+.route-card p {
+  display: block;
+  color: var(--muted);
+  margin-top: 3px;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.consequence {
+  background: #fff8d7;
+  border-color: #ead071;
+}
+
+.route-stack {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.route-card {
+  padding: 11px;
+}
+
+.route-card .plain {
+  margin-top: 9px;
+}
+
+.mini-field input {
+  margin-top: 5px;
+}
+
+.manager-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 0 14px 10px;
+}
+
+.manager-pane {
+  display: none;
+  padding: 0 14px 14px;
+}
+
+.manager-pane.active {
+  display: block;
+}
+
+.file-grid {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 10px;
+}
+
+.tree {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.tree strong,
+.tree button {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #edf0f3;
+  background: #fff;
+  text-align: left;
+  padding: 8px 9px;
+}
+
+.tree button.selected {
+  background: #eef4ff;
+  color: var(--blue);
+  font-weight: 800;
+}
+
+.data-list {
+  margin: 0 0 12px;
+}
+
+.data-list div {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  border-bottom: 1px solid var(--line);
+  padding: 8px 0;
+}
+
+.data-list dt {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.data-list dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.log-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.log-grid article {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 10px;
+  background: #fff;
+}
+
+.log-grid p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.saved-list {
+  display: grid;
+  gap: 8px;
+}
+
+.saved-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+}
+
+.saved-row.active {
+  border-color: var(--blue);
+  box-shadow: inset 4px 0 0 var(--blue);
+}
+
+.saved-row span {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.rename-box {
+  padding: 0 14px 14px;
+}
+
+.transfer-grid button {
+  text-align: left;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.history {
+  margin: 0;
+  padding: 0 14px 14px 34px;
+}
+
+.history li {
+  margin-bottom: 9px;
+}
+
+.history strong,
+.history span {
+  display: block;
+}
+
+.history span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (max-width: 1180px) {
+  .shellbar {
+    grid-template-columns: 1fr;
+  }
+
+  .shell-state,
+  .path-stack {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .command-deck {
+    max-height: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .workspace {
+    padding: 8px;
+  }
+
+  .preview-head,
+  .wp-nav,
+  .object-strip,
+  .saved-row,
+  .progress-card > div:first-child {
+    display: block;
+  }
+
+  .browser-frame {
+    min-height: 0;
+  }
+
+  .wp-preview {
+    grid-template-columns: 1fr;
+    padding: 24px 18px;
+  }
+
+  .wp-copy h2 {
+    font-size: 34px;
+  }
+
+  .wp-copy p {
+    font-size: 17px;
+  }
+
+  .wp-art {
+    min-height: 250px;
+  }
+
+  .green-loop {
+    right: -190px;
+    width: 420px;
+    height: 210px;
+    border-width: 34px;
+  }
+
+  .wp-letter {
+    right: 12px;
+    width: 180px;
+    height: 180px;
+    font-size: 120px;
+  }
+
+  .command-grid,
+  .blueprint-layout,
+  .form-grid,
+  .destination-grid,
+  .route-stack,
+  .file-grid,
+  .transfer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shellbar {
+    padding: 8px;
+  }
+
+  .path-stack > *,
+  .shell-state > * {
+    flex: 1 1 auto;
+  }
+
+  .path-field {
+    flex-basis: 100%;
+  }
+}

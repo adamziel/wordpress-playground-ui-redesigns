@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>v2-design-021 - Preview Lock Command Grid</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="app" data-storage="temporary">
+      <header class="shellbar" aria-label="Current Playground shell">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">P</span>
+          <div>
+            <strong>Playground</strong>
+            <span>Preview Lock Command Grid</span>
+          </div>
+        </div>
+
+        <div class="path-stack" aria-label="Active WordPress browser controls">
+          <button class="icon-text" type="button" id="refreshButton">Refresh</button>
+          <label class="path-field">
+            <span class="sr-only">Active WordPress path</span>
+            <input id="pathInput" value="/hello-from-playground/">
+          </label>
+          <button class="plain" type="button" data-path="/hello-from-playground/">Homepage</button>
+          <button class="plain" type="button" data-path="/wp-admin/">WP Admin</button>
+        </div>
+
+        <div class="shell-state" aria-live="polite">
+          <span class="status warning" id="shellStorage">Unsaved Playground</span>
+          <span class="status" id="shellRuntime">WP latest / PHP 8.3 / Network on</span>
+          <button class="primary" type="button" data-jump="save">Save</button>
+          <button class="plain compact" type="button" data-jump="library">Saved</button>
+          <button class="plain compact" type="button" data-jump="manager">Site Manager</button>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <section class="preview-lock" aria-label="Protected live WordPress preview">
+          <div class="preview-head">
+            <div>
+              <p class="eyebrow">Locked live preview</p>
+              <h1 id="activeTitle">Unsaved Playground</h1>
+              <p id="activeSubtitle">Temporary runtime. Refresh or reset discards files and database unless saved.</p>
+            </div>
+            <div class="preview-controls">
+              <span id="previewPath">/hello-from-playground/</span>
+              <span class="status warning" id="resetMode">Settings reset this temporary site</span>
+            </div>
+          </div>
+
+          <div class="browser-frame">
+            <div class="mini-browser">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <strong id="browserPath">playground.wordpress.net/hello-from-playground/</strong>
+              <span id="browserActivity">Live</span>
+            </div>
+            <div class="wp-adminbar">
+              <span class="wp-logo">W</span>
+              <span>My WordPress Website</span>
+              <button type="button" data-jump="manager">Edit Site</button>
+              <button type="button">0</button>
+              <button type="button">New</button>
+              <button type="button">Edit Page</button>
+              <span class="push">Howdy, admin</span>
+            </div>
+            <nav class="wp-nav" aria-label="WordPress site navigation">
+              <strong id="wpSiteTitle">My WordPress Website</strong>
+              <button type="button" data-path="/hello-from-playground/">Hello from WordPress Playground!</button>
+              <button type="button">Sample Page</button>
+            </nav>
+            <article class="wp-preview" id="previewSurface">
+              <div class="wp-copy">
+                <p class="eyebrow blue" id="previewKicker">Current WordPress page</p>
+                <h2 id="previewHeadline">Hello from <span>WordPress Playground!</span></h2>
+                <p id="previewText">This is Playground, a WordPress that runs client-side in your browser. It is ready for training, plugin demos, theme tests, and quick experiments.</p>
+                <mark id="previewMarker">Logged in as admin. This temporary Playground is not saved yet.</mark>
+                <button class="wp-button" type="button">Discover the mission behind Playground</button>
+              </div>
+              <div class="wp-art" aria-hidden="true">
+                <div class="green-loop one"></div>
+                <div class="green-loop two"></div>
+                <div class="wp-letter">W</div>
+              </div>
+            </article>
+          </div>
+
+          <div class="object-strip" aria-label="Active object state">
+            <div>
+              <span class="label">Storage</span>
+              <strong id="storageSummary">Temporary memory</strong>
+              <small id="storageDetail">Lost on close unless saved.</small>
+            </div>
+            <div>
+              <span class="label">Runtime</span>
+              <strong id="runtimeSummary">WordPress latest / PHP 8.3</strong>
+              <small id="runtimeDetail">English (US), network access on.</small>
+            </div>
+            <div>
+              <span class="label">Last result</span>
+              <strong id="lastResult">Booted Vanilla WordPress</strong>
+              <small id="lastResultDetail">Command results mutate this active preview.</small>
+            </div>
+          </div>
+        </section>
+
+        <aside class="command-deck" aria-label="Command deck">
+          <div class="deck-title">
+            <div>
+              <p class="eyebrow">Command grid</p>
+              <h2>Run, save, manage, transfer</h2>
+            </div>
+            <span class="status" id="deckResult">Blueprint lane ready</span>
+          </div>
+
+          <nav class="command-grid" aria-label="Command groups">
+            <button class="command-tile active" type="button" data-panel="blueprint">
+              <span class="key">Cmd B</span>
+              <strong>Blueprint run</strong>
+              <small id="tileBlueprint">Select and validate</small>
+            </button>
+            <button class="command-tile" type="button" data-panel="settings">
+              <span class="key">Cmd R</span>
+              <strong>Runtime settings</strong>
+              <small id="tileSettings">Reset or Save & Reload</small>
+            </button>
+            <button class="command-tile" type="button" data-panel="save">
+              <span class="key">Cmd S</span>
+              <strong>Save destinations</strong>
+              <small id="tileSave">Browser or local</small>
+            </button>
+            <button class="command-tile" type="button" data-panel="launch">
+              <span class="key">Cmd N</span>
+              <strong>Create routes</strong>
+              <small>PR, GitHub, URL, zip</small>
+            </button>
+            <button class="command-tile" type="button" data-panel="manager">
+              <span class="key">Cmd M</span>
+              <strong>Site Manager</strong>
+              <small>Files, DB, logs</small>
+            </button>
+            <button class="command-tile" type="button" data-panel="library">
+              <span class="key">Cmd L</span>
+              <strong>Saved Playgrounds</strong>
+              <small id="tileLibrary">2 rows</small>
+            </button>
+            <button class="command-tile" type="button" data-panel="transfers">
+              <span class="key">Cmd T</span>
+              <strong>Portability</strong>
+              <small>GitHub, zip, database</small>
+            </button>
+          </nav>
+
+          <section class="panel active" id="panel-blueprint" aria-labelledby="blueprint-title">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Primary flow</p>
+                <h3 id="blueprint-title">Blueprint gallery and editor</h3>
+              </div>
+              <span class="status warning" id="blueprintValidation">Not validated</span>
+            </div>
+
+            <div class="gallery-tools">
+              <div class="filter-row" aria-label="Blueprint categories">
+                <button class="active" type="button" data-category="All">All</button>
+                <button type="button" data-category="Featured">Featured</button>
+                <button type="button" data-category="Website">Website</button>
+                <button type="button" data-category="Personal">Personal</button>
+                <button type="button" data-category="Content">Content</button>
+                <button type="button" data-category="Themes">Themes</button>
+                <button type="button" data-category="Gutenberg">Gutenberg</button>
+                <button type="button" data-category="Experiments">Experiments</button>
+                <button type="button" data-category="WooCommerce">WooCommerce</button>
+                <button type="button" data-category="News">News</button>
+              </div>
+              <label class="search">
+                <span>Search 43 Blueprints</span>
+                <input id="blueprintSearch" value="" placeholder="Search by name or tag">
+              </label>
+              <p class="microcopy">Representative subset shown: 6 of 43 captured gallery entries.</p>
+            </div>
+
+            <div class="blueprint-layout">
+              <div class="blueprint-list" id="blueprintList" aria-label="Blueprint subset"></div>
+              <div class="blueprint-detail">
+                <div class="detail-card">
+                  <p class="eyebrow">Selected Blueprint</p>
+                  <h4 id="selectedBlueprintName">Feed Reader with the Friends Plugin</h4>
+                  <p id="selectedBlueprintDesc">Read feeds from the web in Playground using the Friends plugin.</p>
+                  <div class="tag-row" id="selectedBlueprintTags">
+                    <span>rss</span><span>social web</span>
+                  </div>
+                </div>
+
+                <label class="field">
+                  <span>Blueprint URL</span>
+                  <input id="blueprintUrl" value="https://playground.wordpress.net/blueprints/feed-reader.json">
+                </label>
+
+                <div class="editor-card">
+                  <div class="editor-head">
+                    <div>
+                      <strong>/blueprint.json</strong>
+                      <span id="blueprintEditorState">Clean. JSON has not been validated in this run.</span>
+                    </div>
+                    <button class="plain compact" type="button" id="markBlueprintDirty">Edit JSON</button>
+                  </div>
+                  <pre id="blueprintCode" tabindex="0"><code>{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/hello-from-playground/",
+  "preferredVersions": { "php": "8.3", "wp": "latest" },
+  "steps": [
+    { "step": "installPlugin", "pluginZipFile": "friends.zip" },
+    { "step": "runPHP", "code": "&lt;?php update_option('blogname','Feed Reader Lab');" }
+  ]
+}</code></pre>
+                </div>
+
+                <div class="button-row">
+                  <button class="plain" type="button" id="copyBlueprint">Copy link</button>
+                  <button class="plain" type="button" id="downloadBlueprint">Download bundle</button>
+                  <button class="primary" type="button" id="validateBlueprint">Validate JSON</button>
+                </div>
+
+                <div class="replace-warning" id="replaceWarning" hidden>
+                  <strong>Replace current Playground content?</strong>
+                  <p>Running this Blueprint rewrites files, database content, active path, and the preview shown on the left. Save first if you need the temporary site.</p>
+                  <div class="button-row">
+                    <button class="plain" type="button" id="cancelBlueprint">Cancel</button>
+                    <button class="danger" type="button" id="confirmBlueprint">Confirm replacement</button>
+                  </div>
+                </div>
+
+                <div class="progress-card" id="blueprintProgress" hidden>
+                  <div>
+                    <strong id="blueprintProgressTitle">Running Blueprint</strong>
+                    <span id="blueprintProgressText">Preparing steps</span>
+                  </div>
+                  <div class="meter"><span></span></div>
+                </div>
+                <p class="result" id="blueprintResult">Select a Blueprint, inspect JSON, validate, confirm replacement, then run against the active preview.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" id="panel-settings" aria-labelledby="settings-title">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Secondary flow</p>
+                <h3 id="settings-title">Settings Save & Reload</h3>
+              </div>
+              <span class="status warning" id="settingsDirty">Unsaved changes</span>
+            </div>
+            <div class="form-grid">
+              <label class="field">
+                <span>WordPress Version</span>
+                <select id="wpVersion">
+                  <option>latest</option>
+                  <option>6.8</option>
+                  <option>6.7</option>
+                  <option>6.6</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>PHP Version</span>
+                <select id="phpVersion">
+                  <option>8.3</option>
+                  <option>8.2</option>
+                  <option>8.1</option>
+                  <option>8.0</option>
+                  <option>7.4</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Language</span>
+                <select id="language">
+                  <option>English (United States)</option>
+                  <option>Polish</option>
+                  <option>Spanish</option>
+                  <option>German</option>
+                </select>
+              </label>
+              <label class="check-card">
+                <input type="checkbox" id="olderVersions">
+                <span><strong>Include older versions</strong><small>Shows older WordPress builds in version picker.</small></span>
+              </label>
+              <label class="check-card">
+                <input type="checkbox" id="networkAccess" checked>
+                <span><strong>Allow network access</strong><small>Permits remote requests from WordPress.</small></span>
+              </label>
+              <label class="check-card">
+                <input type="checkbox" id="multisite">
+                <span><strong>Create a multisite network</strong><small>Requires reset or stored reload.</small></span>
+              </label>
+            </div>
+            <div class="consequence" id="settingsConsequence">
+              <strong id="settingsConsequenceTitle">Temporary reset warning</strong>
+              <span id="settingsConsequenceText">This unsaved Playground will be replaced if settings are applied now. Save in browser or local directory to use Save & Reload instead.</span>
+            </div>
+            <div class="button-row">
+              <button class="danger" type="button" id="applyReset">Apply Settings & Reset Playground</button>
+              <button class="primary" type="button" id="saveReload">Save & Reload stored Playground</button>
+            </div>
+            <div class="progress-card" id="reloadProgress" hidden>
+              <div>
+                <strong id="reloadProgressTitle">Reloading runtime</strong>
+                <span id="reloadProgressText">Persisting configuration</span>
+              </div>
+              <div class="meter"><span></span></div>
+            </div>
+            <p class="result" id="settingsResult">Stored Playgrounds have limited configuration options and reload with the new runtime badge.</p>
+          </section>
+
+          <section class="panel" id="panel-save" aria-labelledby="save-title">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Save flows</p>
+                <h3 id="save-title">Choose storage destination</h3>
+              </div>
+              <span class="status" id="saveState">Ready</span>
+            </div>
+            <label class="field">
+              <span>Playground name</span>
+              <input id="saveName" value="Research Browser Playground">
+            </label>
+            <div class="destination-grid">
+              <label class="destination active">
+                <input type="radio" name="saveDestination" value="browser" checked>
+                <span><strong>Save in this browser</strong><small>Creates a browser-backed saved Playground and slug URL.</small></span>
+              </label>
+              <label class="destination">
+                <input type="radio" name="saveDestination" value="local">
+                <span><strong>Save to a local directory</strong><small>Uses the file system picker. Future reloads may need folder reconnection.</small></span>
+              </label>
+            </div>
+            <div class="local-box" id="localBox" hidden>
+              <strong>Folder permission granted</strong>
+              <span>Selected folder: ~/Sites/playground-labs/research-browser</span>
+            </div>
+            <div class="progress-card" id="saveProgress" hidden>
+              <div>
+                <strong id="saveProgressTitle">Saving 0 / 3751 files</strong>
+                <span id="saveProgressText">Copying WordPress files and database</span>
+              </div>
+              <div class="meter"><span></span></div>
+            </div>
+            <div class="button-row">
+              <button class="primary" type="button" id="startSave">Start save</button>
+              <button class="plain" type="button" id="cancelSave">Cancel</button>
+            </div>
+            <p class="result" id="saveResult">Browser save restores on this device. Local directory save exposes files outside the browser and may need permission after reload.</p>
+          </section>
+
+          <section class="panel" id="panel-launch" aria-labelledby="launch-title">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Start new Playground</p>
+                <h3 id="launch-title">Routes and real inputs</h3>
+              </div>
+              <span class="status">Replacement-aware</span>
+            </div>
+            <div class="route-stack">
+              <article class="route-card">
+                <strong>Vanilla WordPress</strong>
+                <p>Fresh latest WordPress install, logged in as admin.</p>
+                <button type="button" class="plain" id="startVanilla">Start fresh</button>
+              </article>
+              <article class="route-card">
+                <strong>WordPress PR</strong>
+                <label class="mini-field">PR number or URL <input value="https://github.com/WordPress/wordpress-develop/pull/7821"></label>
+                <button type="button" class="plain">Preview WordPress PR</button>
+              </article>
+              <article class="route-card">
+                <strong>Gutenberg PR or branch</strong>
+                <label class="mini-field">PR, URL, or branch <input value="trunk"></label>
+                <button type="button" class="plain">Preview Gutenberg</button>
+              </article>
+              <article class="route-card">
+                <strong>From GitHub</strong>
+                <p>Connect account to import plugins, themes, or wp-content. Token is not stored after refresh.</p>
+                <button type="button" class="plain" id="connectGithub">Connect GitHub account</button>
+              </article>
+              <article class="route-card">
+                <strong>Blueprint URL</strong>
+                <label class="mini-field">Blueprint URL <input value="https://example.com/blueprint.json"></label>
+                <button type="button" class="plain" data-jump="blueprint">Inspect in Blueprint lane</button>
+              </article>
+              <article class="route-card">
+                <strong>Import .zip</strong>
+                <p>Opens native file chooser, validates archive, warns before replacing files and database.</p>
+                <button type="button" class="plain" id="importZip">Choose .zip</button>
+              </article>
+            </div>
+            <p class="result" id="launchResult">Starting or importing over an unsaved Playground requires replacement confirmation.</p>
+          </section>
+
+          <section class="panel" id="panel-manager" aria-labelledby="manager-title">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Site Manager</p>
+                <h3 id="manager-title">Files, Blueprint, Database, Logs</h3>
+              </div>
+              <span class="status" id="managerState">Files selected</span>
+            </div>
+            <div class="manager-tabs" aria-label="Site Manager tabs">
+              <button class="active" type="button" data-manager="files">Files</button>
+              <button type="button" data-manager="blueprintTools">Blueprint</button>
+              <button type="button" data-manager="database">Database</button>
+              <button type="button" data-manager="logs">Logs</button>
+              <button type="button" data-manager="settingsMirror">Settings</button>
+            </div>
+            <div class="manager-pane active" id="manager-files">
+              <div class="tool-row">
+                <button type="button" id="newFile">New File</button>
+                <button type="button" id="newFolder">New Folder</button>
+                <button type="button" id="uploadFile">Upload</button>
+                <button type="button" id="browseFiles">Browse files</button>
+              </div>
+              <div class="file-grid">
+                <div class="tree">
+                  <strong>FILES</strong>
+                  <button class="selected" type="button">/wordpress</button>
+                  <button type="button">wp-admin</button>
+                  <button type="button">wp-content</button>
+                  <button type="button">wp-includes</button>
+                  <button type="button">wp-config.php</button>
+                  <button type="button">index.php</button>
+                </div>
+                <div class="editor-card">
+                  <div class="editor-head">
+                    <div>
+                      <strong>/wordpress/wp-config.php</strong>
+                      <span id="fileState">Dirty: CONCATENATE_SCRIPTS changed</span>
+                    </div>
+                    <button class="primary compact" type="button" id="saveFile">Save file</button>
+                  </div>
+                  <pre><code>1  &lt;?php define('CONCATENATE_SCRIPTS', false);
+2  /** The base configuration for WordPress. */
+3  define('DB_NAME', 'database_name_here');
+4  define('DB_USER', 'username_here');
+5  define('DB_PASSWORD', 'password_here');
+6  define('DB_HOST', 'localhost');
+7  define('DB_CHARSET', 'utf8mb4');</code></pre>
+                </div>
+              </div>
+            </div>
+            <div class="manager-pane" id="manager-blueprintTools">
+              <p>Current bundle: <strong>/blueprint.json</strong>. Actions: copy link, download bundle, validate, and run Blueprint with the replacement warning in the Blueprint lane.</p>
+              <div class="tool-row">
+                <button type="button" id="copyManagerBlueprint">Copy link</button>
+                <button type="button" id="downloadManagerBlueprint">Download bundle</button>
+                <button type="button" data-jump="blueprint">Open run controls</button>
+              </div>
+            </div>
+            <div class="manager-pane" id="manager-database">
+              <dl class="data-list">
+                <div><dt>Database driver</dt><dd>MySQL emulation backed by SQLite</dd></div>
+                <div><dt>SQLite database path</dt><dd>/wordpress/wp-content/database/.ht.sqlite</dd></div>
+                <div><dt>Size</dt><dd id="dbSize">452 KB</dd></div>
+              </dl>
+              <div class="tool-row">
+                <button type="button" id="downloadDb">Download database.sqlite</button>
+                <button type="button" id="openAdminer">Open Adminer</button>
+                <button type="button" id="openPhpMyAdmin">Open phpMyAdmin</button>
+              </div>
+            </div>
+            <div class="manager-pane" id="manager-logs">
+              <div class="log-grid">
+                <article><strong>Playground log</strong><p>No problems so far.</p></article>
+                <article><strong>WordPress log</strong><p>Notice: REST preload skipped for /wp/v2/types after Blueprint run.</p></article>
+                <article><strong>PHP log</strong><p>Deprecated notice in demo plugin, non-blocking.</p></article>
+              </div>
+            </div>
+            <div class="manager-pane" id="manager-settingsMirror">
+              <p>Settings mirror the Runtime lane. Stored Playgrounds use Save & Reload; temporary Playgrounds reset destructively.</p>
+              <button class="plain" type="button" data-jump="settings">Open settings controls</button>
+            </div>
+            <p class="result" id="managerResult">File editor has dirty state. Save to record a result in the active object.</p>
+          </section>
+
+          <section class="panel" id="panel-library" aria-labelledby="library-title">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Saved Playgrounds</p>
+                <h3 id="library-title">Open, rename, delete</h3>
+              </div>
+              <span class="status" id="libraryState">Unsaved included</span>
+            </div>
+            <div class="saved-list" id="savedList">
+              <article class="saved-row active" data-row="unsaved">
+                <div>
+                  <strong>Unsaved Playground</strong>
+                  <span>Temporary memory, current active preview</span>
+                </div>
+                <div class="row-actions"><button type="button">Open</button><button type="button" data-delete="unsaved">Reset</button></div>
+              </article>
+              <article class="saved-row" data-row="research">
+                <div>
+                  <strong>Research Browser Playground</strong>
+                  <span>Saved in browser, created May 21, 2026</span>
+                </div>
+                <div class="row-actions"><button type="button" data-open="research">Open</button><button type="button" data-rename="research">Rename</button><button type="button" data-delete="research">Delete</button></div>
+              </article>
+            </div>
+            <div class="rename-box" id="renameBox" hidden>
+              <label class="field">
+                <span>New saved Playground name</span>
+                <input id="renameInput" value="Research Browser Playground">
+              </label>
+              <button class="primary" type="button" id="confirmRename">Apply rename</button>
+            </div>
+            <div class="replace-warning" id="deleteBox" hidden>
+              <strong>Delete saved Playground?</strong>
+              <p>This removes the saved browser copy. If it is active, the shell falls back to the temporary Playground.</p>
+              <div class="button-row">
+                <button class="plain" type="button" id="cancelDelete">Cancel</button>
+                <button class="danger" type="button" id="confirmDelete">Confirm delete</button>
+              </div>
+            </div>
+            <p class="result" id="libraryResult">Saved and unsaved rows share the same active preview state.</p>
+          </section>
+
+          <section class="panel" id="panel-transfers" aria-labelledby="transfer-title">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Portability</p>
+                <h3 id="transfer-title">Import, export, download</h3>
+              </div>
+              <span class="status" id="transferState">Idle</span>
+            </div>
+            <div class="transfer-grid">
+              <button type="button" id="githubExport"><strong>Export to GitHub</strong><span>Connect account, choose repository, push bundle.</span></button>
+              <button type="button" id="zipDownload"><strong>Download as .zip</strong><span>Package active files and database.</span></button>
+              <button type="button" id="zipImport"><strong>Import .zip</strong><span>Native chooser, validate, replacement warning.</span></button>
+              <button type="button" id="databaseDownload"><strong>Download database.sqlite</strong><span>SQLite-backed database export.</span></button>
+            </div>
+            <ol class="history" id="historyList">
+              <li><strong>Boot</strong><span>Vanilla WordPress started in temporary memory.</span></li>
+            </ol>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
