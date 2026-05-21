@@ -1,0 +1,49 @@
+{
+  "id": "v2-design-010",
+  "title": "Command Search Cockpit",
+  "concept": "A live-browser-first Playground cockpit where command search is the discovery layer and the right inspector executes grouped commands with route-specific forms, consequences, progress, and final state mutations.",
+  "focus": [
+    "command search discovery",
+    "large protected WordPress browser",
+    "right inspector command forms",
+    "stateful save and replacement flows",
+    "shared active Playground object mutations"
+  ],
+  "flows": [
+    "Search for a command, review grouped results, select Save in this browser, run progress, and update shell title, path slug, storage badge, saved row, settings consequence, preview state, and transfer history",
+    "Import a ZIP over the current Playground with source selection, invalid-file failure, replacement warning, progress, successful active identity update, path change, storage badge mutation, preview update, and transfer history",
+    "Save to a local directory with folder permission copy, distinct storage identity, local saved row metadata, and reload/reconnect consequence",
+    "Create from Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, and ZIP import through command-specific forms with constraints and progress",
+    "Manage saved, local, imported, and temporary Playgrounds with open, manage, rename, delete confirmation, delete cancellation, final row removal, and active fallback",
+    "Use Site Manager settings, files, Blueprint, database, logs, Export to GitHub, Download as zip, database download, and Blueprint bundle actions while the live browser remains visible"
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start",
+    "WordPress PR preview",
+    "Gutenberg PR or branch preview",
+    "GitHub import with account connection and token caveat",
+    "Blueprint URL runner",
+    "Import .zip with validation, replacement warning, failure state, progress, and success state",
+    "Blueprint gallery categories and search-discovered tools with an honest representative subset of 43 entries",
+    "Featured Blueprint shortcuts including Art Gallery, Coffee Shop, Friends feed reader, Gaming News, Non-profit Organization, and Personal Blog",
+    "Save temporary Playground in browser storage",
+    "Save to a local directory",
+    "Browser and local save progress states",
+    "Saved, local-directory, imported, and unsaved Playground differences",
+    "Saved and unsaved Playground list",
+    "Open, manage, rename, delete confirmation, delete cancellation, row removal, and active fallback",
+    "Current shell path input and refresh",
+    "Homepage and WP Admin shortcuts",
+    "Temporary, saved, local-directory, GitHub import, and ZIP import storage badges",
+    "WordPress, PHP, language, older versions, network, and multisite settings",
+    "Destructive temporary reset and stored Save & Reload behavior",
+    "File browser with create file, create folder, upload, browse files, selected editor, dirty state, save progress, and result state",
+    "Blueprint URL, gallery categories, selected representative entries, editor, validation, copy, download, run, and result states",
+    "SQLite database driver, path, size, database download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs with warning state",
+    "Export to GitHub with connection and repository destination",
+    "Download active Playground as .zip",
+    "Portability actions for GitHub import/export, ZIP import/download, database download, and Blueprint bundle copy/download",
+    "Transfer history that records imports, exports, downloads, saves, file saves, Blueprint runs, settings reloads, and deletes"
+  ]
+}
