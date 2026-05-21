@@ -4346,5 +4346,51 @@
       "download as .zip"
     ],
     "path": "design-096/index.html"
+  },
+  {
+    "id": "design-098",
+    "number": 98,
+    "title": "Playground Tab Matrix",
+    "concept": "A high-density tabbed project workspace for power users managing several Playgrounds at once, with project tabs across the shell, within-project tabs for Site Manager tools, and a split editor plus WordPress preview.",
+    "focus": [
+      "project tabs for multiple saved, unsaved, local-directory, and Blueprint-backed Playgrounds",
+      "within-project tabs for site, files, blueprints, database, logs, and settings",
+      "split preview and editor workspace",
+      "distinct launch routes with their real inputs and consequences",
+      "separate browser-storage and local-directory save destinations"
+    ],
+    "featureCoverage": [
+      "create a vanilla Playground",
+      "create from WordPress PR",
+      "create from Gutenberg PR or branch",
+      "import from GitHub after account connection",
+      "run a Blueprint URL",
+      "import a .zip",
+      "browse and filter Blueprint gallery entries",
+      "select featured blueprint shortcuts",
+      "save temporary Playground in browser storage",
+      "save to a local directory",
+      "see save progress",
+      "browse saved and unsaved Playgrounds",
+      "rename a saved Playground",
+      "delete a saved Playground",
+      "navigate active WordPress paths with URL input",
+      "refresh the active embedded WordPress page",
+      "open Homepage and WP Admin",
+      "edit WordPress, PHP, and language settings",
+      "include older WordPress versions",
+      "allow network access",
+      "create a multisite network",
+      "understand destructive reset and reload behavior",
+      "use File browser with create folder, create file, upload, browse, and code editing affordances",
+      "view, copy, download, and run the current Blueprint bundle",
+      "inspect database driver, path, and size",
+      "download database.sqlite",
+      "open Adminer and phpMyAdmin",
+      "inspect logs and empty states",
+      "export to GitHub",
+      "download a .zip"
+    ],
+    "path": "design-098/index.html"
   }
 ]
