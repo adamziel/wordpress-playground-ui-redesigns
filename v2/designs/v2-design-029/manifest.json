@@ -1,0 +1,47 @@
+{
+  "id": "v2-design-029",
+  "title": "Support Diagnostics Command Deck",
+  "concept": "A dense support diagnostics console that keeps the live WordPress shell protected while status, logs, database details, transfer history, launch contracts, save destinations, and destructive management flows mutate one active Playground object.",
+  "focus": [
+    "support diagnostics and realistic warnings",
+    "dense command deck with readable accelerators",
+    "protected live WordPress shell",
+    "stateful destructive delete fallback",
+    "PR and branch preview lifecycle",
+    "database, logs, and transfer history prominence"
+  ],
+  "flows": [
+    "Delete the active saved Playground end to end with warning, cancel option, typed confirmation, progress, row removal, transfer history, and fallback to an Unsaved Playground in the live shell",
+    "Preview a Gutenberg PR or branch end to end with route-specific input, validation, loading, resulting preview identity, path mutation, saved row mutation, and save/export availability",
+    "Save the active Playground in browser storage or to a local directory with distinct destination consequences, folder permission state, progress, active identity mutation, and saved management row updates",
+    "Create or import using Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import with account connection, Blueprint URL, and ZIP import with real inputs and constraints",
+    "Use Site Manager Settings, Files, Blueprint, Database, Logs, Export to GitHub, and Download as zip while the live preview remains visible",
+    "Inspect database driver, SQLite path and size, download database.sqlite, open Adminer and phpMyAdmin, and record the results in diagnostics history",
+    "Browse a labeled representative subset of the 43 Blueprint gallery entries with categories, search, selected detail, Blueprint URL, editor, copy, download, run, validation, and result states",
+    "Run portability actions for GitHub import/export, ZIP import/download, database download, and Blueprint bundle downloads with visible transfer history"
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start route",
+    "WordPress PR preview route with PR number or URL",
+    "Gutenberg PR or branch preview route with validation, loading, result identity, and save/export unlock",
+    "GitHub import with account connection and non-persistent token warning",
+    "Blueprint URL runner with validation and replacement consequence",
+    "Import .zip with native chooser model, validation, and replacement warning",
+    "Blueprint gallery categories and search with honest representative subset of 43",
+    "Featured Blueprint shortcuts including Art Gallery, Coffee Shop, Feed Reader with the Friends Plugin, Gaming News, Non-profit Organization, and Personal Blog",
+    "Save in this browser with file-copy progress and browser slug identity",
+    "Save to a local directory with folder picker, cancellation, permission grant, folder identity, and reconnect consequence",
+    "Saved, local-directory, preview, and unsaved Playground rows",
+    "Open, manage, rename, delete warning, delete cancel, typed confirmation, delete progress, row removal, and active fallback",
+    "Current shell path input, refresh, Homepage, WP Admin, temporary/saved/local state, Save, and reset/reload consequences",
+    "Site Manager Settings, Files, Blueprint, Database, Logs, Export to GitHub, and Download as zip",
+    "Files create file, create folder, upload, browse files, selected wp-config.php editor, dirty state, save, and result state",
+    "Blueprint editor, Blueprint URL, copy link, download bundle, run, validation, warning, progress, and result state",
+    "SQLite-backed database driver, path, size, database download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs with realistic PHP notice warning",
+    "GitHub import and export",
+    "ZIP import and ZIP download",
+    "Database download and Blueprint bundle portability actions",
+    "Transfer history for saves, PR previews, deletes, resets, file edits, Blueprint runs, database downloads, ZIP actions, and GitHub transfers"
+  ]
+}
