@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design 082 - Playground Saved Sites Library</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">WP</span>
+        <div>
+          <strong>Playground Library</strong>
+          <span>Saved sites first. Launch, inspect, reload, export.</span>
+        </div>
+      </div>
+      <div class="top-actions" aria-label="Global actions">
+        <button class="ghost">Command /</button>
+        <button class="ghost">Settings</button>
+        <button class="primary">New Playground</button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <aside class="library-panel panel" data-mobile-view="library">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Library</p>
+            <h1>Playgrounds</h1>
+          </div>
+          <span class="count">4 total</span>
+        </div>
+
+        <label class="search">
+          <span>Search</span>
+          <input type="search" value="plugin" aria-label="Search saved Playgrounds">
+        </label>
+
+        <div class="state-strip">
+          <button class="chip active">All</button>
+          <button class="chip">Temporary</button>
+          <button class="chip">Browser</button>
+          <button class="chip">Local dir</button>
+        </div>
+
+        <section class="site-list" aria-label="Saved and unsaved Playgrounds">
+          <article class="site-card selected">
+            <div class="site-icon">WP</div>
+            <div>
+              <strong>Unsaved Plugin Sandbox</strong>
+              <span class="muted">Temporary, lost on refresh or close</span>
+              <div class="tags">
+                <span>PHP 8.3</span>
+                <span>WP latest</span>
+                <span>Network on</span>
+              </div>
+            </div>
+            <span class="status warn">Unsaved</span>
+          </article>
+          <article class="site-card">
+            <div class="site-icon dark">WP</div>
+            <div>
+              <strong>Research Browser Playground</strong>
+              <span class="muted">Saved in this browser a moment ago</span>
+              <div class="tags">
+                <span>/hello-from-playground/</span>
+                <span>Browser</span>
+              </div>
+            </div>
+            <span class="status ok">Saved</span>
+          </article>
+          <article class="site-card">
+            <div class="site-icon files">DIR</div>
+            <div>
+              <strong>Blocks QA Local Mirror</strong>
+              <span class="muted">Saved to ~/Sites/playground-blocks</span>
+              <div class="tags">
+                <span>Local directory</span>
+                <span>Multisite</span>
+              </div>
+            </div>
+            <span class="status ok">Mounted</span>
+          </article>
+          <article class="site-card danger-line">
+            <div class="site-icon">TMP</div>
+            <div>
+              <strong>Imported Theme Review</strong>
+              <span class="muted">Zip imported over current temporary site</span>
+              <div class="tags">
+                <span>import-result.zip</span>
+                <span>Needs save</span>
+              </div>
+            </div>
+            <span class="status warn">Changed</span>
+          </article>
+        </section>
+
+        <section class="library-actions">
+          <button class="secondary" data-open="rename">Rename selected</button>
+          <button class="danger" data-open="delete">Delete selected</button>
+        </section>
+      </aside>
+
+      <section class="launch-panel panel" data-mobile-view="start">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Start or Import</p>
+            <h2>Source workbench</h2>
+          </div>
+          <span class="count">Route specific</span>
+        </div>
+
+        <div class="route-grid" role="tablist" aria-label="Start routes">
+          <button class="route-card active" data-route="vanilla">
+            <strong>Vanilla WordPress</strong>
+            <span>Fresh latest install, logged in as admin.</span>
+          </button>
+          <button class="route-card" data-route="wordpress-pr">
+            <strong>WordPress PR</strong>
+            <span>Requires PR number or wordpress-develop URL.</span>
+          </button>
+          <button class="route-card" data-route="gutenberg-pr">
+            <strong>Gutenberg PR / Branch</strong>
+            <span>Accepts PR number, URL, or branch name.</span>
+          </button>
+          <button class="route-card" data-route="github">
+            <strong>From GitHub</strong>
+            <span>Connect account, import plugin/theme/wp-content.</span>
+          </button>
+          <button class="route-card" data-route="blueprint-url">
+            <strong>Blueprint URL</strong>
+            <span>Run a remote blueprint JSON file.</span>
+          </button>
+          <button class="route-card" data-route="zip">
+            <strong>Import .zip</strong>
+            <span>Native file picker; may replace current site files.</span>
+          </button>
+        </div>
+
+        <div class="route-detail" id="route-detail">
+          <div class="route-copy">
+            <p class="eyebrow">Selected route</p>
+            <h3>Vanilla WordPress</h3>
+            <p>Creates a fresh temporary Playground using the selected WordPress, PHP, language, network, and multisite settings.</p>
+          </div>
+          <div class="form-grid">
+            <label>
+              WordPress version
+              <select>
+                <option>latest</option>
+                <option>6.5</option>
+                <option>6.4</option>
+              </select>
+            </label>
+            <label>
+              PHP version
+              <select>
+                <option>8.3</option>
+                <option>8.2</option>
+                <option>8.1</option>
+              </select>
+            </label>
+            <label class="checkline"><input type="checkbox" checked> Allow network access</label>
+            <label class="checkline"><input type="checkbox"> Create multisite network</label>
+          </div>
+          <button class="primary wide" id="launch-action">Start fresh Playground</button>
+        </div>
+
+        <div class="save-flow">
+          <div class="save-title">
+            <div>
+              <p class="eyebrow">Save temporary site</p>
+              <h3>Choose destination</h3>
+            </div>
+            <span class="status warn">Unsaved</span>
+          </div>
+          <div class="save-options">
+            <button class="save-option" data-save="browser">
+              <strong>Save in this browser</strong>
+              <span>Copies Playground files into browser storage and creates a site slug.</span>
+            </button>
+            <button class="save-option" data-save="local">
+              <strong>Save to a local directory</strong>
+              <span>Prompts for a folder and writes files to the selected directory.</span>
+            </button>
+          </div>
+          <div class="progress-card" id="save-result">
+            <span class="muted">Destination not selected yet.</span>
+            <div class="progress"><span style="width: 0%"></span></div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="detail-panel panel" data-mobile-view="site">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Selected Playground</p>
+            <h2>Unsaved Plugin Sandbox</h2>
+          </div>
+          <span class="status warn">Temporary</span>
+        </div>
+
+        <div class="identity-card">
+          <label>
+            Display name
+            <input value="Unsaved Plugin Sandbox" aria-label="Display name">
+          </label>
+          <div class="identity-actions">
+            <button class="secondary" id="rename-button">Apply rename</button>
+            <button class="danger" id="delete-button">Delete...</button>
+          </div>
+          <p id="identity-result" class="notice">Renaming is available after saving; delete will remove the current temporary session.</p>
+        </div>
+
+        <div class="browser-bar">
+          <button aria-label="Refresh current WordPress page">R</button>
+          <input value="/hello-from-playground/" aria-label="Current WordPress path">
+          <button>WP Admin</button>
+          <button>Homepage</button>
+        </div>
+
+        <section class="preview-card">
+          <div class="preview-toolbar">
+            <span>Live site frame</span>
+            <span class="muted">Secondary until a site is selected</span>
+          </div>
+          <div class="wp-preview">
+            <div class="wp-adminbar">My WordPress Website | Edit Site | New | Howdy, admin</div>
+            <div class="wp-page">
+              <strong>Hello from WordPress Playground!</strong>
+              <p>This preview keeps path navigation visible while the library remains the main workspace.</p>
+              <button>Discover the mission behind Playground</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="export-card">
+          <p class="eyebrow">Additional actions</p>
+          <div class="two-buttons">
+            <button>Export to GitHub</button>
+            <button>Download .zip</button>
+          </div>
+          <p class="notice success" id="import-result">Last import: theme-review.zip replaced wp-content and needs a save.</p>
+        </section>
+      </aside>
+
+      <section class="manager-panel panel" data-mobile-view="tools">
+        <div class="manager-head">
+          <div>
+            <p class="eyebrow">Site Manager</p>
+            <h2>Tools for the selected Playground</h2>
+          </div>
+          <div class="manager-tabs" role="tablist">
+            <button class="active" data-tab="settings">Settings</button>
+            <button data-tab="files">Files</button>
+            <button data-tab="blueprint">Blueprint</button>
+            <button data-tab="database">Database</button>
+            <button data-tab="logs">Logs</button>
+            <button data-tab="gallery">Blueprints</button>
+          </div>
+        </div>
+
+        <div class="tab-content active" id="settings">
+          <div class="settings-grid">
+            <label>WordPress version<select><option>latest</option><option>include older versions...</option><option>6.3</option></select></label>
+            <label>PHP version<select><option>8.3</option><option>8.2</option><option>8.1</option></select></label>
+            <label>Language<select><option>English (United States)</option><option>Polish</option><option>Spanish</option></select></label>
+            <label class="checkline"><input type="checkbox"> Include older WordPress versions</label>
+            <label class="checkline"><input type="checkbox" checked> Allow network access</label>
+            <label class="checkline"><input type="checkbox"> Create a multisite network</label>
+          </div>
+          <div class="destructive-box">
+            <strong>Reset and reload consequence</strong>
+            <p>Applying settings to this temporary Playground destroys the current site and starts again. A saved browser site uses Save & Reload with limited configuration options.</p>
+            <button class="danger" id="reset-button">Apply Settings & Reset Playground</button>
+            <button class="secondary">Save & Reload saved Playground</button>
+            <span id="reset-result" class="notice"></span>
+          </div>
+        </div>
+
+        <div class="tab-content" id="files">
+          <div class="ide-grid">
+            <div class="file-tree">
+              <div class="file-actions">
+                <button>New File</button>
+                <button>New Folder</button>
+                <button>Upload</button>
+                <button>Browse files</button>
+              </div>
+              <ul>
+                <li class="open">/wordpress</li>
+                <li>wp-admin</li>
+                <li>wp-content</li>
+                <li>wp-includes</li>
+                <li>index.php</li>
+                <li class="selected-file">wp-config.php</li>
+              </ul>
+            </div>
+            <pre class="code-pane"><code>define('DB_NAME', 'database_name_here');
+define('DB_USER', 'username_here');
+define('DB_PASSWORD', 'password_here');
+define('DB_HOST', 'localhost');
+
+/* Stop editing and start building plugins. */</code></pre>
+          </div>
+        </div>
+
+        <div class="tab-content" id="blueprint">
+          <div class="ide-grid">
+            <div class="file-tree compact">
+              <div class="file-actions">
+                <button>Create file</button>
+                <button>Create folder</button>
+                <button>Upload</button>
+                <button>Browse</button>
+              </div>
+              <ul><li class="selected-file">blueprint.json</li></ul>
+              <div class="stack-actions">
+                <button>Copy link</button>
+                <button>Download bundle</button>
+                <button class="primary">Run Blueprint</button>
+              </div>
+            </div>
+            <pre class="code-pane json"><code>{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/hello-from-playground/",
+  "login": true,
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "latest"
+  }
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="tab-content" id="database">
+          <div class="database-card">
+            <strong>Database management is an early access feature</strong>
+            <p>WordPress Playground emulates MySQL using SQLite. Database tools are improving every week.</p>
+            <dl>
+              <dt>Database driver</dt><dd>MySQL emulation backed by SQLite</dd>
+              <dt>SQLite database path</dt><dd>/wordpress/wp-content/database/.ht.sqlite</dd>
+              <dt>Size</dt><dd>452 KB</dd>
+            </dl>
+            <div class="two-buttons">
+              <button>Download database.sqlite</button>
+              <button>Open Adminer</button>
+              <button>Open phpMyAdmin</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-content" id="logs">
+          <div class="log-grid">
+            <pre>[playground] No problems so far.</pre>
+            <pre>[wordpress] Notice: plugin test completed.</pre>
+            <pre>[php] No fatal errors.</pre>
+          </div>
+        </div>
+
+        <div class="tab-content" id="gallery">
+          <div class="gallery-tools">
+            <div class="state-strip">
+              <button class="chip active">All</button>
+              <button class="chip">Featured</button>
+              <button class="chip">Website</button>
+              <button class="chip">Personal</button>
+              <button class="chip">Content</button>
+              <button class="chip">Themes</button>
+              <button class="chip">Gutenberg</button>
+              <button class="chip">Experiments</button>
+              <button class="chip">WooCommerce</button>
+              <button class="chip">News</button>
+            </div>
+            <label class="search">
+              <span>Search 43 blueprints</span>
+              <input type="search" value="feed" aria-label="Search blueprints">
+            </label>
+          </div>
+          <div class="blueprint-layout">
+            <div class="blueprint-grid">
+              <article><div class="thumb art"></div><strong>Art Gallery</strong><span>Website, Personal</span></article>
+              <article><div class="thumb coffee"></div><strong>Coffee Shop</strong><span>WooCommerce, Store</span></article>
+              <article class="selected"><div class="thumb feed"></div><strong>Feed Reader with the Friends Plugin</strong><span>rss, social web</span></article>
+              <article><div class="thumb game"></div><strong>Gaming News</strong><span>Website, News</span></article>
+              <article><div class="thumb nonprofit"></div><strong>Non-profit Organization</strong><span>Website, Organization</span></article>
+              <article><div class="thumb blog"></div><strong>Personal Blog</strong><span>Personal, Content</span></article>
+              <article><div class="thumb theme"></div><strong>Theme Preview</strong><span>Themes, Gutenberg</span></article>
+              <article><div class="thumb experiment"></div><strong>Block Hooks Lab</strong><span>Experiments, Gutenberg</span></article>
+            </div>
+            <aside class="blueprint-detail">
+              <p class="eyebrow">Selected blueprint</p>
+              <h3>Feed Reader with the Friends Plugin</h3>
+              <p>Installs the Friends plugin, loads a feed-reading demo, and opens the main feed page after launch.</p>
+              <dl>
+                <dt>Category</dt><dd>Content, social web</dd>
+                <dt>Run mode</dt><dd>Creates a new Playground</dd>
+                <dt>Inspection</dt><dd>View blueprint JSON before running</dd>
+              </dl>
+              <button class="secondary">Inspect JSON</button>
+              <button class="primary">Run selected Blueprint</button>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Mobile navigation">
+      <button class="active" data-mobile-target="library">Library</button>
+      <button data-mobile-target="start">Start</button>
+      <button data-mobile-target="site">Site</button>
+      <button data-mobile-target="tools">Tools</button>
+    </nav>
+  </div>
+
+  <dialog id="rename-dialog">
+    <form method="dialog">
+      <h3>Rename saved Playground</h3>
+      <p>Updates the saved item in the library and the browser-backed site title.</p>
+      <label>New name<input value="Research Browser Playground"></label>
+      <menu>
+        <button value="cancel">Cancel</button>
+        <button value="rename" class="primary">Rename</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <dialog id="delete-dialog">
+    <form method="dialog">
+      <h3>Delete Playground</h3>
+      <p>Deleting a saved browser Playground removes it from this browser. Temporary sessions are discarded immediately.</p>
+      <menu>
+        <button value="cancel">Cancel</button>
+        <button value="delete" class="danger">Delete selected</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
