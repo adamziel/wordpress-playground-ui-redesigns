@@ -1,0 +1,49 @@
+{
+  "id": "v2-design-041",
+  "title": "Preview Table Command Deck",
+  "concept": "A preview-protecting command deck where an admin-style table drives Playground objects, launch routes, Site Manager tools, Blueprint gallery entries, and transfer history while a selected-detail panel and large live WordPress shell remain persistent.",
+  "focus": [
+    "admin table plus selected detail",
+    "large protected WordPress preview",
+    "stateful settings Save & Reload flow",
+    "destructive delete with active fallback",
+    "browser, local, imported, exported, and temporary row states"
+  ],
+  "flows": [
+    "Finish settings Save & Reload from a stored Playground by changing WordPress/PHP/language/network options, showing stored reload behavior, progressing through reload, and updating runtime badges, active row, preview state, and transfer history.",
+    "Show the unsaved settings reset consequence for temporary Playgrounds with destructive warning copy and a completed reset result that remains temporary.",
+    "Delete a saved Playground end to end with warning, cancel path, confirm, progress state, final row removal, transfer history, and active-site fallback to the unsaved Playground.",
+    "Save a temporary Playground either in browser storage or to a local directory with distinct destination consequences, local folder permission, progress, transformed row state, shell identity update, and reload consequences.",
+    "Use distinct start routes for Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import with session-only token warning, Blueprint URL, and ZIP import with replacement confirmation.",
+    "Use Site Manager Settings, Files, Blueprint, Database, Logs, Export to GitHub, Download as zip, database download, and Blueprint bundle actions from table rows without hiding the live preview."
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start",
+    "WordPress PR preview",
+    "Gutenberg PR or branch preview",
+    "GitHub import with account connection and token persistence caveat",
+    "Blueprint URL runner",
+    "Import .zip with native chooser framing, validation, replacement warning, progress, and imported result",
+    "Blueprint gallery categories and search with an honest representative subset of 43",
+    "Featured Blueprint shortcuts including Art Gallery, Coffee Shop, Feed Reader with the Friends Plugin, Gaming News, Non-profit Organization, and Personal Blog",
+    "Save temporary Playground in browser storage",
+    "Save to a local directory with folder permission and reconnect consequence",
+    "Visible save progress state",
+    "Saved, unsaved, local-directory, imported, and exported Playground row states",
+    "Open/manage, rename framing, delete confirmation, cancel, progress, final row removal, and active fallback",
+    "Current shell path input and refresh",
+    "Homepage and WP Admin shortcuts",
+    "Temporary, saved browser, local-directory, and imported storage badges",
+    "WordPress version, PHP version, language, older versions, network access, and multisite settings",
+    "Destructive unsaved reset and stored Save & Reload consequences",
+    "File browser with create file, create folder, upload, browse files, selected wp-config.php editor, dirty state, save, and result state",
+    "Blueprint editor with Blueprint URL, validation, copy link, download bundle, run, warning, progress, and result state",
+    "SQLite-backed database driver, path, size, database download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs with warning and empty states",
+    "Export to GitHub",
+    "Download active Playground as .zip",
+    "Database download",
+    "Blueprint bundle portability actions",
+    "Transfer history for saves, settings reloads, resets, imports, exports, downloads, file edits, Blueprint runs, deletes, and path navigation"
+  ]
+}

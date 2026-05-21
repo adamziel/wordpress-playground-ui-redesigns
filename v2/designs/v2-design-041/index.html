@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>V2 Design 041 - Preview Table Command Deck</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app" data-view="playgrounds">
+    <header class="shell" aria-label="Current Playground shell">
+      <div class="identity">
+        <span class="wpMark" aria-hidden="true">W</span>
+        <div>
+          <strong id="shellTitle">Research Browser Playground</strong>
+          <span id="shellMeta">Saved in this browser a moment ago</span>
+        </div>
+      </div>
+
+      <form class="pathBar" id="pathForm">
+        <button type="button" class="iconButton" id="refreshBtn" aria-label="Refresh active WordPress page">R</button>
+        <label class="srOnly" for="pathInput">Active WordPress path</label>
+        <input id="pathInput" value="/hello-from-playground/" autocomplete="off">
+        <button type="submit">Go</button>
+      </form>
+
+      <div class="shellActions">
+        <span class="badge success" id="storageBadge">Saved - browser</span>
+        <span class="badge" id="runtimeBadge">WP latest - PHP 8.3 - en_US</span>
+        <button type="button" data-path="/">Homepage</button>
+        <button type="button" data-path="/wp-admin/">WP Admin</button>
+        <button type="button" class="primary" id="saveButton">Save</button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="ledger" aria-label="Playground command tables">
+        <div class="deckHeader">
+          <div>
+            <p class="eyebrow">Command deck</p>
+            <h1>Playground objects and transfers</h1>
+          </div>
+          <button type="button" class="subtle" id="newPlaygroundBtn">Start new</button>
+        </div>
+
+        <nav class="deckTabs" aria-label="Command groups">
+          <button type="button" class="active" data-view-target="playgrounds">Playgrounds</button>
+          <button type="button" data-view-target="routes">Start routes</button>
+          <button type="button" data-view-target="manager">Site Manager</button>
+          <button type="button" data-view-target="blueprints">Blueprints</button>
+          <button type="button" data-view-target="transfers">Transfers</button>
+        </nav>
+
+        <div class="tableShell">
+          <table class="objectTable">
+            <thead>
+              <tr>
+                <th scope="col">Object</th>
+                <th scope="col">State</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <aside class="detail" aria-label="Selected detail">
+        <div class="detailTop">
+          <div>
+            <p class="eyebrow" id="detailKicker">Selected Playground</p>
+            <h2 id="detailTitle">Research Browser Playground</h2>
+          </div>
+          <span id="detailState" class="badge success">Ready</span>
+        </div>
+        <div id="detailBody"></div>
+      </aside>
+
+      <section class="preview" aria-label="Live WordPress preview">
+        <div class="previewTop">
+          <div class="browserLine">
+            <button type="button" class="iconButton" data-path="refresh">R</button>
+            <span id="previewPath">/hello-from-playground/</span>
+          </div>
+          <span id="previewStatus" class="statusText">Live WordPress shell protected</span>
+        </div>
+
+        <div class="wordpressFrame" id="wordpressFrame">
+          <div class="wpAdminBar">
+            <span>W</span>
+            <span>My WordPress Website</span>
+            <span>Edit Site</span>
+            <span>New</span>
+            <span>Edit Page</span>
+            <span class="push">Howdy, admin</span>
+          </div>
+          <nav class="wpSiteNav">
+            <strong id="siteHeading">My WordPress Website</strong>
+            <a>Hello from WordPress Playground!</a>
+            <a>Sample Page</a>
+          </nav>
+          <div class="wpContent" id="previewContent">
+            <article>
+              <h2>Hello from <span>WordPress Playground!</span></h2>
+              <p>This is Playground, a WordPress that runs client-side in your browser. It is perfect for training, demonstrating plugins and themes, and testing purposes.</p>
+              <mark>Note that you are logged-in as admin!</mark>
+              <p>Thus, you can modify this site as you like: edit content, install plugins and play around.</p>
+              <button type="button">Discover the mission behind Playground</button>
+            </article>
+            <div class="playgroundGlyph" aria-hidden="true">
+              <div class="rings"></div>
+              <strong>W</strong>
+            </div>
+          </div>
+          <div class="previewOverlay hidden" id="previewOverlay">
+            <strong id="overlayTitle">Reloading WordPress</strong>
+            <span id="overlayText">Applying runtime settings...</span>
+            <div class="meter"><span id="overlayMeter"></span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
