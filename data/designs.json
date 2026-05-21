@@ -1878,5 +1878,50 @@
       "download a .zip"
     ],
     "path": "design-042/index.html"
+  },
+  {
+    "id": "design-045",
+    "number": 45,
+    "title": "Playground Author Browser",
+    "concept": "A browser-chrome redesign for Blueprint authors where Playgrounds behave like browser tabs, creation and saved management live in a bookmark shelf, and Site Manager opens as inline authoring drawers beside the active WordPress page.",
+    "focus": [
+      "browser-like tab and address model",
+      "modal-free inline source, save, and management panels",
+      "Blueprint-author-first Site Manager drawer",
+      "dense controls with warm editorial accents"
+    ],
+    "featureCoverage": [
+      "create vanilla Playground",
+      "create from WordPress PR",
+      "create from Gutenberg PR or branch",
+      "import from GitHub after account connection",
+      "run Blueprint URL",
+      "import .zip",
+      "browse and filter Blueprint gallery entries",
+      "select featured blueprint shortcuts",
+      "save temporary Playground in browser storage",
+      "save to a local directory",
+      "see save progress",
+      "browse saved and unsaved Playgrounds",
+      "rename a saved Playground",
+      "delete a saved Playground",
+      "navigate active WordPress paths with URL input",
+      "refresh active embedded WordPress page",
+      "open Homepage and WP Admin",
+      "edit WordPress, PHP, and language settings",
+      "include older WordPress versions",
+      "allow network access",
+      "create a multisite network",
+      "understand destructive reset and reload behavior",
+      "use File browser with create folder, create file, upload, browse, and code editing affordances",
+      "view, copy, download, and run the current Blueprint bundle",
+      "inspect database driver, path, and size",
+      "download database.sqlite",
+      "open Adminer and phpMyAdmin",
+      "inspect logs and empty states",
+      "export to GitHub",
+      "download .zip"
+    ],
+    "path": "design-045/index.html"
   }
 ]
