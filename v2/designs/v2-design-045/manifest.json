@@ -1,0 +1,50 @@
+{
+  "id": "v2-design-045",
+  "title": "Transfer and Portability Deck",
+  "concept": "A table-led WordPress Playground operations deck that treats browser save, local directory save, GitHub import/export, ZIP import/download, database download, and Blueprint bundle actions as one transfer system with a persistent selected-detail panel and protected live preview.",
+  "focus": [
+    "transfer-centered object model",
+    "admin table plus selected detail",
+    "stateful saved, local, imported, exported, deleted, and reset rows",
+    "protected live WordPress shell",
+    "route-specific PR and branch preview completion"
+  ],
+  "flows": [
+    "Finish destructive delete end to end with warning, cancel support, confirmation progress, row deleting state, final row removal, transfer history entry, and active-site fallback to an Unsaved Playground when needed.",
+    "Finish PR or branch preview end to end with WordPress PR and Gutenberg PR/branch inputs, validation, loading, resulting preview identity, active path update, save/export availability, table mutation, and live preview update.",
+    "Save the active temporary Playground in browser storage or to a local directory with distinct destination copy, folder permission grant or denial, file-copy progress, slug or folder identity, reset/reload consequence, and same-row transformation.",
+    "Manage saved, unsaved, browser-backed, local-directory, imported, exported, and transfer rows with open, manage, rename, delete, reset, and result states.",
+    "Use Site Manager Settings, Files, Blueprint, Database, and Logs while Homepage, WP Admin, path navigation, refresh, Save, Export to GitHub, and Download as zip remain visible.",
+    "Browse a representative subset of 6 of 43 captured Blueprint gallery entries with current categories/search, selected detail, Blueprint URL, editor, copy, download, run, validation, and result state.",
+    "Run portability actions for GitHub import/export, ZIP import/download, database.sqlite download, Adminer, phpMyAdmin, and Blueprint bundle copy/download/run with transfer history and selected-object updates."
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start",
+    "WordPress PR preview with PR number or URL",
+    "Gutenberg PR or branch preview with PR, URL, or branch name",
+    "GitHub import with account connection and token-not-stored consequence",
+    "Blueprint URL runner",
+    "Import .zip with native chooser framing, validation, replacement warning, progress, and imported result",
+    "Blueprint gallery categories and search with honest representative subset of 43",
+    "Featured Blueprint shortcuts including Art Gallery, Coffee Shop, Feed Reader with the Friends Plugin, Gaming News, Non-profit Organization, and Personal Blog",
+    "Save in this browser with progress and browser slug identity",
+    "Save to a local directory with folder permission, denial, progress, folder identity, and reconnect consequence",
+    "Saved and unsaved Playground list",
+    "Open and manage saved Playgrounds",
+    "Rename saved Playground",
+    "Delete saved Playground with confirmation, cancel, progress, final row removal, and active fallback",
+    "Current shell path input and refresh",
+    "Homepage and WP Admin shortcuts",
+    "Temporary, saved, local permission, imported, exported, deleting, and reset states",
+    "WordPress version, PHP version, language, older versions, network access, and multisite settings",
+    "Destructive Apply Settings and Reset Playground and stored Save and Reload behavior",
+    "Site Manager tabs for Settings, Files, Blueprint, Database, and Logs",
+    "File browser with create file, create folder, upload, browse files, selected file/editor, dirty state, save, and result state",
+    "Blueprint editor with copy link, download bundle, run, validation, and result state",
+    "SQLite-backed database driver, path, size, database.sqlite download, Adminer, and phpMyAdmin",
+    "Playground, WordPress, and PHP logs with empty and notice states",
+    "Export to GitHub",
+    "Download as .zip",
+    "Transfer history for database, ZIP, GitHub, and Blueprint bundle actions"
+  ]
+}
