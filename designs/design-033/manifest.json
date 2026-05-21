@@ -1,0 +1,50 @@
+{
+  "id": "design-033",
+  "title": "Playground Admin Command Table",
+  "concept": "A dense WordPress-admin-like dashboard for plugin developers where a persistent command/search overlay drives a compact results pane, while saved sites, starts, Site Manager tools, blueprints, and transfer actions remain organized as admin tables.",
+  "focus": [
+    "command search overlay",
+    "results-pane workflow",
+    "professional admin dashboard",
+    "plugin developer repetition",
+    "compact tables and filters"
+  ],
+  "flows": [
+    "Search or filter the command table to start Vanilla WordPress, WordPress PR, Gutenberg PR or branch, GitHub import, Blueprint URL, zip import, or Blueprint gallery flows.",
+    "Save the temporary Playground to browser storage or a local directory with progress, then manage saved browser-backed Playgrounds with rename and delete actions.",
+    "Open Site Manager tabs for settings, file browser, Blueprint editing, database tools, logs, Homepage, WP Admin, and additional export actions.",
+    "Browse the Blueprint gallery with category filters and run featured templates including Art Gallery, Coffee Shop, Feed Reader, Gaming News, Non-profit Organization, and Personal Blog.",
+    "Use transfer tools for GitHub import, export to GitHub, download as zip, and local zip import."
+  ],
+  "featureCoverage": [
+    "Vanilla WordPress start",
+    "WordPress PR preview",
+    "Gutenberg PR or branch preview",
+    "GitHub import with account connection",
+    "Blueprint URL runner",
+    "Import zip trigger",
+    "Blueprint gallery with category filters and search",
+    "Featured blueprint shortcuts",
+    "Save in browser storage",
+    "Save to local directory",
+    "Save progress state",
+    "Saved and unsaved Playground management",
+    "Rename saved Playground",
+    "Delete saved Playground",
+    "URL path navigation and refresh",
+    "Homepage and WP Admin shortcuts",
+    "WordPress version settings",
+    "Include older WordPress versions",
+    "PHP version settings",
+    "Language settings",
+    "Allow network access",
+    "Create multisite network",
+    "Destructive reset and saved reload behavior",
+    "File browser with new file, new folder, upload, browse, and code editor",
+    "Blueprint JSON editor with copy link, download bundle, and run controls",
+    "Database driver, path, size, download, Adminer, and phpMyAdmin",
+    "Logs for Playground, WordPress, and PHP",
+    "Export to GitHub",
+    "Download as zip"
+  ]
+}
