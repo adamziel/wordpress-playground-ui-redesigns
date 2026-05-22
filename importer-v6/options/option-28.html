@@ -51,6 +51,14 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
 .stack{margin-top:12px;display:grid;gap:10px}
 .memo{border:1px solid var(--rule);border-radius:6px;background:#fff;padding:12px 13px;position:relative}
 .memo.focus{border-color:var(--accent);background:#fffaeb}
+.memo.drop-active{border-color:var(--accent);background:var(--soft);box-shadow:0 0 0 4px rgba(161,98,7,.12)}
+.memo.drop-active .drop-zone{border-color:var(--accent);background:#fffdf3}
+.drop-zone{border:1px dashed var(--rule2);border-radius:6px;padding:11px 12px 10px;background:#fff;transition:border-color .15s,background .15s}
+.drop-zone .drop-cue{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12.5px;color:var(--muted);margin-bottom:7px}
+.drop-zone .drop-cue::before,.drop-zone .drop-cue::after{content:"";flex:1;border-top:1px dotted var(--rule2)}
+.drop-zone .drop-cue b{color:var(--ink);font-weight:600;letter-spacing:.01em}
+.drop-zone .drop-or{text-align:center;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#bda66f;margin:2px 0 7px}
+.drop-zone .pick{border:0;padding:0;background:transparent}
 .memo .num{position:absolute;top:-1px;left:-1px;background:var(--accent);color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:6px 0 6px 0;letter-spacing:.08em}
 .memo h3{margin:0 0 2px 28px;font-size:13.5px;font-weight:600;letter-spacing:.01em}
 .memo .desc{margin:0 0 8px 28px;font-size:12px;color:var(--muted)}
@@ -259,10 +267,14 @@ details > div{margin-top:6px;font-size:12.5px;color:var(--muted)}
           <h3>Upload a file or folder</h3>
           <p class="desc">From this computer. .zip, .epub, .pdf, WXR .xml, or a whole folder.</p>
           <div class="field">
-            <div class="pick">
-              <button class="pickbtn" id="pickFile">Choose file…</button>
-              <button class="pickbtn" id="pickFolder">Choose folder…</button>
-              <span class="name" id="upName">No file selected</span>
+            <div class="drop-zone" id="dropZone">
+              <div class="drop-cue"><b>Drop files or a folder here</b></div>
+              <div class="drop-or">or</div>
+              <div class="pick">
+                <button class="pickbtn" id="pickFile">Choose file…</button>
+                <button class="pickbtn" id="pickFolder">Choose folder…</button>
+                <span class="name" id="upName">No file selected</span>
+              </div>
             </div>
             <input id="fileIn" type="file" multiple style="display:none">
             <input id="folderIn" type="file" webkitdirectory multiple style="display:none">
@@ -295,6 +307,12 @@ details > div{margin-top:6px;font-size:12.5px;color:var(--muted)}
     }
     fileIn.addEventListener('change',()=>gotFiles(fileIn.files));
     folderIn.addEventListener('change',()=>gotFiles(folderIn.files));
+    let dragDepth=0;
+    function setDrop(on){m2.classList.toggle('drop-active',on);}
+    m2.addEventListener('dragenter',e=>{if(!e.dataTransfer||!Array.from(e.dataTransfer.types||[]).includes('Files'))return;e.preventDefault();dragDepth++;setDrop(true);});
+    m2.addEventListener('dragover',e=>{if(!e.dataTransfer||!Array.from(e.dataTransfer.types||[]).includes('Files'))return;e.preventDefault();e.dataTransfer.dropEffect='copy';});
+    m2.addEventListener('dragleave',()=>{dragDepth=Math.max(0,dragDepth-1);if(!dragDepth)setDrop(false);});
+    m2.addEventListener('drop',e=>{e.preventDefault();dragDepth=0;setDrop(false);if(e.dataTransfer&&e.dataTransfer.files&&e.dataTransfer.files.length)gotFiles(e.dataTransfer.files);});
     t.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
       const map={gh:'https://github.com/WordPress/gutenberg/tree/trunk/docs',wp:'https://example.com/wp-json/',feed:'https://example.org/feed.xml',sitemap:'https://example.com/sitemap.xml',wxr:'https://example.com/wp-content/export.xml'};
       input.value=map[c.dataset.s]||'';input.focus();focusMemo('url');
